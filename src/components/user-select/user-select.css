@@ -1,0 +1,80 @@
+ft-user-select {
+  display: block;
+}
+ft-user-select .ft-input.sc-ft-input:focus,
+ft-user-select .ft-input.sc-ft-input:valid {
+  border-bottom: 0;
+}
+ft-user-select
+  .ft-input-wrapper.ft-input-has-icon-left.sc-ft-input
+  input.sc-ft-input,
+ft-user-select
+  .ft-input-wrapper.ft-input-has-icon-left.sc-ft-input
+  label.sc-ft-input {
+  margin-bottom: 0;
+  height: 2.75rem;
+  text-indent: 35px;
+}
+ft-user-select ft-input {
+  --ft-input-margin: 0 0 8px 0;
+}
+
+ft-user-select .user-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ft-user-select .user-list ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 0;
+  position: relative;
+}
+ft-user-select .user-list ul li div.user-select-avatar {
+  margin-right: 3%;
+}
+ft-user-select .user-list ul li div.user-select-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: auto;
+}
+ft-user-select .user-list ul li div.user-select-text span {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  padding: 0 0 0.25rem 0;
+}
+ft-user-select .user-list ul li div.user-select-icon {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 10px;
+  right: 30px;
+  color: #ccc;
+}
+ft-user-select .user-list ul li .selected-user {
+  color: var(--theme-primary);
+}
+ft-user-select .user-list ul li img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+ft-user-select .user-list ul li:hover {
+  cursor: pointer;
+  color: var(--theme-secondary);
+}
+ft-user-select .user-list ul li:hover div.user-select-icon {
+  color: var(--theme-secondary);
+}
+ft-user-select .user-list ion-icon.user-select-checkmark {
+  width: 40px;
+  height: 40px;
+}
+ft-user-select .user-list ion-icon.selected-edit {
+  width: 40px;
+  height: 40px;
+}

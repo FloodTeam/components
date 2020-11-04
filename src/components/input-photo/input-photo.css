@@ -1,0 +1,47 @@
+floodteam-input-photo .upload-wrapper {
+  display: block;
+  margin: 0 auto;
+  height: 180px;
+  width: 150px;
+  position: relative;
+}
+
+floodteam-input-photo .upload-wrapper .photo {
+  position: relative;
+  background: var(--theme-grey);
+  border-radius: 4px;
+  border: 2px solid var(--theme-light);
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--ion-color-medium);
+  font-size: 75px;
+  line-height: 150px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+floodteam-input-photo .upload-wrapper .photo.is-loading:before {
+  border-radius: 4px;
+}
+
+floodteam-input-photo .upload-wrapper .photo.is-loading:after {
+  border-radius: 4px;
+}
+
+floodteam-input-photo .upload-wrapper .photo:hover {
+  cursor: pointer;
+  border-color: var(--theme-blue);
+}
+
+floodteam-input-photo input[type="file"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}

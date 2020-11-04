@@ -1,0 +1,33 @@
+floodteam-graph-pay-splits floodteam-error .floodteam-error-wrapper {
+  padding: 0 !important;
+}
+
+floodteam-graph-pay-splits .graph-pay-splits-wrapper {
+  display: block;
+  max-width: 400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+floodteam-graph-pay-splits h1 {
+  text-align: center;
+  color: var(--theme-success) !important;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+floodteam-graph-pay-splits floodteam-graph {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+floodteam-graph-pay-splits floodteam-item h4 {
+  color: var(--theme-dark-grey) !important;
+}
+
+floodteam-graph-pay-splits floodteam-item floodteam-badge {
+  --floodteam-badge-padding: 0 10px;
+  --floodteam-badge-background: var(--theme-success);
+  --floodteam-badge-color: #ffffff;
+}
