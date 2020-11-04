@@ -2,8 +2,8 @@ import {
   Component,
   ComponentInterface,
   Element,
-  // Event,
-  // EventEmitter,
+  Event,
+  EventEmitter,
   Listen,
   Method,
   Prop,
@@ -40,9 +40,9 @@ export class Epay implements ComponentInterface {
 
   @Element() epayEl: any;
 
-  // @Event() ftEpayShowCommisions: EventEmitter<any>;
-  // @Event() floodteamFetch: EventEmitter<any>;
-  // @Event() floodteamSubmit: EventEmitter<any>;
+  @Event() ftEpayShowCommisions: EventEmitter<any>;
+  @Event() floodteamFetch: EventEmitter<any>;
+  @Event() floodteamSubmit: EventEmitter<any>;
 
   /**
    * The error message to display
@@ -212,15 +212,15 @@ export class Epay implements ComponentInterface {
         email: this.email,
       };
     }
-    // this.floodteamSubmit.emit({
-    //   endpoint: "addPayment",
-    //   data: {
-    //     ...data,
-    //     jobId: this.jobId,
-    //     userId: this.userId,
-    //     type
-    //   }
-    // });
+    this.floodteamSubmit.emit({
+      endpoint: "addPayment",
+      data: {
+        ...data,
+        jobId: this.jobId,
+        userId: this.userId,
+        type,
+      },
+    });
   }
 
   @Listen("ftCardError")
@@ -303,16 +303,6 @@ export class Epay implements ComponentInterface {
    */
   @Method()
   async updateSlides() {
-    if (window && window.dispatchEvent) {
-      var event;
-      if (typeof Event === "function") {
-        event = new (Event as any)("resize");
-      } else {
-        event = document.createEvent("Event");
-        event.initEvent("resize", true, true);
-      }
-      window.dispatchEvent(event);
-    }
     this.sliderEl.updateAutoHeight();
     return this.sliderEl.update();
   }
@@ -373,16 +363,16 @@ export class Epay implements ComponentInterface {
 
   async fetchData() {
     if (this.jobId) {
-      // this.floodteamFetch.emit({
-      //   endpoint: "findJob",
-      //   params: {
-      //     id: this.jobId,
-      //     withPayments: true,
-      //     withUsers: false,
-      //     withSites: false,
-      //     withPayModel: false
-      //   }
-      // });
+      this.floodteamFetch.emit({
+        endpoint: "findJob",
+        params: {
+          id: this.jobId,
+          withPayments: true,
+          withUsers: false,
+          withSites: false,
+          withPayModel: false,
+        },
+      });
     }
   }
 

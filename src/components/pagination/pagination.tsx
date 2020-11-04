@@ -1,8 +1,8 @@
 import {
   Component,
   ComponentInterface,
-  // Event,
-  // EventEmitter,
+  Event,
+  EventEmitter,
   Prop,
   h,
   Listen,
@@ -19,7 +19,7 @@ export class Pagination implements ComponentInterface {
   virtualScrollEl: HTMLIonVirtualScrollElement;
   infiniteScrollEl: HTMLIonInfiniteScrollElement;
 
-  // @Event() floodteamFetch: EventEmitter;
+  @Event() floodteamFetch: EventEmitter;
 
   @Prop() disableFetch = false;
   @Prop({ mutable: true }) approxItemHeight: number;
@@ -46,7 +46,6 @@ export class Pagination implements ComponentInterface {
   @Listen("floodteamSuccess", { target: "body" })
   async onSuccess(event) {
     if (event.detail.name === "pagination") {
-      console.log(event.detail);
       try {
         if (this.page === 0) {
           this.results = [];
@@ -63,9 +62,6 @@ export class Pagination implements ComponentInterface {
       if (event.detail?.data?.results?.pageCount === this.page) {
         this.infiniteScrollEl.disabled = true;
       }
-      setTimeout(() => {
-        window.dispatchEvent(new (Event as any)("resize"));
-      }, 1000);
     }
   }
 
@@ -97,9 +93,6 @@ export class Pagination implements ComponentInterface {
   async addResults(results: any[] = []) {
     this.onResize();
     this.results = [...this.results, ...results];
-    setTimeout(() => {
-      window.dispatchEvent(new (Event as any)("resize"));
-    }, 1000);
   }
 
   getResults(
@@ -109,35 +102,31 @@ export class Pagination implements ComponentInterface {
       limit?: boolean;
     } = {}
   ) {
-    console.log(options);
-    // this.floodteamFetch.emit({
-    //   name: "pagination",
-    //   endpoint: this.endpoint,
-    //   dataPropsMap: this.dataPropsMap,
-    //   disableFetch: this.disableFetch,
-    //   params: {
-    //     data: this.fetchData
-    //       ? this.fetchData
-    //       : {
-    //           query: this.query ? this.query : "",
-    //           page: options.page
-    //             ? options.page
-    //             : options.next
-    //             ? this.page + 1
-    //             : this.page,
-    //           limit: options.limit ? options.limit : this.limit,
-    //           orderBy: this.orderBy,
-    //           orderDirection: this.orderDirection
-    //         }
-    //   }
-    // });
+    this.floodteamFetch.emit({
+      name: "pagination",
+      endpoint: this.endpoint,
+      dataPropsMap: this.dataPropsMap,
+      disableFetch: this.disableFetch,
+      params: {
+        data: this.fetchData
+          ? this.fetchData
+          : {
+              query: this.query ? this.query : "",
+              page: options.page
+                ? options.page
+                : options.next
+                ? this.page + 1
+                : this.page,
+              limit: options.limit ? options.limit : this.limit,
+              orderBy: this.orderBy,
+              orderDirection: this.orderDirection,
+            },
+      },
+    });
   }
 
   componentDidLoad() {
     this.getResults();
-    setTimeout(() => {
-      window.dispatchEvent(new (Event as any)("resize"));
-    }, 1000);
   }
 
   render() {
