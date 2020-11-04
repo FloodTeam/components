@@ -2,20 +2,20 @@ import {
   Component,
   ComponentInterface,
   Element,
-  Event,
-  EventEmitter,
+  // Event,
+  // EventEmitter,
   Listen,
   Method,
   Prop,
   State,
   Watch,
-  h
+  h,
 } from "@stencil/core";
 import { Job, PaymentInput } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 
 @Component({
   tag: "floodteam-epay",
-  styleUrl: "epay.css"
+  styleUrl: "epay.css",
 })
 export class Epay implements ComponentInterface {
   payCheckEl: any;
@@ -27,7 +27,7 @@ export class Epay implements ComponentInterface {
     "card",
     "check",
     "confirmation",
-    "success"
+    "success",
   ];
   countdownTimerEl: any;
   intervalWatcher: any;
@@ -40,9 +40,9 @@ export class Epay implements ComponentInterface {
 
   @Element() epayEl: any;
 
-  @Event() ftEpayShowCommisions: EventEmitter<any>;
-  @Event() floodteamFetch: EventEmitter<any>;
-  @Event() floodteamSubmit: EventEmitter<any>;
+  // @Event() ftEpayShowCommisions: EventEmitter<any>;
+  // @Event() floodteamFetch: EventEmitter<any>;
+  // @Event() floodteamSubmit: EventEmitter<any>;
 
   /**
    * The error message to display
@@ -178,7 +178,7 @@ export class Epay implements ComponentInterface {
         await this.confirmPayment(
           this.errorCode === 2006
             ? {
-                ignore_check_amount_mismatch: true
+                ignore_check_amount_mismatch: true,
               }
             : {}
         );
@@ -197,30 +197,30 @@ export class Epay implements ComponentInterface {
       data = {
         token: event.detail.token.id,
         amount: this.amount,
-        email: this.email
+        email: this.email,
       };
     } else if (type === "check") {
       data = {
         transactionId: event.id ? event.id : null,
         checkNumber: event.check_number ? event.check_number : null,
         amount: this.amount,
-        email: this.email
+        email: this.email,
       };
     } else if (type === "manual") {
       data = {
         amount: this.amount,
-        email: this.email
+        email: this.email,
       };
     }
-    this.floodteamSubmit.emit({
-      endpoint: "addPayment",
-      data: {
-        ...data,
-        jobId: this.jobId,
-        userId: this.userId,
-        type
-      }
-    });
+    // this.floodteamSubmit.emit({
+    //   endpoint: "addPayment",
+    //   data: {
+    //     ...data,
+    //     jobId: this.jobId,
+    //     userId: this.userId,
+    //     type
+    //   }
+    // });
   }
 
   @Listen("ftCardError")
@@ -373,16 +373,16 @@ export class Epay implements ComponentInterface {
 
   async fetchData() {
     if (this.jobId) {
-      this.floodteamFetch.emit({
-        endpoint: "findJob",
-        params: {
-          id: this.jobId,
-          withPayments: true,
-          withUsers: false,
-          withSites: false,
-          withPayModel: false
-        }
-      });
+      // this.floodteamFetch.emit({
+      //   endpoint: "findJob",
+      //   params: {
+      //     id: this.jobId,
+      //     withPayments: true,
+      //     withUsers: false,
+      //     withSites: false,
+      //     withPayModel: false
+      //   }
+      // });
     }
   }
 
@@ -415,7 +415,7 @@ export class Epay implements ComponentInterface {
   formatUSD(amount: number) {
     const formatter = new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "USD"
+      currency: "USD",
     });
 
     return formatter.format(amount);
@@ -599,7 +599,7 @@ export class Epay implements ComponentInterface {
           class={{
             owed: true,
             shrunk: this.isHeaderShrunk,
-            hidden: this.isHeaderHidden
+            hidden: this.isHeaderHidden,
           }}
         >
           <span>
@@ -617,12 +617,12 @@ export class Epay implements ComponentInterface {
           ) : null}
         </div>
         <ion-slides
-          ref={el => (this.sliderEl = el)}
+          ref={(el) => (this.sliderEl = el)}
           options={{
             autoHeight: true,
             allowTouchMove: false,
             simulateTouch: false,
-            autoplay: false
+            autoplay: false,
           }}
           class={{ "hide-slides": this.isSlidesHidding }}
         >
@@ -633,7 +633,7 @@ export class Epay implements ComponentInterface {
                   <div class="past">
                     <h2>Past Payments</h2>
                     {this.job?.payments?.length > 0 ? (
-                      this.job.payments.map(payment => (
+                      this.job.payments.map((payment) => (
                         <ion-item lines="none">
                           <ion-label class="ion-text-wrap">
                             <h4>
@@ -649,7 +649,7 @@ export class Epay implements ComponentInterface {
                                 color:
                                   payment.type === "manual"
                                     ? "var(--ion-color-danger)"
-                                    : "var(--ion-color-success)"
+                                    : "var(--ion-color-success)",
                               }}
                             >
                               {this.getPaymentText(payment)}
@@ -754,20 +754,20 @@ export class Epay implements ComponentInterface {
                   "::placeholder": {
                     color: "#999999",
                     iconColor: "#999999",
-                    fontWeight: "normal"
-                  }
+                    fontWeight: "normal",
+                  },
                 },
                 invalid: {
                   color: "#ee6274",
-                  iconColor: "#ee6274"
-                }
+                  iconColor: "#ee6274",
+                },
               }}
             />
           </ion-slide>
           <ion-slide id="check">
             <floodteam-pay-check
               loading={this.loading}
-              ref={el => (this.payCheckEl = el)}
+              ref={(el) => (this.payCheckEl = el)}
               apiKey={this.dadeKey}
               url={this.dadeUrl}
               amount={this.amount}
@@ -822,7 +822,7 @@ export class Epay implements ComponentInterface {
                             percent={(this.confirmationTimerLeft / 30) * 100}
                             stroke={5}
                             radius={30}
-                            ref={el => (this.countdownTimerEl = el)}
+                            ref={(el) => (this.countdownTimerEl = el)}
                           >
                             {this.confirmationTimerLeft}s
                           </floodteam-progress-circle>
@@ -847,7 +847,7 @@ export class Epay implements ComponentInterface {
             <ion-grid>
               <ion-row>
                 <ion-col>
-                  <floodteam-thumbs-up ref={el => (this.thumbsUpEl = el)} />
+                  <floodteam-thumbs-up ref={(el) => (this.thumbsUpEl = el)} />
                   <p>You're good to go!</p>
                 </ion-col>
               </ion-row>

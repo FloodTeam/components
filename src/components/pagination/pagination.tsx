@@ -1,25 +1,25 @@
 import {
   Component,
   ComponentInterface,
-  Event,
-  EventEmitter,
+  // Event,
+  // EventEmitter,
   Prop,
   h,
   Listen,
   Method,
-  Watch
+  Watch,
 } from "@stencil/core";
 import Debounce from "debounce-decorator";
 
 @Component({
   tag: "floodteam-pagination",
-  styleUrl: "pagination.css"
+  styleUrl: "pagination.css",
 })
 export class Pagination implements ComponentInterface {
   virtualScrollEl: HTMLIonVirtualScrollElement;
   infiniteScrollEl: HTMLIonInfiniteScrollElement;
 
-  @Event() floodteamFetch: EventEmitter;
+  // @Event() floodteamFetch: EventEmitter;
 
   @Prop() disableFetch = false;
   @Prop({ mutable: true }) approxItemHeight: number;
@@ -39,7 +39,7 @@ export class Pagination implements ComponentInterface {
   @Watch("query")
   onQuery() {
     this.getResults({
-      page: 0
+      page: 0,
     });
   }
 
@@ -72,7 +72,7 @@ export class Pagination implements ComponentInterface {
   @Listen("ionInfinite")
   onInfiniteScroll() {
     this.getResults({
-      next: true
+      next: true,
     });
   }
 
@@ -109,27 +109,28 @@ export class Pagination implements ComponentInterface {
       limit?: boolean;
     } = {}
   ) {
-    this.floodteamFetch.emit({
-      name: "pagination",
-      endpoint: this.endpoint,
-      dataPropsMap: this.dataPropsMap,
-      disableFetch: this.disableFetch,
-      params: {
-        data: this.fetchData
-          ? this.fetchData
-          : {
-              query: this.query ? this.query : "",
-              page: options.page
-                ? options.page
-                : options.next
-                ? this.page + 1
-                : this.page,
-              limit: options.limit ? options.limit : this.limit,
-              orderBy: this.orderBy,
-              orderDirection: this.orderDirection
-            }
-      }
-    });
+    console.log(options);
+    // this.floodteamFetch.emit({
+    //   name: "pagination",
+    //   endpoint: this.endpoint,
+    //   dataPropsMap: this.dataPropsMap,
+    //   disableFetch: this.disableFetch,
+    //   params: {
+    //     data: this.fetchData
+    //       ? this.fetchData
+    //       : {
+    //           query: this.query ? this.query : "",
+    //           page: options.page
+    //             ? options.page
+    //             : options.next
+    //             ? this.page + 1
+    //             : this.page,
+    //           limit: options.limit ? options.limit : this.limit,
+    //           orderBy: this.orderBy,
+    //           orderDirection: this.orderDirection
+    //         }
+    //   }
+    // });
   }
 
   componentDidLoad() {
@@ -144,13 +145,13 @@ export class Pagination implements ComponentInterface {
     return (
       <div class="pagination">
         <ion-virtual-scroll
-          ref={el => (this.virtualScrollEl = el)}
+          ref={(el) => (this.virtualScrollEl = el)}
           items={this.results}
           approxItemHeight={this.approxItemHeight}
         >
           <ion-grid>
             <ion-row>
-              {this.results.map(result => {
+              {this.results.map((result) => {
                 return (
                   <ion-col>
                     <ComponentTag
@@ -166,7 +167,7 @@ export class Pagination implements ComponentInterface {
           </ion-grid>
           <ion-infinite-scroll
             style={{ display: "block" }}
-            ref={el => (this.infiniteScrollEl = el)}
+            ref={(el) => (this.infiniteScrollEl = el)}
           >
             <ion-infinite-scroll-content
               loading-spinner="bubbles"
