@@ -7,12 +7,12 @@ import {
   Listen,
   Method,
   Prop,
-  h
+  h,
 } from "@stencil/core";
 
 @Component({
   tag: "floodteam-form",
-  styleUrl: "form.css"
+  styleUrl: "form.css",
 })
 export class Form implements ComponentInterface {
   formEl: HTMLFormElement;
@@ -87,6 +87,10 @@ export class Form implements ComponentInterface {
    */
   @Prop({ mutable: true }) loading = false;
   /**
+   * Should the enter button binding be disabled
+   */
+  @Prop() disableEnterButton = false;
+  /**
    * Should the form disable reset
    */
   @Prop() disableReset = false;
@@ -98,7 +102,7 @@ export class Form implements ComponentInterface {
    * Has the form fields been changed
    */
   @Prop({
-    mutable: true
+    mutable: true,
   })
   hasChanged = false;
   /**
@@ -157,7 +161,7 @@ export class Form implements ComponentInterface {
       event.target.name &&
       !event.target.name.startsWith("ion-") &&
       (this.excludeData ? this.excludeData : []).filter(
-        excludedName => excludedName === event.target.name
+        (excludedName) => excludedName === event.target.name
       ).length === 0
     ) {
       this.setByPath(this.formData, event.target.name, event.target.value);
@@ -174,7 +178,7 @@ export class Form implements ComponentInterface {
       event.target &&
       event.target.name &&
       (this.excludeData ? this.excludeData : []).filter(
-        excludedName => excludedName === event.target.name
+        (excludedName) => excludedName === event.target.name
       ).length === 0
     ) {
       this.formData[event.target.name] = event.target.value;
@@ -187,7 +191,7 @@ export class Form implements ComponentInterface {
   @Listen("keydown")
   async onKeyDown(event: KeyboardEvent) {
     if (event.key === "Enter" && (await this.checkFormValidity())) {
-      if (this.submitButtonEl) {
+      if (this.submitButtonEl && !this.disableEnterButton) {
         this.submitButtonEl.click();
       }
     }
@@ -227,7 +231,7 @@ export class Form implements ComponentInterface {
       id: this.documentId,
       endpoint: this.endpoint,
       data,
-      name: this.name
+      name: this.name,
     });
     this.hasChanged = false;
   }
@@ -248,7 +252,7 @@ export class Form implements ComponentInterface {
       id: this.documentId,
       endpoint: this.endpoint,
       data: this.formData,
-      name: this.name
+      name: this.name,
     });
     this.hasChanged = false;
   }
@@ -265,8 +269,8 @@ export class Form implements ComponentInterface {
           !reportValidity
             ? {
                 validationClassOptions: {
-                  ignoreInvalid: true
-                }
+                  ignoreInvalid: true,
+                },
               }
             : null
         ))
@@ -287,7 +291,7 @@ export class Form implements ComponentInterface {
     this.floodteamValidation.emit({
       event,
       isValid,
-      name: this.name
+      name: this.name,
     });
 
     if (this.submitButtonEl) {
@@ -358,8 +362,8 @@ export class Form implements ComponentInterface {
         endpoint: this.findEndpoint,
         params: {
           ...(this.findParams ? this.findParams : {}),
-          id: this.documentId
-        }
+          id: this.documentId,
+        },
       });
     }
     if (this.formData) {
@@ -370,11 +374,11 @@ export class Form implements ComponentInterface {
   render() {
     return (
       <form
-        ref={el => (this.formEl = el as HTMLFormElement)}
+        ref={(el) => (this.formEl = el as HTMLFormElement)}
         name={this.name}
         id={this.name}
-        onReset={event => this.reset(event)}
-        onSubmit={event => this.submit(event)}
+        onReset={(event) => this.reset(event)}
+        onSubmit={(event) => this.submit(event)}
         class={{ "is-loading": this.loading }}
       >
         <slot />
@@ -384,7 +388,7 @@ export class Form implements ComponentInterface {
               <ion-col>
                 {this.resetButton ? (
                   <ion-button
-                    ref={el => (this.resetButtonEl = el)}
+                    ref={(el) => (this.resetButtonEl = el)}
                     type="reset"
                     fill={this.resetButtonFill}
                     color={this.resetButtonColor}
@@ -395,7 +399,7 @@ export class Form implements ComponentInterface {
               <ion-col>
                 {this.submitButton ? (
                   <ion-button
-                    ref={el => (this.submitButtonEl = el)}
+                    ref={(el) => (this.submitButtonEl = el)}
                     type="submit"
                     color={this.submitButtonColor}
                     fill={this.submitButtonFill}
