@@ -138,7 +138,7 @@ export class Epay implements ComponentInterface {
 
   @Listen("ionInput")
   onInput(event) {
-    if (event.target.name === "amount") {
+    if (event?.target?.name === "amount") {
       this.amount = event.target.value ? parseFloat(event.target.value) : null;
     } else if (event.target.name === "email") {
       this.email = event.target.value;
@@ -147,7 +147,7 @@ export class Epay implements ComponentInterface {
 
   @Listen("ftToggle")
   onFtToggle(event) {
-    if (event.target.name === "projected") {
+    if (event?.target?.name === "projected") {
       console.log(event);
     }
   }
