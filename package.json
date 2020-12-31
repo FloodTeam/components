@@ -37,7 +37,7 @@
   "dependencies": {
     "@dadesystems/dademobile": "^1.2.1",
     "@ionic/core": "^5.5.2",
-    "@madnesslabs/thefloodteam-backend": "^1.5.36",
+    "@madnesslabs/thefloodteam-backend": "^1.5.37",
     "@stencil/core": "^2.3.0",
     "@storybook/web-components": "^6.1.11",
     "chart.js": "^2.9.4",
