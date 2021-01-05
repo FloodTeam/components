@@ -22,7 +22,7 @@ export const config: Config = {
     {
       type: "dist",
       dir: distDirs.stencil,
-      copy: [{ src: "assets" }],
+      copy: [{ src: "fonts" }],
     },
     // one file in es6
     {
