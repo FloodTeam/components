@@ -2,7 +2,7 @@ import { ListQueryInput } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 import {
   Component,
   ComponentInterface,
-  Event as CustomEvent,
+  Event,
   EventEmitter,
   Prop,
   h,
@@ -22,7 +22,7 @@ export class Pagination implements ComponentInterface {
   virtualScrollEl: HTMLIonVirtualScrollElement;
   infiniteScrollEl: HTMLIonInfiniteScrollElement;
 
-  @CustomEvent() floodteamFetch: EventEmitter;
+  @Event() floodteamFetch: EventEmitter;
 
   @Prop() gridEl: FunctionalComponent<any>;
   @Prop() listEl: FunctionalComponent<any>;
@@ -61,7 +61,7 @@ export class Pagination implements ComponentInterface {
   @Watch("display")
   onDisplay() {
     setTimeout(async () => {
-      window.dispatchEvent(new Event("resize"));
+      window.dispatchEvent(new window.Event("resize"));
     }, 1000);
   }
 
@@ -86,7 +86,7 @@ export class Pagination implements ComponentInterface {
         this.infiniteScrollEl.disabled = true;
       }
       setTimeout(async () => {
-        window.dispatchEvent(new Event("resize"));
+        window.dispatchEvent(new window.Event("resize"));
       }, 1000);
     }
   }
