@@ -19,6 +19,11 @@ export const config: Config = {
       type: "www",
       serviceWorker: null,
     },
+    {
+      type: "dist",
+      dir: distDirs.stencil,
+      copy: [{ src: "assets" }],
+    },
     // one file in es6
     {
       type: "dist-custom-elements-bundle",
