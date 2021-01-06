@@ -1,19 +1,21 @@
-import { script } from './lit-script';
+import { script } from "./lit-script";
 
 const capitalize = (s) => {
-  if (typeof s !== 'string') return '';
+  if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
 export const eventHandles = (eventNames) => {
-  return eventNames.map(eventName => `on${capitalize(eventName)}`);
+  return eventNames.map((eventName) => `on${capitalize(eventName)}`);
 };
 
-export function action (compName, eventNames) {
+export function action(compName, eventNames) {
   return script(`
     (function(){
       const comp = document.querySelector('${compName}');
-      ${eventNames.map((eventName) => `
+      ${eventNames
+        .map(
+          (eventName) => `
         comp.addEventListener('${eventName}', () => {
           var evt = new MouseEvent('on${capitalize(eventName)}', {
             bubbles: true,
@@ -22,7 +24,18 @@ export function action (compName, eventNames) {
           });
           comp.dispatchEvent(evt);
         });
-      `).join('')}
+      `
+        )
+        .join("")}
+    })()
+  `);
+}
+
+export function passProp(compName, propName, propValue) {
+  return script(`
+    (function(){
+      const comp = document.querySelector('${compName}');
+      comp.${propName} = "madness
     })()
   `);
 }

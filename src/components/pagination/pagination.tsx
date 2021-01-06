@@ -87,7 +87,7 @@ export class Pagination implements ComponentInterface {
       }
       setTimeout(async () => {
         window.dispatchEvent(new window.Event("resize"));
-      }, 1000);
+      }, 1500);
     }
   }
 

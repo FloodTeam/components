@@ -54,5 +54,23 @@
     <% files.js.forEach(file => { %>
       <script src="<%= file %>"></script>
     <% }); %>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        TrackMyGiving.init({
+          host: "http://localhost:4000",
+          functionsHost:
+            "https://us-central1-trackmygiving-4cbe8.cloudfunctions.net",
+        });
+        var firebaseConfig = {
+          apiKey: "AIzaSyAHlZ6S4P-dQUc9xVsB6NioBVqs9gAHZjs",
+          authDomain: "trackmygiving-4cbe8.firebaseapp.com",
+          databaseURL: "https://trackmygiving-4cbe8.firebaseio.com",
+          projectId: "trackmygiving-4cbe8",
+          storageBucket: "trackmygiving-4cbe8.appspot.com",
+          messagingSenderId: "423724975087",
+          appId: "1:423724975087:web:6dba08d2ba5a9eb3",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
   </body>
 </html>
