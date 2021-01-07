@@ -10,11 +10,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %>
-    <% } %> <% files.css.forEach(file => { %>
+    <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %> <% } %> <%
+    files.css.forEach(file => { %>
     <link href="<%= file %>" rel="stylesheet" />
-    <% }); %> <% // OVERRIDE START const { namespace } =
-    require('../package.json'); %>
+    <% }); %>
+
+    <% // OVERRIDE START
+        const { namespace } = require('../package.json');
+    %>
     <script type="module" src="<%= namespace %>.esm.js"></script>
     <link rel="stylesheet" href="<%= namespace %>.css" />
     <% // OVERRIDE ENDS %>
@@ -27,24 +30,29 @@
     </style>
   </head>
   <body>
-    <% if (typeof bodyHtmlSnippet !== 'undefined') { %> <%= bodyHtmlSnippet %>
+    <% if (typeof bodyHtmlSnippet !== 'undefined') { %>
+      <%= bodyHtmlSnippet %>
     <% } %>
 
     <div id="root"></div>
     <div id="docs-root"></div>
 
     <% if (typeof globals !== 'undefined' && Object.keys(globals).length) { %>
-    <script>
-      <% for (var varName in globals) { %>
-          <% if (globals[varName] != undefined) { %>
-            window['<%=varName%>'] = <%= JSON.stringify(globals[varName]) %>;
-          <% } %>
-      <% } %>
-    </script>
-    <% } %> <% dlls.forEach(file => { %>
-    <script src="<%= file %>"></script>
-    <% }); %> <% files.js.forEach(file => { %>
-    <script src="<%= file %>"></script>
+      <script>
+        <% for (var varName in globals) { %>
+            <% if (globals[varName] != undefined) { %>
+              window['<%=varName%>'] = <%= JSON.stringify(globals[varName]) %>;
+            <% } %>
+        <% } %>
+      </script>
+    <% } %>
+
+    <% dlls.forEach(file => { %>
+      <script src="<%= file %>"></script>
+    <% }); %>
+
+    <% files.js.forEach(file => { %>
+      <script src="<%= file %>"></script>
     <% }); %>
   </body>
 </html>
