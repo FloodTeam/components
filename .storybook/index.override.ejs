@@ -10,14 +10,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %> <% } %> <%
-    files.css.forEach(file => { %>
+    <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %>
+    <% } %> <% files.css.forEach(file => { %>
     <link href="<%= file %>" rel="stylesheet" />
-    <% }); %>
-
-    <% // OVERRIDE START
-        const { namespace } = require('../package.json');
-    %>
+    <% }); %> <% // OVERRIDE START const { namespace } =
+    require('../package.json'); %>
     <script type="module" src="<%= namespace %>.esm.js"></script>
     <link rel="stylesheet" href="<%= namespace %>.css" />
     <% // OVERRIDE ENDS %>
@@ -30,47 +27,24 @@
     </style>
   </head>
   <body>
-    <% if (typeof bodyHtmlSnippet !== 'undefined') { %>
-      <%= bodyHtmlSnippet %>
+    <% if (typeof bodyHtmlSnippet !== 'undefined') { %> <%= bodyHtmlSnippet %>
     <% } %>
 
     <div id="root"></div>
     <div id="docs-root"></div>
 
     <% if (typeof globals !== 'undefined' && Object.keys(globals).length) { %>
-      <script>
-        <% for (var varName in globals) { %>
-            <% if (globals[varName] != undefined) { %>
-              window['<%=varName%>'] = <%= JSON.stringify(globals[varName]) %>;
-            <% } %>
-        <% } %>
-      </script>
-    <% } %>
-
-    <% dlls.forEach(file => { %>
-      <script src="<%= file %>"></script>
-    <% }); %>
-
-    <% files.js.forEach(file => { %>
-      <script src="<%= file %>"></script>
-    <% }); %>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        TrackMyGiving.init({
-          host: "http://localhost:4000",
-          functionsHost:
-            "https://us-central1-trackmygiving-4cbe8.cloudfunctions.net",
-        });
-        var firebaseConfig = {
-          apiKey: "AIzaSyAHlZ6S4P-dQUc9xVsB6NioBVqs9gAHZjs",
-          authDomain: "trackmygiving-4cbe8.firebaseapp.com",
-          databaseURL: "https://trackmygiving-4cbe8.firebaseio.com",
-          projectId: "trackmygiving-4cbe8",
-          storageBucket: "trackmygiving-4cbe8.appspot.com",
-          messagingSenderId: "423724975087",
-          appId: "1:423724975087:web:6dba08d2ba5a9eb3",
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+      <% for (var varName in globals) { %>
+          <% if (globals[varName] != undefined) { %>
+            window['<%=varName%>'] = <%= JSON.stringify(globals[varName]) %>;
+          <% } %>
+      <% } %>
+    </script>
+    <% } %> <% dlls.forEach(file => { %>
+    <script src="<%= file %>"></script>
+    <% }); %> <% files.js.forEach(file => { %>
+    <script src="<%= file %>"></script>
+    <% }); %>
   </body>
 </html>

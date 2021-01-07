@@ -30,12 +30,3 @@ export function action(compName, eventNames) {
     })()
   `);
 }
-
-export function passProp(compName, propName, propValue) {
-  return script(`
-    (function(){
-      const comp = document.querySelector('${compName}');
-      comp.${propName} = "madness
-    })()
-  `);
-}
