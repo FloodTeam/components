@@ -7,15 +7,15 @@ import {
   Listen,
   Prop,
   State,
-  h
+  h,
 } from "@stencil/core";
-import { Address } from "@madnesslabs/thefloodteam-backend";
+import { Address } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 
 declare var google;
 
 @Component({
   tag: "floodteam-input-address",
-  styleUrl: "input-address.css"
+  styleUrl: "input-address.css",
 })
 export class InputAddress implements ComponentInterface {
   autocompleteFieldEl: HTMLIonInputElement;
@@ -69,7 +69,7 @@ export class InputAddress implements ComponentInterface {
         this.value.full = fullAddress;
         this.ionInput.emit({
           name: this.name,
-          value: this.value
+          value: this.value,
         });
       }, 100);
     }
@@ -81,7 +81,7 @@ export class InputAddress implements ComponentInterface {
       inputEl.setAttribute("autocomplete", "new-password");
     }, 200);
     const autocomplete = new google.maps.places.Autocomplete(inputEl, {
-      types: ["address"]
+      types: ["address"],
     });
 
     google.maps.event.addListener(autocomplete, "place_changed", () => {
@@ -120,7 +120,7 @@ export class InputAddress implements ComponentInterface {
           setTimeout(() => {
             this.ionInput.emit({
               name: this.name,
-              value: this.value
+              value: this.value,
             });
           }, 10);
         }
@@ -138,7 +138,7 @@ export class InputAddress implements ComponentInterface {
         state: this.stateSelectEl.value,
         street: this.streetInputEl.value as string,
         unit: this.unitInputEl.value as string,
-        zip: this.zipInputEl.value as string
+        zip: this.zipInputEl.value as string,
       };
     }
     this.floodteamAddressMode.emit({ maual: this.manualEntry });
@@ -155,7 +155,7 @@ export class InputAddress implements ComponentInterface {
         <ion-label position="stacked">{this.label}</ion-label>
         <div class="manual-fields">
           <ion-input
-            ref={el => (this.streetInputEl = el)}
+            ref={(el) => (this.streetInputEl = el)}
             type="text"
             name={this.name + ".street"}
             placeholder="Street Address"
@@ -163,14 +163,14 @@ export class InputAddress implements ComponentInterface {
             required={this.required && this.manualEntry}
           />
           <ion-input
-            ref={el => (this.unitInputEl = el)}
+            ref={(el) => (this.unitInputEl = el)}
             type="text"
             name={this.name + ".unit"}
             placeholder="Street Address 2"
             value={value.unit}
           />
           <ion-input
-            ref={el => (this.cityInputEl = el)}
+            ref={(el) => (this.cityInputEl = el)}
             type="text"
             name={this.name + ".city"}
             placeholder="City"
@@ -181,7 +181,7 @@ export class InputAddress implements ComponentInterface {
             <ion-row>
               <ion-col size="6">
                 <floodteam-input-state
-                  ref={el => (this.stateSelectEl = el)}
+                  ref={(el) => (this.stateSelectEl = el)}
                   name={this.name + ".state"}
                   value={value.state}
                   placeholder="State"
@@ -189,7 +189,7 @@ export class InputAddress implements ComponentInterface {
               </ion-col>
               <ion-col size="6">
                 <ion-input
-                  ref={el => (this.zipInputEl = el)}
+                  ref={(el) => (this.zipInputEl = el)}
                   class="zip-input"
                   type="tel"
                   name={this.name + ".zip"}
@@ -218,7 +218,7 @@ export class InputAddress implements ComponentInterface {
       <ion-item class={{ "is-hidden": this.manualEntry }}>
         <ion-label position="stacked">{this.label}</ion-label>
         <ion-input
-          ref={el => (this.autocompleteFieldEl = el)}
+          ref={(el) => (this.autocompleteFieldEl = el)}
           class="autocomplete-field"
           type="text"
           placeholder={this.placeholder}
@@ -237,7 +237,7 @@ export class InputAddress implements ComponentInterface {
             <ion-icon name="create" />
           </span>
         </ion-button>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
