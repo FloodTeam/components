@@ -6,13 +6,13 @@ import {
   Listen,
   Prop,
   h,
-  State
+  State,
 } from "@stencil/core";
 import { Address } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 
 @Component({
   tag: "floodteam-payment-methods",
-  styleUrl: "payment-methods.css"
+  styleUrl: "payment-methods.css",
 })
 export class PaymentMethods implements ComponentInterface {
   cardInputEl: HTMLFloodteamInputElement;
@@ -27,7 +27,7 @@ export class PaymentMethods implements ComponentInterface {
     autoHeight: true,
     allowTouchMove: false,
     simulateTouch: false,
-    autoplay: false
+    autoplay: false,
   };
 
   @Event() ftRemovePaymentMethod: EventEmitter;
@@ -72,7 +72,7 @@ export class PaymentMethods implements ComponentInterface {
     if (event.detail.name === "cardForm") {
       setTimeout(() => {
         this.errors = event.detail.error.response.errors.map(
-          err => err.message
+          (err) => err.message
         );
       }, 100);
     }
@@ -98,7 +98,7 @@ export class PaymentMethods implements ComponentInterface {
         address_line2: address?.unit,
         address_city: address?.city,
         address_state: address?.state,
-        address_zip: address?.zip
+        address_zip: address?.zip,
       });
       data.token = token.id;
       data.address = address.full;
@@ -122,7 +122,7 @@ export class PaymentMethods implements ComponentInterface {
   async removePaymentMethod(id: string) {
     if (confirm("Are you sure you wish to delete this payment method?")) {
       this.ftRemovePaymentMethod.emit({
-        id
+        id,
       });
     }
   }
@@ -130,11 +130,11 @@ export class PaymentMethods implements ComponentInterface {
   render() {
     return (
       <ion-card>
-        {this.errors.map(errorMessage => (
+        {this.errors.map((errorMessage) => (
           <floodteam-error>{errorMessage}</floodteam-error>
         ))}
         <ion-slides
-          ref={el => (this.sliderEl = el)}
+          ref={(el) => (this.sliderEl = el)}
           options={this.sliderOptions}
         >
           <ion-slide id="methods">
@@ -142,13 +142,13 @@ export class PaymentMethods implements ComponentInterface {
               <h2>Payment Methods</h2>
               {this.methods && this.methods.length > 0 ? (
                 <ion-list lines="none">
-                  {this.methods.map(method => (
+                  {this.methods.map((method) => (
                     <ion-item>
                       <ion-label>
                         <h2>{method.name}</h2>
                         <p
                           style={{
-                            textTransform: "capitalize"
+                            textTransform: "capitalize",
                           }}
                         >
                           {method.type === "checking"
@@ -189,7 +189,7 @@ export class PaymentMethods implements ComponentInterface {
             <div class="slide-wrapper">
               <h2>Select Payment Type</h2>
               <p>What is the method you would like to get paid on?</p>
-              <floodteam-form
+              <fireenjin-form
                 disableLoader
                 name="paymentForm"
                 resetButton="<ion-icon slot='start' name='arrow-back-outline'></ion-icon>Back"
@@ -231,7 +231,7 @@ export class PaymentMethods implements ComponentInterface {
                     </ion-col>
                   </ion-row>
                 </ion-grid>
-              </floodteam-form>
+              </fireenjin-form>
             </div>
           </ion-slide>
           <ion-slide id="add">
@@ -244,18 +244,18 @@ export class PaymentMethods implements ComponentInterface {
                 {this.payType === "card" ? "Debit Card" : "Bank Account"}?
               </p>
               {this.payType === "card" ? (
-                <floodteam-form
+                <fireenjin-form
                   name="cardForm"
                   resetButton="<ion-icon slot='start' name='arrow-back-outline'></ion-icon>Back"
                   resetButtonColor="medium"
                   submitButtonColor="success"
                   endpoint="addPaymentMethod"
-                  beforeSubmit={data => this.onBeforeSubmit(data)}
+                  beforeSubmit={(data) => this.onBeforeSubmit(data)}
                   excludeData={["card", "cardName"]}
                 >
                   <ion-list>
                     <floodteam-input
-                      ref={el => (this.cardInputEl = el)}
+                      ref={(el) => (this.cardInputEl = el)}
                       placeholder="Card Number"
                       name="card"
                       type="card"
@@ -264,8 +264,8 @@ export class PaymentMethods implements ComponentInterface {
                         fonts: [
                           {
                             cssSrc:
-                              "https://fonts.googleapis.com/css?family=Work+Sans:400"
-                          }
+                              "https://fonts.googleapis.com/css?family=Work+Sans:400",
+                          },
                         ],
                         style: {
                           base: {
@@ -288,19 +288,19 @@ export class PaymentMethods implements ComponentInterface {
                                   "(prefers-color-scheme: dark)"
                                 ).matches
                                   ? "#8d9ba9"
-                                  : "#acadad"
-                            }
+                                  : "#acadad",
+                            },
                           },
                           invalid: {
                             iconColor: "#ee6274",
-                            color: "#ee6274"
-                          }
-                        }
+                            color: "#ee6274",
+                          },
+                        },
                       }}
                       required
                     />
                     <floodteam-input
-                      ref={el => (this.nameInputEl = el)}
+                      ref={(el) => (this.nameInputEl = el)}
                       placeholder="Name on Card"
                       name="cardName"
                       value={this.cardName}
@@ -308,38 +308,38 @@ export class PaymentMethods implements ComponentInterface {
                       required
                     />
                     <floodteam-input-address
-                      ref={el => (this.addressInputEl = el)}
+                      ref={(el) => (this.addressInputEl = el)}
                       placeholder="Billing Address"
                       name="address"
                       value={this.address}
                       required
                     />
                   </ion-list>
-                </floodteam-form>
+                </fireenjin-form>
               ) : (
-                <floodteam-form
+                <fireenjin-form
                   resetButton="<ion-icon slot='start' name='arrow-back-outline'></ion-icon>Back"
                   resetButtonColor="medium"
                   submitButtonColor="success"
                   endpoint="addPaymentMethod"
-                  beforeSubmit={data => this.onBeforeSubmit(data, true)}
+                  beforeSubmit={(data) => this.onBeforeSubmit(data, true)}
                   name="bankingForm"
                 >
                   <ion-list>
                     <floodteam-input
-                      ref={el => (this.accountInputEl = el)}
+                      ref={(el) => (this.accountInputEl = el)}
                       placeholder="Account Number"
                       name="accountNumber"
                       required
                     />
                     <floodteam-input
-                      ref={el => (this.routingInputEl = el)}
+                      ref={(el) => (this.routingInputEl = el)}
                       placeholder="Routing Number"
                       name="routingNumber"
                       required
                     />
                   </ion-list>
-                </floodteam-form>
+                </fireenjin-form>
               )}
             </div>
           </ion-slide>
@@ -347,7 +347,7 @@ export class PaymentMethods implements ComponentInterface {
             <div class="slide-wrapper">
               <floodteam-thumbs-up
                 size="100px"
-                ref={el => (this.thumbsUpEl = el)}
+                ref={(el) => (this.thumbsUpEl = el)}
               />
               <ion-grid>
                 <ion-row>
