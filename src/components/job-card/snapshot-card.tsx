@@ -23,12 +23,13 @@ export class SnapshotCard implements ComponentInterface {
 
   render() {
     return (
-      <div
+      <ion-card
         class={{
           widget: true,
           active: this.active,
           "disable-shrink": this.disableShrink,
         }}
+        href={!this.buttonText && this.href ? this.href : null}
       >
         <div
           class="widget__photo"
@@ -46,7 +47,7 @@ export class SnapshotCard implements ComponentInterface {
         <div class="widget__details">
           <slot />
         </div>
-      </div>
+      </ion-card>
     );
   }
 }
