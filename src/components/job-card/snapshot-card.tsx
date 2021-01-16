@@ -19,10 +19,17 @@ export class SnapshotCard implements ComponentInterface {
   @Prop() buttonText: string;
   @Prop() active = false;
   @Prop() buttonProps = {};
+  @Prop() disableShrink = false;
 
   render() {
     return (
-      <div class={this.active ? "widget active" : "widget"}>
+      <div
+        class={{
+          widget: true,
+          active: this.active,
+          "disable-shrink": this.disableShrink,
+        }}
+      >
         <div
           class="widget__photo"
           onClick={(event) => this.floodteamClick.emit({ event })}

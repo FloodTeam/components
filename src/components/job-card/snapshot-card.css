@@ -36,10 +36,11 @@ floodteam-snapshot-card .widget {
   margin-bottom: 25px;
 }
 floodteam-snapshot-card .widget:hover .widget__button,
-floodteam-snapshot-card .widget.active .widget__button {
+floodteam-snapshot-card .widget.active .widget__button,
+floodteam-snapshot-card .widget.disable-shrink .widget__button {
   top: 32px;
 }
-floodteam-snapshot-card .widget:hover .widget__photo,
+floodteam-snapshot-card .widget:not(.disable-shrink):hover .widget__photo,
 floodteam-snapshot-card .widget.active .widget__photo {
   height: 80px;
   -webkit-transform: scale(1.3);
@@ -57,7 +58,7 @@ floodteam-snapshot-card .widget.active .widget__overlay {
   visibility: visible;
   opacity: 1;
 }
-floodteam-snapshot-card .widget:hover floodteam-badge,
+floodteam-snapshot-card .widget:not(.disable-shrink):hover floodteam-badge,
 floodteam-snapshot-card .widget.active floodteam-badge {
   top: -100px;
 }
