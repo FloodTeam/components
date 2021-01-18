@@ -39,7 +39,31 @@
 
   <body>
     <fireenjin-designer-gallery
-      host="https://madnesslabs.github.io/floodteam-components/"
+      host="https://madnesslabs.github.io/floodteam-components"
+      use-hash
     ></fireenjin-designer-gallery>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        FloodTeam.init({
+          host: "https://ftms-ca85b.appspot.com",
+          functionsHost: "https://us-central1-ftms-ca85b.cloudfunctions.net",
+        });
+        var firebaseConfig = {
+          apiKey: "AIzaSyD5dzUNlXR1b7oFj523utB_eZymWX3X0wY",
+          authDomain: "ftms-ca85b.firebaseapp.com",
+          databaseURL: "https://ftms-ca85b.firebaseio.com",
+          projectId: "ftms-ca85b",
+          storageBucket: "ftms-ca85b.appspot.com",
+          messagingSenderId: "26422956124",
+          appId: "1:26422956124:web:5102d14c30573ff2",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        FireEnjin.init({
+          host: "https://ftms-ca85b.appspot.com",
+          functionsHost: "https://us-central1-ftms-ca85b.cloudfunctions.net",
+        });
+      });
+    </script>
   </body>
 </html>
