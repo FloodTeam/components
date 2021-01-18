@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Build
-        run: npm run build:stencil
+        run: npm run build
       # - name: UI Test
       #   run: npm run chromatic
       - name: Release
