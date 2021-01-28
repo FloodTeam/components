@@ -71,7 +71,9 @@ export class PaymentMethods implements ComponentInterface {
   @Listen("fireenjinError", { target: "body" })
   onError(event) {
     setTimeout(() => {
-      this.errors = event.detail.data.response.errors.map((err) => err.message);
+      this.errors = event.detail.error.response.errors.map(
+        (err) => err.message
+      );
     }, 100);
   }
 
