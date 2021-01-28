@@ -3,7 +3,7 @@ import { Component, ComponentInterface, Prop, h } from "@stencil/core";
 @Component({
   tag: "floodteam-error",
   styleUrl: "error.css",
-  shadow: true
+  shadow: true,
 })
 export class Error implements ComponentInterface {
   /**
@@ -25,6 +25,7 @@ export class Error implements ComponentInterface {
         <ion-icon name={this.iconName} color={this.color} slot="start" />
         <ion-label color={this.color} class="ion-text-wrap">
           {this.message}
+          <slot />
         </ion-label>
       </ion-item>
     );

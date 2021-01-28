@@ -129,8 +129,8 @@ export class PaymentMethods implements ComponentInterface {
   render() {
     return (
       <ion-card>
-        {this.errors.map((errorMessage) => (
-          <floodteam-error>{errorMessage}</floodteam-error>
+        {this.errors.map((message) => (
+          <floodteam-error message={message} />
         ))}
         <ion-slides
           ref={(el) => (this.sliderEl = el)}
