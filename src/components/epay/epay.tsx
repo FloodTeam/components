@@ -42,7 +42,7 @@ export class Epay implements ComponentInterface {
 
   @Event() ftEpayShowCommisions: EventEmitter<any>;
   @Event() floodteamFetch: EventEmitter<any>;
-  @Event() floodteamSubmit: EventEmitter<any>;
+  @Event() fireenjinSubmit: EventEmitter<any>;
 
   /**
    * The error message to display
@@ -104,7 +104,7 @@ export class Epay implements ComponentInterface {
   @State() loading = false;
   @State() errorCode: number;
 
-  @Listen("floodteamSuccess", { target: "body" })
+  @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
     if (!["findJob", "addPayment"].includes(event.detail?.endpoint))
       return false;
@@ -212,7 +212,7 @@ export class Epay implements ComponentInterface {
         email: this.email,
       };
     }
-    this.floodteamSubmit.emit({
+    this.fireenjinSubmit.emit({
       endpoint: "addPayment",
       data: {
         ...data,

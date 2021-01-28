@@ -9,12 +9,12 @@ import {
   Prop,
   State,
   Watch,
-  h
+  h,
 } from "@stencil/core";
 
 @Component({
   tag: "floodteam-input-photo",
-  styleUrl: "input-photo.css"
+  styleUrl: "input-photo.css",
 })
 export class InputPhoto implements ComponentInterface {
   @Element() photoUploaderEl: any;
@@ -27,7 +27,7 @@ export class InputPhoto implements ComponentInterface {
    * A link to the photo to display
    */
   @Prop({
-    mutable: true
+    mutable: true,
   })
   value: string;
   /**
@@ -74,7 +74,7 @@ export class InputPhoto implements ComponentInterface {
   @Event() floodteamUpload: EventEmitter;
   @Event() ionInput: EventEmitter;
 
-  @Listen("floodteamSuccess", { target: "body" })
+  @Listen("fireenjinSuccess", { target: "body" })
   onSuccess(event) {
     if (event.detail.endpoint !== "upload" || event.detail.name !== this.name)
       return false;
@@ -99,7 +99,7 @@ export class InputPhoto implements ComponentInterface {
     if (this.value) {
       this.ionInput.emit({
         name: this.name,
-        value: this.value
+        value: this.value,
       });
     }
   }
@@ -124,7 +124,7 @@ export class InputPhoto implements ComponentInterface {
     if (!window.FileReader) return;
 
     const reader = new FileReader();
-    reader.onload = async event => {
+    reader.onload = async (event) => {
       if (event.target.readyState != 2) return;
       if (event.target.error) {
         alert("Error while reading file");
@@ -141,8 +141,8 @@ export class InputPhoto implements ComponentInterface {
           path: this.path,
           file,
           fileName: this.fileName,
-          encodedContent: event.target.result
-        }
+          encodedContent: event.target.result,
+        },
       });
     };
 
@@ -173,11 +173,11 @@ export class InputPhoto implements ComponentInterface {
           <div
             class={this.loading ? "photo is-loading" : "photo"}
             style={{
-              backgroundImage: this.photoUrl ? `url('${this.photoUrl}')` : null
+              backgroundImage: this.photoUrl ? `url('${this.photoUrl}')` : null,
             }}
-            onClick={event => this.triggerFileInput(event)}
-            onDrop={event => this.onDrop(event)}
-            onDragOver={event => this.onDrag(event)}
+            onClick={(event) => this.triggerFileInput(event)}
+            onDrop={(event) => this.onDrop(event)}
+            onDragOver={(event) => this.onDrag(event)}
             onDragEnter={() => this.onDragEnter()}
             onDragLeave={() => this.onDragLeave()}
           >
@@ -188,7 +188,7 @@ export class InputPhoto implements ComponentInterface {
               fill="clear"
               expand="block"
               size="small"
-              onClick={event => this.triggerFileInput(event)}
+              onClick={(event) => this.triggerFileInput(event)}
             >
               {this.buttonText}
               <ion-icon name="image" slot="end" />
@@ -198,7 +198,7 @@ export class InputPhoto implements ComponentInterface {
         <slot />
         <input
           type="file"
-          onChange={event => this.selectFile(event)}
+          onChange={(event) => this.selectFile(event)}
           accept="image/*"
         />
       </div>

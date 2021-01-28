@@ -48,14 +48,14 @@ export class PaymentMethods implements ComponentInterface {
     this.sliderEl.updateAutoHeight();
   }
 
-  @Listen("floodteamReset")
+  @Listen("fireenjinReset")
   async onReset(event) {
     this.errors = [];
     if (event.target.name === "cardForm") await this.cardInputEl.clear();
     this.back();
   }
 
-  @Listen("floodteamSubmit")
+  @Listen("fireenjinSubmit")
   async onSubmit(event) {
     this.errors = [];
     if (
@@ -67,7 +67,7 @@ export class PaymentMethods implements ComponentInterface {
     this.next();
   }
 
-  @Listen("floodteamError", { target: "body" })
+  @Listen("fireenjinError", { target: "body" })
   onError(event) {
     if (event.detail.name === "cardForm") {
       setTimeout(() => {
@@ -78,7 +78,7 @@ export class PaymentMethods implements ComponentInterface {
     }
   }
 
-  @Listen("floodteamSuccess", { target: "body" })
+  @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
     if (event.detail.endpoint === "addPaymentMethod") {
       setTimeout(() => {

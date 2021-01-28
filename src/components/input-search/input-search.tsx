@@ -7,14 +7,14 @@ import {
   h,
   Listen,
   Method,
-  State
+  State,
 } from "@stencil/core";
 import Debounce from "debounce-decorator";
 import { popoverController, TextFieldTypes } from "@ionic/core";
 
 @Component({
   tag: "floodteam-input-search",
-  styleUrl: "input-search.css"
+  styleUrl: "input-search.css",
 })
 export class InputSearch implements ComponentInterface {
   itemEl: HTMLIonItemElement;
@@ -82,7 +82,7 @@ export class InputSearch implements ComponentInterface {
     await this.setValidationClass();
   }
 
-  @Listen("floodteamSuccess", { target: "body" })
+  @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
     console.log(this.mode, event.detail.data);
     if (
@@ -97,8 +97,8 @@ export class InputSearch implements ComponentInterface {
         component: "floodteam-input-search-popover",
         componentProps: {
           results: event.detail.data.results ? event.detail.data.results : [],
-          template: this.template
-        }
+          template: this.template,
+        },
       });
       this.resultsPopover.present();
     } else {
@@ -116,10 +116,10 @@ export class InputSearch implements ComponentInterface {
       params: {
         data: {
           query: event.target.value,
-          ...this.searchParams
-        }
+          ...this.searchParams,
+        },
       },
-      dataPropsMap: this.dataPropsMap
+      dataPropsMap: this.dataPropsMap,
     });
   }
 
@@ -162,15 +162,15 @@ export class InputSearch implements ComponentInterface {
     return [
       <ion-item
         class="search-input"
-        ref={el => (this.itemEl = el)}
-        onClick={event => this.onInput(event)}
+        ref={(el) => (this.itemEl = el)}
+        onClick={(event) => this.onInput(event)}
       >
         <slot name="start" />
         {this.iconStart && <ion-icon name={this.iconStart} slot="start" />}
         {this.label && <ion-label position="stacked">{this.label}</ion-label>}
         <ion-input
-          onInput={event => this.onInput(event)}
-          ref={el => (this.inputEl = el)}
+          onInput={(event) => this.onInput(event)}
+          ref={(el) => (this.inputEl = el)}
           disabled={this.disabled}
           type={this.type}
           name={this.name}
@@ -183,8 +183,8 @@ export class InputSearch implements ComponentInterface {
         <slot name="end" />
       </ion-item>,
       this.mode === "inline" && this.results?.length
-        ? this.results.map(result => this.template(result))
-        : null
+        ? this.results.map((result) => this.template(result))
+        : null,
     ];
   }
 }
