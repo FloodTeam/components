@@ -1,3 +1,5 @@
+import { OrganismPresets } from "@madnesslabs/fireenjin-designer/dist/types/interfaces";
+
 export default {
   default: {
     name: "Default",
@@ -6,4 +8,10 @@ export default {
       size: "100px",
     },
   },
-};
+  wee: {
+    props: {
+      size: "100px",
+      initials: "ML",
+    },
+  },
+} as OrganismPresets;

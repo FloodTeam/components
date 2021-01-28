@@ -1,6 +1,7 @@
 import { Config } from "@stencil/core";
+import typescript from "rollup-plugin-typescript";
 
-const { namespace } = require("./package.json");
+import { namespace } from "./package.json";
 
 export const config: Config = {
   namespace,
@@ -22,4 +23,7 @@ export const config: Config = {
       file: "www/core.json",
     },
   ],
+  rollupPlugins: {
+    before: [typescript()],
+  },
 };

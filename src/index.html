@@ -25,7 +25,6 @@
     ></script>
     <script type="module" src="/build/floodteam.esm.js"></script>
     <script nomodule src="/build/floodteam.js"></script>
-    <script src="/presets.js" type="module"></script>
 
     <link href="/build/floodteam.css" rel="stylesheet" />
     <link
@@ -35,9 +34,59 @@
     />
     <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <style>
+      body {
+        display: block;
+        overflow: auto;
+        position: initial;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
     <fireenjin-designer-gallery></fireenjin-designer-gallery>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var defaultWrapper = function (sdkFunction) {
+          return sdkFunction();
+        };
+        FloodTeam.init({
+          debug: true,
+          host: "https://ftms-ca85b.appspot.com",
+          functionsHost: "https://us-central1-ftms-ca85b.cloudfunctions.net",
+        });
+        var firebaseConfig = {
+          apiKey: "AIzaSyD5dzUNlXR1b7oFj523utB_eZymWX3X0wY",
+          authDomain: "ftms-ca85b.firebaseapp.com",
+          databaseURL: "https://ftms-ca85b.firebaseio.com",
+          projectId: "ftms-ca85b",
+          storageBucket: "ftms-ca85b.appspot.com",
+          messagingSenderId: "26422956124",
+          appId: "1:26422956124:web:5102d14c30573ff2",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      });
+    </script>
+    <script src="/presets.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBenUMQZUJg7qRUoFUJOS5tjK-JnOeQtjM&libraries=places"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://apis.google.com/js/api.js"
+      async
+      defer
+      type="text/javascript"
+    ></script>
   </body>
 </html>
