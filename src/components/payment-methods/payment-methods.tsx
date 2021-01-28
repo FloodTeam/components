@@ -60,7 +60,8 @@ export class PaymentMethods implements ComponentInterface {
     this.errors = [];
     if (
       event.detail.endpoint === "cardForm" ||
-      event.target.name === "bankingForm"
+      event.target.name === "bankingForm" ||
+      event.detail.endpoint === "addPaymentMethod"
     ) {
       return false;
     }
@@ -69,13 +70,9 @@ export class PaymentMethods implements ComponentInterface {
 
   @Listen("fireenjinError", { target: "body" })
   onError(event) {
-    if (event.detail.name === "cardForm") {
-      setTimeout(() => {
-        this.errors = event.detail.error.response.errors.map(
-          (err) => err.message
-        );
-      }, 100);
-    }
+    setTimeout(() => {
+      this.errors = event.detail.data.response.errors.map((err) => err.message);
+    }, 100);
   }
 
   @Listen("fireenjinSuccess", { target: "body" })
