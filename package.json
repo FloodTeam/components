@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@dadesystems/dademobile": "^1.2.1",
-    "@ionic/core": "^5.5.2",
-    "@madnesslabs/thefloodteam-backend": "^1.5.92",
-    "@stencil/core": "^2.3.0",
+    "@ionic/core": "^5.5.3",
+    "@madnesslabs/thefloodteam-backend": "^1.5.93",
+    "@stencil/core": "^2.4.0",
     "chart.js": "^2.9.4",
     "cleave.js": "^1.6.0",
     "date-fns": "^2.16.1",
