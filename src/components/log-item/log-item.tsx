@@ -3,7 +3,7 @@ import { format } from "date-fns";
 
 @Component({
   tag: "floodteam-log-item",
-  styleUrl: "log-item.css"
+  styleUrl: "log-item.css",
 })
 export class LogItem implements ComponentInterface {
   @Prop() type: string;
@@ -32,12 +32,12 @@ export class LogItem implements ComponentInterface {
               <ion-col
                 style={{
                   display: "flex",
-                  justifyContent: "flex-end"
+                  justifyContent: "flex-end",
                 }}
               >
                 <small
                   style={{
-                    color: "var(--ion-color-medium)"
+                    color: "var(--ion-color-medium)",
                   }}
                 >
                   {this.formatDate(this.createdAt)}
@@ -47,11 +47,23 @@ export class LogItem implements ComponentInterface {
             <ion-row>
               <ion-col>
                 <h3>Input</h3>
-                <floodteam-json-viewer innerHTML={this.input} />
+                <floodteam-json-viewer
+                  innerHTML={
+                    typeof this.input === "object"
+                      ? JSON.stringify(this.input)
+                      : this.input
+                  }
+                />
               </ion-col>
               <ion-col>
                 <h3>Output</h3>
-                <floodteam-json-viewer innerHTML={this.output} />
+                <floodteam-json-viewer
+                  innerHTML={
+                    typeof this.output === "object"
+                      ? JSON.stringify(this.output)
+                      : this.output
+                  }
+                />
               </ion-col>
             </ion-row>
           </ion-grid>
