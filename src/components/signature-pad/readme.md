@@ -36,7 +36,7 @@
 
 ### `clear() => Promise<any>`
 
-
+Clear the signature field
 
 #### Returns
 
@@ -46,7 +46,7 @@ Type: `Promise<any>`
 
 ### `download(dataURL: any, filename: any) => Promise<void>`
 
-
+Download a file via a new browser tab
 
 #### Returns
 
@@ -56,7 +56,7 @@ Type: `Promise<void>`
 
 ### `downloadJPG() => Promise<void>`
 
-
+Download the signature as a JPG file
 
 #### Returns
 
@@ -66,7 +66,7 @@ Type: `Promise<void>`
 
 ### `downloadPNG() => Promise<void>`
 
-
+Download the signature as a PNG file
 
 #### Returns
 
@@ -76,7 +76,7 @@ Type: `Promise<void>`
 
 ### `downloadSVG() => Promise<void>`
 
-
+Download the signature as an SVG file
 
 #### Returns
 
@@ -86,7 +86,7 @@ Type: `Promise<void>`
 
 ### `fromData(data: any) => Promise<any>`
 
-
+Fill the signature pad from data
 
 #### Returns
 
@@ -96,7 +96,7 @@ Type: `Promise<any>`
 
 ### `isEmpty() => Promise<any>`
 
-
+Check if the signature pad is empty
 
 #### Returns
 
@@ -106,7 +106,7 @@ Type: `Promise<any>`
 
 ### `resizeCanvas() => Promise<void>`
 
-
+Resize the canvas based on browser
 
 #### Returns
 
@@ -116,7 +116,7 @@ Type: `Promise<void>`
 
 ### `submit() => Promise<void>`
 
-
+Update the value and emit ionChange event
 
 #### Returns
 
@@ -126,7 +126,7 @@ Type: `Promise<void>`
 
 ### `toData() => Promise<any>`
 
-
+Get the signature pad data
 
 #### Returns
 
@@ -136,7 +136,7 @@ Type: `Promise<any>`
 
 ### `undo() => Promise<any>`
 
-
+Undo the last stroke from the signature
 
 #### Returns
 
