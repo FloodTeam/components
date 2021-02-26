@@ -2,10 +2,6 @@ floodteam-signature-pad {
   display: block;
 }
 
-floodteam-signature-pad ion-card {
-  margin: 10px auto;
-}
-
 floodteam-signature-pad .signature-pad {
   position: relative;
   display: -webkit-box;
@@ -22,7 +18,7 @@ floodteam-signature-pad .signature-pad {
   max-height: 460px;
   background-color: #fff;
   border-radius: 4px;
-  padding: 16px;
+  margin: 10px auto;
 }
 
 floodteam-signature-pad .signature-pad::before {
