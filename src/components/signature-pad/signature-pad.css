@@ -1,5 +1,6 @@
 floodteam-signature-pad {
   display: block;
+  margin: 0 auto;
 }
 
 floodteam-signature-pad .signature-pad {
@@ -18,19 +19,8 @@ floodteam-signature-pad .signature-pad {
   max-height: 460px;
   background-color: #fff;
   border-radius: 4px;
+  padding: 10px;
   margin: 10px auto;
-}
-
-floodteam-signature-pad .signature-pad::before {
-  left: 20px;
-  -webkit-transform: skew(-3deg) rotate(-3deg);
-  transform: skew(-3deg) rotate(-3deg);
-}
-
-floodteam-signature-pad .signature-pad::after {
-  right: 20px;
-  -webkit-transform: skew(3deg) rotate(3deg);
-  transform: skew(3deg) rotate(3deg);
 }
 
 floodteam-signature-pad canvas {
@@ -47,7 +37,7 @@ floodteam-signature-pad .signature-pad ion-icon.undo {
 }
 
 floodteam-signature-pad .signature-pad--footer {
-  color: #c3c3c3;
+  color: var(--ion-color-medium, #c3c3c3);
   text-align: center;
   font-size: 1.2em;
   margin-top: 8px;
