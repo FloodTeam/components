@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "@dadesystems/dademobile": "^1.2.1",
+    "@ionic-native/core": "^5.31.1",
+    "@ionic-native/geolocation": "^5.31.1",
     "@ionic/core": "^5.5.3",
     "@madnesslabs/thefloodteam-backend": "^1.5.94",
     "@stencil/core": "^2.4.0",

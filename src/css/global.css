@@ -1,0 +1,120 @@
+/* Document Level Styles */
+
+/*
+  The imports below are needed to include our light dom css for global styles such as fonts and colors.
+  You can comment out any of these imports if you do not need that css. For example, if you have your own
+  global font family css then you can comment out the typography.css import.
+*/
+
+/** Core CSS required for ionic components to work property */
+@import "~@ionic/core/css/core.css";
+
+/** Basic CSS for apps built with Ionic */
+@import "~@ionic/core/css/normalize.css";
+@import "~@ionic/core/css/structure.css";
+@import "~@ionic/core/css/typography.css";
+
+/** Optional CSS utils that can be commented out */
+@import "~@ionic/core/css/padding.css";
+@import "~@ionic/core/css/float-elements.css";
+@import "~@ionic/core/css/text-alignment.css";
+@import "~@ionic/core/css/text-transformation.css";
+@import "~@ionic/core/css/flex-utils.css";
+
+/*
+  The CSS Variables below can be used to theme your app.
+  For more info on CSS variables check out:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+
+  More info about color theming using Ionic:
+  https://ionicframework.com/docs/theming/color-generator
+*/
+:root {
+  --ion-color-primary: #3ea7de;
+  --ion-color-primary-rgb: 62, 167, 222;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #3793c3;
+  --ion-color-primary-tint: #51b0e1;
+
+  --ion-color-secondary: #3388bb;
+  --ion-color-secondary-rgb: 51, 136, 187;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #2d78a5;
+  --ion-color-secondary-tint: #4794c2;
+
+  --ion-color-tertiary: #1e3955;
+  --ion-color-tertiary-rgb: 30, 57, 85;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #1a324b;
+  --ion-color-tertiary-tint: #354d66;
+
+  --ion-color-success: #79c79d;
+  --ion-color-success-rgb: 121, 199, 157;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #6aaf8a;
+  --ion-color-success-tint: #86cda7;
+
+  --ion-color-warning: #ffd966;
+  --ion-color-warning-rgb: 255, 217, 102;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #e0bf5a;
+  --ion-color-warning-tint: #ffdd75;
+
+  --ion-color-danger: #ee6274;
+  --ion-color-danger-rgb: 238, 98, 116;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d15666;
+  --ion-color-danger-tint: #f07282;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  --ion-color-medium: #dddddd;
+  --ion-color-medium-rgb: 221, 221, 221;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #c2c2c2;
+  --ion-color-medium-tint: #e0e0e0;
+
+  --ion-color-light: #f5f6f6;
+  --ion-color-light-rgb: 244, 245, 248;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+
+  --ion-font-family: "Work Sans", sans-serif;
+  --ion-font-family-secondary: "Rubik", sans-serif;
+
+  --ion-icon-checkmark: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjNjVjYzk2IiBkPSJNMjU2IDQ4QzE0MS42IDQ4IDQ4IDE0MS42IDQ4IDI1NnM5My42IDIwOCAyMDggMjA4IDIwOC05My42IDIwOC0yMDhTMzcwLjQgNDggMjU2IDQ4em0tNDIuNyAzMTguOUwxMDYuNyAyNjAuM2wyOS45LTI5LjkgNzYuOCA3Ni44IDE2Mi4xLTE2Mi4xIDI5LjkgMjkuOS0xOTIuMSAxOTEuOXoiLz48L3N2Zz4=);
+}
+
+ion-icon.ft-icon-style {
+  color: var(--ion-color-secondary);
+  padding: 7px;
+  position: relative;
+}
+ion-icon.ft-icon-style:after {
+  border: 1px solid var(--ion-color-medium-shade);
+  border-bottom-color: var(--ion-color-secondary);
+  border-right-color: var(--ion-color-secondary);
+  transform: rotate(45deg);
+  border-radius: 100%;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
