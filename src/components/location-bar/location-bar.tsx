@@ -6,7 +6,6 @@ import {
   h,
   Build,
   State,
-  Listen,
 } from "@stencil/core";
 import algoliasearch from "algoliasearch/lite";
 
