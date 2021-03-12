@@ -6,6 +6,7 @@ import {
   h,
   Build,
   State,
+  Listen,
 } from "@stencil/core";
 import algoliasearch from "algoliasearch/lite";
 
@@ -118,7 +119,10 @@ export class LocationBar implements ComponentInterface {
                   value={this.query}
                   placeholder="Enter Zip"
                 />
-                <ion-button color="success" type="submit">
+                <ion-button
+                  color="success"
+                  onClick={() => (this.changingLocation = false)}
+                >
                   Set
                 </ion-button>
               </fireenjin-form>
