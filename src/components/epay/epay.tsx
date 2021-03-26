@@ -41,7 +41,7 @@ export class Epay implements ComponentInterface {
   @Element() epayEl: any;
 
   @Event() ftEpayShowCommisions: EventEmitter<any>;
-  @Event() floodteamFetch: EventEmitter<any>;
+  @Event() fireenjinFetch: EventEmitter<any>;
   @Event() fireenjinSubmit: EventEmitter<any>;
 
   /**
@@ -106,8 +106,6 @@ export class Epay implements ComponentInterface {
 
   @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
-    if (!["findJob", "addPayment"].includes(event.detail?.endpoint))
-      return false;
     if (event.detail.endpoint === "findJob") {
       this.job = event.detail?.data?.job ? event.detail.data.job : null;
       this.customer = event.detail?.data?.job?.customer
@@ -363,7 +361,7 @@ export class Epay implements ComponentInterface {
 
   async fetchData() {
     if (this.jobId) {
-      this.floodteamFetch.emit({
+      this.fireenjinFetch.emit({
         endpoint: "findJob",
         params: {
           id: this.jobId,
