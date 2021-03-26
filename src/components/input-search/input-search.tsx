@@ -42,7 +42,7 @@ export class InputSearch implements ComponentInterface {
   @State() results: any[] = [];
 
   @Event() ionInput: EventEmitter;
-  @Event() floodteamFetch: EventEmitter;
+  @Event() fireenjinFetch: EventEmitter;
 
   @Method()
   async checkValidity(options?: {
