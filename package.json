@@ -1,5 +1,5 @@
 {
-  "name": "@madnesslabs/thefloodteam-components",
+  "name": "@floodteam/components",
   "namespace": "floodteam",
   "version": "1.0.0",
   "main": "./dist/index.cjs.js",
@@ -7,7 +7,7 @@
   "es2015": "./dist/esm/index.mjs",
   "es2017": "./dist/esm/index.mjs",
   "types": "./dist/types/components.d.ts",
-  "unpkg": "./dist/fireenjin/fireenjin.js",
+  "unpkg": "./dist/floodteam/floodteam.esm.js",
   "collection:main": "./dist/collection/index.js",
   "collection": "./dist/collection/collection-manifest.json",
   "files": [

@@ -30,8 +30,8 @@
 
 | Event                  | Description | Type               |
 | ---------------------- | ----------- | ------------------ |
+| `fireenjinFetch`       |             | `CustomEvent<any>` |
 | `fireenjinSubmit`      |             | `CustomEvent<any>` |
-| `floodteamFetch`       |             | `CustomEvent<any>` |
 | `ftEpayShowCommisions` |             | `CustomEvent<any>` |
 
 
