@@ -1,0 +1,1 @@
+import{r}from"./p-a7779090.js";const s=class{constructor(s){r(this,s),this.results=[]}render(){return this.results.map((r=>this.template(r)))}};export{s as floodteam_input_search_popover}
