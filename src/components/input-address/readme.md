@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                              | Type                                                                                                                                                                                      | Default     |
-| ------------- | ------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `label`       | `label`       | The label of the input field             | `string`                                                                                                                                                                                  | `undefined` |
-| `name`        | `name`        | The name attribute of the input          | `string`                                                                                                                                                                                  | `undefined` |
-| `placeholder` | `placeholder` | The placeholder text for the input field | `string`                                                                                                                                                                                  | `undefined` |
-| `required`    | `required`    | Whether the address input is required    | `boolean`                                                                                                                                                                                 | `undefined` |
-| `value`       | --            | The value of the input field             | `{ __typename?: "Address"; placeId?: string; lat?: number; lng?: number; full?: string; street?: string; unit?: string; city?: string; state?: string; zip?: string; country?: string; }` | `{}`        |
+| Property      | Attribute     | Description                              | Type      | Default     |
+| ------------- | ------------- | ---------------------------------------- | --------- | ----------- |
+| `label`       | `label`       | The label of the input field             | `string`  | `undefined` |
+| `name`        | `name`        | The name attribute of the input          | `string`  | `undefined` |
+| `placeholder` | `placeholder` | The placeholder text for the input field | `string`  | `undefined` |
+| `required`    | `required`    | Whether the address input is required    | `boolean` | `undefined` |
+| `value`       | `value`       | The value of the input field             | `any`     | `{}`        |
 
 
 ## Events

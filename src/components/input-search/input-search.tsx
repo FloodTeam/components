@@ -108,9 +108,8 @@ export class InputSearch implements ComponentInterface {
 
   @Debounce(1000)
   onInput(event) {
-    console.log(event);
     if (this.disableSearch || event?.target?.value?.length <= 1) return;
-    this.floodteamFetch.emit({
+    this.fireenjinFetch.emit({
       event,
       endpoint: this.endpoint,
       params: {

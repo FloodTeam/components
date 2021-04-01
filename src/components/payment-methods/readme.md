@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                                                                                                                                                                                      | Default     |
-| ----------- | ------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `address`   | --           |             | `{ __typename?: "Address"; placeId?: string; lat?: number; lng?: number; full?: string; street?: string; unit?: string; city?: string; state?: string; zip?: string; country?: string; }` | `{}`        |
-| `cardName`  | `card-name`  |             | `string`                                                                                                                                                                                  | `undefined` |
-| `methods`   | --           |             | `any[]`                                                                                                                                                                                   | `undefined` |
-| `payType`   | `pay-type`   |             | `"card" \| "checking"`                                                                                                                                                                    | `"card"`    |
-| `stripeKey` | `stripe-key` |             | `string`                                                                                                                                                                                  | `undefined` |
-| `userId`    | `user-id`    |             | `string`                                                                                                                                                                                  | `undefined` |
+| Property    | Attribute    | Description | Type                   | Default     |
+| ----------- | ------------ | ----------- | ---------------------- | ----------- |
+| `address`   | `address`    |             | `any`                  | `{}`        |
+| `cardName`  | `card-name`  |             | `string`               | `undefined` |
+| `methods`   | --           |             | `any[]`                | `undefined` |
+| `payType`   | `pay-type`   |             | `"card" \| "checking"` | `"card"`    |
+| `stripeKey` | `stripe-key` |             | `string`               | `undefined` |
+| `userId`    | `user-id`    |             | `string`               | `undefined` |
 
 
 ## Events

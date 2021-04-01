@@ -8,7 +8,6 @@ import {
   h,
   State,
 } from "@stencil/core";
-import { Address } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 
 @Component({
   tag: "floodteam-payment-methods",
@@ -34,7 +33,7 @@ export class PaymentMethods implements ComponentInterface {
 
   @Prop() stripeKey: string;
   @Prop() cardName: string;
-  @Prop() address: Address = {};
+  @Prop() address: any = {};
   @Prop() userId: string;
   @Prop() payType: "card" | "checking" = "card";
   @Prop() methods: any[];

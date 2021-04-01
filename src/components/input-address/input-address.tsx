@@ -9,7 +9,6 @@ import {
   State,
   h,
 } from "@stencil/core";
-import { Address } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 
 declare var google;
 
@@ -34,7 +33,7 @@ export class InputAddress implements ComponentInterface {
   /**
    * The value of the input field
    */
-  @Prop({ mutable: true }) value: Address = {};
+  @Prop({ mutable: true }) value: any = {};
   /**
    * The label of the input field
    */

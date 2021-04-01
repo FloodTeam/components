@@ -11,7 +11,6 @@ import {
   Watch,
   h,
 } from "@stencil/core";
-import { Job, PaymentInput } from "@madnesslabs/thefloodteam-backend/dist/sdk";
 
 @Component({
   tag: "floodteam-epay",
@@ -94,7 +93,7 @@ export class Epay implements ComponentInterface {
   @State() isHeaderHidden = false;
   @State() paymentType: "card" | "check" | "manual";
   @State() email: string;
-  @State() job: Partial<Job>;
+  @State() job: any;
   @State() subText: string;
   @State() confirmationTimerLeft = 30;
   @State() paymentPayload: any;
@@ -190,7 +189,7 @@ export class Epay implements ComponentInterface {
   }
 
   submitPayment(type: "card" | "check" | "manual", event) {
-    let data: PaymentInput = {};
+    let data = {};
     if (type === "card") {
       data = {
         token: event.detail.token.id,
