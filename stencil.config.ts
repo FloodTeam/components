@@ -22,6 +22,10 @@ export const config: Config = {
       type: "docs-json",
       file: "www/core.json",
     },
+    {
+      type: "dist-hydrate-script",
+      dir: "dist/hydrate",
+    },
   ],
   rollupPlugins: {
     before: [typescript()],
