@@ -1,0 +1,6140 @@
+{
+  "timestamp": "2021-04-01T06:42:25",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.5.2",
+    "typescriptVersion": "4.2.3"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/avatar/avatar.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-avatar",
+      "readme": "# floodteam-avatar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "initials",
+          "type": "string",
+          "mutable": false,
+          "attr": "initials",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-graph-pay-splits"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "floodteam-graph-pay-splits": [
+          "floodteam-avatar"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/epay/epay.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-epay",
+      "readme": "# floodteam-epay\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customer",
+          "type": "any",
+          "mutable": true,
+          "attr": "customer",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dadeKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "dade-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dadeUrl",
+          "type": "string",
+          "mutable": false,
+          "attr": "dade-url",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "mutable": true,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "The error message to display",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isAdmin",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-admin",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "jobId",
+          "type": "string",
+          "mutable": true,
+          "attr": "job-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "owed",
+          "type": "any",
+          "mutable": true,
+          "attr": "owed",
+          "reflectToAttr": false,
+          "docs": "The amount of money owed",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "paymentId",
+          "type": "string",
+          "mutable": true,
+          "attr": "payment-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "payments",
+          "type": "{ timestamp: string; brand: string; last4: number; amount: number; }[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "The list of payments",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "{ timestamp: string; brand: string; last4: number; amount: number; }[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showSlide",
+          "type": "\"card\" | \"check\" | \"confirmation\" | \"details\" | \"payments\" | \"report\"",
+          "mutable": false,
+          "attr": "show-slide",
+          "reflectToAttr": false,
+          "docs": "The slide to show when loading the component",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "card",
+              "type": "string"
+            },
+            {
+              "value": "check",
+              "type": "string"
+            },
+            {
+              "value": "confirmation",
+              "type": "string"
+            },
+            {
+              "value": "details",
+              "type": "string"
+            },
+            {
+              "value": "payments",
+              "type": "string"
+            },
+            {
+              "value": "report",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stripeKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "stripe-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "total",
+          "type": "any",
+          "mutable": true,
+          "attr": "total",
+          "reflectToAttr": false,
+          "docs": "The total amount of money billed",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "tracking",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "userId",
+          "type": "string",
+          "mutable": true,
+          "attr": "user-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "users",
+          "type": "any[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "confirmPayment",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "confirmPayment(options?: any) => Promise<any>",
+          "parameters": [],
+          "docs": "Confirm a check payment",
+          "docsTags": []
+        },
+        {
+          "name": "reset",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "reset() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "success",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "success() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "updateSlides",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "updateSlides() => Promise<void>",
+          "parameters": [],
+          "docs": "Update the ion-slides height",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "fireenjinFetch",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "fireenjinSubmit",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftEpayShowCommisions",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "fireenjinSuccess",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftCheckScan",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionInput",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftToggle",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftSubmitCard",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftCardError",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionSlideDidChange",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftCheckError",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftSelect",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftSubmitCheck",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftCancel",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "ion-button",
+        "ion-icon",
+        "floodteam-progress-bar",
+        "ion-slides",
+        "ion-slide",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "ion-item",
+        "ion-label",
+        "floodteam-fallback",
+        "ion-list",
+        "floodteam-input",
+        "floodteam-pay-card",
+        "floodteam-pay-check",
+        "floodteam-error",
+        "floodteam-progress-circle",
+        "floodteam-thumbs-up"
+      ],
+      "dependencyGraph": {
+        "floodteam-epay": [
+          "ion-card",
+          "ion-button",
+          "ion-icon",
+          "floodteam-progress-bar",
+          "ion-slides",
+          "ion-slide",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-item",
+          "ion-label",
+          "floodteam-fallback",
+          "ion-list",
+          "floodteam-input",
+          "floodteam-pay-card",
+          "floodteam-pay-check",
+          "floodteam-error",
+          "floodteam-progress-circle",
+          "floodteam-thumbs-up"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-fallback": [
+          "ion-icon"
+        ],
+        "floodteam-input": [
+          "ion-input",
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "floodteam-pay-card": [
+          "floodteam-error",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
+        ],
+        "floodteam-error": [
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "floodteam-pay-check": [
+          "floodteam-error",
+          "floodteam-flip-card",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
+        ],
+        "floodteam-flip-card": [
+          "ion-icon"
+        ],
+        "floodteam-thumbs-up": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/error/error.tsx",
+      "encapsulation": "shadow",
+      "tag": "floodteam-error",
+      "readme": "# floodteam-error\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "The color of the component",
+          "docsTags": [],
+          "default": "\"danger\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "The icon to use",
+          "docsTags": [],
+          "default": "\"alert-circle-outline\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "mutable": false,
+          "attr": "message",
+          "reflectToAttr": false,
+          "docs": "The error message to display",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay",
+        "floodteam-graph-pay-splits",
+        "floodteam-pay-card",
+        "floodteam-pay-check",
+        "floodteam-payment-methods"
+      ],
+      "dependencies": [
+        "ion-item",
+        "ion-icon",
+        "ion-label"
+      ],
+      "dependencyGraph": {
+        "floodteam-error": [
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-epay": [
+          "floodteam-error"
+        ],
+        "floodteam-graph-pay-splits": [
+          "floodteam-error"
+        ],
+        "floodteam-pay-card": [
+          "floodteam-error"
+        ],
+        "floodteam-pay-check": [
+          "floodteam-error"
+        ],
+        "floodteam-payment-methods": [
+          "floodteam-error"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/fallback/fallback.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-fallback",
+      "readme": "# floodteam-fallback\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "An icon to display above the fallback message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "mutable": false,
+          "attr": "message",
+          "reflectToAttr": false,
+          "docs": "The message to display as a fallback",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay"
+      ],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-fallback": [
+          "ion-icon"
+        ],
+        "floodteam-epay": [
+          "floodteam-fallback"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/feed-card/feed-card.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-feed-card",
+      "readme": "# floodteam-feed-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "actionButtons",
+          "type": "{ action: string; size?: \"small\" | \"default\" | \"large\"; fill?: \"default\" | \"clear\" | \"outline\" | \"solid\"; color?: string; iconStart?: string; iconEnd?: string; text?: string; href?: string; }[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "An optional action button to show on the card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ action: string; size?: \"small\""
+            },
+            {
+              "value": "default",
+              "type": "string"
+            },
+            {
+              "value": "large\"; fill?: \"default",
+              "type": "string"
+            },
+            {
+              "value": "clear",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "type": "\"solid\"; color?: string; iconStart?: string; iconEnd?: string; text?: string; href?: string; }[]"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "backgroundImage",
+          "type": "string",
+          "mutable": false,
+          "attr": "background-image",
+          "reflectToAttr": false,
+          "docs": "The background image to use for the card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Date",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "When the feed item was created",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "Date"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "details",
+          "type": "string",
+          "mutable": false,
+          "attr": "details",
+          "reflectToAttr": false,
+          "docs": "The more in depth details about the feed card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "The main text at the top of the feed card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "mutable": false,
+          "attr": "image",
+          "reflectToAttr": false,
+          "docs": "The image to display at the top left of the feed card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "modal",
+          "type": "string",
+          "mutable": false,
+          "attr": "modal",
+          "reflectToAttr": false,
+          "docs": "The component to load into a modal that will display on load",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "payload",
+          "type": "any",
+          "mutable": false,
+          "attr": "payload",
+          "reflectToAttr": false,
+          "docs": "Payload data to send through the feed card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "read",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "read",
+          "reflectToAttr": false,
+          "docs": "Whether the message has been read",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "subtext",
+          "type": "string",
+          "mutable": false,
+          "attr": "subtext",
+          "reflectToAttr": false,
+          "docs": "The subtext to display under the title",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tags",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "A list of tags that apply to this feed card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "floodteamFeedAction",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "ion-item",
+        "ion-thumbnail",
+        "ion-label",
+        "ion-chip",
+        "ion-buttons",
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-feed-card": [
+          "ion-card",
+          "ion-item",
+          "ion-thumbnail",
+          "ion-label",
+          "ion-chip",
+          "ion-buttons",
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "ion-chip": [
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/flip-card/flip-card.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-flip-card",
+      "readme": "# floodteam-flip-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "backImage",
+          "type": "string",
+          "mutable": false,
+          "attr": "back-image",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "flipped",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "flipped",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "frontImage",
+          "type": "string",
+          "mutable": false,
+          "attr": "front-image",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hideRefresh",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "hide-refresh",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "flip",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "flip(event?: any) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "floodteamFlip",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "swiped-left",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "swiped-right",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-pay-check"
+      ],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-flip-card": [
+          "ion-icon"
+        ],
+        "floodteam-pay-check": [
+          "floodteam-flip-card"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/graph/graph.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-graph",
+      "readme": "# floodteam-graph\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "datasets",
+          "type": "ChartDataSets[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "The dataset to render graph with",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "ChartDataSets[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labels",
+          "type": "string[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "The labels for the graph",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The title of the graph",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"area\" | \"bar\" | \"bubble\" | \"doughnut\" | \"line\" | \"pie\" | \"polarArea\" | \"radar\" | \"scatter\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of graph to generate",
+          "docsTags": [],
+          "default": "\"bar\"",
+          "values": [
+            {
+              "value": "area",
+              "type": "string"
+            },
+            {
+              "value": "bar",
+              "type": "string"
+            },
+            {
+              "value": "bubble",
+              "type": "string"
+            },
+            {
+              "value": "doughnut",
+              "type": "string"
+            },
+            {
+              "value": "line",
+              "type": "string"
+            },
+            {
+              "value": "pie",
+              "type": "string"
+            },
+            {
+              "value": "polarArea",
+              "type": "string"
+            },
+            {
+              "value": "radar",
+              "type": "string"
+            },
+            {
+              "value": "scatter",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "refresh",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "refresh() => Promise<void>",
+          "parameters": [],
+          "docs": "Refresh the graph",
+          "docsTags": []
+        },
+        {
+          "name": "removeChart",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "removeChart() => Promise<boolean>",
+          "parameters": [],
+          "docs": "Destroy the ChartJS instance and reset chart on state",
+          "docsTags": []
+        },
+        {
+          "name": "setDatasets",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "setDatasets(datasets: Chart.ChartDataSets[]) => Promise<any>",
+          "parameters": [],
+          "docs": "Set the list datasets for the graph",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "datasets The datasets to render"
+            }
+          ]
+        },
+        {
+          "name": "setLabels",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "setLabels(labels: string[]) => Promise<any>",
+          "parameters": [],
+          "docs": "Set the list labels for the graph",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "labels The labels for the graph"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "event": "floodteamGraphClick",
+          "detail": "{ event: any; item?: any; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the graph is clicked",
+          "docsTags": []
+        },
+        {
+          "event": "floodteamGraphTooltip",
+          "detail": "{ event: { afterBody: any[]; backgroundColor: string; beforeBody: any[]; body: any[]; bodyFontColor: string; bodyFontSize: number; bodySpacing: number; borderColor: string; borderWidth: number; caretPadding: number; caretSize: number; caretX: number; caretY: number; cornerRadius: number; dataPoints: ChartTooltipItem[]; displayColors: boolean; footer: any[]; footerFontColor: string; footerFontSize: number; footerMarginTop: number; footerSpacing: number; height: number; labelColors: ChartTooltipLabelColor[]; labelTextColors: string[]; legendBackgroundColor: string; opacity: number; title: string[]; titleFontColor: string; titleFontSize: number; titleMarinBottom: number; titleSpacing: number; width: number; x: number; xAlign: number; xPadding: number; y: number; yAlign: number; yPadding: number; }; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a tooltip is shown over the graph",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-graph-pay-splits"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "floodteam-graph-pay-splits": [
+          "floodteam-graph"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/graph-pay-splits/graph-pay-splits.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-graph-pay-splits",
+      "readme": "# floodteam-graph-pay-splits\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "graphTitle",
+          "type": "string",
+          "mutable": false,
+          "attr": "graph-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "users",
+          "type": "any[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setUsers",
+          "returns": {
+            "type": "Promise<any[]>",
+            "docs": ""
+          },
+          "signature": "setUsers(users: any) => Promise<any[]>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "floodteam-graph",
+        "ion-item",
+        "floodteam-avatar",
+        "floodteam-error",
+        "ion-badge"
+      ],
+      "dependencyGraph": {
+        "floodteam-graph-pay-splits": [
+          "floodteam-graph",
+          "ion-item",
+          "floodteam-avatar",
+          "floodteam-error",
+          "ion-badge"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-error": [
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input/input.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input",
+      "readme": "# floodteam-input\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "actionOptions",
+          "type": "any",
+          "mutable": false,
+          "attr": "action-options",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autocapitalize",
+          "type": "string",
+          "mutable": false,
+          "attr": "autocapitalize",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autocomplete",
+          "type": "\"off\" | \"on\"",
+          "mutable": false,
+          "attr": "autocomplete",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"off\"",
+          "values": [
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autocorrect",
+          "type": "\"off\" | \"on\"",
+          "mutable": false,
+          "attr": "autocorrect",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "clearInput",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "clear-input",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "edit",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "edit",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconLeft",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-left",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconRight",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-right",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "info",
+          "type": "string",
+          "mutable": false,
+          "attr": "info",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "inputMode",
+          "type": "string",
+          "mutable": false,
+          "attr": "input-mode",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"text\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "minlength",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "type": "any",
+          "mutable": false,
+          "attr": "pattern",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "any",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "any",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "silence",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "silence",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "spellCheck",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "spell-check",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "string",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stripeElements",
+          "type": "{ style?: any; fonts?: any[]; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "{ style?: any; fonts?: any[]; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stripeKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "stripe-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "any",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "checkValidity",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "checkValidity(options?: { setValidationClass?: boolean; validationClassOptions?: { ignoreInvalid?: boolean; }; }) => Promise<boolean>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "clear",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "clear() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "getCardToken",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "getCardToken(options?: { name?: string; address_line1?: string; address_line2?: string; address_city?: string; address_state?: string; address_zip?: string; address_country?: string; currency?: string; }) => Promise<any>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "reportValidity",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "reportValidity() => Promise<boolean>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "ionBlur",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionFocus",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "ionBlur",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay",
+        "floodteam-location-bar",
+        "floodteam-payment-methods",
+        "floodteam-user-select"
+      ],
+      "dependencies": [
+        "ion-input",
+        "ion-item",
+        "ion-icon",
+        "ion-label"
+      ],
+      "dependencyGraph": {
+        "floodteam-input": [
+          "ion-input",
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-epay": [
+          "floodteam-input"
+        ],
+        "floodteam-location-bar": [
+          "floodteam-input"
+        ],
+        "floodteam-payment-methods": [
+          "floodteam-input"
+        ],
+        "floodteam-user-select": [
+          "floodteam-input"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-address/input-address.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-address",
+      "readme": "# floodteam-input-address\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "The label of the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name attribute of the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "The placeholder text for the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Whether the address input is required",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the input field",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "floodteamAddressMode",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "floodteamUpdateAutoHeight",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "ionChange",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-payment-methods"
+      ],
+      "dependencies": [
+        "ion-item",
+        "ion-label",
+        "ion-input",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "floodteam-input-state",
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-address": [
+          "ion-item",
+          "ion-label",
+          "ion-input",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "floodteam-input-state",
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-input-state": [
+          "ion-select",
+          "ion-select-option"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "floodteam-payment-methods": [
+          "floodteam-input-address"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-file/input-file.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-file",
+      "readme": "# floodteam-input-file\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "accept",
+          "type": "string",
+          "mutable": false,
+          "attr": "accept",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "defaultValue",
+          "type": "any",
+          "mutable": false,
+          "attr": "default-value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "documentId",
+          "type": "string",
+          "mutable": false,
+          "attr": "document-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "endpoint",
+          "type": "string",
+          "mutable": false,
+          "attr": "endpoint",
+          "reflectToAttr": false,
+          "docs": "The endpoint to upload to",
+          "docsTags": [],
+          "default": "\"upload\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fileName",
+          "type": "string",
+          "mutable": false,
+          "attr": "file-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "mutable": false,
+          "attr": "path",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"file\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "openFile",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "openFile() => Promise<any>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "floodteamUpload",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "floodteamUploadFile",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "ion-item",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-file": [
+          "ion-card",
+          "ion-item",
+          "ion-icon"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-photo/input-photo.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-photo",
+      "readme": "# floodteam-input-photo\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "buttonText",
+          "type": "string",
+          "mutable": false,
+          "attr": "button-text",
+          "reflectToAttr": false,
+          "docs": "Text to display on the photo upload button",
+          "docsTags": [],
+          "default": "\"Edit Image\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Is the uploader disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "documentId",
+          "type": "string",
+          "mutable": false,
+          "attr": "document-id",
+          "reflectToAttr": false,
+          "docs": "The ID of the document the photo is tied to",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "endpoint",
+          "type": "string",
+          "mutable": false,
+          "attr": "endpoint",
+          "reflectToAttr": false,
+          "docs": "The endpoint to upload to",
+          "docsTags": [],
+          "default": "\"upload\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fallback",
+          "type": "string",
+          "mutable": false,
+          "attr": "fallback",
+          "reflectToAttr": false,
+          "docs": "The fallback image to use if photo isn't set",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fileName",
+          "type": "string",
+          "mutable": false,
+          "attr": "file-name",
+          "reflectToAttr": false,
+          "docs": "The filename to use for the uploaded file",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "initials",
+          "type": "string",
+          "mutable": false,
+          "attr": "initials",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "loading",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name to use when emitting field change event",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "mutable": false,
+          "attr": "path",
+          "reflectToAttr": false,
+          "docs": "The storage path to upload the file to",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showButton",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-button",
+          "reflectToAttr": false,
+          "docs": "Should the photo uploader show the button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of photo being uploaded",
+          "docsTags": [],
+          "default": "\"photo\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "A link to the photo to display",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "triggerFileInput",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "triggerFileInput(_event: any) => Promise<boolean>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "floodteamUpload",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "fireenjinSuccess",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-photo": [
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-search/input-search.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-search",
+      "readme": "# floodteam-input-search-popover\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dataPropsMap",
+          "type": "any",
+          "mutable": false,
+          "attr": "data-props-map",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disableSearch",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable-search",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "endpoint",
+          "type": "string",
+          "mutable": false,
+          "attr": "endpoint",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconEnd",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-end",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconStart",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-start",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"inline\" | \"popover\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"popover\"",
+          "values": [
+            {
+              "value": "inline",
+              "type": "string"
+            },
+            {
+              "value": "popover",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "searchParams",
+          "type": "any",
+          "mutable": false,
+          "attr": "search-params",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "template",
+          "type": "(result: any) => any",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "(result: any) => any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"date\" | \"datetime-local\" | \"email\" | \"month\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"time\" | \"url\" | \"week\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"email\"",
+          "values": [
+            {
+              "value": "date",
+              "type": "string"
+            },
+            {
+              "value": "datetime-local",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "month",
+              "type": "string"
+            },
+            {
+              "value": "number",
+              "type": "string"
+            },
+            {
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "time",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            },
+            {
+              "value": "week",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "checkValidity",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "checkValidity(options?: { setValidationClass?: boolean; validationClassOptions?: { ignoreInvalid?: boolean; }; }) => Promise<boolean>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "clearResults",
+          "returns": {
+            "type": "Promise<any[]>",
+            "docs": ""
+          },
+          "signature": "clearResults() => Promise<any[]>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "closePopover",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "closePopover() => Promise<boolean>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "openPopover",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "openPopover() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "reportValidity",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "reportValidity() => Promise<boolean>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "fireenjinFetch",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "ionBlur",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinSuccess",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-input-search-user"
+      ],
+      "dependencies": [
+        "ion-item",
+        "ion-icon",
+        "ion-label",
+        "ion-input"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-search": [
+          "ion-item",
+          "ion-icon",
+          "ion-label",
+          "ion-input"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-input-search-user": [
+          "floodteam-input-search"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-search/input-search-popover.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-search-popover",
+      "readme": "# floodteam-input-search-popover\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "results",
+          "type": "any",
+          "mutable": false,
+          "attr": "results",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "template",
+          "type": "(result: any) => any",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "(result: any) => any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/input-search-user/input-search-user.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-search-user",
+      "readme": "# floodteam-input-search-user\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dataPropsMap",
+          "type": "any",
+          "mutable": false,
+          "attr": "data-props-map",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disableSearch",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable-search",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "endpoint",
+          "type": "string",
+          "mutable": false,
+          "attr": "endpoint",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconEnd",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-end",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconStart",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-start",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "limit",
+          "type": "number",
+          "mutable": false,
+          "attr": "limit",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"inline\" | \"popover\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"inline\"",
+          "values": [
+            {
+              "value": "inline",
+              "type": "string"
+            },
+            {
+              "value": "popover",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"Search Users\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "template",
+          "type": "(result: any) => any",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "(result: any) => any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "floodteamSelectUser",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "floodteam-input-search",
+        "ion-item",
+        "ion-label",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-search-user": [
+          "floodteam-input-search",
+          "ion-item",
+          "ion-label",
+          "ion-icon"
+        ],
+        "floodteam-input-search": [
+          "ion-item",
+          "ion-icon",
+          "ion-label",
+          "ion-input"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-state/input-state.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-state",
+      "readme": "# floodteam-input-state\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-input-address"
+      ],
+      "dependencies": [
+        "ion-select",
+        "ion-select-option"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-state": [
+          "ion-select",
+          "ion-select-option"
+        ],
+        "floodteam-input-address": [
+          "floodteam-input-state"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/json-viewer/json-viewer.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-json-viewer",
+      "readme": "# floodteam-json-viewer\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-log-item"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "floodteam-log-item": [
+          "floodteam-json-viewer"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/location-bar/location-bar.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-location-bar",
+      "readme": "# floodteam-location-bar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "algoliaAppId",
+          "type": "string",
+          "mutable": false,
+          "attr": "algolia-app-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"ZKFP93O6EH\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "algoliaIndex",
+          "type": "string",
+          "mutable": false,
+          "attr": "algolia-index",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"locations\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "algoliaSearchKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "algolia-search-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"cef2b52143823594c9c5af78ad86bcf0\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "mutable": true,
+          "attr": "query",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "ion-icon",
+        "floodteam-input",
+        "ion-button"
+      ],
+      "dependencyGraph": {
+        "floodteam-location-bar": [
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-icon",
+          "floodteam-input",
+          "ion-button"
+        ],
+        "floodteam-input": [
+          "ion-input",
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/log-item/log-item.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-log-item",
+      "readme": "# floodteam-log-item\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "createdAt",
+          "type": "string",
+          "mutable": false,
+          "attr": "created-at",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "input",
+          "type": "string",
+          "mutable": false,
+          "attr": "input",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "output",
+          "type": "string",
+          "mutable": false,
+          "attr": "output",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resolveTime",
+          "type": "number",
+          "mutable": false,
+          "attr": "resolve-time",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-item",
+        "ion-label",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "floodteam-json-viewer"
+      ],
+      "dependencyGraph": {
+        "floodteam-log-item": [
+          "ion-item",
+          "ion-label",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "floodteam-json-viewer"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/pay-card/pay-card.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-pay-card",
+      "readme": "# floodteam-pay-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "stripeKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "stripe-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stripeStyle",
+          "type": "any",
+          "mutable": false,
+          "attr": "stripe-style",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ftCancel",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftCardError",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftSubmitCard",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay"
+      ],
+      "dependencies": [
+        "floodteam-error",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "ion-button"
+      ],
+      "dependencyGraph": {
+        "floodteam-pay-card": [
+          "floodteam-error",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
+        ],
+        "floodteam-error": [
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "floodteam-epay": [
+          "floodteam-pay-card"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/pay-check/pay-check.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-pay-check",
+      "readme": "# floodteam-pay-check\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "amount",
+          "type": "number",
+          "mutable": false,
+          "attr": "amount",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "apiKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "api-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "loading",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "paymentId",
+          "type": "string",
+          "mutable": false,
+          "attr": "payment-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "mutable": false,
+          "attr": "url",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "userId",
+          "type": "string",
+          "mutable": false,
+          "attr": "user-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "confirmPayment",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "confirmPayment(options?: {}) => Promise<any>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "flipCard",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "flipCard() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "openCamera",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "openCamera() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "ftCancel",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftCheckConfirmation",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftCheckError",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftCheckScan",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ftSubmitCheck",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "floodteamFlip",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay"
+      ],
+      "dependencies": [
+        "floodteam-error",
+        "floodteam-flip-card",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "ion-button"
+      ],
+      "dependencyGraph": {
+        "floodteam-pay-check": [
+          "floodteam-error",
+          "floodteam-flip-card",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
+        ],
+        "floodteam-error": [
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-flip-card": [
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "floodteam-epay": [
+          "floodteam-pay-check"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/payment-methods/payment-methods.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-payment-methods",
+      "readme": "# floodteam-payment-methods\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "address",
+          "type": "any",
+          "mutable": false,
+          "attr": "address",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "cardName",
+          "type": "string",
+          "mutable": false,
+          "attr": "card-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "methods",
+          "type": "any[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "payType",
+          "type": "\"card\" | \"checking\"",
+          "mutable": false,
+          "attr": "pay-type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"card\"",
+          "values": [
+            {
+              "value": "card",
+              "type": "string"
+            },
+            {
+              "value": "checking",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stripeKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "stripe-key",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "userId",
+          "type": "string",
+          "mutable": false,
+          "attr": "user-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ftRemovePaymentMethod",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "ionSlideDidChange",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinReset",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinSubmit",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinError",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinSuccess",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "floodteam-error",
+        "ion-slides",
+        "ion-slide",
+        "ion-list",
+        "ion-item",
+        "ion-label",
+        "ion-button",
+        "ion-icon",
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "floodteam-input",
+        "floodteam-input-address",
+        "floodteam-thumbs-up"
+      ],
+      "dependencyGraph": {
+        "floodteam-payment-methods": [
+          "ion-card",
+          "floodteam-error",
+          "ion-slides",
+          "ion-slide",
+          "ion-list",
+          "ion-item",
+          "ion-label",
+          "ion-button",
+          "ion-icon",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "floodteam-input",
+          "floodteam-input-address",
+          "floodteam-thumbs-up"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "floodteam-error": [
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "floodteam-input": [
+          "ion-input",
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "floodteam-input-address": [
+          "ion-item",
+          "ion-label",
+          "ion-input",
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "floodteam-input-state",
+          "ion-button",
+          "ion-icon"
+        ],
+        "floodteam-input-state": [
+          "ion-select",
+          "ion-select-option"
+        ],
+        "floodteam-thumbs-up": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/progress-bar/progress-bar.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-progress-bar",
+      "readme": "# floodteam-progress-bar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "percent",
+          "type": "number",
+          "mutable": false,
+          "attr": "percent",
+          "reflectToAttr": false,
+          "docs": "The percent of the progress bar that will be filled",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setPercent",
+          "returns": {
+            "type": "Promise<number>",
+            "docs": ""
+          },
+          "signature": "setPercent(percent: number) => Promise<number>",
+          "parameters": [],
+          "docs": "Set the progress bar completion percentage",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--floodteam-progess-bar-fill-transition",
+          "annotation": "prop",
+          "docs": "The transtion settings for the fill bar"
+        },
+        {
+          "name": "--floodteam-progress-bar-background-color",
+          "annotation": "prop",
+          "docs": "The background color of the progress bar"
+        },
+        {
+          "name": "--floodteam-progress-bar-border-radius",
+          "annotation": "prop",
+          "docs": "The border radius of the progress bar and fill bar"
+        },
+        {
+          "name": "--floodteam-progress-bar-fill-background-color",
+          "annotation": "prop",
+          "docs": "The color of the progress bar fill"
+        },
+        {
+          "name": "--floodteam-progress-bar-fill-width",
+          "annotation": "prop",
+          "docs": "The percent amount to fill the progress bar"
+        },
+        {
+          "name": "--floodteam-progress-bar-height",
+          "annotation": "prop",
+          "docs": "The height of the progress bar"
+        },
+        {
+          "name": "--floodteam-progress-bar-width",
+          "annotation": "prop",
+          "docs": "The width of the progress bar"
+        },
+        {
+          "name": "--transition",
+          "annotation": "prop",
+          "docs": "Transition of the button"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "floodteam-epay": [
+          "floodteam-progress-bar"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/progress-circle/progress-circle.tsx",
+      "encapsulation": "shadow",
+      "tag": "floodteam-progress-circle",
+      "readme": "# floodteam-progress-circle\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "percent",
+          "type": "number",
+          "mutable": true,
+          "attr": "percent",
+          "reflectToAttr": false,
+          "docs": "The percent value of progress filled between 0 and 100",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "mutable": false,
+          "attr": "radius",
+          "reflectToAttr": false,
+          "docs": "The radius size of the circle in pixels",
+          "docsTags": [],
+          "default": "60",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stroke",
+          "type": "number",
+          "mutable": false,
+          "attr": "stroke",
+          "reflectToAttr": false,
+          "docs": "The stroke thickness of the progress bar",
+          "docsTags": [],
+          "default": "5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "floodteam-epay": [
+          "floodteam-progress-circle"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/progress-timeline/progress-timeline.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-progress-timeline",
+      "readme": "# floodteam-progress-timeline\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "events",
+          "type": "any",
+          "mutable": false,
+          "attr": "events",
+          "reflectToAttr": false,
+          "docs": "The major events on the timeline",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/radios/radios.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-radios",
+      "readme": "# floodteam-radios\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lines",
+          "type": "\"full\" | \"inset\" | \"none\"",
+          "mutable": false,
+          "attr": "lines",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"none\"",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "inset",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "any",
+          "mutable": false,
+          "attr": "options",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "any",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "selected",
+          "type": "number",
+          "mutable": true,
+          "attr": "selected",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ionChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-item",
+        "ion-label",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-radios": [
+          "ion-item",
+          "ion-label",
+          "ion-icon"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/share/share.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-share",
+      "readme": "# floodteam-share\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "options",
+          "type": "{ url: string; text?: string; title?: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{ url: null }",
+          "values": [
+            {
+              "type": "{ url: string; text?: string; title?: string; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "tmgShareClose",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-list",
+        "ion-item",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-share": [
+          "ion-list",
+          "ion-item",
+          "ion-icon"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/signature-pad/signature-pad.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-signature-pad",
+      "readme": "# floodteam-signature-pad\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "mutable": false,
+          "attr": "background-color",
+          "reflectToAttr": false,
+          "docs": "The background color for the signature pad",
+          "docsTags": [],
+          "default": "\"rgb(255, 255, 255)\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "clearText",
+          "type": "string",
+          "mutable": false,
+          "attr": "clear-text",
+          "reflectToAttr": false,
+          "docs": "The text to display on the clear button",
+          "docsTags": [],
+          "default": "\"Clear\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dotSize",
+          "type": "number",
+          "mutable": false,
+          "attr": "dot-size",
+          "reflectToAttr": false,
+          "docs": "Radius of a single dot",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "The label to display below signature pad",
+          "docsTags": [],
+          "default": "\"Sign Above\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxWidth",
+          "type": "number",
+          "mutable": false,
+          "attr": "max-width",
+          "reflectToAttr": false,
+          "docs": "Maximum width of a line",
+          "docsTags": [],
+          "default": "0.5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minDistance",
+          "type": "number",
+          "mutable": false,
+          "attr": "min-distance",
+          "reflectToAttr": false,
+          "docs": "Add the next point only if the previous one is farther than x pixels",
+          "docsTags": [],
+          "default": "5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minWidth",
+          "type": "number",
+          "mutable": false,
+          "attr": "min-width",
+          "reflectToAttr": false,
+          "docs": "Minimum width of a line",
+          "docsTags": [],
+          "default": "0.5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the element",
+          "docsTags": [],
+          "default": "\"signature\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "penColor",
+          "type": "string",
+          "mutable": false,
+          "attr": "pen-color",
+          "reflectToAttr": false,
+          "docs": "Color used to draw the lines. Can be any color format accepted by context.fillStyle",
+          "docsTags": [],
+          "default": "\"black\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "submitText",
+          "type": "string",
+          "mutable": false,
+          "attr": "submit-text",
+          "reflectToAttr": false,
+          "docs": "The text to display on the submit button",
+          "docsTags": [],
+          "default": "\"Submit\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "throttle",
+          "type": "number",
+          "mutable": false,
+          "attr": "throttle",
+          "reflectToAttr": false,
+          "docs": "Draw the next point at most once per every x milliseconds. Set it to 0 to turn off throttling",
+          "docsTags": [],
+          "default": "16",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The current data for the signature pad",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "velocityFilterWeight",
+          "type": "number",
+          "mutable": false,
+          "attr": "velocity-filter-weight",
+          "reflectToAttr": false,
+          "docs": "Weight used to modify new velocity based on the previous velocity",
+          "docsTags": [],
+          "default": "0.7",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "clear",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "clear() => Promise<any>",
+          "parameters": [],
+          "docs": "Clear the signature field",
+          "docsTags": []
+        },
+        {
+          "name": "download",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "download(dataURL: any, filename: any) => Promise<void>",
+          "parameters": [],
+          "docs": "Download a file via a new browser tab",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "dataURL The signature image file data"
+            },
+            {
+              "name": "param",
+              "text": "filename The name of the file"
+            }
+          ]
+        },
+        {
+          "name": "downloadJPG",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "downloadJPG() => Promise<void>",
+          "parameters": [],
+          "docs": "Download the signature as a JPG file",
+          "docsTags": []
+        },
+        {
+          "name": "downloadPNG",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "downloadPNG() => Promise<void>",
+          "parameters": [],
+          "docs": "Download the signature as a PNG file",
+          "docsTags": []
+        },
+        {
+          "name": "downloadSVG",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "downloadSVG() => Promise<void>",
+          "parameters": [],
+          "docs": "Download the signature as an SVG file",
+          "docsTags": []
+        },
+        {
+          "name": "fromData",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "fromData(data: any) => Promise<any>",
+          "parameters": [],
+          "docs": "Fill the signature pad from data",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "data The signature data"
+            }
+          ]
+        },
+        {
+          "name": "isEmpty",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "isEmpty() => Promise<any>",
+          "parameters": [],
+          "docs": "Check if the signature pad is empty",
+          "docsTags": []
+        },
+        {
+          "name": "resizeCanvas",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "resizeCanvas() => Promise<void>",
+          "parameters": [],
+          "docs": "Resize the canvas based on browser",
+          "docsTags": []
+        },
+        {
+          "name": "submit",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "submit() => Promise<void>",
+          "parameters": [],
+          "docs": "Update the value and emit ionChange event",
+          "docsTags": []
+        },
+        {
+          "name": "toData",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "toData() => Promise<any>",
+          "parameters": [],
+          "docs": "Get the signature pad data",
+          "docsTags": []
+        },
+        {
+          "name": "undo",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "undo() => Promise<any>",
+          "parameters": [],
+          "docs": "Undo the last stroke from the signature",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "ionChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "ion-icon",
+        "ion-button"
+      ],
+      "dependencyGraph": {
+        "floodteam-signature-pad": [
+          "ion-card",
+          "ion-icon",
+          "ion-button"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/slide/slide.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-slide",
+      "readme": "# floodteam-slide\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/slides/slides.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-slides",
+      "readme": "# floodteam-slides\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [
+        {
+          "name": "update",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "update() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/job-card/snapshot-card.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-snapshot-card",
+      "readme": "# floodteam-snapshot-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "buttonProps",
+          "type": "{}",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "{}"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "buttonText",
+          "type": "string",
+          "mutable": false,
+          "attr": "button-text",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disableShrink",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable-shrink",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "photo",
+          "type": "string",
+          "mutable": false,
+          "attr": "photo",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "floodteamClick",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-card",
+        "ion-button"
+      ],
+      "dependencyGraph": {
+        "floodteam-snapshot-card": [
+          "ion-card",
+          "ion-button"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/star-rating/star-rating.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-star-rating",
+      "readme": "# floodteam-star-rating\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxRating",
+          "type": "number",
+          "mutable": false,
+          "attr": "max-rating",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "5",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"rating\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setCurrentRating",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setCurrentRating(rating: any) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "ftStarRating",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "input",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/tab/tab.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-tab",
+      "readme": "# floodteam-tab\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "selected",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "selected",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tab",
+          "type": "string",
+          "mutable": false,
+          "attr": "tab",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/tabs/tabs.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-tabs",
+      "readme": "# floodteam-tabs\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "hash",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "hash",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "selected",
+          "type": "string",
+          "mutable": true,
+          "attr": "selected",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "floodteamTabChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-grid",
+        "ion-row",
+        "ion-col"
+      ],
+      "dependencyGraph": {
+        "floodteam-tabs": [
+          "ion-grid",
+          "ion-row",
+          "ion-col"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/thumbs-up/thumbs-up.tsx",
+      "encapsulation": "shadow",
+      "tag": "floodteam-thumbs-up",
+      "readme": "# floodteam-thumbs-up\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "animating",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "animating",
+          "reflectToAttr": false,
+          "docs": "Start the animation",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "The size of the thumb",
+          "docsTags": [],
+          "default": "\"150px\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay",
+        "floodteam-payment-methods"
+      ],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-thumbs-up": [
+          "ion-icon"
+        ],
+        "floodteam-epay": [
+          "floodteam-thumbs-up"
+        ],
+        "floodteam-payment-methods": [
+          "floodteam-thumbs-up"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/user-select/user-select.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-user-select",
+      "readme": "# floodteam-user-select\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "delay",
+          "type": "number",
+          "mutable": false,
+          "attr": "delay",
+          "reflectToAttr": false,
+          "docs": "How long to delay after input before searching",
+          "docsTags": [],
+          "default": "1000",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Whether or not the search input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "emailRequired",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "email-required",
+          "reflectToAttr": false,
+          "docs": "Is the email required in order to select result",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "loading",
+          "reflectToAttr": false,
+          "docs": "Whether or not the loader is showing",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "mutable": true,
+          "attr": "query",
+          "reflectToAttr": false,
+          "docs": "The search query to fill into the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "records",
+          "type": "any[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "A list of user records that match the search query",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "user",
+          "type": "any",
+          "mutable": true,
+          "attr": "user",
+          "reflectToAttr": false,
+          "docs": "The user currently selected",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "reset",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "reset() => Promise<boolean>",
+          "parameters": [],
+          "docs": "Reset the field",
+          "docsTags": []
+        },
+        {
+          "name": "setResults",
+          "returns": {
+            "type": "Promise<any[]>",
+            "docs": ""
+          },
+          "signature": "setResults(records: any[]) => Promise<any[]>",
+          "parameters": [],
+          "docs": "Set search results with list of users",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "records An array of user records"
+            }
+          ]
+        },
+        {
+          "name": "setUser",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "setUser(user: any, event?: UIEvent) => Promise<any>",
+          "parameters": [],
+          "docs": "Set selected user",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "user The selected user object"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "event": "ftLoad",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the component loads",
+          "docsTags": []
+        },
+        {
+          "event": "ftSearch",
+          "detail": "{ event: any; query: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the user submits the search form or after typing",
+          "docsTags": []
+        },
+        {
+          "event": "ftSelect",
+          "detail": "{ event: UIEvent; user: any; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the user submits the search form or after typing",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-content",
+        "floodteam-input",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "floodteam-user-select": [
+          "ion-content",
+          "floodteam-input",
+          "ion-icon"
+        ],
+        "floodteam-input": [
+          "ion-input",
+          "ion-item",
+          "ion-icon",
+          "ion-label"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    }
+  ]
+}
