@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-01T17:22:01",
+  "timestamp": "2021-04-02T17:18:56",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -3790,6 +3790,7 @@
         "ion-row",
         "ion-col",
         "ion-icon",
+        "fireenjin-form",
         "floodteam-input",
         "ion-button"
       ],
@@ -3799,8 +3800,18 @@
           "ion-row",
           "ion-col",
           "ion-icon",
+          "fireenjin-form",
           "floodteam-input",
           "ion-button"
+        ],
+        "fireenjin-form": [
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ],
         "floodteam-input": [
           "ion-input",
@@ -3810,9 +3821,6 @@
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
           "ion-ripple-effect"
         ]
       }
@@ -4473,6 +4481,7 @@
         "ion-grid",
         "ion-row",
         "ion-col",
+        "fireenjin-form",
         "floodteam-input",
         "floodteam-input-address",
         "floodteam-thumbs-up"
@@ -4491,6 +4500,7 @@
           "ion-grid",
           "ion-row",
           "ion-col",
+          "fireenjin-form",
           "floodteam-input",
           "floodteam-input-address",
           "floodteam-thumbs-up"
@@ -4509,6 +4519,12 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "fireenjin-form": [
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
         ],
         "floodteam-input": [
           "ion-input",
