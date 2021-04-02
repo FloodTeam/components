@@ -39,6 +39,7 @@
     "@ionic-native/core": "^5.31.1",
     "@ionic-native/geolocation": "^5.31.1",
     "@ionic/core": "^5.5.3",
+    "@madnesslabs/fireenjin-components": "^1.1.22",
     "@stencil/core": "^2.4.0",
     "algoliasearch": "^4.8.6",
     "chart.js": "^2.9.4",
