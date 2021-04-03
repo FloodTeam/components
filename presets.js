@@ -15,6 +15,16 @@ define("src/components/avatar/avatar.presets", ["require", "exports"], function 
     exports["default"] = {
         "default": {
             name: "Default",
+            props: {}
+        }
+    };
+});
+define("src/components/book-now/book-now.presets", ["require", "exports"], function (require, exports) {
+    "use strict";
+    exports.__esModule = true;
+    exports["default"] = {
+        "default": {
+            name: "Default",
             props: {
                 src: "https://madnesslabs.net/img/logo.png",
                 size: "100px"
