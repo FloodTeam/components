@@ -1,0 +1,84 @@
+# floodteam-book-now
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property     | Attribute     | Description | Type      | Default     |
+| ------------ | ------------- | ----------- | --------- | ----------- |
+| `locationId` | `location-id` |             | `string`  | `undefined` |
+| `referralId` | `referral-id` |             | `string`  | `undefined` |
+| `referring`  | `referring`   |             | `boolean` | `false`     |
+| `token`      | `token`       |             | `string`  | `undefined` |
+
+
+## Dependencies
+
+### Depends on
+
+- ion-card
+- [floodteam-error](../error)
+- fireenjin-form
+- ion-list
+- [floodteam-input](../input)
+- [floodteam-input-address](../input-address)
+- [floodteam-checkmark](../checkmark)
+- ion-grid
+- ion-row
+- ion-col
+- ion-label
+- ion-button
+- ion-icon
+
+### Graph
+```mermaid
+graph TD;
+  floodteam-book-now --> ion-card
+  floodteam-book-now --> floodteam-error
+  floodteam-book-now --> fireenjin-form
+  floodteam-book-now --> ion-list
+  floodteam-book-now --> floodteam-input
+  floodteam-book-now --> floodteam-input-address
+  floodteam-book-now --> floodteam-checkmark
+  floodteam-book-now --> ion-grid
+  floodteam-book-now --> ion-row
+  floodteam-book-now --> ion-col
+  floodteam-book-now --> ion-label
+  floodteam-book-now --> ion-button
+  floodteam-book-now --> ion-icon
+  ion-card --> ion-ripple-effect
+  floodteam-error --> ion-item
+  floodteam-error --> ion-icon
+  floodteam-error --> ion-label
+  ion-item --> ion-icon
+  ion-item --> ion-ripple-effect
+  fireenjin-form --> ion-grid
+  fireenjin-form --> ion-row
+  fireenjin-form --> ion-col
+  fireenjin-form --> ion-button
+  ion-button --> ion-ripple-effect
+  floodteam-input --> ion-input
+  floodteam-input --> ion-item
+  floodteam-input --> ion-icon
+  floodteam-input --> ion-label
+  floodteam-input-address --> ion-item
+  floodteam-input-address --> ion-label
+  floodteam-input-address --> ion-input
+  floodteam-input-address --> ion-grid
+  floodteam-input-address --> ion-row
+  floodteam-input-address --> ion-col
+  floodteam-input-address --> floodteam-input-state
+  floodteam-input-address --> ion-button
+  floodteam-input-address --> ion-icon
+  floodteam-input-state --> ion-select
+  floodteam-input-state --> ion-select-option
+  floodteam-checkmark --> ion-icon
+  style floodteam-book-now fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

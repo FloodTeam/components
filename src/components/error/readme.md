@@ -18,6 +18,7 @@
 
 ### Used by
 
+ - [floodteam-book-now](../book-now)
  - [floodteam-epay](../epay)
  - [floodteam-graph-pay-splits](../graph-pay-splits)
  - [floodteam-pay-card](../pay-card)
@@ -38,6 +39,7 @@ graph TD;
   floodteam-error --> ion-label
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
+  floodteam-book-now --> floodteam-error
   floodteam-epay --> floodteam-error
   floodteam-graph-pay-splits --> floodteam-error
   floodteam-pay-card --> floodteam-error

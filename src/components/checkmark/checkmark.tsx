@@ -1,11 +1,11 @@
 import { Component, ComponentInterface, Host, Prop, h } from "@stencil/core";
 
 @Component({
-  tag: "floodteam-thumbs-up",
-  styleUrl: "thumbs-up.css",
-  shadow: true
+  tag: "floodteam-checkmark",
+  styleUrl: "checkmark.css",
+  shadow: true,
 })
-export class ThumbsUp implements ComponentInterface {
+export class Checkmark implements ComponentInterface {
   /**
    * The size of the thumb
    */
@@ -19,16 +19,16 @@ export class ThumbsUp implements ComponentInterface {
     return (
       <Host
         style={{
-          "--floodteam-thumbs-up-size": this.size
+          "--floodteam-checkmark-size": this.size,
         }}
       >
         <div
           class={{
-            "thumbs-up-wrapper": true,
-            animate: this.animating
+            "checkmark-wrapper": true,
+            animate: this.animating,
           }}
         >
-          <ion-icon name="thumbs-up" />
+          <ion-icon name="checkmark-circle" />
         </div>
       </Host>
     );

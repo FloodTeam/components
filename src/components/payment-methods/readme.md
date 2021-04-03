@@ -40,9 +40,10 @@
 - ion-grid
 - ion-row
 - ion-col
+- fireenjin-form
 - [floodteam-input](../input)
 - [floodteam-input-address](../input-address)
-- [floodteam-thumbs-up](../thumbs-up)
+- [floodteam-checkmark](../checkmark)
 
 ### Graph
 ```mermaid
@@ -59,9 +60,10 @@ graph TD;
   floodteam-payment-methods --> ion-grid
   floodteam-payment-methods --> ion-row
   floodteam-payment-methods --> ion-col
+  floodteam-payment-methods --> fireenjin-form
   floodteam-payment-methods --> floodteam-input
   floodteam-payment-methods --> floodteam-input-address
-  floodteam-payment-methods --> floodteam-thumbs-up
+  floodteam-payment-methods --> floodteam-checkmark
   ion-card --> ion-ripple-effect
   floodteam-error --> ion-item
   floodteam-error --> ion-icon
@@ -69,6 +71,10 @@ graph TD;
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
   ion-button --> ion-ripple-effect
+  fireenjin-form --> ion-grid
+  fireenjin-form --> ion-row
+  fireenjin-form --> ion-col
+  fireenjin-form --> ion-button
   floodteam-input --> ion-input
   floodteam-input --> ion-item
   floodteam-input --> ion-icon
@@ -84,7 +90,7 @@ graph TD;
   floodteam-input-address --> ion-icon
   floodteam-input-state --> ion-select
   floodteam-input-state --> ion-select-option
-  floodteam-thumbs-up --> ion-icon
+  floodteam-checkmark --> ion-icon
   style floodteam-payment-methods fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

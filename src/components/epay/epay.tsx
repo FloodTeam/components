@@ -19,7 +19,7 @@ import {
 export class Epay implements ComponentInterface {
   payCheckEl: any;
   sliderEl: HTMLIonSlidesElement;
-  thumbsUpEl: any;
+  checkmarkEl: any;
   slideIndex = [
     "summary",
     "payment",
@@ -308,7 +308,7 @@ export class Epay implements ComponentInterface {
   async success() {
     await this.sliderEl.slideTo(5);
     this.isBackShowing = false;
-    this.thumbsUpEl.animating = true;
+    this.checkmarkEl.animating = true;
     setTimeout(async () => {
       await this.reset();
     }, 5000);
@@ -834,7 +834,7 @@ export class Epay implements ComponentInterface {
             <ion-grid>
               <ion-row>
                 <ion-col>
-                  <floodteam-thumbs-up ref={(el) => (this.thumbsUpEl = el)} />
+                  <floodteam-checkmark ref={(el) => (this.checkmarkEl = el)} />
                   <p>You're good to go!</p>
                 </ion-col>
               </ion-row>

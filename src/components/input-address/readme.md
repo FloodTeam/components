@@ -29,6 +29,7 @@
 
 ### Used by
 
+ - [floodteam-book-now](../book-now)
  - [floodteam-payment-methods](../payment-methods)
 
 ### Depends on
@@ -60,6 +61,7 @@ graph TD;
   floodteam-input-state --> ion-select
   floodteam-input-state --> ion-select-option
   ion-button --> ion-ripple-effect
+  floodteam-book-now --> floodteam-input-address
   floodteam-payment-methods --> floodteam-input-address
   style floodteam-input-address fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -23,6 +23,7 @@
 - ion-row
 - ion-col
 - ion-icon
+- fireenjin-form
 - [floodteam-input](../input)
 - ion-button
 
@@ -33,15 +34,20 @@ graph TD;
   floodteam-location-bar --> ion-row
   floodteam-location-bar --> ion-col
   floodteam-location-bar --> ion-icon
+  floodteam-location-bar --> fireenjin-form
   floodteam-location-bar --> floodteam-input
   floodteam-location-bar --> ion-button
+  fireenjin-form --> ion-grid
+  fireenjin-form --> ion-row
+  fireenjin-form --> ion-col
+  fireenjin-form --> ion-button
+  ion-button --> ion-ripple-effect
   floodteam-input --> ion-input
   floodteam-input --> ion-item
   floodteam-input --> ion-icon
   floodteam-input --> ion-label
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
-  ion-button --> ion-ripple-effect
   style floodteam-location-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

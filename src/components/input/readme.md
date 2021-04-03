@@ -108,6 +108,7 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [floodteam-book-now](../book-now)
  - [floodteam-epay](../epay)
  - [floodteam-location-bar](../location-bar)
  - [floodteam-payment-methods](../payment-methods)
@@ -129,6 +130,7 @@ graph TD;
   floodteam-input --> ion-label
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
+  floodteam-book-now --> floodteam-input
   floodteam-epay --> floodteam-input
   floodteam-location-bar --> floodteam-input
   floodteam-payment-methods --> floodteam-input

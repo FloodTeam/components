@@ -57,10 +57,36 @@
         var defaultWrapper = function (sdkFunction) {
           return sdkFunction();
         };
-        FloodTeam.init({
+        FireEnjin.init({
           debug: true,
           host: "https://ftms-ca85b.appspot.com",
           functionsHost: "https://us-central1-ftms-ca85b.cloudfunctions.net",
+        });
+        window.addEventListener("fireenjinSubmit", async (event) => {
+          document.body.dispatchEvent(
+            new CustomEvent("fireenjinSuccess", {
+              detail: {
+                event: event.detail?.event,
+                data: {},
+                name: event.detail.name,
+                endpoint: event.detail.endpoint,
+              },
+            })
+          );
+        });
+        window.addEventListener("fireenjinFetch", async (event) => {
+          document.body.dispatchEvent(
+            new CustomEvent("fireenjinSuccess", {
+              detail: {
+                event: event.detail.event,
+                target: event.target,
+                cached: true,
+                data: {},
+                name: event.detail.name,
+                endpoint: event.detail.endpoint,
+              },
+            })
+          );
         });
         var firebaseConfig = {
           apiKey: "AIzaSyD5dzUNlXR1b7oFj523utB_eZymWX3X0wY",

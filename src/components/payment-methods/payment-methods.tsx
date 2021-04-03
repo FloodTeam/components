@@ -19,7 +19,7 @@ export class PaymentMethods implements ComponentInterface {
   addressInputEl: HTMLFloodteamInputAddressElement;
   routingInputEl: HTMLFloodteamInputElement;
   accountInputEl: HTMLFloodteamInputElement;
-  thumbsUpEl: any;
+  checkmarkEl: any;
   sliderEl: HTMLIonSlidesElement;
   sliderOptions: any = {
     initialSlide: 0,
@@ -80,7 +80,7 @@ export class PaymentMethods implements ComponentInterface {
   async onSuccess(event) {
     if (event.detail.endpoint === "addPaymentMethod") {
       setTimeout(() => {
-        this.thumbsUpEl.animating = true;
+        this.checkmarkEl.animating = true;
       }, 500);
       this.next();
     }
@@ -343,9 +343,9 @@ export class PaymentMethods implements ComponentInterface {
           </ion-slide>
           <ion-slide id="confirmation">
             <div class="slide-wrapper">
-              <floodteam-thumbs-up
+              <floodteam-checkmark
                 size="100px"
-                ref={(el) => (this.thumbsUpEl = el)}
+                ref={(el) => (this.checkmarkEl = el)}
               />
               <ion-grid>
                 <ion-row>

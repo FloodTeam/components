@@ -118,3 +118,35 @@ ion-icon.ft-icon-style:after {
   right: 0;
   left: 0;
 }
+
+/*
+  Contextual Loader
+*/
+.is-loading {
+  position: relative;
+  pointer-events: none;
+}
+.is-loading:before {
+  transition: all 400ms ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 99;
+}
+.is-loading:after {
+  display: block;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  content: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDApOyBkaXNwbGF5OiBibG9jazsiIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2VhN2RlIiBzdHJva2Utd2lkdGg9IjIiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjIuMTI3NjU5NTc0NDY4MDg1cyIgdmFsdWVzPSIwOzQwIiBrZXlUaW1lcz0iMDsxIiBrZXlTcGxpbmVzPSIwIDAuMiAwLjggMSIgY2FsY01vZGU9InNwbGluZSIgYmVnaW49IjBzIj48L2FuaW1hdGU+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGR1cj0iMi4xMjc2NTk1NzQ0NjgwODVzIiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIga2V5U3BsaW5lcz0iMC4yIDAgMC44IDEiIGNhbGNNb2RlPSJzcGxpbmUiIGJlZ2luPSIwcyI+PC9hbmltYXRlPgo8L2NpcmNsZT48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzg4YmIiIHN0cm9rZS13aWR0aD0iMiI+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGR1cj0iMi4xMjc2NTk1NzQ0NjgwODVzIiB2YWx1ZXM9IjA7NDAiIGtleVRpbWVzPSIwOzEiIGtleVNwbGluZXM9IjAgMC4yIDAuOCAxIiBjYWxjTW9kZT0ic3BsaW5lIiBiZWdpbj0iLTEuMDYzODI5Nzg3MjM0MDQyNXMiPjwvYW5pbWF0ZT4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIyLjEyNzY1OTU3NDQ2ODA4NXMiIHZhbHVlcz0iMTswIiBrZXlUaW1lcz0iMDsxIiBrZXlTcGxpbmVzPSIwLjIgMCAwLjggMSIgY2FsY01vZGU9InNwbGluZSIgYmVnaW49Ii0xLjA2MzgyOTc4NzIzNDA0MjVzIj48L2FuaW1hdGU+CjwvY2lyY2xlPgo8L3N2Zz4=);
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  z-index: 100;
+  pointer-events: none;
+}

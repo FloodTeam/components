@@ -1,4 +1,4 @@
-# floodteam-thumbs-up
+# floodteam-checkmark
 
 
 
@@ -17,6 +17,7 @@
 
 ### Used by
 
+ - [floodteam-book-now](../book-now)
  - [floodteam-epay](../epay)
  - [floodteam-payment-methods](../payment-methods)
 
@@ -27,10 +28,11 @@
 ### Graph
 ```mermaid
 graph TD;
-  floodteam-thumbs-up --> ion-icon
-  floodteam-epay --> floodteam-thumbs-up
-  floodteam-payment-methods --> floodteam-thumbs-up
-  style floodteam-thumbs-up fill:#f9f,stroke:#333,stroke-width:4px
+  floodteam-checkmark --> ion-icon
+  floodteam-book-now --> floodteam-checkmark
+  floodteam-epay --> floodteam-checkmark
+  floodteam-payment-methods --> floodteam-checkmark
+  style floodteam-checkmark fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

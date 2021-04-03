@@ -100,7 +100,7 @@ Type: `Promise<void>`
 - [floodteam-pay-check](../pay-check)
 - [floodteam-error](../error)
 - [floodteam-progress-circle](../progress-circle)
-- [floodteam-thumbs-up](../thumbs-up)
+- [floodteam-checkmark](../checkmark)
 
 ### Graph
 ```mermaid
@@ -123,7 +123,7 @@ graph TD;
   floodteam-epay --> floodteam-pay-check
   floodteam-epay --> floodteam-error
   floodteam-epay --> floodteam-progress-circle
-  floodteam-epay --> floodteam-thumbs-up
+  floodteam-epay --> floodteam-checkmark
   ion-card --> ion-ripple-effect
   ion-button --> ion-ripple-effect
   ion-item --> ion-icon
@@ -148,7 +148,7 @@ graph TD;
   floodteam-pay-check --> ion-col
   floodteam-pay-check --> ion-button
   floodteam-flip-card --> ion-icon
-  floodteam-thumbs-up --> ion-icon
+  floodteam-checkmark --> ion-icon
   style floodteam-epay fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
