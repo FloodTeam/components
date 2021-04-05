@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-03T07:15:22",
+  "timestamp": "2021-04-05T07:52:22",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -84,7 +84,7 @@
       "filePath": "./src/components/book-now/book-now.tsx",
       "encapsulation": "none",
       "tag": "floodteam-book-now",
-      "readme": "# floodteam-book-now\n\n\n",
+      "readme": "# floodteam-book-now\n\n## STL Location\n\n`<floodteam-book-now location=\"TGjRNPVFDHFbsamnxeSt\"></floodteam-book-now>`\n\n## JEFFCO Location\n\n`<floodteam-book-now location=\"pmtPJQSaXGTAsTUQ2g5G\"></floodteam-book-now>`\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -95,7 +95,7 @@
           "mutable": false,
           "attr": "location-id",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The ID of the location",
           "docsTags": [],
           "values": [
             {
@@ -111,7 +111,7 @@
           "mutable": false,
           "attr": "referral-id",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The ID of the referring user",
           "docsTags": [],
           "values": [
             {
@@ -127,7 +127,7 @@
           "mutable": false,
           "attr": "referring",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Is the user referring?",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -144,7 +144,7 @@
           "mutable": false,
           "attr": "token",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The campaign or API token",
           "docsTags": [],
           "values": [
             {
