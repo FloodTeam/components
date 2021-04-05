@@ -8,9 +8,21 @@ import ClipboardJS from "clipboard";
 export class BookNow {
   formEl: any;
 
+  /**
+   * Is the user referring?
+   */
   @Prop() referring = false;
+  /**
+   * The ID of the referring user
+   */
   @Prop() referralId: string;
+  /**
+   * The ID of the location
+   */
   @Prop() locationId: string;
+  /**
+   * The campaign or API token
+   */
   @Prop() token: string;
 
   @State() errors: string[] = [];

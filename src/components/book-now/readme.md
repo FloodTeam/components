@@ -1,19 +1,23 @@
 # floodteam-book-now
 
+## STL Location
 
+`<floodteam-book-now location="TGjRNPVFDHFbsamnxeSt"></floodteam-book-now>`
+
+## JEFFCO Location
+
+`<floodteam-book-now location="pmtPJQSaXGTAsTUQ2g5G"></floodteam-book-now>`
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
-| Property     | Attribute     | Description | Type      | Default     |
-| ------------ | ------------- | ----------- | --------- | ----------- |
-| `locationId` | `location-id` |             | `string`  | `undefined` |
-| `referralId` | `referral-id` |             | `string`  | `undefined` |
-| `referring`  | `referring`   |             | `boolean` | `false`     |
-| `token`      | `token`       |             | `string`  | `undefined` |
-
+| Property     | Attribute     | Description                  | Type      | Default     |
+| ------------ | ------------- | ---------------------------- | --------- | ----------- |
+| `locationId` | `location-id` | The ID of the location       | `string`  | `undefined` |
+| `referralId` | `referral-id` | The ID of the referring user | `string`  | `undefined` |
+| `referring`  | `referring`   | Is the user referring?       | `boolean` | `false`     |
+| `token`      | `token`       | The campaign or API token    | `string`  | `undefined` |
 
 ## Dependencies
 
@@ -34,6 +38,7 @@
 - ion-icon
 
 ### Graph
+
 ```mermaid
 graph TD;
   floodteam-book-now --> ion-card
@@ -79,6 +84,6 @@ graph TD;
   style floodteam-book-now fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
