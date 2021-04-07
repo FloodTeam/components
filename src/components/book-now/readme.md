@@ -10,6 +10,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute     | Description                  | Type      | Default     |
@@ -18,6 +19,7 @@
 | `referralId` | `referral-id` | The ID of the referring user | `string`  | `undefined` |
 | `referring`  | `referring`   | Is the user referring?       | `boolean` | `false`     |
 | `token`      | `token`       | The campaign or API token    | `string`  | `undefined` |
+
 
 ## Dependencies
 
@@ -38,7 +40,6 @@
 - ion-icon
 
 ### Graph
-
 ```mermaid
 graph TD;
   floodteam-book-now --> ion-card
@@ -84,6 +85,6 @@ graph TD;
   style floodteam-book-now fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

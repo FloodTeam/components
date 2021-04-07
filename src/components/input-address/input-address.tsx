@@ -46,6 +46,10 @@ export class InputAddress implements ComponentInterface {
    * The name attribute of the input
    */
   @Prop() name: string;
+  /**
+   * The Google Maps API Key
+   */
+  @Prop() googleMapsKey: string;
 
   @State() place: any;
   @State() manualEntry = false;
@@ -71,6 +75,30 @@ export class InputAddress implements ComponentInterface {
           value: this.value,
         });
       }, 100);
+    }
+  }
+
+  injectScript(src) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = src;
+      script.addEventListener("load", resolve);
+      script.addEventListener("error", () => reject("Error loading script."));
+      script.addEventListener("abort", () => reject("Script loading aborted."));
+      document.head.appendChild(script);
+    });
+  }
+
+  async componentWillLoad() {
+    try {
+      if (this.googleMapsKey && !window?.google?.maps) {
+        await this.injectScript(
+          `https://maps.googleapis.com/maps/api/js?key=${this.googleMapsKey}&libraries=places`
+        );
+      }
+    } catch (e) {
+      console.log("Error injecting Google Maps");
     }
   }
 
