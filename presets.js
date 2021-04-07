@@ -26,14 +26,7 @@ define("src/components/book-now/book-now.presets", ["require", "exports"], funct
         "default": {
             name: "Default",
             props: {
-                src: "https://madnesslabs.net/img/logo.png",
-                size: "100px"
-            }
-        },
-        wee: {
-            props: {
-                size: "100px",
-                initials: "ML"
+                googleMapsKey: "AIzaSyBenUMQZUJg7qRUoFUJOS5tjK-JnOeQtjM"
             }
         }
     };
