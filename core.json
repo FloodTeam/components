@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-05T07:52:22",
+  "timestamp": "2021-04-07T00:43:21",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -89,6 +89,22 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "googleMapsKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "google-maps-key",
+          "reflectToAttr": false,
+          "docs": "The Google Maps API Key",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "locationId",
           "type": "string",
@@ -2334,6 +2350,22 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "googleMapsKey",
+          "type": "string",
+          "mutable": false,
+          "attr": "google-maps-key",
+          "reflectToAttr": false,
+          "docs": "The Google Maps API Key",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "label",
           "type": "string",
