@@ -24,6 +24,10 @@ export class BookNow {
    * The campaign or API token
    */
   @Prop() token: string;
+  /**
+   * The Google Maps API Key
+   */
+  @Prop() googleMapsKey: string;
 
   @State() errors: string[] = [];
   @State() successful = false;
@@ -107,6 +111,7 @@ export class BookNow {
               placeholder="What is the customer's email address?"
             />
             <floodteam-input-address
+              googleMapsKey={this.googleMapsKey}
               name="address"
               label="Job Address"
               placeholder="What is the address of the loss?"

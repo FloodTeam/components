@@ -13,12 +13,13 @@
 
 ## Properties
 
-| Property     | Attribute     | Description                  | Type      | Default     |
-| ------------ | ------------- | ---------------------------- | --------- | ----------- |
-| `locationId` | `location-id` | The ID of the location       | `string`  | `undefined` |
-| `referralId` | `referral-id` | The ID of the referring user | `string`  | `undefined` |
-| `referring`  | `referring`   | Is the user referring?       | `boolean` | `false`     |
-| `token`      | `token`       | The campaign or API token    | `string`  | `undefined` |
+| Property        | Attribute         | Description                  | Type      | Default     |
+| --------------- | ----------------- | ---------------------------- | --------- | ----------- |
+| `googleMapsKey` | `google-maps-key` | The Google Maps API Key      | `string`  | `undefined` |
+| `locationId`    | `location-id`     | The ID of the location       | `string`  | `undefined` |
+| `referralId`    | `referral-id`     | The ID of the referring user | `string`  | `undefined` |
+| `referring`     | `referring`       | Is the user referring?       | `boolean` | `false`     |
+| `token`         | `token`           | The campaign or API token    | `string`  | `undefined` |
 
 
 ## Dependencies
