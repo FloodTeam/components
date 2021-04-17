@@ -4,12 +4,12 @@ import {
   Event,
   EventEmitter,
   Prop,
-  h
+  h,
 } from "@stencil/core";
 
 @Component({
   tag: "floodteam-input-search-user",
-  styleUrl: "input-search-user.css"
+  styleUrl: "input-search-user.css",
 })
 export class InputSearchUser implements ComponentInterface {
   timer: any;
@@ -31,6 +31,7 @@ export class InputSearchUser implements ComponentInterface {
   @Prop() iconStart: string;
   @Prop() limit = 5;
   @Prop() template: (result) => any;
+  @Prop() results: any[] = [];
 
   @Event() ionInput: EventEmitter;
   @Event() floodteamSelectUser: EventEmitter;
@@ -39,11 +40,11 @@ export class InputSearchUser implements ComponentInterface {
     this.value = user.email;
     this.floodteamSelectUser.emit({
       event,
-      user
+      user,
     });
     setTimeout(async () => {
       await this.inputSearchEl.checkValidity({
-        setValidationClass: true
+        setValidationClass: true,
       });
     }, 200);
     if (this.mode === "popover") {
@@ -60,22 +61,23 @@ export class InputSearchUser implements ComponentInterface {
         iconStart={this.iconStart}
         mode={this.mode}
         label={this.label}
-        ref={el => (this.inputSearchEl = el)}
+        ref={(el) => (this.inputSearchEl = el)}
         endpoint="listUsers"
         dataPropsMap={{
-          users: "results"
+          users: "results",
         }}
         name={this.name}
         searchParams={{
-          limit: this.limit ? this.limit : null
+          limit: this.limit ? this.limit : null,
         }}
+        results={this.results}
         placeholder={this.placeholder}
         value={this.value}
-        template={result => (
+        template={(result) => (
           <ion-item
-            onClick={event => this.selectUser(event, result)}
+            onClick={(event) => this.selectUser(event, result)}
             style={{
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             <ion-label>

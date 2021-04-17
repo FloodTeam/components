@@ -7,7 +7,6 @@ import {
   h,
   Listen,
   Method,
-  State,
 } from "@stencil/core";
 import Debounce from "debounce-decorator";
 import { popoverController, TextFieldTypes } from "@ionic/core";
@@ -38,8 +37,7 @@ export class InputSearch implements ComponentInterface {
   @Prop() mode: "popover" | "inline" = "popover";
   @Prop() iconEnd: string;
   @Prop() iconStart: string;
-
-  @State() results: any[] = [];
+  @Prop({ mutable: true }) results: any[] = [];
 
   @Event() ionInput: EventEmitter;
   @Event() fireenjinFetch: EventEmitter;
@@ -84,12 +82,8 @@ export class InputSearch implements ComponentInterface {
 
   @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
-    console.log(this.mode, event.detail.data);
-    if (
-      event.detail.endpoint === this.endpoint &&
-      event.detail?.data?.results?.length > 0 &&
-      this.mode === "popover"
-    ) {
+    if (event?.detail?.endpoint !== this.endpoint) return;
+    if (this.mode === "popover") {
       this.resultsPopover = await popoverController.create({
         translucent: true,
         showBackdrop: false,
@@ -101,9 +95,8 @@ export class InputSearch implements ComponentInterface {
         },
       });
       this.resultsPopover.present();
-    } else {
-      this.results = event.detail.data.results ? event.detail.data.results : [];
     }
+    this.results = event.detail?.data?.results ? event.detail.data.results : [];
   }
 
   @Debounce(1000)
