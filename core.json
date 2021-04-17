@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-07T20:30:25",
+  "timestamp": "2021-04-17T23:34:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -3280,6 +3280,22 @@
           "required": false
         },
         {
+          "name": "results",
+          "type": "any[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "searchParams",
           "type": "any",
           "mutable": false,
@@ -3797,6 +3813,22 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "results",
+          "type": "any[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any[]"
             }
           ],
           "optional": false,
