@@ -80,9 +80,10 @@ export class InputSearchUser implements ComponentInterface {
           >
             <ion-label>
               <h2>
-                {result.firstName} {result.firstName}
+                {result.firstName ? result.firstName : ""}{" "}
+                {result.lastName ? result.lastName : ""}
               </h2>
-              <p>{result.email}</p>
+              <p>{result.email ? result.email : "No email on file"}</p>
             </ion-label>
             <ion-icon name="checkmark-circle" />
           </ion-item>
