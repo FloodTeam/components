@@ -22,6 +22,7 @@
 | `name`          | `name`           |             | `string`                | `undefined`      |
 | `placeholder`   | `placeholder`    |             | `string`                | `"Search Users"` |
 | `required`      | `required`       |             | `boolean`               | `undefined`      |
+| `results`       | --               |             | `any[]`                 | `[]`             |
 | `template`      | --               |             | `(result: any) => any`  | `undefined`      |
 | `value`         | `value`          |             | `any`                   | `undefined`      |
 

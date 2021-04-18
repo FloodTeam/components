@@ -34,11 +34,11 @@
     />
     <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
-    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
     <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
     <style>
       body {
         display: block;
@@ -54,14 +54,19 @@
     <fireenjin-designer-gallery></fireenjin-designer-gallery>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var defaultWrapper = function (sdkFunction) {
-          return sdkFunction();
+        var firebaseConfig = {
+          apiKey: "AIzaSyD5dzUNlXR1b7oFj523utB_eZymWX3X0wY",
+          authDomain: "ftms-ca85b.firebaseapp.com",
+          databaseURL: "https://ftms-ca85b.firebaseio.com",
+          projectId: "ftms-ca85b",
+          storageBucket: "ftms-ca85b.appspot.com",
+          messagingSenderId: "26422956124",
+          appId: "1:26422956124:web:5102d14c30573ff2",
         };
-        FireEnjin.init({
-          debug: true,
-          host: "https://ftms-ca85b.appspot.com",
-          functionsHost: "https://us-central1-ftms-ca85b.cloudfunctions.net",
-        });
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        db.useEmulator("localhost", 8080);
         window.addEventListener("fireenjinSubmit", async (event) => {
           document.body.dispatchEvent(
             new CustomEvent("fireenjinSuccess", {
@@ -75,30 +80,32 @@
           );
         });
         window.addEventListener("fireenjinFetch", async (event) => {
+          const data = {
+            users: {
+              results: [
+                {
+                  id: "bob",
+                  firstName: "Bob",
+                  lastName: "The Builder",
+                  email: "bobby@madnesslabs.net",
+                },
+              ],
+            },
+          };
+          console.log(event, data);
           document.body.dispatchEvent(
             new CustomEvent("fireenjinSuccess", {
               detail: {
                 event: event.detail.event,
-                target: event.target,
+                target: event?.target,
                 cached: true,
-                data: {},
-                name: event.detail.name,
-                endpoint: event.detail.endpoint,
+                data,
+                name: event?.detail?.name,
+                endpoint: event?.detail?.endpoint,
               },
             })
           );
         });
-        var firebaseConfig = {
-          apiKey: "AIzaSyD5dzUNlXR1b7oFj523utB_eZymWX3X0wY",
-          authDomain: "ftms-ca85b.firebaseapp.com",
-          databaseURL: "https://ftms-ca85b.firebaseio.com",
-          projectId: "ftms-ca85b",
-          storageBucket: "ftms-ca85b.appspot.com",
-          messagingSenderId: "26422956124",
-          appId: "1:26422956124:web:5102d14c30573ff2",
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
       });
     </script>
     <script src="/presets.js"></script>

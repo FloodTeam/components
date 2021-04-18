@@ -63,14 +63,12 @@ export class InputSearchUser implements ComponentInterface {
         label={this.label}
         ref={(el) => (this.inputSearchEl = el)}
         endpoint="listUsers"
-        dataPropsMap={{
-          users: "results",
-        }}
+        resultsKey="users"
         name={this.name}
         searchParams={{
           limit: this.limit ? this.limit : null,
         }}
-        results={this.results}
+        results={this.results as any}
         placeholder={this.placeholder}
         value={this.value}
         template={(result) => (

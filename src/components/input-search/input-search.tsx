@@ -31,13 +31,14 @@ export class InputSearch implements ComponentInterface {
   @Prop() endpoint: string;
   @Prop() dataPropsMap: any;
   @Prop() template: (result) => any;
-  @Prop() type: TextFieldTypes = "email";
+  @Prop() type: TextFieldTypes = "text";
   @Prop() searchParams: any = {};
   @Prop() disableSearch = false;
   @Prop() mode: "popover" | "inline" = "popover";
   @Prop() iconEnd: string;
   @Prop() iconStart: string;
   @Prop({ mutable: true }) results: any[] = [];
+  @Prop() resultsKey: string;
 
   @Event() ionInput: EventEmitter;
   @Event() fireenjinFetch: EventEmitter;
@@ -83,6 +84,14 @@ export class InputSearch implements ComponentInterface {
   @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
     if (event?.detail?.endpoint !== this.endpoint) return;
+    this.results =
+      this.resultsKey &&
+      event.detail?.data &&
+      event.detail?.data[this.resultsKey]?.results
+        ? event.detail?.data[this.resultsKey].results
+        : event.detail?.data?.results
+        ? event.detail.data.results
+        : [];
     if (this.mode === "popover") {
       this.resultsPopover = await popoverController.create({
         translucent: true,
@@ -90,13 +99,12 @@ export class InputSearch implements ComponentInterface {
         event: event.detail.event,
         component: "floodteam-input-search-popover",
         componentProps: {
-          results: event.detail.data.results ? event.detail.data.results : [],
+          results: this.results,
           template: this.template,
         },
       });
       this.resultsPopover.present();
     }
-    this.results = event.detail?.data?.results ? event.detail.data.results : [];
   }
 
   @Debounce(1000)
