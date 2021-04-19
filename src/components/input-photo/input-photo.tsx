@@ -71,7 +71,7 @@ export class InputPhoto implements ComponentInterface {
   @Prop({ mutable: true }) loading: boolean;
   @State() photoUrl: string;
 
-  @Event() floodteamUpload: EventEmitter;
+  @Event() fireenjinUpload: EventEmitter;
   @Event() ionInput: EventEmitter;
 
   @Listen("fireenjinSuccess", { target: "body" })
@@ -131,7 +131,7 @@ export class InputPhoto implements ComponentInterface {
         return;
       }
 
-      this.floodteamUpload.emit({
+      this.fireenjinUpload.emit({
         event,
         endpoint: this.endpoint,
         name: this.name,
