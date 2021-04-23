@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-19T08:52:40",
+  "timestamp": "2021-04-23T22:09:45",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -760,6 +760,7 @@
         "ion-button",
         "ion-icon",
         "floodteam-progress-bar",
+        "floodteam-toggle",
         "ion-slides",
         "ion-slide",
         "ion-grid",
@@ -782,6 +783,7 @@
           "ion-button",
           "ion-icon",
           "floodteam-progress-bar",
+          "floodteam-toggle",
           "ion-slides",
           "ion-slide",
           "ion-grid",
@@ -803,6 +805,11 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "floodteam-toggle": [
+          "ion-item",
+          "ion-label",
+          "ion-toggle"
         ],
         "ion-item": [
           "ion-icon",
@@ -1003,7 +1010,8 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "floodteam-epay"
+        "floodteam-epay",
+        "floodteam-photo-carousel"
       ],
       "dependencies": [
         "ion-icon"
@@ -1013,6 +1021,9 @@
           "ion-icon"
         ],
         "floodteam-epay": [
+          "floodteam-fallback"
+        ],
+        "floodteam-photo-carousel": [
           "floodteam-fallback"
         ]
       }
@@ -1401,6 +1412,236 @@
         ],
         "floodteam-pay-check": [
           "floodteam-flip-card"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/floating-button/floating-button.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-floating-button",
+      "readme": "# floodteam-floating-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "badge",
+          "type": "string",
+          "mutable": false,
+          "attr": "badge",
+          "reflectToAttr": false,
+          "docs": "The content of the badge",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "badgeColor",
+          "type": "string",
+          "mutable": false,
+          "attr": "badge-color",
+          "reflectToAttr": false,
+          "docs": "The color of the badge to display",
+          "docsTags": [],
+          "default": "\"success\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "buttonList",
+          "type": "{ label: string; icon: string; color?: string; href?: string; onClick?: (event: any) => any; }[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "The list of buttons to show when the material button is clicked",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "{ label: string; icon: string; color?: string; href?: string; onClick?: (event: any) => any; }[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "The color of the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "horizontal",
+          "type": "\"center\" | \"end\" | \"start\"",
+          "mutable": false,
+          "attr": "horizontal",
+          "reflectToAttr": false,
+          "docs": "The horizontal position of the button",
+          "docsTags": [],
+          "default": "\"end\"",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "listSide",
+          "type": "\"bottom\" | \"end\" | \"start\" | \"top\"",
+          "mutable": false,
+          "attr": "list-side",
+          "reflectToAttr": false,
+          "docs": "The side the list should display",
+          "docsTags": [],
+          "default": "\"bottom\"",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "openIcon",
+          "type": "string",
+          "mutable": false,
+          "attr": "open-icon",
+          "reflectToAttr": false,
+          "docs": "The icon to use on the material button when it's closed",
+          "docsTags": [],
+          "default": "\"ellipsis-vertical\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "mutable": false,
+          "attr": "url",
+          "reflectToAttr": false,
+          "docs": "The url to link the material button to",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "vertical",
+          "type": "\"bottom\" | \"center\" | \"top\"",
+          "mutable": false,
+          "attr": "vertical",
+          "reflectToAttr": false,
+          "docs": "The vertical position of the button",
+          "docsTags": [],
+          "default": "\"center\"",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-fab",
+        "ion-fab-button",
+        "ion-icon",
+        "ion-fab-list",
+        "ion-button",
+        "ion-badge"
+      ],
+      "dependencyGraph": {
+        "floodteam-floating-button": [
+          "ion-fab",
+          "ion-fab-button",
+          "ion-icon",
+          "ion-fab-list",
+          "ion-button",
+          "ion-badge"
+        ],
+        "ion-fab-button": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ]
       }
     },
@@ -2790,6 +3031,57 @@
       }
     },
     {
+      "filePath": "./src/components/input-json/input-json.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-json",
+      "readme": "# floodteam-input-json\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-item",
+        "ion-label",
+        "fireenjin-json-editor"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-json": [
+          "ion-item",
+          "ion-label",
+          "fireenjin-json-editor"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/input-photo/input-photo.tsx",
       "encapsulation": "none",
       "tag": "floodteam-input-photo",
@@ -3056,7 +3348,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "floodteam-photo-carousel"
+      ],
       "dependencies": [
         "ion-button",
         "ion-icon"
@@ -3068,6 +3362,9 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "floodteam-photo-carousel": [
+          "floodteam-input-photo"
         ]
       }
     },
@@ -4015,6 +4312,123 @@
       }
     },
     {
+      "filePath": "./src/components/job-progress/job-progress.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-job-progress",
+      "readme": "# floodteam-job-progress\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"success\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"status\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "scrollable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "scrollable",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "statuses",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\"respond\", \"evaluate\", \"map\", \"dry\", \"review\"]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"respond\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-segment",
+        "ion-segment-button",
+        "ion-label"
+      ],
+      "dependencyGraph": {
+        "floodteam-job-progress": [
+          "ion-segment",
+          "ion-segment-button",
+          "ion-label"
+        ],
+        "ion-segment-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/json-viewer/json-viewer.tsx",
       "encapsulation": "none",
       "tag": "floodteam-json-viewer",
@@ -4886,6 +5300,252 @@
           "ion-select-option"
         ],
         "floodteam-checkmark": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/photo-carousel/photo-carousel.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-photo-carousel",
+      "readme": "# floodteam-photo-carousel\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "addButtonColor",
+          "type": "string",
+          "mutable": false,
+          "attr": "add-button-color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"primary\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "badgeColor",
+          "type": "string",
+          "mutable": false,
+          "attr": "badge-color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"medium\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "currentSlide",
+          "type": "number",
+          "mutable": true,
+          "attr": "current-slide",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hideAddButton",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "hide-add-button",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "jobId",
+          "type": "string",
+          "mutable": false,
+          "attr": "job-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "any",
+          "mutable": false,
+          "attr": "options",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "photos",
+          "type": "any[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "getCurrentSlide",
+          "returns": {
+            "type": "Promise<number>",
+            "docs": ""
+          },
+          "signature": "getCurrentSlide() => Promise<number>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "selectFiles",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "selectFiles(event: any) => Promise<any>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "slideNext",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "slideNext() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "slidePrev",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "slidePrev() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "slideTo",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "slideTo(slideNumber: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "update",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "update() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [
+        {
+          "event": "ionSlideDidChange",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "floodteam-input-photo",
+        "ion-badge",
+        "ion-fab",
+        "ion-fab-button",
+        "ion-icon",
+        "ion-slides",
+        "ion-slide",
+        "ion-img",
+        "floodteam-fallback"
+      ],
+      "dependencyGraph": {
+        "floodteam-photo-carousel": [
+          "floodteam-input-photo",
+          "ion-badge",
+          "ion-fab",
+          "ion-fab-button",
+          "ion-icon",
+          "ion-slides",
+          "ion-slide",
+          "ion-img",
+          "floodteam-fallback"
+        ],
+        "floodteam-input-photo": [
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "ion-fab-button": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-fallback": [
           "ion-icon"
         ]
       }
@@ -6190,6 +6850,92 @@
           "ion-grid",
           "ion-row",
           "ion-col"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/toggle/toggle.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-toggle",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "floodteam-epay"
+      ],
+      "dependencies": [
+        "ion-item",
+        "ion-label",
+        "ion-toggle"
+      ],
+      "dependencyGraph": {
+        "floodteam-toggle": [
+          "ion-item",
+          "ion-label",
+          "ion-toggle"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
+        ],
+        "floodteam-epay": [
+          "floodteam-toggle"
         ]
       }
     },
