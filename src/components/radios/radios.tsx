@@ -22,7 +22,7 @@ export class Radios implements ComponentInterface {
   @Prop() required: any;
   @Prop() options: any;
   @Prop() name: string;
-  @Prop() lines: "full" | "inset" | "none" = "none";
+  @Prop() lines: "full" | "inset" | "none" = "full";
   @Prop({ mutable: true }) selected = 0;
 
   @State() selectedIndex: number;
