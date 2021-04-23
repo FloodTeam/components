@@ -1,0 +1,82 @@
+floodteam-photo-carousel {
+  border: 1px solid var(--ion-color-base-dark);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px auto auto;
+  min-width: 250px;
+  min-height: 200px;
+  margin: 0 auto;
+  background: 1px solid var(--ion-color-base-dark-tint);
+}
+
+floodteam-photo-carousel ion-slides::after {
+  content: "";
+  display: block;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: transparent;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.3) 80%
+  );
+  border-radius: 8px 8px 0 0;
+}
+
+floodteam-photo-carousel ion-slide {
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
+  position: relative;
+  min-width: 250px;
+  min-height: 200px;
+}
+
+floodteam-photo-carousel ion-slide ion-img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+floodteam-photo-carousel floodteam-input-photo {
+  height: 0px;
+  width: 0px;
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+}
+
+floodteam-photo-carousel floodteam-fallback {
+  --floodteam-fallback-icon-size: 10vw;
+}
+
+floodteam-photo-carousel floodteam-fallback ion-icon {
+  max-width: 120px;
+  max-height: 120px;
+  color: var(--ion-color-base-dark);
+}
+
+floodteam-photo-carousel .photo-pagination {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  color: #666;
+  display: block;
+  z-index: 2;
+  padding-right: 10px;
+}
+
+floodteam-photo-carousel ion-fab.select-photo {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 2;
+}

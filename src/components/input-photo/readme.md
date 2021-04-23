@@ -28,7 +28,7 @@
 
 | Event             | Description | Type               |
 | ----------------- | ----------- | ------------------ |
-| `floodteamUpload` |             | `CustomEvent<any>` |
+| `fireenjinUpload` |             | `CustomEvent<any>` |
 | `ionInput`        |             | `CustomEvent<any>` |
 
 
@@ -47,6 +47,10 @@ Type: `Promise<boolean>`
 
 ## Dependencies
 
+### Used by
+
+ - [floodteam-photo-carousel](../photo-carousel)
+
 ### Depends on
 
 - ion-button
@@ -58,6 +62,7 @@ graph TD;
   floodteam-input-photo --> ion-button
   floodteam-input-photo --> ion-icon
   ion-button --> ion-ripple-effect
+  floodteam-photo-carousel --> floodteam-input-photo
   style floodteam-input-photo fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

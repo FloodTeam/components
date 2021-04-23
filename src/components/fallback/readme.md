@@ -18,6 +18,7 @@
 ### Used by
 
  - [floodteam-epay](../epay)
+ - [floodteam-photo-carousel](../photo-carousel)
 
 ### Depends on
 
@@ -28,6 +29,7 @@
 graph TD;
   floodteam-fallback --> ion-icon
   floodteam-epay --> floodteam-fallback
+  floodteam-photo-carousel --> floodteam-fallback
   style floodteam-fallback fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -5,12 +5,12 @@ import {
   Method,
   Prop,
   Watch,
-  h
+  h,
 } from "@stencil/core";
 
 @Component({
   tag: "floodteam-progress-bar",
-  styleUrl: "progress-bar.css"
+  styleUrl: "progress-bar.css",
 })
 export class ProgressBar implements ComponentInterface {
   @Element() progressBarEl: any;
