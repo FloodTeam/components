@@ -1,25 +1,25 @@
-floodteam-input-json {
+floodteam-toggle {
   display: block;
   width: 100%;
 }
 
-floodteam-input-json .invalid {
+floodteam-toggle .invalid {
   --border-color: var(--ion-color-danger) !important;
 }
 
-floodteam-input-json .invalid ion-label {
+floodteam-toggle .invalid ion-label {
   color: var(--ion-color-danger) !important;
 }
 
-floodteam-input-json .valid {
+floodteam-toggle .valid {
   --border-color: var(--ion-color-success) !important;
 }
 
-floodteam-input-json .valid ion-label {
+floodteam-toggle .valid ion-label {
   color: var(--ion-color-success) !important;
 }
 
-floodteam-input-json ion-label {
+floodteam-toggle ion-label {
   font-size: 16px !important;
   font-weight: bold !important;
   display: block;
@@ -29,7 +29,7 @@ floodteam-input-json ion-label {
   font-family: var(--theme-font-primary);
 }
 
-floodteam-input-json ion-item {
+floodteam-toggle ion-item {
   position: relative;
   box-shadow: none !important;
   --background: var(--background);
@@ -38,21 +38,21 @@ floodteam-input-json ion-item {
   --min-height: var(--item-min-height, 48px) !important;
 }
 
-floodteam-input-json ion-item ion-icon[slot="start"] {
+floodteam-toggle ion-item ion-icon[slot="start"] {
   margin: auto 10px 10px auto;
   fill: var(--ion-text-color);
 }
 
-floodteam-input-json ion-item.item-has-focus {
+floodteam-toggle ion-item.item-has-focus {
   --border-width: 0;
   border-color: var(--ion-color-primary);
 }
 
-floodteam-input-json ion-item.item-has-focus ion-label {
+floodteam-toggle ion-item.item-has-focus ion-label {
   color: var(--ion-color-primary) !important;
 }
 
-floodteam-input-json .input-icon ion-icon {
+floodteam-toggle .input-icon ion-icon {
   display: block;
   position: absolute;
   right: 0px;
@@ -62,7 +62,7 @@ floodteam-input-json .input-icon ion-icon {
   color: var(--ion-color-dark);
 }
 
-floodteam-input-json .input-icon ion-icon:hover {
+floodteam-toggle .input-icon ion-icon:hover {
   cursor: pointer;
   color: var(--ion-color-primary);
 }
