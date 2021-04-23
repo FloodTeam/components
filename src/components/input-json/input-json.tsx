@@ -6,6 +6,8 @@ import { Build, Component, h, Prop } from "@stencil/core";
 })
 export class InputJson {
   @Prop() value: any = {};
+  @Prop() label: string;
+  @Prop() name = "json";
 
   componentDidLoad() {
     if (Build.isBrowser) {
@@ -16,10 +18,10 @@ export class InputJson {
   render() {
     return (
       <ion-item>
-        <ion-label position="stacked">Sample Data</ion-label>
+        {this.label && <ion-label position="stacked">{this.label}</ion-label>}
         <fireenjin-json-editor
           style={{ width: "100%", marginTop: "15px" }}
-          name="sampleData"
+          name={this.name}
           value={this.value ? this.value : {}}
         />
       </ion-item>
