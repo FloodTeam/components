@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-23T22:11:52",
+  "timestamp": "2021-04-24T00:31:53",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -5826,7 +5826,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "\"none\"",
+          "default": "\"full\"",
           "values": [
             {
               "value": "full",
@@ -6890,6 +6890,7 @@
       "filePath": "./src/components/toggle/toggle.tsx",
       "encapsulation": "none",
       "tag": "floodteam-toggle",
+      "readme": "# floodteam-toggle\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
