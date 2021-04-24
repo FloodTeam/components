@@ -86,6 +86,7 @@ Type: `Promise<void>`
 - ion-button
 - ion-icon
 - [floodteam-progress-bar](../progress-bar)
+- [floodteam-toggle](../toggle)
 - ion-slides
 - ion-slide
 - ion-grid
@@ -109,6 +110,7 @@ graph TD;
   floodteam-epay --> ion-button
   floodteam-epay --> ion-icon
   floodteam-epay --> floodteam-progress-bar
+  floodteam-epay --> floodteam-toggle
   floodteam-epay --> ion-slides
   floodteam-epay --> ion-slide
   floodteam-epay --> ion-grid
@@ -126,6 +128,9 @@ graph TD;
   floodteam-epay --> floodteam-checkmark
   ion-card --> ion-ripple-effect
   ion-button --> ion-ripple-effect
+  floodteam-toggle --> ion-item
+  floodteam-toggle --> ion-label
+  floodteam-toggle --> ion-toggle
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
   floodteam-fallback --> ion-icon

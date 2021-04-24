@@ -600,7 +600,7 @@ export class Epay implements ComponentInterface {
             <floodteam-toggle
               name="tracking"
               label="Tracking"
-              checked={this.tracking}
+              value={!!this.tracking}
             />
           ) : null}
         </div>

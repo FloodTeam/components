@@ -10,7 +10,7 @@
 | Property   | Attribute  | Description | Type                          | Default     |
 | ---------- | ---------- | ----------- | ----------------------------- | ----------- |
 | `label`    | `label`    |             | `string`                      | `undefined` |
-| `lines`    | `lines`    |             | `"full" \| "inset" \| "none"` | `"none"`    |
+| `lines`    | `lines`    |             | `"full" \| "inset" \| "none"` | `"full"`    |
 | `name`     | `name`     |             | `string`                      | `undefined` |
 | `options`  | `options`  |             | `any`                         | `undefined` |
 | `required` | `required` |             | `any`                         | `undefined` |

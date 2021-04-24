@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type  | Default |
-| -------- | --------- | ----------- | ----- | ------- |
-| `value`  | `value`   |             | `any` | `{}`    |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `label`  | `label`   |             | `string` | `undefined` |
+| `name`   | `name`    |             | `string` | `"json"`    |
+| `value`  | `value`   |             | `any`    | `{}`        |
 
 
 ## Dependencies
