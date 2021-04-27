@@ -93,7 +93,7 @@ export class PhotoCarousel implements ComponentInterface {
             class="select-photo"
             onClick={(event) => this.selectFiles(event)}
           >
-            <ion-fab-button color={this.addButtonColor} size="small">
+            <ion-fab-button color={this.addButtonColor}>
               <ion-icon name="add"></ion-icon>
             </ion-fab-button>
           </ion-fab>
