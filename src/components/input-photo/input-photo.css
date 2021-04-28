@@ -1,7 +1,7 @@
 floodteam-input-photo .upload-wrapper {
   display: block;
   margin: 0 auto;
-  height: 180px;
+  height: 150px;
   width: 150px;
   position: relative;
 }
@@ -44,4 +44,5 @@ floodteam-input-photo input[type="file"] {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  float: left;
 }
