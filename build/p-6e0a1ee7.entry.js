@@ -1,0 +1,1 @@
+import{r as o,h as r}from"./p-a7779090.js";const t=class{constructor(r){o(this,r)}componentDidLoad(){}render(){return r("div",null)}};t.style="floodteam-photo-gallery{display:block}";export{t as floodteam_photo_gallery}
