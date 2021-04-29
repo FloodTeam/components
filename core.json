@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-29T02:51:10",
+  "timestamp": "2021-04-29T03:35:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -5735,16 +5735,55 @@
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "photos",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "ftOpenPhotoCarousel",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-grid",
+        "ion-row",
+        "ion-col",
+        "ion-img"
+      ],
+      "dependencyGraph": {
+        "floodteam-photo-gallery": [
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-img"
+        ]
+      }
     },
     {
       "filePath": "./src/components/progress-bar/progress-bar.tsx",
