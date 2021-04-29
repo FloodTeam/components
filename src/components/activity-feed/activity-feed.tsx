@@ -1,4 +1,3 @@
-import { Feed, FeedListQueryInput } from "@floodteam/backend";
 import {
   Component,
   ComponentInterface,
@@ -26,7 +25,7 @@ export class ActivityFeed implements ComponentInterface {
   @Prop() userId: string;
 
   @State() paginationEl: HTMLElement;
-  @State() fetchData: FeedListQueryInput = {
+  @State() fetchData: any = {
     orderBy: "createdAt",
     orderDirection: "desc",
   };
@@ -120,7 +119,7 @@ export class ActivityFeed implements ComponentInterface {
           ref={(el) => (this.paginationEl = el)}
           disableVirtualScroll
           display="grid"
-          gridEl={({ result: card }: { result: Partial<Feed> }) => (
+          gridEl={({ result: card }: { result: Partial<any> }) => (
             <ion-card innerHTML={card.html} />
           )}
           fetchData={{
