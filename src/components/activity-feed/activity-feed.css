@@ -1,0 +1,36 @@
+floodteam-activity-feed
+  fireenjin-pagination
+  .pagination
+  > div
+  > ion-grid
+  > ion-row
+  > ion-col {
+  min-width: 100%;
+}
+
+floodteam-activity-feed .feed-header {
+  padding-left: 30px;
+}
+
+floodteam-activity-feed .feed-header h1,
+floodteam-activity-feed .feed-header h2,
+floodteam-activity-feed .feed-header h3,
+floodteam-activity-feed .feed-header h4,
+floodteam-activity-feed .feed-header h5,
+floodteam-activity-feed .feed-header p {
+  margin: 0;
+  padding: 0;
+}
+
+floodteam-activity-feed .embed {
+  background: black;
+  position: relative;
+}
+
+floodteam-activity-feed .embed iframe {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  height: 45%;
+}
