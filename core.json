@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-04-29T03:35:19",
+  "timestamp": "2021-05-10T19:15:31",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -2916,6 +2916,258 @@
         ],
         "floodteam-payment-methods": [
           "floodteam-input-address"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input-amount/input-amount.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-input-amount",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "decimal",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "decimal",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "presets",
+          "type": "Preset[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "Preset[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "string",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"0.01\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ionChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "ionInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "ionBlur",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-item",
+        "ion-icon",
+        "ion-label",
+        "ion-input"
+      ],
+      "dependencyGraph": {
+        "floodteam-input-amount": [
+          "ion-item",
+          "ion-icon",
+          "ion-label",
+          "ion-input"
+        ],
+        "ion-item": [
+          "ion-icon",
+          "ion-ripple-effect"
         ]
       }
     },
