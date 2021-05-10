@@ -10,8 +10,6 @@ import {
   h,
 } from "@stencil/core";
 
-declare type Preset = { label?: string; value: any } | string;
-
 @Component({
   tag: "floodteam-input-amount",
   styleUrl: "input-amount.css",
@@ -24,7 +22,7 @@ export class InputAmount implements ComponentInterface {
   @Prop() placeholder: string;
   @Prop({ mutable: true }) value: any;
   @Prop() required: boolean;
-  @Prop() presets: Preset[];
+  @Prop() presets: ({ label?: string; value: any } | string)[];
   @Prop() decimal: boolean;
   @Prop() autofocus: boolean;
   @Prop() disabled: boolean;
@@ -99,7 +97,7 @@ export class InputAmount implements ComponentInterface {
     this.formattedValue = this.formatCurrency(this.value);
   }
 
-  selectPreset(preset: Preset) {
+  selectPreset(preset: { label?: string; value: any } | string) {
     this.formattedValue = this.formatCurrency(
       typeof preset === "string" ? preset : preset?.value ? preset.value : 0
     );
