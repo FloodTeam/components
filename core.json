@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-05-10T19:15:31",
+  "timestamp": "2021-05-10T19:52:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -3057,14 +3057,17 @@
         },
         {
           "name": "presets",
-          "type": "Preset[]",
+          "type": "(string | { label?: string; value: any; })[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
           "values": [
             {
-              "type": "Preset[]"
+              "type": "(string"
+            },
+            {
+              "type": "{ label?: string; value: any; })[]"
             }
           ],
           "optional": false,
