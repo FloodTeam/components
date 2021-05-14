@@ -19,7 +19,7 @@ export class Toggle {
     return (
       <ion-item>
         {this.label && <ion-label>{this.label}</ion-label>}
-        <ion-toggle color="success" name="partial" checked={!!this.value} />
+        <ion-toggle color="success" name={this.name} checked={!!this.value} />
       </ion-item>
     );
   }
