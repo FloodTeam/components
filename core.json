@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-05-14T01:12:42",
+  "timestamp": "2021-05-15T08:33:36",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -1800,7 +1800,7 @@
       "props": [
         {
           "name": "datasets",
-          "type": "ChartDataSets[]",
+          "type": "ChartDataset<keyof ChartTypeRegistry, (number | ScatterDataPoint | BubbleDataPoint)[]>[]",
           "mutable": true,
           "reflectToAttr": false,
           "docs": "The dataset to render graph with",
@@ -1808,7 +1808,13 @@
           "default": "[]",
           "values": [
             {
-              "type": "ChartDataSets[]"
+              "type": "ChartDataset<keyof ChartTypeRegistry, (number"
+            },
+            {
+              "type": "ScatterDataPoint"
+            },
+            {
+              "type": "BubbleDataPoint)[]>[]"
             }
           ],
           "optional": false,
@@ -1848,7 +1854,7 @@
         },
         {
           "name": "type",
-          "type": "\"area\" | \"bar\" | \"bubble\" | \"doughnut\" | \"line\" | \"pie\" | \"polarArea\" | \"radar\" | \"scatter\"",
+          "type": "\"bar\" | \"bubble\" | \"doughnut\" | \"line\" | \"pie\" | \"polarArea\" | \"radar\" | \"scatter\"",
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
@@ -1856,10 +1862,6 @@
           "docsTags": [],
           "default": "\"bar\"",
           "values": [
-            {
-              "value": "area",
-              "type": "string"
-            },
             {
               "value": "bar",
               "type": "string"
@@ -1926,7 +1928,7 @@
             "type": "Promise<any>",
             "docs": ""
           },
-          "signature": "setDatasets(datasets: Chart.ChartDataSets[]) => Promise<any>",
+          "signature": "setDatasets(datasets: ChartDataset[]) => Promise<any>",
           "parameters": [],
           "docs": "Set the list datasets for the graph",
           "docsTags": [
@@ -1965,7 +1967,7 @@
         },
         {
           "event": "floodteamGraphTooltip",
-          "detail": "{ event: { afterBody: any[]; backgroundColor: string; beforeBody: any[]; body: any[]; bodyFontColor: string; bodyFontSize: number; bodySpacing: number; borderColor: string; borderWidth: number; caretPadding: number; caretSize: number; caretX: number; caretY: number; cornerRadius: number; dataPoints: ChartTooltipItem[]; displayColors: boolean; footer: any[]; footerFontColor: string; footerFontSize: number; footerMarginTop: number; footerSpacing: number; height: number; labelColors: ChartTooltipLabelColor[]; labelTextColors: string[]; legendBackgroundColor: string; opacity: number; title: string[]; titleFontColor: string; titleFontSize: number; titleMarinBottom: number; titleSpacing: number; width: number; x: number; xAlign: number; xPadding: number; y: number; yAlign: number; yPadding: number; }; }",
+          "detail": "{ event: { afterBody: any[]; backgroundColor: string; beforeBody: any[]; body: any[]; bodyFontColor: string; bodyFontSize: number; bodySpacing: number; borderColor: string; borderWidth: number; caretPadding: number; caretSize: number; caretX: number; caretY: number; cornerRadius: number; dataPoints: any[]; displayColors: boolean; footer: any[]; footerFontColor: string; footerFontSize: number; footerMarginTop: number; footerSpacing: number; height: number; labelStyle: TooltipLabelStyle; labelTextColors: string[]; legendBackgroundColor: string; opacity: number; title: string[]; titleFontColor: string; titleFontSize: number; titleMarinBottom: number; titleSpacing: number; width: number; x: number; xAlign: number; xPadding: number; y: number; yAlign: number; yPadding: number; }; }",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -2689,8 +2691,7 @@
         "floodteam-book-now",
         "floodteam-epay",
         "floodteam-location-bar",
-        "floodteam-payment-methods",
-        "floodteam-user-select"
+        "floodteam-payment-methods"
       ],
       "dependencies": [
         "ion-input",
@@ -2719,9 +2720,6 @@
           "floodteam-input"
         ],
         "floodteam-payment-methods": [
-          "floodteam-input"
-        ],
-        "floodteam-user-select": [
           "floodteam-input"
         ]
       }
@@ -2923,6 +2921,7 @@
       "filePath": "./src/components/input-amount/input-amount.tsx",
       "encapsulation": "none",
       "tag": "floodteam-input-amount",
+      "readme": "# floodteam-input-amount\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -7427,234 +7426,6 @@
         ],
         "floodteam-epay": [
           "floodteam-toggle"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/user-select/user-select.tsx",
-      "encapsulation": "none",
-      "tag": "floodteam-user-select",
-      "readme": "# floodteam-user-select\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "delay",
-          "type": "number",
-          "mutable": false,
-          "attr": "delay",
-          "reflectToAttr": false,
-          "docs": "How long to delay after input before searching",
-          "docsTags": [],
-          "default": "1000",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "Whether or not the search input is disabled",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "emailRequired",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "email-required",
-          "reflectToAttr": false,
-          "docs": "Is the email required in order to select result",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "loading",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "loading",
-          "reflectToAttr": false,
-          "docs": "Whether or not the loader is showing",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "query",
-          "type": "string",
-          "mutable": true,
-          "attr": "query",
-          "reflectToAttr": false,
-          "docs": "The search query to fill into the input",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "records",
-          "type": "any[]",
-          "mutable": true,
-          "reflectToAttr": false,
-          "docs": "A list of user records that match the search query",
-          "docsTags": [],
-          "default": "[]",
-          "values": [
-            {
-              "type": "any[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "user",
-          "type": "any",
-          "mutable": true,
-          "attr": "user",
-          "reflectToAttr": false,
-          "docs": "The user currently selected",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "reset",
-          "returns": {
-            "type": "Promise<boolean>",
-            "docs": ""
-          },
-          "signature": "reset() => Promise<boolean>",
-          "parameters": [],
-          "docs": "Reset the field",
-          "docsTags": []
-        },
-        {
-          "name": "setResults",
-          "returns": {
-            "type": "Promise<any[]>",
-            "docs": ""
-          },
-          "signature": "setResults(records: any[]) => Promise<any[]>",
-          "parameters": [],
-          "docs": "Set search results with list of users",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "records An array of user records"
-            }
-          ]
-        },
-        {
-          "name": "setUser",
-          "returns": {
-            "type": "Promise<any>",
-            "docs": ""
-          },
-          "signature": "setUser(user: any, event?: UIEvent) => Promise<any>",
-          "parameters": [],
-          "docs": "Set selected user",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "user The selected user object"
-            }
-          ]
-        }
-      ],
-      "events": [
-        {
-          "event": "ftLoad",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emitted when the component loads",
-          "docsTags": []
-        },
-        {
-          "event": "ftSearch",
-          "detail": "{ event: any; query: string; }",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emitted when the user submits the search form or after typing",
-          "docsTags": []
-        },
-        {
-          "event": "ftSelect",
-          "detail": "{ event: UIEvent; user: any; }",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emitted when the user submits the search form or after typing",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-content",
-        "floodteam-input",
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "floodteam-user-select": [
-          "ion-content",
-          "floodteam-input",
-          "ion-icon"
-        ],
-        "floodteam-input": [
-          "ion-input",
-          "ion-item",
-          "ion-icon",
-          "ion-label"
-        ],
-        "ion-item": [
-          "ion-icon",
-          "ion-ripple-effect"
         ]
       }
     }
