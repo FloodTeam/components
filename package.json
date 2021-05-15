@@ -51,8 +51,8 @@
     "signature_pad": "^3.0.0-beta.4"
   },
   "devDependencies": {
-    "@madnesslabs/fireenjin": "^1.4.15",
-    "@madnesslabs/fireenjin-designer": "^1.1.32",
+    "@madnesslabs/fireenjin": "^1.4.17",
+    "@madnesslabs/fireenjin-designer": "^1.1.33",
     "@stencil/eslint-plugin": "^0.3.1",
     "@types/chart.js": "^2.9.32",
     "@types/cleave.js": "^1.4.4",
