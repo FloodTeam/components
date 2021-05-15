@@ -31,9 +31,7 @@
     "test:watch": "stencil test --spec --watch"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": ""
-    }
+    "hooks": {}
   },
   "dependencies": {
     "@dadesystems/dademobile": "^1.2.1",
