@@ -6,17 +6,23 @@ import {
   EventEmitter,
   Method,
   Prop,
-  h
+  h,
 } from "@stencil/core";
-import Chart from "chart.js";
+import {
+  Chart,
+  ChartConfiguration,
+  ChartDataset,
+  TooltipLabelStyle,
+  ChartTypeRegistry,
+} from "chart.js";
 
 @Component({
   tag: "floodteam-graph",
-  styleUrl: "graph.css"
+  styleUrl: "graph.css",
 })
 export class Graph implements ComponentInterface {
   chart: Chart;
-  config: Chart.ChartConfiguration;
+  config: ChartConfiguration;
 
   @Element() graphEl: HTMLElement;
 
@@ -39,7 +45,7 @@ export class Graph implements ComponentInterface {
       caretX: number;
       caretY: number;
       cornerRadius: number;
-      dataPoints: Chart.ChartTooltipItem[];
+      dataPoints: any[];
       displayColors: boolean;
       footer: any[];
       footerFontColor: string;
@@ -47,7 +53,7 @@ export class Graph implements ComponentInterface {
       footerMarginTop: number;
       footerSpacing: number;
       height: number;
-      labelColors: Chart.ChartTooltipLabelColor[];
+      labelStyle: TooltipLabelStyle;
       labelTextColors: string[];
       legendBackgroundColor: string;
       opacity: number;
@@ -74,14 +80,14 @@ export class Graph implements ComponentInterface {
    * The dataset to render graph with
    */
   @Prop({
-    mutable: true
+    mutable: true,
   })
-  datasets: Chart.ChartDataSets[] = [];
+  datasets: ChartDataset[] = [];
   /**
    * The labels for the graph
    */
   @Prop({
-    mutable: true
+    mutable: true,
   })
   labels: string[] = [];
   /**
@@ -91,23 +97,14 @@ export class Graph implements ComponentInterface {
   /**
    * The type of graph to generate
    */
-  @Prop() type:
-    | "bar"
-    | "line"
-    | "radar"
-    | "doughnut"
-    | "pie"
-    | "polarArea"
-    | "bubble"
-    | "scatter"
-    | "area" = "bar";
+  @Prop() type: keyof ChartTypeRegistry = "bar";
 
   /**
    * Set the list datasets for the graph
    * @param datasets The datasets to render
    */
   @Method()
-  async setDatasets(datasets: Chart.ChartDataSets[]) {
+  async setDatasets(datasets: ChartDataset[]) {
     return (this.datasets =
       typeof datasets === "string"
         ? JSON.parse(datasets)
@@ -176,29 +173,21 @@ export class Graph implements ComponentInterface {
       type: this.type,
       data: {
         labels: this.labels,
-        datasets: this.datasets
+        datasets: this.datasets,
       },
-      options: {
-        legend: { display: false },
-        title: this.name
-          ? {
-              display: true,
-              text: this.name
-            }
-          : null
-      }
+      options: {},
     };
     if (!this.config.options) {
       this.config.options = {};
     }
-    if (!this.config.options.tooltips) {
-      this.config.options.tooltips = {
-        enabled: false,
-        custom: event => {
-          this.floodteamGraphTooltip.emit({ event: event as any });
-        }
-      };
-    }
+    // if (!this.config.options.tooltips) {
+    //   this.config.options.tooltips = {
+    //     enabled: false,
+    //     custom: (event) => {
+    //       this.floodteamGraphTooltip.emit({ event: event as any });
+    //     },
+    //   };
+    // }
 
     if (!this.config.options.onClick) {
       this.config.options.onClick = this.onGraphClick.bind(this);

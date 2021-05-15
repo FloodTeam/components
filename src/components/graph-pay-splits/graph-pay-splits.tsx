@@ -6,12 +6,13 @@ import {
   Prop,
   State,
   Watch,
-  h
+  h,
 } from "@stencil/core";
+import { ChartDataset } from "chart.js";
 
 @Component({
   tag: "floodteam-graph-pay-splits",
-  styleUrl: "graph-pay-splits.css"
+  styleUrl: "graph-pay-splits.css",
 })
 export class GraphPaySplits implements ComponentInterface {
   @Element() graphPaySplitsEl: any;
@@ -19,7 +20,7 @@ export class GraphPaySplits implements ComponentInterface {
   @Prop() users = [];
   @Prop() graphTitle: string;
 
-  @State() datasets: Chart.ChartDataSets[] = [];
+  @State() datasets: ChartDataset[] = [];
   @State() labels: string[] = [];
   @State() currentUsers: any[] = [];
 
@@ -40,10 +41,10 @@ export class GraphPaySplits implements ComponentInterface {
         "#8e5ea2",
         "#3cba9f",
         "#e8c3b9",
-        "#c45850"
+        "#c45850",
       ];
       const data = [];
-      this.users.map(record => {
+      this.users.map((record) => {
         this.labels.push(record.user.user_name);
         data.push(record.amount);
       });
@@ -51,8 +52,8 @@ export class GraphPaySplits implements ComponentInterface {
       this.datasets = [
         {
           backgroundColor,
-          data
-        }
+          data,
+        },
       ];
 
       return this.currentUsers;
@@ -70,7 +71,7 @@ export class GraphPaySplits implements ComponentInterface {
   formatUSD(amount: number) {
     const formatter = new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "USD"
+      currency: "USD",
     });
 
     return formatter.format(amount);
@@ -106,7 +107,7 @@ export class GraphPaySplits implements ComponentInterface {
           datasets={this.datasets}
           labels={this.labels}
         />
-        {this.users.map(record => (
+        {this.users.map((record) => (
           <ion-item>
             <floodteam-avatar
               src={
@@ -118,7 +119,7 @@ export class GraphPaySplits implements ComponentInterface {
             />
             <h4>{record.user.user_name}</h4>
             {record.payables && record.payables.length > 0 ? (
-              record.payables.map(payable => [
+              record.payables.map((payable) => [
                 <p>
                   {payable.type === "percent"
                     ? payable.percent * 100 + "%"
@@ -127,7 +128,7 @@ export class GraphPaySplits implements ComponentInterface {
                 </p>,
                 payable.payment ? (
                   <p>{this.getPaymentText(payable.payment)}</p>
-                ) : null
+                ) : null,
               ])
             ) : (
               <floodteam-error message="No payment is tied to this payable!" />

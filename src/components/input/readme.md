@@ -112,7 +112,6 @@ Type: `Promise<void>`
  - [floodteam-epay](../epay)
  - [floodteam-location-bar](../location-bar)
  - [floodteam-payment-methods](../payment-methods)
- - [floodteam-user-select](../user-select)
 
 ### Depends on
 
@@ -134,7 +133,6 @@ graph TD;
   floodteam-epay --> floodteam-input
   floodteam-location-bar --> floodteam-input
   floodteam-payment-methods --> floodteam-input
-  floodteam-user-select --> floodteam-input
   style floodteam-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
