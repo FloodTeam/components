@@ -62,8 +62,8 @@ export class InputSearchUser implements ComponentInterface {
         mode={this.mode}
         label={this.label}
         ref={(el) => (this.inputSearchEl = el)}
-        endpoint="listUsers"
-        resultsKey="users"
+        endpoint="searchUsers"
+        resultsKey="results.users"
         name={this.name}
         searchParams={{
           limit: this.limit ? this.limit : null,
