@@ -10,6 +10,7 @@ import {
 } from "@stencil/core";
 import Debounce from "debounce-decorator";
 import { popoverController, TextFieldTypes } from "@ionic/core";
+import pathToValue from "../../helpers/pathToValue";
 
 @Component({
   tag: "floodteam-input-search",
@@ -83,15 +84,13 @@ export class InputSearch implements ComponentInterface {
 
   @Listen("fireenjinSuccess", { target: "body" })
   async onSuccess(event) {
-    if (event?.detail?.endpoint !== this.endpoint) return;
-    this.results =
-      this.resultsKey &&
-      event.detail?.data &&
-      event.detail?.data[this.resultsKey]?.results
-        ? event.detail?.data[this.resultsKey].results
-        : event.detail?.data?.results
-        ? event.detail.data.results
-        : [];
+    if (event?.detail?.endpoint !== this.endpoint || !event?.detail?.data)
+      return;
+    this.results = await pathToValue(
+      event.detail.data,
+      this.resultsKey ? this.resultsKey : "searchUsers.results"
+    );
+    console.log(this.results);
     if (this.mode === "popover") {
       this.resultsPopover = await popoverController.create({
         translucent: true,
