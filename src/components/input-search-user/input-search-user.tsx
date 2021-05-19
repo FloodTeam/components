@@ -63,7 +63,7 @@ export class InputSearchUser implements ComponentInterface {
         label={this.label}
         ref={(el) => (this.inputSearchEl = el)}
         endpoint="searchUsers"
-        resultsKey="results.users"
+        resultsKey="searchUsers.results"
         name={this.name}
         searchParams={{
           limit: this.limit ? this.limit : null,
