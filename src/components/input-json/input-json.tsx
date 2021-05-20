@@ -17,7 +17,7 @@ export class InputJson {
 
   render() {
     return (
-      <ion-item>
+      <ion-item style={{ overflow: "visible" }}>
         {this.label && <ion-label position="stacked">{this.label}</ion-label>}
         <fireenjin-json-editor
           style={{ width: "100%", marginTop: "15px" }}
