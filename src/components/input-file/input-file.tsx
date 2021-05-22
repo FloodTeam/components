@@ -8,12 +8,12 @@ import {
   State,
   h,
   Watch,
-  Method
+  Method,
 } from "@stencil/core";
 
 @Component({
   tag: "floodteam-input-file",
-  styleUrl: "input-file.css"
+  styleUrl: "input-file.css",
 })
 export class InputFile implements ComponentInterface {
   @Element() fileUploaderEl: any;
@@ -38,6 +38,7 @@ export class InputFile implements ComponentInterface {
   @State() isLoading: boolean;
   @State() fileUrl: string;
   @State() selectedFile: string;
+  @State() dragOver = false;
 
   @Event() floodteamUpload: EventEmitter;
   @Event() ionInput: EventEmitter;
@@ -47,15 +48,14 @@ export class InputFile implements ComponentInterface {
     if (!this.value) return false;
     this.ionInput.emit({
       name: this.name,
-      value: this.value
+      value: this.value,
     });
   }
 
   @Method()
   async openFile() {
-    const fileInputEl: any = this.fileUploaderEl.querySelector(
-      'input[type="file"]'
-    );
+    const fileInputEl: any =
+      this.fileUploaderEl.querySelector('input[type="file"]');
     fileInputEl.click();
     return fileInputEl;
   }
@@ -65,7 +65,7 @@ export class InputFile implements ComponentInterface {
     if (!window.FileReader) return;
 
     const reader = new FileReader();
-    reader.onload = async event => {
+    reader.onload = async (event) => {
       if (event.target.readyState != 2) return;
       if (event.target.error) {
         alert("Error while reading file");
@@ -82,8 +82,8 @@ export class InputFile implements ComponentInterface {
           fileName: this.fileName,
           file,
           path: this.path,
-          encodedContent: event.target.result
-        }
+          encodedContent: event.target.result,
+        },
       });
     };
 
@@ -99,27 +99,67 @@ export class InputFile implements ComponentInterface {
 
   onDrop(event) {
     event.preventDefault();
+    if (event.dataTransfer.items) {
+      // Use DataTransferItemList interface to access the file(s)
+      for (var i = 0; i < event.dataTransfer.items.length; i++) {
+        // If dropped items aren't files, reject them
+        if (event.dataTransfer.items[i].kind === "file") {
+          var file = event.dataTransfer.items[i].getAsFile();
+          this.selectedFile = file.name;
+          this.uploadFile(file);
+        }
+      }
+    } else {
+      // Use DataTransfer interface to access the file(s)
+      for (var i = 0; i < event.dataTransfer.files.length; i++) {
+        const file = event.dataTransfer.files[i];
+        this.selectedFile = file.name;
+        this.uploadFile(file);
+        console.log("... file[" + i + "].name = " + file.name);
+      }
+    }
+    this.dragOver = false;
   }
 
   onDrag(event) {
     event.preventDefault();
   }
 
+  onDragOver(event) {
+    event.preventDefault();
+  }
+
   onDragEnter(event) {
     console.log("Show UI to drop file", event);
+    this.dragOver = true;
   }
 
   onDragLeave(event) {
     console.log("Hide UI to drop file", event);
+    this.dragOver = false;
   }
 
   render() {
     return (
-      <ion-card onClick={() => this.openFile()}>
+      <ion-card
+        class={{ "drag-over": this.dragOver }}
+        onDragEnter={(event) => this.onDragEnter(event)}
+        onDragOver={(event) => this.onDragOver(event)}
+        onDrag={(event) => this.onDrag(event)}
+        onDrop={(event) => this.onDrop(event)}
+        onDragLeave={(event) => this.onDragLeave(event)}
+        onClick={() => this.openFile()}
+      >
         <ion-item lines="none">
           <ion-icon name={this.icon ? this.icon : "document"} slot="start" />
           <div>
-            <h2>{this.label ? this.label : "Upload a File"}</h2>
+            <h2>
+              {this.dragOver
+                ? "Drop File Here"
+                : this.label
+                ? this.label
+                : "Upload a File"}
+            </h2>
             <p>
               {this.selectedFile
                 ? this.selectedFile
@@ -131,7 +171,7 @@ export class InputFile implements ComponentInterface {
         </ion-item>
         <input
           type="file"
-          onChange={event => this.selectFile(event)}
+          onChange={(event) => this.selectFile(event)}
           accept={this.accept ? this.accept : null}
           value="blah"
         />

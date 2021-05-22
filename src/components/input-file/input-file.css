@@ -6,11 +6,16 @@ floodteam-input-file ion-card {
   padding: 0;
 }
 
+floodteam-input-file ion-card.drag-over {
+  opacity: 0.8;
+}
+
 floodteam-input-file ion-card ion-item {
   padding: 5px 0;
   background-color: var(--theme-lighter-grey);
   --ion-color-base: var(--theme-lighter-grey);
   --background: var(--theme-lighter-grey);
+  pointer-events: none;
 }
 
 floodteam-input-file ion-card ion-item ion-icon {
