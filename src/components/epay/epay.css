@@ -4,9 +4,6 @@ floodteam-epay {
     var(--ion-font-family, Arial, Helvetica, sans-serif)
   );
 }
-floodteam-epay ion-card {
-  margin: 15px auto;
-}
 floodteam-epay .hidden {
   height: 0;
   width: 0;
@@ -45,15 +42,6 @@ floodteam-epay floodteam-toggle {
   opacity: 1;
   transition: opacity ease 0.3s;
   pointer-events: initial;
-}
-floodteam-epay floodteam-toggle .floodteam-toggle-wrapper label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 12px;
-  text-align: center;
-  color: var(--floodteam-epay-toggle-color, var(--ion-color-medium));
-  font-weight: bold;
 }
 floodteam-epay ion-item ion-icon[slot="start"] {
   margin: auto 10px 10px auto;
