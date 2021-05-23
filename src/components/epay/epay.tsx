@@ -78,10 +78,8 @@ export class Epay implements ComponentInterface {
   @Prop({ mutable: true }) customer: any = {};
   @Prop({ mutable: true }) jobId: string;
   @Prop({ mutable: true }) userId: string;
-  @Prop() isAdmin = true;
   @Prop() dadeKey: string;
   @Prop() dadeUrl: string;
-  @Prop() tracking = false;
   @Prop({ mutable: true }) users: any[] = [];
   @Prop({ mutable: true }) paymentId: string;
 
@@ -596,13 +594,6 @@ export class Epay implements ComponentInterface {
           </span>
           <floodteam-progress-bar percent={this.calculatePercentPaid()} />
           {this.isSubTextShowing && <p>{this.subText}</p>}
-          {this.isAdmin ? (
-            <floodteam-toggle
-              name="tracking"
-              label="Tracking"
-              value={!!this.tracking}
-            />
-          ) : null}
         </div>
         <ion-slides
           ref={(el) => (this.sliderEl = el)}
@@ -699,7 +690,7 @@ export class Epay implements ComponentInterface {
                 </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col>
+                <ion-col size="6">
                   <ion-button
                     color="success"
                     onClick={() => this.payWithCheck()}
@@ -707,7 +698,7 @@ export class Epay implements ComponentInterface {
                     Pay with Check
                   </ion-button>
                 </ion-col>
-                <ion-col>
+                <ion-col size="6">
                   <ion-button
                     color="success"
                     onClick={() => this.payWithCard()}
@@ -716,15 +707,6 @@ export class Epay implements ComponentInterface {
                   </ion-button>
                 </ion-col>
               </ion-row>
-              {this.isAdmin && (
-                <ion-row>
-                  <ion-col>
-                    <ion-button onClick={() => this.payManually()} fill="clear">
-                      Manual Payment
-                    </ion-button>
-                  </ion-col>
-                </ion-row>
-              )}
             </ion-grid>
           </ion-slide>
           <ion-slide id="card">
