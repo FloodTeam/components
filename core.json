@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-05-22T06:24:47",
+  "timestamp": "2021-05-23T18:42:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -561,23 +561,6 @@
           "required": false
         },
         {
-          "name": "isAdmin",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "is-admin",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "jobId",
           "type": "string",
           "mutable": true,
@@ -707,23 +690,6 @@
           "values": [
             {
               "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "tracking",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "tracking",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -904,7 +870,6 @@
         "ion-button",
         "ion-icon",
         "floodteam-progress-bar",
-        "floodteam-toggle",
         "ion-slides",
         "ion-slide",
         "ion-grid",
@@ -927,7 +892,6 @@
           "ion-button",
           "ion-icon",
           "floodteam-progress-bar",
-          "floodteam-toggle",
           "ion-slides",
           "ion-slide",
           "ion-grid",
@@ -949,11 +913,6 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
-        ],
-        "floodteam-toggle": [
-          "ion-item",
-          "ion-label",
-          "ion-toggle"
         ],
         "ion-item": [
           "ion-icon",
@@ -7406,9 +7365,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "floodteam-epay"
-      ],
+      "dependents": [],
       "dependencies": [
         "ion-item",
         "ion-label",
@@ -7423,9 +7380,6 @@
         "ion-item": [
           "ion-icon",
           "ion-ripple-effect"
-        ],
-        "floodteam-epay": [
-          "floodteam-toggle"
         ]
       }
     }
