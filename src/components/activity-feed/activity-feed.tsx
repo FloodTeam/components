@@ -133,6 +133,10 @@ export class ActivityFeed implements ComponentInterface {
                           label: "Payment",
                           value: "payment",
                         },
+                        {
+                          label: "Admin",
+                          value: "admin",
+                        },
                       ],
                     },
                   ],
