@@ -65,9 +65,8 @@ export class ActivityFeed implements ComponentInterface {
     const items: HTMLIonItemElement[] = Array.from(
       listEl.querySelectorAll("ion-item")
     );
-    const progressBarEl: HTMLIonProgressBarElement = listEl.querySelector(
-      "ion-progress-bar"
-    );
+    const progressBarEl: HTMLIonProgressBarElement =
+      listEl.querySelector("ion-progress-bar");
     for (const item of items) {
       completed =
         completed + (item?.querySelector("ion-checkbox")?.checked ? 1 : 0);
@@ -108,6 +107,33 @@ export class ActivityFeed implements ComponentInterface {
                       dataPropsMap: {
                         locations: "results",
                       },
+                    },
+                    {
+                      name: "type",
+                      label: "Type",
+                      icon: "folder-open",
+                      options: [
+                        {
+                          label: "All",
+                          value: null,
+                        },
+                        {
+                          label: "Note",
+                          value: "note",
+                        },
+                        {
+                          label: "Alert",
+                          value: "alert",
+                        },
+                        {
+                          label: "Job",
+                          value: "job",
+                        },
+                        {
+                          label: "Payment",
+                          value: "payment",
+                        },
+                      ],
                     },
                   ],
                 }}
