@@ -95,6 +95,7 @@ export class PaymentMethods implements ComponentInterface {
         address_line1: address?.street,
         address_line2: address?.unit,
         address_city: address?.city,
+        address_country: "US",
         address_state: address?.state,
         address_zip: address?.zip,
       });

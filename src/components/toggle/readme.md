@@ -16,10 +16,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [floodteam-epay](../epay)
-
 ### Depends on
 
 - ion-item
@@ -34,7 +30,6 @@ graph TD;
   floodteam-toggle --> ion-toggle
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
-  floodteam-epay --> floodteam-toggle
   style floodteam-toggle fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
