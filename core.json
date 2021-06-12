@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-06-11T23:32:51",
+  "timestamp": "2021-06-12T05:21:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -6404,7 +6404,7 @@
       "methods": [],
       "events": [
         {
-          "event": "tmgShareClose",
+          "event": "floodteamShareClose",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,
