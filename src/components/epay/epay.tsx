@@ -367,6 +367,7 @@ export class Epay implements ComponentInterface {
           withSites: false,
           withPayModel: false,
           withPhotos: false,
+          withPayables: false,
         },
       });
     }
