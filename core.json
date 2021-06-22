@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-06-17T19:03:56",
+  "timestamp": "2021-06-22T18:04:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -6920,7 +6920,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/job-card/snapshot-card.tsx",
+      "filePath": "./src/components/snapshot-card/snapshot-card.tsx",
       "encapsulation": "none",
       "tag": "floodteam-snapshot-card",
       "readme": "# floodteam-snapshot-card\n\n\n",
