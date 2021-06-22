@@ -10,7 +10,8 @@ import {
   State,
   Watch,
   h,
-  forceUpdate
+  forceUpdate,
+  Build
 } from "@stencil/core";
 import Cleave from "cleave.js";
 import "cleave.js/dist/addons/cleave-phone.us";
@@ -192,86 +193,88 @@ export class Input implements ComponentInterface {
   }
 
   componentDidLoad() {
-    setTimeout(() => {
-      this.input = this.inputEl.querySelector("input");
-      this.inputType = this.type
-        ? this.type === "phone"
-          ? "tel"
-          : this.type
-        : "text";
+    if (Build.isBrowser) {
+      setTimeout(() => {
+        this.input = this.inputEl.querySelector("input");
+        this.inputType = this.type
+          ? this.type === "phone"
+            ? "tel"
+            : this.type
+          : "text";
 
-      if (this.type === "phone") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          phone: true,
-          phoneRegionCode: "US",
-          delimiter: "-"
-        });
-      } else if (this.type === "hour") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          numericOnly: true,
-          delimiter: ".",
-          blocks: [2, 2]
-        });
-      } else if (this.type === "expiration") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          delimiter: "/",
-          numericOnly: true,
-          blocks: [2, 2]
-        });
-      } else if (this.type === "cvc") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          delimiter: "",
-          numericOnly: true,
-          blocks: [4]
-        });
-      } else if (this.type === "ssn") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          delimiter: "",
-          numericOnly: true,
-          blocks: [4]
-        });
-      } else if (this.type === "code") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          delimiter: "",
-          numericOnly: true,
-          blocks: [6]
-        });
-      } else if (this.type === "ein") {
-        this.cleave = new Cleave(this.input, {
-          onValueChanged: e => {
-            this.value = e.target.value;
-            forceUpdate(this);
-          },
-          numericOnly: true,
-          blocks: [2, 7],
-          delimiter: "-"
-        });
-      }
-    }, 100);
+        if (this.type === "phone") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            phone: true,
+            phoneRegionCode: "US",
+            delimiter: "-"
+          });
+        } else if (this.type === "hour") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            numericOnly: true,
+            delimiter: ".",
+            blocks: [2, 2]
+          });
+        } else if (this.type === "expiration") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            delimiter: "/",
+            numericOnly: true,
+            blocks: [2, 2]
+          });
+        } else if (this.type === "cvc") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            delimiter: "",
+            numericOnly: true,
+            blocks: [4]
+          });
+        } else if (this.type === "ssn") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            delimiter: "",
+            numericOnly: true,
+            blocks: [4]
+          });
+        } else if (this.type === "code") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            delimiter: "",
+            numericOnly: true,
+            blocks: [6]
+          });
+        } else if (this.type === "ein") {
+          this.cleave = new Cleave(this.input, {
+            onValueChanged: e => {
+              this.value = e.target.value;
+              forceUpdate(this);
+            },
+            numericOnly: true,
+            blocks: [2, 7],
+            delimiter: "-"
+          });
+        }
+      }, 100);
+    }
   }
 
   togglePassword(event: UIEvent) {

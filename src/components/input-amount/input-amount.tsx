@@ -8,6 +8,7 @@ import {
   State,
   Watch,
   h,
+  Build,
 } from "@stencil/core";
 
 @Component({
@@ -94,7 +95,9 @@ export class InputAmount implements ComponentInterface {
   }
 
   componentDidLoad() {
-    this.formattedValue = this.formatCurrency(this.value);
+    if (Build.isBrowser) {
+      this.formattedValue = this.formatCurrency(this.value);
+    }
   }
 
   selectPreset(preset: { label?: string; value: any } | string) {

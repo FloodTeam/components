@@ -7,6 +7,7 @@ import {
   State,
   Watch,
   h,
+  Build,
 } from "@stencil/core";
 import { ChartDataset } from "chart.js";
 
@@ -95,7 +96,9 @@ export class GraphPaySplits implements ComponentInterface {
   }
 
   componentDidLoad() {
-    this.setUsers(this.users);
+    if (Build.isBrowser) {
+      this.setUsers(this.users);
+    }
   }
 
   render() {

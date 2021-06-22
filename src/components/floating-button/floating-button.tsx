@@ -1,5 +1,5 @@
 import { Color } from "@ionic/core";
-import { Component, ComponentInterface, Listen, Prop, h } from "@stencil/core";
+import { Component, ComponentInterface, Listen, Prop, h, Build } from "@stencil/core";
 
 @Component({
   tag: "floodteam-floating-button",
@@ -78,10 +78,12 @@ export class FloatingButton implements ComponentInterface {
   }
 
   componentDidLoad() {
-    const fabIconEl: HTMLIonIconElement = this.fabEl
-      .querySelector("ion-fab-button")
-      .shadowRoot.querySelector("ion-icon");
-    fabIconEl.style.setProperty("font-size", "40px");
+    if (Build.isBrowser) {
+      const fabIconEl: HTMLIonIconElement = this.fabEl
+        .querySelector("ion-fab-button")
+        .shadowRoot.querySelector("ion-icon");
+      fabIconEl.style.setProperty("font-size", "40px");
+    }
   }
 
   render() {

@@ -8,6 +8,7 @@ import {
   Prop,
   State,
   h,
+  Build,
 } from "@stencil/core";
 
 declare var google;
@@ -91,68 +92,72 @@ export class InputAddress implements ComponentInterface {
   }
 
   async componentWillLoad() {
-    try {
-      if (this.googleMapsKey && !window?.google?.maps) {
-        await this.injectScript(
-          `https://maps.googleapis.com/maps/api/js?key=${this.googleMapsKey}&libraries=places`
-        );
+    if (Build.isBrowser) {
+      try {
+        if (this.googleMapsKey && !window?.google?.maps) {
+          await this.injectScript(
+            `https://maps.googleapis.com/maps/api/js?key=${this.googleMapsKey}&libraries=places`
+          );
+        }
+      } catch (e) {
+        console.log("Error injecting Google Maps");
       }
-    } catch (e) {
-      console.log("Error injecting Google Maps");
     }
   }
 
   async componentDidLoad() {
-    const inputEl = await this.autocompleteFieldEl.getInputElement();
-    setTimeout(() => {
-      inputEl.setAttribute("autocomplete", "new-password");
-    }, 200);
-    const autocomplete = new google.maps.places.Autocomplete(inputEl, {
-      types: ["address"],
-    });
-
-    google.maps.event.addListener(autocomplete, "place_changed", () => {
-      this.place = autocomplete.getPlace();
-      if (!this.value) {
-        this.value = {};
-      }
-      this.value.full = this.place.formatted_address;
-
-      let streetAddress = "";
-      this.value.placeId = this.place?.place_id;
-      this.value.lat = this.place?.geometry?.location?.lat();
-      this.value.lng = this.place?.geometry?.location?.lng();
-      this.place.address_components.map((field, index) => {
-        if (field.types.indexOf("street_number") !== -1) {
-          streetAddress = field.long_name;
-        }
-        if (field.types.indexOf("route") !== -1) {
-          streetAddress = streetAddress + " " + field.long_name;
-        }
-        if (field.types.indexOf("locality") !== -1) {
-          this.value.city = field.long_name;
-        }
-        if (field.types.indexOf("postal_code") !== -1) {
-          this.value.zip = field.short_name;
-        }
-        if (field.types.indexOf("administrative_area_level_1") !== -1) {
-          this.value.state = field.short_name;
-        }
-
-        if (this.place.address_components.length === index + 1) {
-          this.value.street = streetAddress;
-        }
-
-        if (index === this.place.address_components.length - 1) {
-          setTimeout(() => {
-            this.ionInput.emit({
-              name: this.name,
-              value: this.value,
-            });
-          }, 10);
-        }
+    if (Build.isBrowser) {
+      const inputEl = await this.autocompleteFieldEl.getInputElement();
+      setTimeout(() => {
+        inputEl.setAttribute("autocomplete", "new-password");
+      }, 200);
+      const autocomplete = new google.maps.places.Autocomplete(inputEl, {
+        types: ["address"],
       });
-    });
+  
+      google.maps.event.addListener(autocomplete, "place_changed", () => {
+        this.place = autocomplete.getPlace();
+        if (!this.value) {
+          this.value = {};
+        }
+        this.value.full = this.place.formatted_address;
+  
+        let streetAddress = "";
+        this.value.placeId = this.place?.place_id;
+        this.value.lat = this.place?.geometry?.location?.lat();
+        this.value.lng = this.place?.geometry?.location?.lng();
+        this.place.address_components.map((field, index) => {
+          if (field.types.indexOf("street_number") !== -1) {
+            streetAddress = field.long_name;
+          }
+          if (field.types.indexOf("route") !== -1) {
+            streetAddress = streetAddress + " " + field.long_name;
+          }
+          if (field.types.indexOf("locality") !== -1) {
+            this.value.city = field.long_name;
+          }
+          if (field.types.indexOf("postal_code") !== -1) {
+            this.value.zip = field.short_name;
+          }
+          if (field.types.indexOf("administrative_area_level_1") !== -1) {
+            this.value.state = field.short_name;
+          }
+  
+          if (this.place.address_components.length === index + 1) {
+            this.value.street = streetAddress;
+          }
+  
+          if (index === this.place.address_components.length - 1) {
+            setTimeout(() => {
+              this.ionInput.emit({
+                name: this.name,
+                value: this.value,
+              });
+            }, 10);
+          }
+        });
+      });
+    }
   }
 
   toggleManualEntry() {

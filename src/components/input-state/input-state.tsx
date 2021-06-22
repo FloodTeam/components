@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Prop, h } from "@stencil/core";
+import { Component, ComponentInterface, Element, Prop, h, Build } from "@stencil/core";
 
 @Component({
   tag: "floodteam-input-state",
@@ -70,8 +70,10 @@ export class InputState implements ComponentInterface {
   };
 
   componentDidLoad() {
-    const ionSelectEl = this.stateAutocompleteEl.querySelector("ion-select");
-    ionSelectEl.interfaceOptions = { header: "State" };
+    if (Build.isBrowser) {
+      const ionSelectEl = this.stateAutocompleteEl.querySelector("ion-select");
+      ionSelectEl.interfaceOptions = { header: "State" };
+    }
   }
 
   render() {

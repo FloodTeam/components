@@ -9,7 +9,8 @@ import {
   Prop,
   State,
   Watch,
-  h
+  h,
+  Build
 } from "@stencil/core";
 
 @Component({
@@ -53,11 +54,13 @@ export class StarRating implements ComponentInterface {
   }
 
   componentDidLoad() {
-    this.currentRating = parseFloat(this.value ? this.value : "0");
-    this.starRatingEl.style.setProperty(
-      "--star-rating-max",
-      `${this.maxRating}`
-    );
+    if (Build.isBrowser) {
+      this.currentRating = parseFloat(this.value ? this.value : "0");
+      this.starRatingEl.style.setProperty(
+        "--star-rating-max",
+        `${this.maxRating}`
+      );
+    }
   }
 
   render() {
