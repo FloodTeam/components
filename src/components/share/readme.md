@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event           | Description | Type               |
-| --------------- | ----------- | ------------------ |
-| `tmgShareClose` |             | `CustomEvent<any>` |
+| Event                 | Description | Type               |
+| --------------------- | ----------- | ------------------ |
+| `floodteamShareClose` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

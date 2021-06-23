@@ -142,6 +142,11 @@ export class SignaturePad {
     return this.pad.isEmpty();
   }
 
+  @Method()
+  async toDataURL(type = "image/png") {
+    return this.pad.toDataURL(type);
+  }
+
   /**
    * Download the signature as an SVG file
    */
@@ -279,6 +284,11 @@ export class SignaturePad {
   async submit() {
     this.value = await this.toData();
     this.ionChange.emit();
+  }
+
+  @Method()
+  async getSignatureInstace() {
+    return this.pad;
   }
 
   dataURLToBlob(dataURL) {
