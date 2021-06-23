@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-06-22T18:04:01",
+  "timestamp": "2021-06-23T23:45:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -6746,6 +6746,17 @@
           ]
         },
         {
+          "name": "getSignatureInstace",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "getSignatureInstace() => Promise<any>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
           "name": "isEmpty",
           "returns": {
             "type": "Promise<any>",
@@ -6787,6 +6798,17 @@
           "signature": "toData() => Promise<any>",
           "parameters": [],
           "docs": "Get the signature pad data",
+          "docsTags": []
+        },
+        {
+          "name": "toDataURL",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "toDataURL(type?: string) => Promise<any>",
+          "parameters": [],
+          "docs": "",
           "docsTags": []
         },
         {
