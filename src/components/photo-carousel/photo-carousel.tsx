@@ -24,6 +24,7 @@ export class PhotoCarousel implements ComponentInterface {
   @Prop() photos: any[] = [];
   @Prop({ mutable: true }) currentSlide = 0;
   @Prop() options: any = {};
+  @Prop() name = "photocarousel";
 
   @Listen("ionSlideDidChange")
   async onSlideChange() {
@@ -78,6 +79,7 @@ export class PhotoCarousel implements ComponentInterface {
     return (
       <Host>
         <floodteam-input-photo
+          name={this.name}
           ref={(el) => (this.inputPhotoEl = el)}
           path={`jobs/${this.jobId}/photos`}
           documentId={this.jobId}
