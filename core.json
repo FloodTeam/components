@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-06-24T01:18:58",
+  "timestamp": "2021-06-24T19:23:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -3304,6 +3304,23 @@
           "required": false
         },
         {
+          "name": "uploadData",
+          "type": "any",
+          "mutable": false,
+          "attr": "upload-data",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{}",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "value",
           "type": "any",
           "mutable": false,
@@ -3335,16 +3352,7 @@
       ],
       "events": [
         {
-          "event": "floodteamUpload",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "floodteamUploadFile",
+          "event": "fireenjinUpload",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,
