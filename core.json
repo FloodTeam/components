@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-06-24T19:23:19",
+  "timestamp": "2021-06-24T20:08:22",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.2",
@@ -5787,6 +5787,23 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"photocarousel\"",
           "values": [
             {
               "type": "string"
