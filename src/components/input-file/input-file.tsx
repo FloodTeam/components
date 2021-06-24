@@ -32,15 +32,14 @@ export class InputFile implements ComponentInterface {
    * The endpoint to upload to
    */
   @Prop() endpoint = "upload";
-
-  @Event() floodteamUploadFile: EventEmitter;
+  @Prop() uploadData: any = {};
 
   @State() isLoading: boolean;
   @State() fileUrl: string;
   @State() selectedFile: string;
   @State() dragOver = false;
 
-  @Event() floodteamUpload: EventEmitter;
+  @Event() fireenjinUpload: EventEmitter;
   @Event() ionInput: EventEmitter;
 
   @Watch("value")
@@ -72,17 +71,20 @@ export class InputFile implements ComponentInterface {
         return;
       }
 
-      this.floodteamUpload.emit({
+      this.fireenjinUpload.emit({
         event,
         name: this.name,
         endpoint: this.endpoint,
         data: {
-          id: this.documentId,
-          type: this.type,
-          fileName: this.fileName,
-          file,
-          path: this.path,
-          encodedContent: event.target.result,
+          ...{
+            id: this.documentId,
+            type: this.type,
+            fileName: this.fileName,
+            file,
+            path: this.path,
+            encodedContent: event.target.result,
+          },
+          ...this.uploadData,
         },
       });
     };
