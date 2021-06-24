@@ -326,7 +326,8 @@ export class SignaturePad {
         minWidth: this.minWidth,
         throttle: this.throttle,
         velocityFilterWeight: this.velocityFilterWeight,
-        onEnd: () => {
+        onEnd: async () => {
+          this.value = await this.toData();
           this.ionInput.emit();
         },
       });
