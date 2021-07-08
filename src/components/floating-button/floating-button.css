@@ -34,13 +34,13 @@ floodteam-floating-button ion-fab-list .button-wrapper {
 
 floodteam-floating-button ion-fab-list .fab-label {
   font-family: var(--ion-font-family);
-  color: #fff;
+  color: var(--ion-text-color);
   height: 35px;
   white-space: nowrap;
   line-height: 35px;
   padding: 0 10px;
-  border-radius: 2px;
-  background: var(--theme-dark-dark);
+  border-radius: 10px;
+  background: rgba(var(--ion-color-base-rgb), 0.8);
   position: absolute;
   top: 11px;
   right: 65px;
