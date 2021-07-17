@@ -1,43 +1,54 @@
-import { Component, ComponentInterface, Element, h } from "@stencil/core";
+import {
+  Component,
+  ComponentInterface,
+  Element,
+  Prop,
+  h,
+  Method,
+} from "@stencil/core";
 
 import JSONFormatter from "json-formatter-js";
 
 @Component({
   tag: "floodteam-json-viewer",
-  styleUrl: "json-viewer.css"
+  styleUrl: "json-viewer.css",
 })
 export class JsonViewer implements ComponentInterface {
-  @Element() jsonViewerEl: HTMLFloodteamJsonViewerElement;
-  codeEl: HTMLElement;
+  timer: number;
+  lastValue: any;
 
-  formatStringJSON(str: string) {
+  @Element() jsonViewerEl: any;
+
+  @Prop() watcher = false;
+
+  @Method()
+  async formatStringJSON(str: string) {
     if (!str || !JSON.parse(str)) return;
-    const formatter = new JSONFormatter(JSON.parse(str), 1, {
-      theme:
-        window &&
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : null
-    });
-    this.codeEl.replaceWith(formatter.render());
+    const formatter = new JSONFormatter(JSON.parse(str), 1, {});
+    this.jsonViewerEl.innerHTML = "";
+    const codeEl = document.createElement("code");
+    codeEl.appendChild(formatter.render());
+    this.jsonViewerEl.appendChild(codeEl);
   }
 
-  componentDidRender() {
-    setTimeout(() => {
+  connectedCallback() {
+    if (!this.watcher) return;
+    this.timer = window.setInterval(() => {
       try {
-        this.formatStringJSON(this.jsonViewerEl.innerText);
-      } catch (err) {
-        console.log(err);
+        if (JSON.parse(this.jsonViewerEl.innerText))
+          this.formatStringJSON(this.jsonViewerEl.innerText);
+      } catch (e) {
+        // No need to log
       }
-    }, 1500);
+    }, 250);
+  }
+
+  disconnectedCallback() {
+    if (!this.watcher) return;
+    window.clearInterval(this.timer);
   }
 
   render() {
-    return (
-      <code ref={el => (this.codeEl = el)}>
-        <slot />
-      </code>
-    );
+    return <slot />;
   }
 }
