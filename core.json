@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-10T03:24:44",
+  "timestamp": "2021-07-17T21:16:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -4834,8 +4834,38 @@
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
-      "methods": [],
+      "props": [
+        {
+          "name": "watcher",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "watcher",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "formatStringJSON",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "formatStringJSON(str: string) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "events": [],
       "listeners": [],
       "styles": [],
