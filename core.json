@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-17T21:16:11",
+  "timestamp": "2021-07-18T23:13:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -4835,6 +4835,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "openDepth",
+          "type": "number",
+          "mutable": false,
+          "attr": "open-depth",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "watcher",
           "type": "boolean",
