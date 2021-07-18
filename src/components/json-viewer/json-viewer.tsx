@@ -20,11 +20,12 @@ export class JsonViewer implements ComponentInterface {
   @Element() jsonViewerEl: any;
 
   @Prop() watcher = false;
+  @Prop() openDepth = 1;
 
   @Method()
   async formatStringJSON(str: string) {
     if (!str || !JSON.parse(str)) return;
-    const formatter = new JSONFormatter(JSON.parse(str), 1, {});
+    const formatter = new JSONFormatter(JSON.parse(str), this.openDepth, {});
     this.jsonViewerEl.innerHTML = "";
     const codeEl = document.createElement("code");
     codeEl.appendChild(formatter.render());
@@ -46,6 +47,17 @@ export class JsonViewer implements ComponentInterface {
   disconnectedCallback() {
     if (!this.watcher) return;
     window.clearInterval(this.timer);
+  }
+
+  componentDidLoad() {
+    setTimeout(() => {
+      try {
+        if (JSON.parse(this.jsonViewerEl.innerText))
+          this.formatStringJSON(this.jsonViewerEl.innerText);
+      } catch (e) {
+        // No need to log
+      }
+    }, 200);
   }
 
   render() {
