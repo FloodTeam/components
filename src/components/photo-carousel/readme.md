@@ -7,15 +7,16 @@
 
 ## Properties
 
-| Property         | Attribute          | Description | Type      | Default     |
-| ---------------- | ------------------ | ----------- | --------- | ----------- |
-| `addButtonColor` | `add-button-color` |             | `string`  | `"primary"` |
-| `badgeColor`     | `badge-color`      |             | `string`  | `"medium"`  |
-| `currentSlide`   | `current-slide`    |             | `number`  | `0`         |
-| `hideAddButton`  | `hide-add-button`  |             | `boolean` | `false`     |
-| `jobId`          | `job-id`           |             | `string`  | `undefined` |
-| `options`        | `options`          |             | `any`     | `{}`        |
-| `photos`         | --                 |             | `any[]`   | `[]`        |
+| Property         | Attribute          | Description | Type      | Default           |
+| ---------------- | ------------------ | ----------- | --------- | ----------------- |
+| `addButtonColor` | `add-button-color` |             | `string`  | `"primary"`       |
+| `badgeColor`     | `badge-color`      |             | `string`  | `"medium"`        |
+| `currentSlide`   | `current-slide`    |             | `number`  | `0`               |
+| `hideAddButton`  | `hide-add-button`  |             | `boolean` | `false`           |
+| `jobId`          | `job-id`           |             | `string`  | `undefined`       |
+| `name`           | `name`             |             | `string`  | `"photocarousel"` |
+| `options`        | `options`          |             | `any`     | `{}`              |
+| `photos`         | --                 |             | `any[]`   | `[]`              |
 
 
 ## Methods

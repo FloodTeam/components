@@ -10,10 +10,20 @@ import {
 } from "@stencil/core";
 import {
   Chart,
+  ArcElement,
+  BarController,
+  BarElement,
+  CategoryScale,
   ChartConfiguration,
   ChartDataset,
+  PieController,
   TooltipLabelStyle,
   ChartTypeRegistry,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  Title,
 } from "chart.js";
 
 @Component({
@@ -192,6 +202,21 @@ export class Graph implements ComponentInterface {
     if (!this.config.options.onClick) {
       this.config.options.onClick = this.onGraphClick.bind(this);
     }
+  }
+
+  componentDidLoad() {
+    Chart.register(
+      ArcElement,
+      BarController,
+      BarElement,
+      CategoryScale,
+      PieController,
+      LineController,
+      LineElement,
+      PointElement,
+      LinearScale,
+      Title
+    );
   }
 
   render() {

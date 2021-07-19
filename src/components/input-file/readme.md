@@ -19,16 +19,16 @@
 | `name`         | `name`          |                           | `string` | `undefined` |
 | `path`         | `path`          |                           | `string` | `undefined` |
 | `type`         | `type`          |                           | `string` | `"file"`    |
+| `uploadData`   | `upload-data`   |                           | `any`    | `{}`        |
 | `value`        | `value`         |                           | `any`    | `undefined` |
 
 
 ## Events
 
-| Event                 | Description | Type               |
-| --------------------- | ----------- | ------------------ |
-| `floodteamUpload`     |             | `CustomEvent<any>` |
-| `floodteamUploadFile` |             | `CustomEvent<any>` |
-| `ionInput`            |             | `CustomEvent<any>` |
+| Event             | Description | Type               |
+| ----------------- | ----------- | ------------------ |
+| `fireenjinUpload` |             | `CustomEvent<any>` |
+| `ionInput`        |             | `CustomEvent<any>` |
 
 
 ## Methods

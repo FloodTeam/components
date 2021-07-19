@@ -94,6 +94,16 @@ Type: `Promise<any>`
 
 
 
+### `getSignatureInstace() => Promise<any>`
+
+
+
+#### Returns
+
+Type: `Promise<any>`
+
+
+
 ### `isEmpty() => Promise<any>`
 
 Check if the signature pad is empty
@@ -127,6 +137,16 @@ Type: `Promise<void>`
 ### `toData() => Promise<any>`
 
 Get the signature pad data
+
+#### Returns
+
+Type: `Promise<any>`
+
+
+
+### `toDataURL(type?: string) => Promise<any>`
+
+
 
 #### Returns
 
