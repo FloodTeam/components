@@ -363,6 +363,7 @@ export class Epay implements ComponentInterface {
         params: {
           id: this.jobId,
           withPayments: true,
+          withEfiles: false,
           withUsers: false,
           withSites: false,
           withPayModel: false,
