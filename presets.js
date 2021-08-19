@@ -31,50 +31,16 @@ define("src/components/book-now/book-now.presets", ["require", "exports"], funct
         }
     };
 });
-define("src/components/graph/graph.presets", ["require", "exports"], function (require, exports) {
+define("src/components/epay/epay.presets", ["require", "exports"], function (require, exports) {
     "use strict";
     exports.__esModule = true;
     exports["default"] = {
         "default": {
-            name: "Pie Chart",
+            name: "Default",
             props: {
-                type: "pie",
-                labels: ["Test 1", "test 2"],
-                datasets: [
-                    {
-                        label: "Dataset 1",
-                        data: [30, 20],
-                        backgroundColor: ["red", "blue"]
-                    },
-                ]
-            }
-        },
-        bar: {
-            name: "Bar Chart",
-            props: {
-                type: "bar",
-                labels: ["Test 1", "test 2"],
-                datasets: [
-                    {
-                        label: "Dataset 1",
-                        data: [30, 20],
-                        backgroundColor: ["red", "blue"]
-                    },
-                ]
-            }
-        },
-        line: {
-            name: "Line Chart",
-            props: {
-                type: "line",
-                labels: ["Test 1", "test 2"],
-                datasets: [
-                    {
-                        label: "Dataset 1",
-                        data: [30, 20],
-                        backgroundColor: ["red", "blue"]
-                    },
-                ]
+                stripeKey: "pk_test_K1eh90TvFf2KeXn6HHTdUJRO",
+                dadeUrl: "https://test.dadesystems.com/api/billers/82",
+                dadeKey: "pk_test_K1eh90TvFf2KeXn6HHTdUJRO"
             }
         }
     };
