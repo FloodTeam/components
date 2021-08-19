@@ -12,7 +12,7 @@ import {
 import { ChartDataset } from "chart.js";
 
 @Component({
-  tag: "floodteam-graph-pay-splits",
+  tag: "fireenjin-graph-pay-splits",
   styleUrl: "graph-pay-splits.css",
 })
 export class GraphPaySplits implements ComponentInterface {
@@ -105,7 +105,7 @@ export class GraphPaySplits implements ComponentInterface {
     return (
       <div class="graph-pay-splits-wrapper">
         {this.graphTitle ? <h1>{this.graphTitle}</h1> : null}
-        <floodteam-graph
+        <fireenjin-graph
           type="doughnut"
           datasets={this.datasets}
           labels={this.labels}
