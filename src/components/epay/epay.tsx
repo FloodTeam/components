@@ -32,8 +32,8 @@ export class Epay implements ComponentInterface {
   intervalWatcher: any;
   userPrefersDark =
     window &&
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
       ? true
       : false;
 
@@ -173,8 +173,8 @@ export class Epay implements ComponentInterface {
         await this.confirmPayment(
           this.errorCode === 2006
             ? {
-                ignore_check_amount_mismatch: true,
-              }
+              ignore_check_amount_mismatch: true,
+            }
             : {}
         );
         this.submitPayment(this.paymentType, this.paymentEvent);
@@ -425,7 +425,8 @@ export class Epay implements ComponentInterface {
       : 0;
   }
 
-  takePayment() {
+  @Method()
+  async takePayment() {
     this.isHeaderShrunk = true;
     this.isBackShowing = true;
     this.isSubTextShowing = false;
@@ -527,21 +528,19 @@ export class Epay implements ComponentInterface {
           this.paymentPayload.token.card
           ? this.paymentPayload.token.card.brand
           : ""
-      )} ${
-        this.paymentPayload &&
+      )} ${this.paymentPayload &&
         this.paymentPayload.token &&
         this.paymentPayload.token.card &&
         this.paymentPayload.token.card
-          ? this.paymentPayload.token.card.funding
-          : ""
-      } ending in ${
-        this.paymentPayload &&
-        this.paymentPayload.token &&
-        this.paymentPayload.token.card &&
-        this.paymentPayload.token.card
+        ? this.paymentPayload.token.card.funding
+        : ""
+        } ending in ${this.paymentPayload &&
+          this.paymentPayload.token &&
+          this.paymentPayload.token.card &&
+          this.paymentPayload.token.card
           ? this.paymentPayload.token.card.last4
           : ""
-      }</h4>`;
+        }</h4>`;
     } else if (this.paymentType === "check") {
       return `<ion-grid><ion-row><ion-col size="6"><img src="${this.checkFront}" style="border-radius: 20px; width:100%; display: block; max-width: 300px;" /></ion-col><ion-col size="6"><img src="${this.checkBack}" style="border-radius: 20px; width:100%; display: block; max-width: 300px;" /></ion-col></ion-row></ion-grid>`;
     } else if (this.paymentType === "manual") {
@@ -555,15 +554,12 @@ export class Epay implements ComponentInterface {
     if (payment.type === "manual") {
       paymentText = `${this.formatUSD(payment.amount)} manually on ${paidOn}`;
     } else if (payment.type === "card") {
-      paymentText = `${this.formatUSD(payment.amount)} on ${
-        payment.brand ? payment.brand : ""
-      } card ending in ${
-        payment.ending_in ? payment.ending_in : ""
-      } on ${paidOn}`;
+      paymentText = `${this.formatUSD(payment.amount)} on ${payment.brand ? payment.brand : ""
+        } card ending in ${payment.ending_in ? payment.ending_in : ""
+        } on ${paidOn}`;
     } else if (payment.type === "check") {
-      paymentText = `${this.formatUSD(payment.amount)} by check ${
-        payment.check_number ? payment.check_number : ""
-      } on ${paidOn}`;
+      paymentText = `${this.formatUSD(payment.amount)} by check ${payment.check_number ? payment.check_number : ""
+        } on ${paidOn}`;
     }
 
     return paymentText;
@@ -646,12 +642,6 @@ export class Epay implements ComponentInterface {
                       />
                     )}
                   </div>
-                  <ion-button
-                    color="success"
-                    onClick={() => this.takePayment()}
-                  >
-                    Take a Payment
-                  </ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -672,8 +662,8 @@ export class Epay implements ComponentInterface {
                         this.email
                           ? this.email
                           : this.customer?.email
-                          ? this.customer.email
-                          : null
+                            ? this.customer.email
+                            : null
                       }
                       required
                     />
@@ -782,8 +772,8 @@ export class Epay implements ComponentInterface {
                           {this.paymentType === "manual"
                             ? `Paying manually`
                             : `Paying with ${this.capitalize(
-                                this.paymentType
-                              )}`}
+                              this.paymentType
+                            )}`}
                         </p>
                         <div innerHTML={this.getPaymentTypeCofirmation()} />
                       </div>
