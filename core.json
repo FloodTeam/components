@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-08-24T20:41:24",
+  "timestamp": "2021-08-24T22:35:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -981,7 +981,6 @@
         "floodteam-pay-card",
         "floodteam-pay-check",
         "floodteam-error",
-        "floodteam-progress-circle",
         "floodteam-checkmark"
       ],
       "dependencyGraph": {
@@ -1003,7 +1002,6 @@
           "floodteam-pay-card",
           "floodteam-pay-check",
           "floodteam-error",
-          "floodteam-progress-circle",
           "floodteam-checkmark"
         ],
         "ion-card": [
@@ -6044,15 +6042,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "floodteam-epay"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "floodteam-epay": [
-          "floodteam-progress-circle"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/progress-timeline/progress-timeline.tsx",
