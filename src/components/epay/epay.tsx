@@ -29,7 +29,6 @@ export class Epay implements ComponentInterface {
     "success",
   ];
   countdownTimerEl: any;
-  intervalWatcher: any;
   userPrefersDark =
     window &&
       window.matchMedia &&
@@ -93,7 +92,6 @@ export class Epay implements ComponentInterface {
   @State() email: string;
   @State() job: any;
   @State() subText: string;
-  @State() confirmationTimerLeft = 30;
   @State() paymentPayload: any;
   @State() checkFront: string;
   @State() checkBack: string;
@@ -157,17 +155,9 @@ export class Epay implements ComponentInterface {
     this.isHeaderHidden = true;
     await this.sliderEl.slideTo(4);
     this.paymentEvent = event;
-    this.intervalWatcher = setInterval(() => {
-      this.confirmationTimerLeft = this.confirmationTimerLeft - 1;
-      if (this.confirmationTimerLeft <= 0) {
-        this.approve();
-      }
-    }, 1000);
   }
 
   async approve() {
-    clearInterval(this.intervalWatcher);
-    this.confirmationTimerLeft = 30;
     if (this.paymentType === "check") {
       try {
         await this.confirmPayment(
@@ -248,10 +238,6 @@ export class Epay implements ComponentInterface {
     ) {
       return false;
     }
-    if (this.intervalWatcher) {
-      clearInterval(this.intervalWatcher);
-      this.confirmationTimerLeft = 30;
-    }
     if (event.detail.error.errors[0].error_code === 2006) {
       this.errorCode = 2006;
       this.error = `The amount you typed doesn't match what the scanner saw (${this.formatUSD(
@@ -324,8 +310,6 @@ export class Epay implements ComponentInterface {
     this.isHeaderHidden = false;
     this.paymentType = null;
     this.paymentEvent = null;
-    clearInterval(this.intervalWatcher);
-    this.confirmationTimerLeft = 30;
     this.setSubText();
     await this.sliderEl.update();
   }
@@ -496,8 +480,6 @@ export class Epay implements ComponentInterface {
       } else if (this.paymentType === "manual") {
         await this.sliderEl.slideTo(1);
       }
-      clearInterval(this.intervalWatcher);
-      this.confirmationTimerLeft = 30;
     } else {
       this.paymentType === "check"
         ? await this.sliderEl.slideTo(1)
@@ -780,18 +762,7 @@ export class Epay implements ComponentInterface {
                     </ion-item>
                     <ion-grid>
                       <ion-row class="ion-align-items-center">
-                        <ion-col size="2" class="ion-align-self-end">
-                          <floodteam-progress-circle
-                            percent={(this.confirmationTimerLeft / 30) * 100}
-                            stroke={5}
-                            radius={30}
-                            ref={(el) => (this.countdownTimerEl = el)}
-                          >
-                            {this.confirmationTimerLeft}s
-                          </floodteam-progress-circle>
-                        </ion-col>
-                        <ion-col size="4">Until Auto-Approval</ion-col>
-                        <ion-col size="6" class="ion-align-self-end">
+                        <ion-col size="12" class="ion-align-self-end">
                           <ion-button
                             onClick={() => this.approve()}
                             color="success"
