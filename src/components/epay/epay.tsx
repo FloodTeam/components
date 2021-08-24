@@ -411,6 +411,7 @@ export class Epay implements ComponentInterface {
 
   @Method()
   async takePayment() {
+    if (this.isBackShowing) return;
     this.isHeaderShrunk = true;
     this.isBackShowing = true;
     this.isSubTextShowing = false;
