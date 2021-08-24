@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-08-19T18:40:32",
+  "timestamp": "2021-08-24T20:41:24",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -845,6 +845,17 @@
             "docs": ""
           },
           "signature": "success() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "takePayment",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "takePayment() => Promise<void>",
           "parameters": [],
           "docs": "",
           "docsTags": []
