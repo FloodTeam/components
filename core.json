@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-08-24T22:40:44",
+  "timestamp": "2021-08-26T05:22:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -3420,6 +3420,23 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "Allow uploading multiple",
+          "docsTags": [],
+          "default": "false",
           "values": [
             {
               "type": "boolean"
