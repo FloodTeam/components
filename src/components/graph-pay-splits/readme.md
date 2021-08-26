@@ -30,7 +30,7 @@ Type: `Promise<any[]>`
 
 ### Depends on
 
-- [floodteam-graph](../graph)
+- fireenjin-graph
 - ion-item
 - [floodteam-avatar](../avatar)
 - [floodteam-error](../error)
@@ -39,17 +39,17 @@ Type: `Promise<any[]>`
 ### Graph
 ```mermaid
 graph TD;
-  floodteam-graph-pay-splits --> floodteam-graph
-  floodteam-graph-pay-splits --> ion-item
-  floodteam-graph-pay-splits --> floodteam-avatar
-  floodteam-graph-pay-splits --> floodteam-error
-  floodteam-graph-pay-splits --> ion-badge
+  fireenjin-graph-pay-splits --> fireenjin-graph
+  fireenjin-graph-pay-splits --> ion-item
+  fireenjin-graph-pay-splits --> floodteam-avatar
+  fireenjin-graph-pay-splits --> floodteam-error
+  fireenjin-graph-pay-splits --> ion-badge
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
   floodteam-error --> ion-item
   floodteam-error --> ion-icon
   floodteam-error --> ion-label
-  style floodteam-graph-pay-splits fill:#f9f,stroke:#333,stroke-width:4px
+  style fireenjin-graph-pay-splits fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

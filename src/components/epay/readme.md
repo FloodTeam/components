@@ -65,6 +65,16 @@ Type: `Promise<void>`
 
 
 
+### `takePayment() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 ### `updateSlides() => Promise<void>`
 
 Update the ion-slides height
@@ -97,7 +107,6 @@ Type: `Promise<void>`
 - [floodteam-pay-card](../pay-card)
 - [floodteam-pay-check](../pay-check)
 - [floodteam-error](../error)
-- [floodteam-progress-circle](../progress-circle)
 - [floodteam-checkmark](../checkmark)
 
 ### Graph
@@ -120,7 +129,6 @@ graph TD;
   floodteam-epay --> floodteam-pay-card
   floodteam-epay --> floodteam-pay-check
   floodteam-epay --> floodteam-error
-  floodteam-epay --> floodteam-progress-circle
   floodteam-epay --> floodteam-checkmark
   ion-card --> ion-ripple-effect
   ion-button --> ion-ripple-effect

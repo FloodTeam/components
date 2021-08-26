@@ -18,9 +18,9 @@
 
 ### Used by
 
+ - [fireenjin-graph-pay-splits](../graph-pay-splits)
  - [floodteam-book-now](../book-now)
  - [floodteam-epay](../epay)
- - [floodteam-graph-pay-splits](../graph-pay-splits)
  - [floodteam-pay-card](../pay-card)
  - [floodteam-pay-check](../pay-check)
  - [floodteam-payment-methods](../payment-methods)
@@ -39,9 +39,9 @@ graph TD;
   floodteam-error --> ion-label
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
+  fireenjin-graph-pay-splits --> floodteam-error
   floodteam-book-now --> floodteam-error
   floodteam-epay --> floodteam-error
-  floodteam-graph-pay-splits --> floodteam-error
   floodteam-pay-card --> floodteam-error
   floodteam-pay-check --> floodteam-error
   floodteam-payment-methods --> floodteam-error

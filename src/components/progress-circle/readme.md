@@ -14,19 +14,6 @@
 | `stroke`  | `stroke`  | The stroke thickness of the progress bar               | `number` | `5`     |
 
 
-## Dependencies
-
-### Used by
-
- - [floodteam-epay](../epay)
-
-### Graph
-```mermaid
-graph TD;
-  floodteam-epay --> floodteam-progress-circle
-  style floodteam-progress-circle fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -18,12 +18,12 @@
 
 ### Used by
 
- - [floodteam-graph-pay-splits](../graph-pay-splits)
+ - [fireenjin-graph-pay-splits](../graph-pay-splits)
 
 ### Graph
 ```mermaid
 graph TD;
-  floodteam-graph-pay-splits --> floodteam-avatar
+  fireenjin-graph-pay-splits --> floodteam-avatar
   style floodteam-avatar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

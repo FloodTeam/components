@@ -17,6 +17,7 @@
 | `fileName`   | `file-name`   | The filename to use for the uploaded file        | `string`  | `undefined`    |
 | `initials`   | `initials`    |                                                  | `string`  | `undefined`    |
 | `loading`    | `loading`     |                                                  | `boolean` | `undefined`    |
+| `multiple`   | `multiple`    | Allow uploading multiple                         | `boolean` | `false`        |
 | `name`       | `name`        | The name to use when emitting field change event | `string`  | `undefined`    |
 | `path`       | `path`        | The storage path to upload the file to           | `string`  | `undefined`    |
 | `showButton` | `show-button` | Should the photo uploader show the button        | `boolean` | `false`        |
