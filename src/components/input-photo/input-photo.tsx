@@ -67,6 +67,10 @@ export class InputPhoto implements ComponentInterface {
    */
   @Prop() endpoint = "upload";
   @Prop() initials: string;
+  /**
+   * Allow uploading multiple
+   */
+  @Prop() multiple = false;
 
   @Prop({ mutable: true }) loading: boolean;
   @State() photoUrl: string;
@@ -94,8 +98,8 @@ export class InputPhoto implements ComponentInterface {
     this.photoUrl = this.value
       ? this.value
       : this.fallback
-      ? this.fallback
-      : null;
+        ? this.fallback
+        : null;
     if (this.value) {
       this.ionInput.emit({
         name: this.name,
@@ -200,6 +204,7 @@ export class InputPhoto implements ComponentInterface {
           type="file"
           onChange={(event) => this.selectFile(event)}
           accept="image/*"
+          multiple={this.multiple}
         />
       </div>
     );
