@@ -84,6 +84,7 @@ export class PhotoCarousel implements ComponentInterface {
           path={`jobs/${this.jobId}/photos`}
           documentId={this.jobId}
           fileName={new Date().toISOString()}
+          multiple
         />
         {this.photos?.length ? (
           <ion-badge color={this.badgeColor} class="photo-pagination">
