@@ -1,15 +1,11 @@
 floodteam-photo-carousel {
+  display: block;
   border: 1px solid var(--ion-color-base-dark);
-  border-radius: 8px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 10px auto auto;
-  min-width: 250px;
-  min-height: 200px;
+  min-height: 90px;
+  min-width: 160px;
   margin: 0 auto;
-  background: 1px solid var(--ion-color-base-dark-tint);
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
 floodteam-photo-carousel ion-slides::after {
@@ -30,20 +26,18 @@ floodteam-photo-carousel ion-slides::after {
   border-radius: 8px 8px 0 0;
 }
 
-floodteam-photo-carousel ion-slide {
-  width: 100%;
-  padding-top: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
-  position: relative;
-  min-width: 250px;
-  min-height: 200px;
-}
-
-floodteam-photo-carousel ion-slide ion-img {
-  position: absolute;
-  top: 50%;
+floodteam-photo-carousel ion-slides {
+  position: absolute !important;
+  top: 0;
   left: 0;
   right: 0;
-  transform: translateY(-50%);
+  bottom: 0;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+floodteam-photo-carousel ion-slide {
+  margin: auto;
 }
 
 floodteam-photo-carousel floodteam-input-photo {
@@ -52,6 +46,7 @@ floodteam-photo-carousel floodteam-input-photo {
   visibility: hidden;
   opacity: 0;
   display: block;
+  overflow: hidden;
 }
 
 floodteam-photo-carousel floodteam-fallback {
