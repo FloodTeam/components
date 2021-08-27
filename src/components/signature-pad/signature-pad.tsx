@@ -338,7 +338,7 @@ export class SignaturePad {
   render() {
     return (
       <ion-card id="signature-pad" class="signature-pad">
-        <canvas ref={(el) => (this.canvasEl = el)} />
+        <canvas ref={(el) => (this.canvasEl = el)} height="200" width="" />
         <ion-icon
           class="undo"
           name="arrow-undo-circle-outline"
