@@ -105,7 +105,7 @@ ion-icon.ft-icon-style {
   position: relative;
 }
 ion-icon.ft-icon-style:after {
-  border: 1px solid var(--ion-color-medium-shade);
+  border: 1px solid var(--ion-color-light-shade);
   border-bottom-color: var(--ion-color-secondary);
   border-right-color: var(--ion-color-secondary);
   transform: rotate(45deg);
