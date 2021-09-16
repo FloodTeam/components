@@ -1,0 +1,18 @@
+search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+search-bar .filter-button {
+  margin: auto 80px auto auto;
+}
+search-bar ion-searchbar {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+@media only screen and (max-width: 500px) {
+  search-bar .filter-button ion-label {
+    display: none;
+  }
+}

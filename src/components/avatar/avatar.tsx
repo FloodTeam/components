@@ -16,18 +16,13 @@ export class Avatar implements ComponentInterface {
         style={{
           backgroundImage:
             !this.src && this.initials
-              ? null
-              : `url('${
-                  this.src ? this.src : "/assets/images/default-icon.png"
-                }')`,
+              ? `https ://avatars.dicebear.com/api/initials/${this.initials}.svg`
+              : `url('${this.src ? this.src : "/assets/images/default-icon.png"
+              }')`,
           height: this.size ? this.size : "50px",
-          lineHeight: this.size ? this.size : "50px",
-          fontSize: this.size ? `calc(${this.size} / 2 )` : "25px",
           width: this.size ? this.size : "50px"
         }}
-      >
-        {!this.src ? this.initials : null}
-      </div>
+      />
     );
   }
 }

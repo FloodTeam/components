@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event               | Description                         | Type                                                                                                                                  |
-| ------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `tmgMapMarkerClick` | When a marker on the map is clicked | `CustomEvent<{ marker: Marker; location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }; }>` |
+| Event                     | Description                         | Type                                                                                                                                  |
+| ------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `floodteamMapMarkerClick` | When a marker on the map is clicked | `CustomEvent<{ marker: Marker; location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }; }>` |
 
 
 ## Methods
