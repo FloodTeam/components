@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-14T01:22:02",
+  "timestamp": "2021-09-16T23:34:41",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.0",
@@ -4985,6 +4985,135 @@
       }
     },
     {
+      "filePath": "./src/components/map/map.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-map",
+      "readme": "# trackmygiving-map\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "markers",
+          "type": "{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "A list of markers to put onto the map",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "visible",
+          "reflectToAttr": false,
+          "docs": "Should the map be visible?",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "addMarker",
+          "returns": {
+            "type": "Promise<Marker>",
+            "docs": ""
+          },
+          "signature": "addMarker(location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }) => Promise<google.maps.Marker>",
+          "parameters": [],
+          "docs": "Add a marker to the map",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "location The location information for the marker on the map"
+            }
+          ]
+        },
+        {
+          "name": "clearMarkers",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "clearMarkers() => Promise<boolean>",
+          "parameters": [],
+          "docs": "Clear the markers off of the map",
+          "docsTags": []
+        },
+        {
+          "name": "setCenter",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setCenter(latLng: google.maps.LatLng | google.maps.LatLngLiteral) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "setMarkers",
+          "returns": {
+            "type": "Promise<any>",
+            "docs": ""
+          },
+          "signature": "setMarkers(markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]) => Promise<any>",
+          "parameters": [],
+          "docs": "Set the list of map markers",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "markers A list of map markers"
+            }
+          ]
+        },
+        {
+          "name": "setZoom",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setZoom(level: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "floodteamMapMarkerClick",
+          "detail": "{ marker: Marker; location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "When a marker on the map is clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/pay-card/pay-card.tsx",
       "encapsulation": "none",
       "tag": "floodteam-pay-card",
@@ -6263,6 +6392,236 @@
         ],
         "ion-item": [
           "ion-icon",
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/search-bar/search-bar.tsx",
+      "encapsulation": "none",
+      "tag": "floodteam-search-bar",
+      "readme": "# floodteam-search-bar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "beforeGetResults",
+          "type": "any",
+          "mutable": false,
+          "attr": "before-get-results",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disableSearch",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable-search",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "displayMode",
+          "type": "\"grid\" | \"list\"",
+          "mutable": true,
+          "attr": "display-mode",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"grid\"",
+          "values": [
+            {
+              "value": "grid",
+              "type": "string"
+            },
+            {
+              "value": "list",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "filter",
+          "type": "{ label?: string; controls: { resultsKey?: string; name: string; icon?: string; label?: string; value?: any; header?: string; subHeader?: string; message?: string; optionEl?: (result: any) => any; endpoint?: string; query?: string; limit?: number; orderBy?: string; dataPropsMap?: any; params?: any; multiple?: boolean; disabled?: boolean; cancelText?: string; okText?: string; placeholder?: string; selectedText?: string; interface?: SelectInterface; interfaceOptions?: any; compareWith?: string | SelectCompareFn; options?: { label: string; value: string; }[]; }[]; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ label?: string; controls: { resultsKey?: string; name: string; icon?: string; label?: string; value?: any; header?: string; subHeader?: string; message?: string; optionEl?: (result: any) => any; endpoint?: string; query?: string; limit?: number; orderBy?: string; dataPropsMap?: any; params?: any; multiple?: boolean; disabled?: boolean; cancelText?: string; okText?: string; placeholder?: string; selectedText?: string; interface?: SelectInterface; interfaceOptions?: any; compareWith?: string"
+            },
+            {
+              "type": "SelectCompareFn; options?: { label: string; value: string; }[]; }[]; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "modeToggle",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "mode-toggle",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "paginationEl",
+          "type": "any",
+          "mutable": false,
+          "attr": "pagination-el",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "sort",
+          "type": "{ label?: string; value?: string; header?: string; subHeader?: string; message?: string; options: { label: string; value: string; }[]; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ label?: string; value?: string; header?: string; subHeader?: string; message?: string; options: { label: string; value: string; }[]; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "clearFilter",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "clearFilter(event: any, clearingControl: { resultsKey?: string; name: string; icon?: string; label?: string; value?: any; header?: string; subHeader?: string; message?: string; optionEl?: (result: any) => any; endpoint?: string; query?: string; limit?: number; orderBy?: string; dataPropsMap?: any; params?: any; multiple?: boolean; disabled?: boolean; cancelText?: string; okText?: string; placeholder?: string; selectedText?: string; interface?: SelectInterface; interfaceOptions?: any; compareWith?: string | SelectCompareFn | null; options?: { label: string; value: string; }[]; }) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "createFilterPopover",
+          "returns": {
+            "type": "Promise<HTMLIonPopoverElement>",
+            "docs": ""
+          },
+          "signature": "createFilterPopover(event?: any) => Promise<HTMLIonPopoverElement>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "openFilterPopover",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "openFilterPopover(event: any) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "togglePaginationDisplay",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "togglePaginationDisplay() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [
+        {
+          "event": "fireenjinSuccess",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinReset",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinSubmit",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionChange",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-searchbar",
+        "ion-button",
+        "ion-icon",
+        "ion-label",
+        "ion-text"
+      ],
+      "dependencyGraph": {
+        "floodteam-search-bar": [
+          "ion-searchbar",
+          "ion-button",
+          "ion-icon",
+          "ion-label",
+          "ion-text"
+        ],
+        "ion-searchbar": [
+          "ion-icon"
+        ],
+        "ion-button": [
           "ion-ripple-effect"
         ]
       }
