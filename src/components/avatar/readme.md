@@ -9,6 +9,7 @@
 
 | Property   | Attribute  | Description | Type     | Default     |
 | ---------- | ---------- | ----------- | -------- | ----------- |
+| `fallback` | `fallback` |             | `string` | `undefined` |
 | `initials` | `initials` |             | `string` | `undefined` |
 | `size`     | `size`     |             | `string` | `undefined` |
 | `src`      | `src`      |             | `string` | `undefined` |
