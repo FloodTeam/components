@@ -1,18 +1,58 @@
-search-bar {
+floodteam-search-bar {
+  display: block;
+  border: 1px solid rgba(var(--ion-text-color-rgb), 0.6);
+  border-radius: 26px;
+  position: relative;
+  padding: 5px 0;
+}
+floodteam-search-bar .search-bar-wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-content: center;
+  padding-right: 60px;
 }
-search-bar .filter-button {
-  margin: auto 80px auto auto;
+floodteam-search-bar .filter-bar {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-content: center;
+  margin: auto 10px auto auto;
+  max-width: 100%;
 }
-search-bar ion-searchbar {
-  padding-top: 4px;
-  padding-bottom: 4px;
+floodteam-search-bar .filter-bar ion-chip {
+  margin: auto 10px;
+  min-width: 100px;
+  border-color: rgba(var(--ion-text-color-rgb), 0.5);
+}
+floodteam-search-bar .filter-bar ion-chip ion-icon {
+  color: var(--ion-text-color);
+  opacity: 0.6;
+}
+floodteam-search-bar .filter-button {
+  order: 2;
+  margin: auto 0;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+floodteam-search-bar ion-searchbar {
+  max-width: 250px;
+  padding-top: 2px !important;
+  padding-bottom: 0px !important;
+  --background: transparent !important;
+  --box-shadow: none !important;
+  --color: var(--ion-text-color) !important;
 }
 
 @media only screen and (max-width: 500px) {
-  search-bar .filter-button ion-label {
+  floodteam-search-bar .filter-button ion-label {
     display: none;
+  }
+  floodteam-search-bar .search-bar-wrapper {
+    padding-right: 0;
   }
 }

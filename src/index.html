@@ -44,6 +44,90 @@
         display: block;
         overflow: auto;
         position: initial;
+        background: var(--ion-color-light-shade);
+      }
+      .organism-canvas {
+        padding: 30px;
+      }
+      @import "~@floodteam/components/dist/floodteam/floodteam.css";
+      @import "~@mobiscroll/javascript/dist/css/mobiscroll.min.css";
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ion-color-base: var(--ion-color-tertiary);
+          --ion-color-base-rgb: var(--ion-color-tertiary-rgb);
+          --ion-color-base-shade: var(--ion-color-tertiary-shade);
+          --ion-color-base-tint: var(--ion-color-tertiary-tint);
+          --ion-color-base-dark: #112233;
+          --ion-background-color: var(--ion-color-tertiary);
+          --ion-background-color-rgb: var(--ion-color-tertiary-rgb);
+          --ion-text-color: var(--ion-color-tertiary-contrast);
+          --ion-text-color-rgb: var(--ion-color-tertiary-contrast-rgb);
+          --color: var(--ion-color-tertiary-contrast);
+        }
+        ion-content {
+          --background: var(--ion-color-dark);
+        }
+        ion-modal ion-content {
+          --background: var(--ion-color-dark);
+        }
+        ion-modal ion-content ion-tab-bar {
+          --background: var(--ion-color-dark);
+        }
+        ion-menu ion-content {
+          --background: var(--ion-color-dark-shade);
+        }
+        ion-content.truck-background {
+          --background: var(--ion-color-dark-shade)
+            url("/assets/images/banner-truck-darker.jpg") no-repeat bottom
+            center / cover;
+        }
+        button {
+          --button-color-selected: var(--ion-color-primary);
+          --button-color-hover: var(--ion-color-tertiary-contrast);
+          --button-color: rgba(var(--ion-color-tertiary-contrast-rgb), 0.6);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --ion-color-base: var(--ion-color-light);
+          --ion-color-base-rgb: var(--ion-color-light-rgb);
+          --ion-color-base-shade: var(--ion-color-light-shade);
+          --ion-color-base-tint: var(--ion-color-light-tint);
+          --ion-color-base-dark: hsl(220, 4%, 80%);
+          --ion-background-color: var(--ion-color-light);
+          --ion-background-color-rgb: var(--ion-color-light-rgb);
+          --color: var(--ion-color-light-contrast);
+          --ion-text-color: var(--ion-color-light-contrast);
+          --ion-text-color-rgb: var(--ion-color-light-contrast-rgb);
+        }
+        h1.title {
+          color: var(--ion-color-tertiary-shade);
+        }
+        ion-content {
+          --background: var(--ion-color-light-shade);
+        }
+        ion-modal ion-content {
+          --background: var(--ion-color-light-shade);
+        }
+        ion-modal ion-content ion-tab-bar {
+          --background: var(--ion-color-light-shade);
+        }
+        ion-menu ion-content {
+          --background: var(--ion-color-base-dark);
+        }
+        ion-content.truck-background {
+          --background: var(--ion-color-light-shade)
+            url("/assets/images/banner-truck-dark.jpg") no-repeat bottom center /
+            cover;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: var(--ion-color-dark);
+        }
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"></script>

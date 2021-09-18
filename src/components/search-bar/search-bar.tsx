@@ -1,6 +1,4 @@
-import { popoverController } from "@ionic/core";
 import {
-  Build,
   Component,
   ComponentInterface,
   h,
@@ -11,7 +9,7 @@ import {
   State,
   Watch,
 } from "@stencil/core";
-import { SelectCompareFn, SelectInterface } from "@ionic/core";
+import { filterControl } from "../../typings";
 
 @Component({
   tag: "floodteam-search-bar",
@@ -32,36 +30,7 @@ export class SearchBar implements ComponentInterface {
   };
   @Prop() filter?: {
     label?: string;
-    controls: {
-      resultsKey?: string;
-      name: string;
-      icon?: string;
-      label?: string;
-      value?: any;
-      header?: string;
-      subHeader?: string;
-      message?: string;
-      optionEl?: (result: any) => any;
-      endpoint?: string;
-      query?: string;
-      limit?: number;
-      orderBy?: string;
-      dataPropsMap?: any;
-      params?: any;
-      multiple?: boolean;
-      disabled?: boolean;
-      cancelText?: string;
-      okText?: string;
-      placeholder?: string;
-      selectedText?: string;
-      interface?: SelectInterface;
-      interfaceOptions?: any;
-      compareWith?: string | SelectCompareFn | null;
-      options?: {
-        label: string;
-        value: string;
-      }[];
-    }[];
+    controls: filterControl[];
   };
   @Prop() paginationEl: any;
   @Prop() modeToggle = false;
@@ -69,41 +38,16 @@ export class SearchBar implements ComponentInterface {
     mutable: true,
   })
   displayMode: "list" | "grid" = "grid";
-  @Prop() disableSearch = false;
+  @Prop() disabled = false;
   @Prop() beforeGetResults: any;
+  @Prop({
+    mutable: true
+  })
+  showFilter = true;
 
   @State() selectOptions: any = {};
   @State() currentFilters: {
-    [filterKey: string]: {
-      resultsKey?: string;
-      name: string;
-      icon?: string;
-      label?: string;
-      value?: any;
-      header?: string;
-      subHeader?: string;
-      message?: string;
-      optionEl?: (result: any) => any;
-      endpoint?: string;
-      query?: string;
-      limit?: number;
-      orderBy?: string;
-      dataPropsMap?: any;
-      params?: any;
-      multiple?: boolean;
-      disabled?: boolean;
-      cancelText?: string;
-      okText?: string;
-      placeholder?: string;
-      selectedText?: string;
-      interface?: SelectInterface;
-      interfaceOptions?: any;
-      compareWith?: string | SelectCompareFn | null;
-      options?: {
-        label: string;
-        value: string;
-      }[];
-    };
+    [filterKey: string]: filterControl;
   } = {};
 
   @Watch("paginationEl")
@@ -166,60 +110,15 @@ export class SearchBar implements ComponentInterface {
   }
 
   @Method()
-  async createFilterPopover(event?) {
-    return (this.filterPopoverEl = await popoverController.create({
-      component: "popover-filter",
-      componentProps: { ...this.filter, sort: this.sort },
-      event: event ? event : null,
-      cssClass: "popover-filter-wrapper",
-    }));
-  }
-
-  @Method()
   async togglePaginationDisplay() {
     this.displayMode = this.displayMode === "grid" ? "list" : "grid";
     this.paginationEl.display = this.displayMode;
   }
 
   @Method()
-  async openFilterPopover(event) {
-    await this.createFilterPopover(event);
-    this.filterPopoverEl.present();
-  }
-
-  @Method()
   async clearFilter(
     event,
-    clearingControl: {
-      resultsKey?: string;
-      name: string;
-      icon?: string;
-      label?: string;
-      value?: any;
-      header?: string;
-      subHeader?: string;
-      message?: string;
-      optionEl?: (result: any) => any;
-      endpoint?: string;
-      query?: string;
-      limit?: number;
-      orderBy?: string;
-      dataPropsMap?: any;
-      params?: any;
-      multiple?: boolean;
-      disabled?: boolean;
-      cancelText?: string;
-      okText?: string;
-      placeholder?: string;
-      selectedText?: string;
-      interface?: SelectInterface;
-      interfaceOptions?: any;
-      compareWith?: string | SelectCompareFn | null;
-      options?: {
-        label: string;
-        value: string;
-      }[];
-    }
+    clearingControl: filterControl
   ) {
     event.preventDefault();
     event.stopPropagation();
@@ -261,31 +160,25 @@ export class SearchBar implements ComponentInterface {
     );
   }
 
-  async componentDidLoad() {
-    if (this.filter && Build.isBrowser) {
-      await this.createFilterPopover();
-    }
-  }
-
   render() {
     return (
       <Host>
-        {!this.disableSearch && (
+        <div class="search-bar-wrapper">
           <ion-searchbar
-            style={{
-              "--background": "transparent",
-              "--box-shadow": "none",
-              "--color": "var(--ion-text-color)",
-            }}
+            disabled={this.disabled}
           />
-        )}
-        {this.filter?.controls?.length && (
-          <ion-button class="filter-button" shape="round" fill="outline" color="medium" onClick={(event) => this.openFilterPopover(event)}>
-            <ion-icon slot="start" name="funnel" />
-            <ion-label>Filter &nbsp;</ion-label>
-            <ion-text color="primary" slot="end">{Object.keys(this.currentFilters)?.length}</ion-text>
-          </ion-button>
-        )}
+          {this.showFilter && <div class="filter-bar">
+            {this.filter?.controls?.length && this.filter?.controls.map(control => (<ion-chip outline={!Object.keys(this.currentFilters).includes(control?.name)}>
+              {control?.icon && <ion-icon name={control.icon}></ion-icon>}
+              {control?.label && <ion-label>{control.label}</ion-label>}
+              {Object.keys(this.currentFilters).includes(control?.name) && <ion-icon name="close-circle"></ion-icon>}
+            </ion-chip>))}
+          </div>}
+        </div>
+        <ion-button onClick={() => this.showFilter = !this.showFilter} class="filter-button" fill="clear" shape="round" style={{ color: "var(--ion-text-color)" }}>
+          <ion-icon name="funnel" slot="icon-only" />
+          {Object.keys(this.currentFilters)?.length && <ion-badge slot="end">{Object.keys(this.currentFilters).length}</ion-badge>}
+        </ion-button>
       </Host>
     );
   }
