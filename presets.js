@@ -15,7 +15,10 @@ define("src/components/avatar/avatar.presets", ["require", "exports"], function 
     exports["default"] = {
         "default": {
             name: "Default",
-            props: {}
+            props: {
+                src: null,
+                initials: "TT"
+            }
         }
     };
 });
@@ -81,6 +84,59 @@ define("src/components/photo-carousel/photo-carousel.presets", ["require", "expo
                         url: "https://firebasestorage.googleapis.com/v0/b/ftms-ca85b.appspot.com/o/jobs%2FUXmgvBkzLJQ9eKRR8o7i%2Fphotos%2F2021-06-24T21%3A35%3A31.403Z.jpeg?alt=media&token=d5168723-3670-4b6e-872e-74a98d51180d"
                     }
                 ]
+            }
+        }
+    };
+});
+define("src/components/search-bar/search-bar.presets", ["require", "exports"], function (require, exports) {
+    "use strict";
+    exports.__esModule = true;
+    exports["default"] = {
+        "default": {
+            name: "Default",
+            props: {
+                filter: {
+                    label: "Filter By",
+                    controls: [
+                        {
+                            name: "status",
+                            label: "Status",
+                            icon: "help-circle",
+                            multiple: true,
+                            options: [
+                                {
+                                    label: "Respond",
+                                    value: "respond"
+                                },
+                                {
+                                    label: "Evaluate",
+                                    value: "evaluate"
+                                },
+                                {
+                                    label: "Map",
+                                    value: "map"
+                                },
+                                {
+                                    label: "Dry",
+                                    value: "dry"
+                                },
+                                {
+                                    label: "Review",
+                                    value: "review"
+                                },
+                                {
+                                    label: "Complete",
+                                    value: "complete"
+                                },
+                                {
+                                    label: "Lost",
+                                    value: "lost"
+                                },
+                            ],
+                            value: "lost"
+                        },
+                    ]
+                }
             }
         }
     };

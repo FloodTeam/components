@@ -1,8 +1,8 @@
 {
-  "timestamp": "2021-09-16T23:34:41",
+  "timestamp": "2021-09-18T22:37:23",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.8.0",
+    "version": "2.8.1",
     "typescriptVersion": "4.2.3"
   },
   "components": [
@@ -246,6 +246,22 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "fallback",
+          "type": "string",
+          "mutable": false,
+          "attr": "fallback",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "initials",
           "type": "string",
@@ -6422,10 +6438,10 @@
           "required": false
         },
         {
-          "name": "disableSearch",
+          "name": "disabled",
           "type": "boolean",
           "mutable": false,
-          "attr": "disable-search",
+          "attr": "disabled",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
@@ -6462,17 +6478,14 @@
         },
         {
           "name": "filter",
-          "type": "{ label?: string; controls: { resultsKey?: string; name: string; icon?: string; label?: string; value?: any; header?: string; subHeader?: string; message?: string; optionEl?: (result: any) => any; endpoint?: string; query?: string; limit?: number; orderBy?: string; dataPropsMap?: any; params?: any; multiple?: boolean; disabled?: boolean; cancelText?: string; okText?: string; placeholder?: string; selectedText?: string; interface?: SelectInterface; interfaceOptions?: any; compareWith?: string | SelectCompareFn; options?: { label: string; value: string; }[]; }[]; }",
+          "type": "{ label?: string; controls: filterControl[]; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
           "values": [
             {
-              "type": "{ label?: string; controls: { resultsKey?: string; name: string; icon?: string; label?: string; value?: any; header?: string; subHeader?: string; message?: string; optionEl?: (result: any) => any; endpoint?: string; query?: string; limit?: number; orderBy?: string; dataPropsMap?: any; params?: any; multiple?: boolean; disabled?: boolean; cancelText?: string; okText?: string; placeholder?: string; selectedText?: string; interface?: SelectInterface; interfaceOptions?: any; compareWith?: string"
-            },
-            {
-              "type": "SelectCompareFn; options?: { label: string; value: string; }[]; }[]; }"
+              "type": "{ label?: string; controls: filterControl[]; }"
             }
           ],
           "optional": true,
@@ -6512,6 +6525,23 @@
           "required": false
         },
         {
+          "name": "showFilter",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "show-filter",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "sort",
           "type": "{ label?: string; value?: string; header?: string; subHeader?: string; message?: string; options: { label: string; value: string; }[]; }",
           "mutable": false,
@@ -6534,29 +6564,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "clearFilter(event: any, clearingControl: { resultsKey?: string; name: string; icon?: string; label?: string; value?: any; header?: string; subHeader?: string; message?: string; optionEl?: (result: any) => any; endpoint?: string; query?: string; limit?: number; orderBy?: string; dataPropsMap?: any; params?: any; multiple?: boolean; disabled?: boolean; cancelText?: string; okText?: string; placeholder?: string; selectedText?: string; interface?: SelectInterface; interfaceOptions?: any; compareWith?: string | SelectCompareFn | null; options?: { label: string; value: string; }[]; }) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "createFilterPopover",
-          "returns": {
-            "type": "Promise<HTMLIonPopoverElement>",
-            "docs": ""
-          },
-          "signature": "createFilterPopover(event?: any) => Promise<HTMLIonPopoverElement>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "openFilterPopover",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "openFilterPopover(event: any) => Promise<void>",
+          "signature": "clearFilter(event: any, clearingControl: filterControl) => Promise<void>",
           "parameters": [],
           "docs": "",
           "docsTags": []
@@ -6605,21 +6613,26 @@
       "dependents": [],
       "dependencies": [
         "ion-searchbar",
-        "ion-button",
+        "ion-chip",
         "ion-icon",
         "ion-label",
-        "ion-text"
+        "ion-button",
+        "ion-badge"
       ],
       "dependencyGraph": {
         "floodteam-search-bar": [
           "ion-searchbar",
-          "ion-button",
+          "ion-chip",
           "ion-icon",
           "ion-label",
-          "ion-text"
+          "ion-button",
+          "ion-badge"
         ],
         "ion-searchbar": [
           "ion-icon"
+        ],
+        "ion-chip": [
+          "ion-ripple-effect"
         ],
         "ion-button": [
           "ion-ripple-effect"
