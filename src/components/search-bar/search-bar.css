@@ -25,7 +25,11 @@ floodteam-search-bar .filter-bar {
 floodteam-search-bar .filter-bar ion-chip {
   margin: auto 10px;
   min-width: 100px;
-  border-color: rgba(var(--ion-text-color-rgb), 0.5);
+  border-color: rgba(var(--ion-text-color-rgb), 0.8);
+  opacity: 0.8;
+}
+floodteam-search-bar .filter-bar ion-chip:hover {
+  opacity: 1;
 }
 floodteam-search-bar .filter-bar ion-chip ion-icon {
   color: var(--ion-text-color);

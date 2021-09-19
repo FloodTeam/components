@@ -19,6 +19,13 @@
 | `sort`             | --                   |             | `{ label?: string; value?: string; header?: string; subHeader?: string; message?: string; options: { label: string; value: string; }[]; }` | `undefined` |
 
 
+## Events
+
+| Event              | Description | Type               |
+| ------------------ | ----------- | ------------------ |
+| `fireenjinTrigger` |             | `CustomEvent<any>` |
+
+
 ## Methods
 
 ### `clearFilter(event: any, clearingControl: filterControl) => Promise<void>`
@@ -32,6 +39,16 @@ Type: `Promise<void>`
 
 
 ### `togglePaginationDisplay() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `updateCurrentFilters() => Promise<void>`
 
 
 

@@ -1,6 +1,8 @@
 import {
   Component,
   ComponentInterface,
+  Event,
+  EventEmitter,
   h,
   Host,
   Listen,
@@ -16,7 +18,7 @@ import { filterControl } from "../../typings";
   styleUrl: "search-bar.css",
 })
 export class SearchBar implements ComponentInterface {
-  filterPopoverEl: HTMLIonPopoverElement;
+  @Event() fireenjinTrigger: EventEmitter;
   @Prop() sort?: {
     label?: string;
     value?: string;
@@ -50,50 +52,15 @@ export class SearchBar implements ComponentInterface {
     [filterKey: string]: filterControl;
   } = {};
 
-  @Watch("paginationEl")
-  onPaginationElChange() {
-    if (!this.paginationEl) return;
-    this.displayMode = this.paginationEl.display
-      ? this.paginationEl.display
-      : this.displayMode;
+  @Watch("filter")
+  onFilterChange() {
+    this.updateCurrentFilters();
   }
 
   @Listen("fireenjinSuccess", { target: "body" })
   onSuccess(event) {
     if (event?.detail?.name !== "select") return;
     this.selectOptions[event.detail.target.name] = event.detail.data.results;
-  }
-
-  @Listen("fireenjinReset", { target: "body" })
-  onReset() {
-    if (!this.filterPopoverEl) return;
-    this.filterPopoverEl.dismiss();
-  }
-
-  @Listen("fireenjinSubmit", { target: "body" })
-  async onSubmit(event) {
-    if (!this.filterPopoverEl || event?.detail?.name !== "filter") return;
-    if (event.detail?.data && Object.keys(event.detail.data).length) {
-      for (const [i, control] of this.filter.controls.entries()) {
-        if (!control.name || !event.detail?.data[control.name]) continue;
-        const controlData = {
-          ...control,
-          value: event.detail.data[control.name],
-        };
-        this.filter.controls[i] = controlData;
-        this.currentFilters[control.name] = controlData;
-        this.filter = { ...this.filter };
-      }
-    }
-    this.filterPopoverEl.dismiss();
-    if (!this.paginationEl) return;
-    await this.paginationEl.clearResults();
-    let fetchData = {
-      paramData: event?.detail?.data ? event.detail.data : {},
-    };
-    if (this.beforeGetResults && typeof this.beforeGetResults === "function")
-      fetchData = await this.beforeGetResults(fetchData);
-    this.paginationEl.getResults(fetchData);
   }
 
   @Listen("ionChange")
@@ -160,6 +127,20 @@ export class SearchBar implements ComponentInterface {
     );
   }
 
+  @Method()
+  async updateCurrentFilters() {
+    if (!this.filter?.controls) return;
+    for (const control of this.filter.controls) {
+      if (!control?.value) continue;
+      this.currentFilters[control.name] = control;
+      this.currentFilters = { ...this.currentFilters };
+    }
+  }
+
+  componentDidLoad() {
+    this.updateCurrentFilters();
+  }
+
   render() {
     return (
       <Host>
@@ -167,18 +148,22 @@ export class SearchBar implements ComponentInterface {
           <ion-searchbar
             disabled={this.disabled}
           />
-          {this.showFilter && <div class="filter-bar">
-            {this.filter?.controls?.length && this.filter?.controls.map(control => (<ion-chip outline={!Object.keys(this.currentFilters).includes(control?.name)}>
+          {this.showFilter && this.filter?.controls?.length && <div class="filter-bar">
+            {this.filter?.controls?.length && this.filter?.controls.map(control => (<ion-chip outline={!Object.keys(this.currentFilters).includes(control?.name)} onClick={(event) => this.fireenjinTrigger.emit({
+              event, name: control?.name, payload: {
+                control
+              }
+            })}>
               {control?.icon && <ion-icon name={control.icon}></ion-icon>}
               {control?.label && <ion-label>{control.label}</ion-label>}
-              {Object.keys(this.currentFilters).includes(control?.name) && <ion-icon name="close-circle"></ion-icon>}
+              {Object.keys(this.currentFilters).includes(control?.name) && <ion-icon name="close-circle" onClick={(event) => this.clearFilter(event, control)} />}
             </ion-chip>))}
           </div>}
         </div>
-        <ion-button onClick={() => this.showFilter = !this.showFilter} class="filter-button" fill="clear" shape="round" style={{ color: "var(--ion-text-color)" }}>
+        {this.filter?.controls?.length && <ion-button onClick={() => this.showFilter = !this.showFilter} class="filter-button" fill="clear" shape="round" style={{ color: "var(--ion-text-color)" }}>
           <ion-icon name="funnel" slot="icon-only" />
-          {Object.keys(this.currentFilters)?.length && <ion-badge slot="end">{Object.keys(this.currentFilters).length}</ion-badge>}
-        </ion-button>
+          {Object.keys(this.currentFilters)?.length && <ion-badge slot="end">{this.currentFilters ? Object.keys(this.currentFilters).length : 0}</ion-badge>}
+        </ion-button>}
       </Host>
     );
   }
