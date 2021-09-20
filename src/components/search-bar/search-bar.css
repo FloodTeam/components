@@ -21,6 +21,14 @@ floodteam-search-bar .filter-bar {
   align-content: center;
   margin: auto 10px auto auto;
   max-width: 100%;
+  padding-bottom: 3px;
+}
+floodteam-search-bar .filter-bar::-webkit-scrollbar {
+  height: 5px;
+}
+floodteam-search-bar .filter-bar::-webkit-scrollbar-thumb {
+  background: rgba(var(--ion-text-color-rgb), 0.6);
+  border-radius: 2px;
 }
 floodteam-search-bar .filter-bar ion-chip {
   margin: auto 10px;
