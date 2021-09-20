@@ -150,7 +150,10 @@ export class SearchBar implements ComponentInterface {
           />
           {this.showFilter && this.filter?.controls?.length && <div class="filter-bar">
             {this.filter?.controls?.length && this.filter?.controls.map(control => (<ion-chip outline={!Object.keys(this.currentFilters).includes(control?.name)} onClick={(event) => this.fireenjinTrigger.emit({
-              event, name: control?.name, payload: {
+              event,
+              trigger: "filter",
+              name: control?.name,
+              payload: {
                 control
               }
             })}>
