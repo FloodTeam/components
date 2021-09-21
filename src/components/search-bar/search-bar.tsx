@@ -158,12 +158,12 @@ export class SearchBar implements ComponentInterface {
               }
             })}>
               {control?.icon && <ion-icon name={control.icon}></ion-icon>}
-              {control?.label && <ion-label>{control.label}</ion-label>}
+              {control?.label && <ion-label>{control?.value ? Array.isArray(control.value) ? control.value.join(", ") : control.value : control.label}</ion-label>}
               {Object.keys(this.currentFilters).includes(control?.name) && <ion-icon name="close-circle" onClick={(event) => this.clearFilter(event, control)} />}
             </ion-chip>))}
           </div>}
         </div>
-        {this.filter?.controls?.length && <ion-button onClick={() => this.showFilter = !this.showFilter} class="filter-button" fill="clear" shape="round" style={{ color: "var(--ion-text-color)" }}>
+        {this.filter?.controls?.length && <ion-button onClick={() => this.showFilter = !this.showFilter} class="filter-button" size="small" fill="clear" shape="round" style={{ color: "var(--ion-text-color)" }}>
           <ion-icon name="funnel" slot="icon-only" />
           {Object.keys(this.currentFilters)?.length && <ion-badge slot="end">{this.currentFilters ? Object.keys(this.currentFilters).length : 0}</ion-badge>}
         </ion-button>}
