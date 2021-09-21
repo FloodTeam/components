@@ -19,7 +19,6 @@ $RECYCLE.BIN/
 www/*
 loader/
 storybook/
-dist/
 
 .DS_Store
 Thumbs.db

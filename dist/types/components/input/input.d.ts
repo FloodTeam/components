@@ -1,0 +1,83 @@
+import { ComponentInterface, EventEmitter } from "../../stencil-public-runtime";
+import "cleave.js/dist/addons/cleave-phone.us";
+export declare class Input implements ComponentInterface {
+  itemEl: HTMLIonItemElement;
+  cardNumberEl: HTMLElement;
+  card: any;
+  stripe: any;
+  modal: HTMLIonModalElement;
+  cardValidity: any;
+  inputEl: any;
+  stripeKey: string;
+  type: any;
+  placeholder: any;
+  label: string;
+  value: any;
+  required: any;
+  name: string;
+  autocomplete: "on" | "off";
+  autocapitalize: string;
+  autocorrect: "on" | "off";
+  autofocus: boolean;
+  minlength: number;
+  maxlength: number;
+  disabled: boolean;
+  info: string;
+  edit: boolean;
+  min: string;
+  max: string;
+  iconLeft: string;
+  iconRight: string;
+  silence: boolean;
+  step: string;
+  actionOptions: any;
+  pattern: any;
+  clearInput: boolean;
+  multiple: boolean;
+  readOnly: boolean;
+  spellCheck: boolean;
+  inputMode: string;
+  stripeElements: {
+    style?: any;
+    fonts?: any[];
+  };
+  ionChange: EventEmitter;
+  ionInput: EventEmitter;
+  ionBlur: EventEmitter;
+  ionFocus: EventEmitter;
+  showInfo: boolean;
+  passwordVisible: boolean;
+  cleave: any;
+  input: HTMLInputElement;
+  inputType: string;
+  onBlur(): Promise<void>;
+  getCardToken(options?: {
+    name?: string;
+    address_line1?: string;
+    address_line2?: string;
+    address_city?: string;
+    address_state?: string;
+    address_zip?: string;
+    address_country?: string;
+    currency?: string;
+  }): Promise<any>;
+  setFocus(): Promise<void>;
+  checkValidity(options?: {
+    setValidationClass?: boolean;
+    validationClassOptions?: {
+      ignoreInvalid?: boolean;
+    };
+  }): Promise<boolean>;
+  clear(): Promise<void>;
+  reportValidity(): Promise<boolean>;
+  onValueChange(): boolean;
+  setValidationClass(options?: {
+    ignoreInvalid?: boolean;
+  }): Promise<void>;
+  componentDidLoad(): void;
+  togglePassword(event: UIEvent): void;
+  initializeStripeElements(): boolean;
+  dateToYearMonthDay(timestamp: any): string;
+  renderInput(): any;
+  render(): any;
+}

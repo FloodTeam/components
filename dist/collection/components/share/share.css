@@ -1,0 +1,39 @@
+floodteam-share ion-item:hover {
+  cursor: pointer;
+}
+
+floodteam-share .share-twitter ion-icon {
+  color: #1da1f3;
+}
+
+floodteam-share .share-twitter ion-icon svg {
+  fill: #1da1f3;
+}
+
+floodteam-share .share-twitter:hover .item {
+  color: #1da1f3;
+}
+
+floodteam-share .share-facebook ion-icon {
+  color: #3b5998;
+}
+
+floodteam-share .share-facebook ion-icon svg {
+  fill: #3b5998;
+}
+
+floodteam-share .share-facebook:hover .item {
+  color: #3b5998;
+}
+
+floodteam-share .share-google ion-icon {
+  color: #dd4b38;
+}
+
+floodteam-share .share-google ion-icon svg {
+  fill: #dd4b38;
+}
+
+floodteam-share .share-google:hover .item {
+  color: #dd4b38;
+}

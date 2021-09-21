@@ -1,0 +1,50 @@
+@keyframes fadeRoll {
+  0% {
+    transform: rotate(30deg) translateY(50px) scale(0.6);
+    opacity: 0;
+  }
+
+  80% {
+    transform: rotate(-15deg) translateY(-10px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.checkmark-wrapper {
+  display: block;
+  margin: 0 auto;
+  width: var(
+    --floodteam-checkmark-width,
+    var(--floodteam-checkmark-size, 150px)
+  );
+  height: var(
+    --floodteam-checkmark-height,
+    var(--floodteam-checkmark-size, 150px)
+  );
+  max-width: var(--floodteam-checkmark-max-width, 800px);
+  min-height: var(
+    --floodteam-checkmark-min-height,
+    var(--floodteam-checkmark-size, 150px)
+  );
+}
+
+ion-icon {
+  display: block;
+  height: var(--floodteam-checkmark-size, 150px);
+  width: var(--floodteam-checkmark-size, 150px);
+  color: var(--ion-color-success, #000000);
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+.animate ion-icon {
+  animation: fadeRoll 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

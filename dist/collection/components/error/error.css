@@ -1,0 +1,19 @@
+ion-item {
+  font-family: var(
+    --floodteam-error-font-family,
+    var(--theme-font-primary, Arial, Helvetica, sans-serif)
+  );
+  --item-border-bottom: none;
+  --item-content-padding: 0;
+  position: relative;
+}
+ion-icon {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+}
+ion-label {
+  padding-left: 5px;
+  font-size: 14px;
+  color: var(--ion-color-danger, red) !important;
+}

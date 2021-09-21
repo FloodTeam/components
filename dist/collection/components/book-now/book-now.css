@@ -1,0 +1,28 @@
+floodteam-book-now .success-message {
+  display: block;
+  opacity: 0;
+  height: 0px;
+  transition: opacity 0.6s ease;
+  transition-delay: 1s;
+}
+
+floodteam-book-now .successful .success-message {
+  opacity: 1;
+  height: auto;
+}
+
+floodteam-book-now fireenjin-form {
+  transition: opacity 0.6s ease;
+  opacity: 1;
+}
+
+floodteam-book-now .successful fireenjin-form {
+  opacity: 0;
+  height: 0px;
+}
+
+floodteam-book-now b {
+  display: block;
+  text-align: center;
+  color: var(--ion-color-success);
+}

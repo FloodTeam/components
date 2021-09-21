@@ -1,0 +1,253 @@
+floodteam-epay {
+  font-family: var(
+    --floodteam-epay-font-family,
+    var(--ion-font-family, Arial, Helvetica, sans-serif)
+  );
+}
+floodteam-epay .hidden {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+floodteam-epay floodteam-flip-card .flip-card-inner .badge-top-right {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  border-radius: 0 0 0 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+floodteam-epay floodteam-button {
+  cursor: pointer;
+}
+floodteam-epay floodteam-slides {
+  transition: 0.4s ease all;
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+  opacity: 1;
+}
+floodteam-epay floodteam-slides.hide-slides {
+  opacity: 0;
+  height: 0;
+}
+floodteam-epay floodteam-toggle {
+  position: absolute;
+  top: var(--floodteam-epay-toggle-top, 10px);
+  right: var(--floodteam-epay-toggle-right, 25px);
+  opacity: 1;
+  transition: opacity ease 0.3s;
+  pointer-events: initial;
+}
+floodteam-epay ion-item ion-icon[slot="start"] {
+  margin: auto 10px 10px auto;
+  fill: var(--ion-text-color);
+}
+floodteam-epay .owed {
+  padding: var(--floodteam-epay-owed-padding, 15px 0 15px 0);
+  transition: opacity 0.3s ease;
+}
+floodteam-epay .back-button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+}
+floodteam-epay .owed > span,
+floodteam-epay .owed > p {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+floodteam-epay .owed > span,
+floodteam-epay #confirmation h1 {
+  margin: 0 auto;
+  font-size: 36px;
+  font-weight: bold;
+  color: var(
+    --floodteam-epay-money-color,
+    var(--ion-color-success, green)
+  ) !important;
+  line-height: 60px;
+  height: 60px;
+  transition: 0.4s all ease;
+}
+floodteam-epay .owed > p {
+  letter-spacing: 2px;
+  color: var(--ion-text-color) !important;
+}
+floodteam-epay .owed floodteam-progress-bar {
+  transition: 0.4s all ease;
+  display: block;
+  max-width: 200px;
+  width: 80%;
+  margin: 15px auto;
+  opacity: 1;
+}
+floodteam-epay .owed.shrunk {
+  padding: 10px 0 0 0;
+}
+floodteam-epay .owed.shrunk floodteam-progress-bar {
+  --floodteam-progress-bar-height: 10px;
+}
+floodteam-epay .owed.shrunk floodteam-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+floodteam-epay .owed.shrunk > span,
+floodteam-epay #confirmation h1 {
+  height: 30px;
+  font-size: 28px;
+  padding-top: 0;
+}
+floodteam-epay #payments .past {
+  display: block;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+floodteam-epay #payments h2 {
+  color: #999 !important;
+  margin: 0 15px;
+  padding: 5px 5px;
+  font-size: 16px;
+  border-bottom: 2px solid #bbb;
+  display: block;
+  text-align: left;
+}
+floodteam-epay #payments floodteam-button {
+  display: block;
+  width: 100%;
+}
+floodteam-epay #payments floodteam-fallback {
+  --floodteam-fallback-icon-size: 50px;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+}
+floodteam-epay #details {
+  padding: 0 30px;
+}
+floodteam-epay #details label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #bbb !important;
+  text-align: left;
+}
+floodteam-epay #details floodteam-grid {
+  padding: 15px 0 0 0;
+}
+floodteam-epay #card {
+  padding: 30px 30px 0 30px;
+}
+floodteam-epay #check {
+  padding: 0 30px;
+}
+floodteam-epay #admin-controls floodteam-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
+}
+floodteam-epay .view-button {
+  width: 80px;
+  padding: 10px;
+  position: absolute;
+  top: var(--floodteam-epay-view-button-top, 0px);
+  left: var(--floodteam-epay-view-button-left, 0px);
+}
+floodteam-epay .view-button p {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  display: block;
+  color: #95989a !important;
+  width: 100%;
+  text-align: center;
+}
+floodteam-epay .view-button ion-icon {
+  display: block;
+  margin: 0 auto;
+  height: 25px;
+  width: 25px;
+  color: #cccccc !important;
+}
+floodteam-epay .view-button:hover {
+  cursor: pointer;
+}
+floodteam-epay .view-button:hover p {
+  color: var(--ion-color-secondary) !important;
+}
+floodteam-epay .view-button:hover ion-icon {
+  color: var(--ion-color-secondary) !important;
+}
+floodteam-epay #confirmation .confirm-title {
+  font-weight: bold;
+  color: var(--ion-color-medium) !important;
+  margin: 0 auto 15px;
+}
+floodteam-epay #confirmation floodteam-list {
+  display: block;
+  max-width: 400px;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+floodteam-epay #confirmation floodteam-list p {
+  font-size: 14px;
+}
+floodteam-epay #confirmation floodteam-progress-circle {
+  color: var(--ion-color-medium);
+  font-size: 14px;
+  font-weight: bold;
+  height: 40px;
+  float: right;
+}
+floodteam-epay #confirmation floodteam-thumbs-up {
+  display: block;
+  margin: 30px auto;
+}
+floodteam-epay #confirmation floodteam-error {
+  display: block;
+  width: 90%;
+  margin: 15px auto 0;
+}
+floodteam-epay #success p {
+  color: var(--ion-color-medium) !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+floodteam-epay floodteam-error .ft-error-wrapper {
+  padding: 0 !important;
+}
+
+floodteam-epay ion-item h4 {
+  color: var(--theme-dark-grey) !important;
+}
+
+@media only screen and (max-width: 500px) {
+  floodteam-epay .back-button {
+    top: 3px;
+    left: -15px;
+    z-index: 9;
+  }
+  floodteam-epay .owed > span {
+    font-size: 24px !important;
+    line-height: 30px;
+    padding-top: 20px;
+  }
+  floodteam-epay #details {
+    padding: 0 10px;
+  }
+  floodteam-epay #card {
+    padding: 20px 10px 0 10px;
+  }
+  floodteam-epay #check {
+    padding: 0 10px;
+  }
+}

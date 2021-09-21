@@ -7,11 +7,11 @@
       {
         "assets": [
           {
-            "path": "dist/floodteam/floodteam.css",
+            "path": "./dist/floodteam/floodteam.css",
             "label": "CSS distribution"
           },
           {
-            "path": "dist/floodteam/floodteam.esm.js",
+            "path": "./dist/floodteam/floodteam.esm.js",
             "label": "JS distribution"
           }
         ]
