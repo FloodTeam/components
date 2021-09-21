@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-21T02:07:53",
+  "timestamp": "2021-09-21T02:25:08",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -5879,10 +5879,10 @@
         {
           "name": "selectFiles",
           "returns": {
-            "type": "Promise<any>",
+            "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "selectFiles(event: any) => Promise<any>",
+          "signature": "selectFiles(event: any) => Promise<boolean>",
           "parameters": [],
           "docs": "",
           "docsTags": []
