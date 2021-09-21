@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["https://floodteam-components.web.app"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]

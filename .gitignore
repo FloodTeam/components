@@ -1,10 +1,3 @@
-dist/
-dist-storybook/
-www/
-loader/
-build/
-src/components.d.ts
-storybook-static
 *~
 *.sw[mnpcod]
 *.log
@@ -20,8 +13,13 @@ log.txt
 .vscode/
 .sass-cache/
 .versions/
+.history/
 node_modules/
 $RECYCLE.BIN/
+www/*
+loader/
+storybook/
+dist/
 
 .DS_Store
 Thumbs.db
