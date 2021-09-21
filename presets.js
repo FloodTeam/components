@@ -9,6 +9,18 @@ function define(name, dependencies, callback) {
     window.presets[name.split('/').pop()] = exports["default"];
 }
 ;
+define("src/components/book-now/book-now.presets", ["require", "exports"], function (require, exports) {
+    "use strict";
+    exports.__esModule = true;
+    exports["default"] = {
+        "default": {
+            name: "Default",
+            props: {
+                googleMapsKey: "AIzaSyBenUMQZUJg7qRUoFUJOS5tjK-JnOeQtjM"
+            }
+        }
+    };
+});
 define("src/components/avatar/avatar.presets", ["require", "exports"], function (require, exports) {
     "use strict";
     exports.__esModule = true;
@@ -18,18 +30,6 @@ define("src/components/avatar/avatar.presets", ["require", "exports"], function 
             props: {
                 src: null,
                 initials: "TT"
-            }
-        }
-    };
-});
-define("src/components/book-now/book-now.presets", ["require", "exports"], function (require, exports) {
-    "use strict";
-    exports.__esModule = true;
-    exports["default"] = {
-        "default": {
-            name: "Default",
-            props: {
-                googleMapsKey: "AIzaSyBenUMQZUJg7qRUoFUJOS5tjK-JnOeQtjM"
             }
         }
     };
