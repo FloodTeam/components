@@ -137,6 +137,10 @@ export class SearchBar implements ComponentInterface {
     }
   }
 
+  getControlLabel(control: filterControl) {
+    return control?.value ? Array.isArray(control.value) ? control.value.join(", ") : control.value : control.label;
+  }
+
   componentDidLoad() {
     this.updateCurrentFilters();
   }
@@ -158,7 +162,7 @@ export class SearchBar implements ComponentInterface {
               }
             })}>
               {control?.icon && <ion-icon name={control.icon}></ion-icon>}
-              {control?.label && <ion-label>{control?.value ? Array.isArray(control.value) ? control.value.join(", ") : control.value : control.label}</ion-label>}
+              {control?.label && <ion-label>{this.getControlLabel(control)}</ion-label>}
               {Object.keys(this.currentFilters).includes(control?.name) && <ion-icon name="close-circle" onClick={(event) => this.clearFilter(event, control)} />}
             </ion-chip>))}
           </div>}
