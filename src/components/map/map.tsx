@@ -128,9 +128,12 @@ export class Map implements ComponentInterface {
       name: string;
       icon: string;
       payload?: any;
-    }[] = []
+    }[] = [],
+    clearFirst = false
   ) {
-    await this.clearMarkers();
+    if (!clearFirst) {
+      await this.clearMarkers();
+    }
     this.markers =
       typeof markers === "string"
         ? JSON.parse(markers)
