@@ -11,6 +11,7 @@ import {
   Method,
   h,
   Build,
+  Watch,
 } from "@stencil/core";
 
 @Component({
@@ -117,6 +118,7 @@ export class Map implements ComponentInterface {
    * @param markers A list of map markers
    */
   @Method()
+  @Watch("markers")
   async setMarkers(
     markers: {
       position: {
@@ -128,14 +130,19 @@ export class Map implements ComponentInterface {
       payload?: any;
     }[] = []
   ) {
-    return (this.markers =
+    await this.clearMarkers();
+    this.markers =
       typeof markers === "string"
         ? JSON.parse(markers)
         : markers.length > 0
           ? markers
           : this.mapEl.getAttribute("markers")
             ? JSON.parse(this.mapEl.getAttribute("markers"))
-            : []);
+            : [];
+    if (this.markers.length >= 1) {
+      this.markers.map(this.addMarker.bind(this));
+    }
+    return this.markers;
   }
 
   @Method()
@@ -242,9 +249,6 @@ export class Map implements ComponentInterface {
           : { latitude: 38.6270025, longitude: -90.19940419999999 };
         this.createMap(this.position);
         await this.setMarkers(this.markers);
-        if (this.markers.length >= 1) {
-          this.markers.map(this.addMarker.bind(this));
-        }
       });
     }
   }

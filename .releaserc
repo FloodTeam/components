@@ -5,9 +5,7 @@
     [
       "@semantic-release/github",
       {
-        "assets": [
-          
-        ]
+        "assets": []
       }
     ],
     "@semantic-release/npm"
