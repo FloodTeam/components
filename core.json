@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-21T18:01:28",
+  "timestamp": "2021-09-22T07:48:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -5085,10 +5085,10 @@
         {
           "name": "setMarkers",
           "returns": {
-            "type": "Promise<any>",
+            "type": "Promise<{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]>",
             "docs": ""
           },
-          "signature": "setMarkers(markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]) => Promise<any>",
+          "signature": "setMarkers(markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]) => Promise<{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]>",
           "parameters": [],
           "docs": "Set the list of map markers",
           "docsTags": [
