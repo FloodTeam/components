@@ -468,11 +468,6 @@ export namespace Components {
         "statuses": string[];
         "value": string;
     }
-    interface FloodteamJsonViewer {
-        "formatStringJSON": (str: string) => Promise<void>;
-        "openDepth": number;
-        "watcher": boolean;
-    }
     interface FloodteamLocationBar {
         "algoliaAppId": string;
         "algoliaIndex": string;
@@ -486,40 +481,6 @@ export namespace Components {
         "output": string;
         "resolveTime": number;
         "type": string;
-    }
-    interface FloodteamMap {
-        /**
-          * Add a marker to the map
-          * @param location The location information for the marker on the map
-         */
-        "addMarker": (location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }) => Promise<google.maps.Marker>;
-        /**
-          * Clear the markers off of the map
-         */
-        "clearMarkers": () => Promise<boolean>;
-        /**
-          * A list of markers to put onto the map
-         */
-        "markers": {
-    position: {
-      lat: number;
-      lng: number;
-    };
-    name: string;
-    icon: string;
-    payload?: any;
-  }[];
-        "setCenter": (latLng: google.maps.LatLng | google.maps.LatLngLiteral) => Promise<void>;
-        /**
-          * Set the list of map markers
-          * @param markers A list of map markers
-         */
-        "setMarkers": (markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[], clearFirst?: boolean) => Promise<{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]>;
-        "setZoom": (level: number) => Promise<void>;
-        /**
-          * Should the map be visible?
-         */
-        "visible": boolean;
     }
     interface FloodteamPayCard {
         "stripeKey": string;
@@ -906,12 +867,6 @@ declare global {
         prototype: HTMLFloodteamJobProgressElement;
         new (): HTMLFloodteamJobProgressElement;
     };
-    interface HTMLFloodteamJsonViewerElement extends Components.FloodteamJsonViewer, HTMLStencilElement {
-    }
-    var HTMLFloodteamJsonViewerElement: {
-        prototype: HTMLFloodteamJsonViewerElement;
-        new (): HTMLFloodteamJsonViewerElement;
-    };
     interface HTMLFloodteamLocationBarElement extends Components.FloodteamLocationBar, HTMLStencilElement {
     }
     var HTMLFloodteamLocationBarElement: {
@@ -923,12 +878,6 @@ declare global {
     var HTMLFloodteamLogItemElement: {
         prototype: HTMLFloodteamLogItemElement;
         new (): HTMLFloodteamLogItemElement;
-    };
-    interface HTMLFloodteamMapElement extends Components.FloodteamMap, HTMLStencilElement {
-    }
-    var HTMLFloodteamMapElement: {
-        prototype: HTMLFloodteamMapElement;
-        new (): HTMLFloodteamMapElement;
     };
     interface HTMLFloodteamPayCardElement extends Components.FloodteamPayCard, HTMLStencilElement {
     }
@@ -1067,10 +1016,8 @@ declare global {
         "floodteam-input-search-user": HTMLFloodteamInputSearchUserElement;
         "floodteam-input-state": HTMLFloodteamInputStateElement;
         "floodteam-job-progress": HTMLFloodteamJobProgressElement;
-        "floodteam-json-viewer": HTMLFloodteamJsonViewerElement;
         "floodteam-location-bar": HTMLFloodteamLocationBarElement;
         "floodteam-log-item": HTMLFloodteamLogItemElement;
-        "floodteam-map": HTMLFloodteamMapElement;
         "floodteam-pay-card": HTMLFloodteamPayCardElement;
         "floodteam-pay-check": HTMLFloodteamPayCheckElement;
         "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
@@ -1551,10 +1498,6 @@ declare namespace LocalJSX {
         "statuses"?: string[];
         "value"?: string;
     }
-    interface FloodteamJsonViewer {
-        "openDepth"?: number;
-        "watcher"?: boolean;
-    }
     interface FloodteamLocationBar {
         "algoliaAppId"?: string;
         "algoliaIndex"?: string;
@@ -1568,39 +1511,6 @@ declare namespace LocalJSX {
         "output"?: string;
         "resolveTime"?: number;
         "type"?: string;
-    }
-    interface FloodteamMap {
-        /**
-          * A list of markers to put onto the map
-         */
-        "markers"?: {
-    position: {
-      lat: number;
-      lng: number;
-    };
-    name: string;
-    icon: string;
-    payload?: any;
-  }[];
-        /**
-          * When a marker on the map is clicked
-         */
-        "onFloodteamMapMarkerClick"?: (event: CustomEvent<{
-    marker: google.maps.Marker;
-    location: {
-      position: {
-        lat: number;
-        lng: number;
-      };
-      name: string;
-      icon: string;
-      payload?: any;
-    };
-  }>) => void;
-        /**
-          * Should the map be visible?
-         */
-        "visible"?: boolean;
     }
     interface FloodteamPayCard {
         "onFtCancel"?: (event: CustomEvent<any>) => void;
@@ -1827,10 +1737,8 @@ declare namespace LocalJSX {
         "floodteam-input-search-user": FloodteamInputSearchUser;
         "floodteam-input-state": FloodteamInputState;
         "floodteam-job-progress": FloodteamJobProgress;
-        "floodteam-json-viewer": FloodteamJsonViewer;
         "floodteam-location-bar": FloodteamLocationBar;
         "floodteam-log-item": FloodteamLogItem;
-        "floodteam-map": FloodteamMap;
         "floodteam-pay-card": FloodteamPayCard;
         "floodteam-pay-check": FloodteamPayCheck;
         "floodteam-payment-methods": FloodteamPaymentMethods;
@@ -1878,10 +1786,8 @@ declare module "@stencil/core" {
             "floodteam-input-search-user": LocalJSX.FloodteamInputSearchUser & JSXBase.HTMLAttributes<HTMLFloodteamInputSearchUserElement>;
             "floodteam-input-state": LocalJSX.FloodteamInputState & JSXBase.HTMLAttributes<HTMLFloodteamInputStateElement>;
             "floodteam-job-progress": LocalJSX.FloodteamJobProgress & JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
-            "floodteam-json-viewer": LocalJSX.FloodteamJsonViewer & JSXBase.HTMLAttributes<HTMLFloodteamJsonViewerElement>;
             "floodteam-location-bar": LocalJSX.FloodteamLocationBar & JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
             "floodteam-log-item": LocalJSX.FloodteamLogItem & JSXBase.HTMLAttributes<HTMLFloodteamLogItemElement>;
-            "floodteam-map": LocalJSX.FloodteamMap & JSXBase.HTMLAttributes<HTMLFloodteamMapElement>;
             "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
             "floodteam-pay-check": LocalJSX.FloodteamPayCheck & JSXBase.HTMLAttributes<HTMLFloodteamPayCheckElement>;
             "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;

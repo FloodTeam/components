@@ -47,7 +47,7 @@ export class LogItem implements ComponentInterface {
             <ion-row>
               <ion-col>
                 <h3>Input</h3>
-                <floodteam-json-viewer
+                <fireenjin-json-viewer
                   innerHTML={
                     typeof this.input === "object"
                       ? JSON.stringify(this.input)
@@ -57,7 +57,7 @@ export class LogItem implements ComponentInterface {
               </ion-col>
               <ion-col>
                 <h3>Output</h3>
-                <floodteam-json-viewer
+                <fireenjin-json-viewer
                   innerHTML={
                     typeof this.output === "object"
                       ? JSON.stringify(this.output)
