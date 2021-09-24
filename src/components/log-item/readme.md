@@ -26,7 +26,7 @@
 - ion-grid
 - ion-row
 - ion-col
-- [floodteam-json-viewer](../json-viewer)
+- fireenjin-json-viewer
 
 ### Graph
 ```mermaid
@@ -36,7 +36,7 @@ graph TD;
   floodteam-log-item --> ion-grid
   floodteam-log-item --> ion-row
   floodteam-log-item --> ion-col
-  floodteam-log-item --> floodteam-json-viewer
+  floodteam-log-item --> fireenjin-json-viewer
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
   style floodteam-log-item fill:#f9f,stroke:#333,stroke-width:4px
