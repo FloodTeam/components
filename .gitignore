@@ -8,6 +8,7 @@ log.txt
 *.sublime-project
 *.sublime-workspace
 
+dist/
 .stencil/
 .idea/
 .vscode/
