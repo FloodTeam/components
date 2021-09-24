@@ -1,4 +1,0 @@
-import "@ionic/core";
-import "@madnesslabs/fireenjin-components";
-declare const _default: () => void;
-export default _default;

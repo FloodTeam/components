@@ -514,7 +514,7 @@ export namespace Components {
           * Set the list of map markers
           * @param markers A list of map markers
          */
-        "setMarkers": (markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]) => Promise<any>;
+        "setMarkers": (markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[], clearFirst?: boolean) => Promise<{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]>;
         "setZoom": (level: number) => Promise<void>;
         /**
           * Should the map be visible?

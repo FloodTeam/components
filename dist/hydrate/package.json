@@ -1,6 +1,0 @@
-{
-  "name": "@floodteam/components/hydrate",
-  "description": "floodteam component hydration app.",
-  "main": "index.js",
-  "types": "index.d.ts"
-}

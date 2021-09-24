@@ -30,6 +30,7 @@ Type: `Promise<any[]>`
 
 ### Depends on
 
+- fireenjin-graph
 - ion-item
 - [floodteam-avatar](../avatar)
 - [floodteam-error](../error)
@@ -38,6 +39,7 @@ Type: `Promise<any[]>`
 ### Graph
 ```mermaid
 graph TD;
+  fireenjin-graph-pay-splits --> fireenjin-graph
   fireenjin-graph-pay-splits --> ion-item
   fireenjin-graph-pay-splits --> floodteam-avatar
   fireenjin-graph-pay-splits --> floodteam-error
