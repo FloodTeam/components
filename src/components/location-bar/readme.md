@@ -24,6 +24,7 @@
 - ion-col
 - ion-icon
 - fireenjin-form
+- fireenjin-input
 - ion-button
 
 ### Graph
@@ -34,12 +35,19 @@ graph TD;
   floodteam-location-bar --> ion-col
   floodteam-location-bar --> ion-icon
   floodteam-location-bar --> fireenjin-form
+  floodteam-location-bar --> fireenjin-input
   floodteam-location-bar --> ion-button
   fireenjin-form --> ion-grid
   fireenjin-form --> ion-row
   fireenjin-form --> ion-col
   fireenjin-form --> ion-button
   ion-button --> ion-ripple-effect
+  fireenjin-input --> ion-input
+  fireenjin-input --> ion-item
+  fireenjin-input --> ion-icon
+  fireenjin-input --> ion-label
+  ion-item --> ion-icon
+  ion-item --> ion-ripple-effect
   style floodteam-location-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

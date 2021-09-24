@@ -1,5 +1,4 @@
 import { Config } from "@stencil/core";
-import typescript from "rollup-plugin-typescript";
 
 import { namespace } from "./package.json";
 
@@ -28,7 +27,5 @@ export const config: Config = {
       dir: "dist/hydrate",
     },
   ],
-  rollupPlugins: {
-    before: [typescript()],
-  },
+  rollupPlugins: {},
 };

@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description | Type                   | Default     |
@@ -13,11 +14,13 @@
 | `stripeKey` | `stripe-key` |             | `string`               | `undefined` |
 | `userId`    | `user-id`    |             | `string`               | `undefined` |
 
+
 ## Events
 
 | Event                   | Description | Type               |
 | ----------------------- | ----------- | ------------------ |
 | `ftRemovePaymentMethod` |             | `CustomEvent<any>` |
+
 
 ## Dependencies
 
@@ -36,11 +39,10 @@
 - ion-row
 - ion-col
 - fireenjin-form
-- [fireenjin-input-address](../input-address)
+- fireenjin-input
 - [floodteam-checkmark](../checkmark)
 
 ### Graph
-
 ```mermaid
 graph TD;
   floodteam-payment-methods --> ion-card
@@ -56,7 +58,7 @@ graph TD;
   floodteam-payment-methods --> ion-row
   floodteam-payment-methods --> ion-col
   floodteam-payment-methods --> fireenjin-form
-  floodteam-payment-methods --> fireenjin-input-address
+  floodteam-payment-methods --> fireenjin-input
   floodteam-payment-methods --> floodteam-checkmark
   ion-card --> ion-ripple-effect
   floodteam-error --> ion-item
@@ -69,21 +71,14 @@ graph TD;
   fireenjin-form --> ion-row
   fireenjin-form --> ion-col
   fireenjin-form --> ion-button
-  fireenjin-input-address --> ion-item
-  fireenjin-input-address --> ion-label
-  fireenjin-input-address --> ion-input
-  fireenjin-input-address --> ion-grid
-  fireenjin-input-address --> ion-row
-  fireenjin-input-address --> ion-col
-  fireenjin-input-address --> fireenjin-input-state
-  fireenjin-input-address --> ion-button
-  fireenjin-input-address --> ion-icon
-  fireenjin-input-state --> ion-select
-  fireenjin-input-state --> ion-select-option
+  fireenjin-input --> ion-input
+  fireenjin-input --> ion-item
+  fireenjin-input --> ion-icon
+  fireenjin-input --> ion-label
   floodteam-checkmark --> ion-icon
   style floodteam-payment-methods fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
