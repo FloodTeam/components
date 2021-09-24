@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-22T08:00:07",
+  "timestamp": "2021-09-24T07:24:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -4669,78 +4669,6 @@
       }
     },
     {
-      "filePath": "./src/components/json-viewer/json-viewer.tsx",
-      "encapsulation": "none",
-      "tag": "floodteam-json-viewer",
-      "readme": "# floodteam-json-viewer\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "openDepth",
-          "type": "number",
-          "mutable": false,
-          "attr": "open-depth",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "1",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "watcher",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "watcher",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "formatStringJSON",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "formatStringJSON(str: string) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [
-        "floodteam-log-item"
-      ],
-      "dependencies": [],
-      "dependencyGraph": {
-        "floodteam-log-item": [
-          "floodteam-json-viewer"
-        ]
-      }
-    },
-    {
       "filePath": "./src/components/location-bar/location-bar.tsx",
       "encapsulation": "none",
       "tag": "floodteam-location-bar",
@@ -4983,7 +4911,7 @@
         "ion-grid",
         "ion-row",
         "ion-col",
-        "floodteam-json-viewer"
+        "fireenjin-json-viewer"
       ],
       "dependencyGraph": {
         "floodteam-log-item": [
@@ -4992,142 +4920,13 @@
           "ion-grid",
           "ion-row",
           "ion-col",
-          "floodteam-json-viewer"
+          "fireenjin-json-viewer"
         ],
         "ion-item": [
           "ion-icon",
           "ion-ripple-effect"
         ]
       }
-    },
-    {
-      "filePath": "./src/components/map/map.tsx",
-      "encapsulation": "none",
-      "tag": "floodteam-map",
-      "readme": "# trackmygiving-map\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "markers",
-          "type": "{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]",
-          "mutable": true,
-          "reflectToAttr": false,
-          "docs": "A list of markers to put onto the map",
-          "docsTags": [],
-          "default": "[]",
-          "values": [
-            {
-              "type": "{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "visible",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "visible",
-          "reflectToAttr": false,
-          "docs": "Should the map be visible?",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "addMarker",
-          "returns": {
-            "type": "Promise<Marker>",
-            "docs": ""
-          },
-          "signature": "addMarker(location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }) => Promise<google.maps.Marker>",
-          "parameters": [],
-          "docs": "Add a marker to the map",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "location The location information for the marker on the map"
-            }
-          ]
-        },
-        {
-          "name": "clearMarkers",
-          "returns": {
-            "type": "Promise<boolean>",
-            "docs": ""
-          },
-          "signature": "clearMarkers() => Promise<boolean>",
-          "parameters": [],
-          "docs": "Clear the markers off of the map",
-          "docsTags": []
-        },
-        {
-          "name": "setCenter",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "setCenter(latLng: google.maps.LatLng | google.maps.LatLngLiteral) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "setMarkers",
-          "returns": {
-            "type": "Promise<{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]>",
-            "docs": ""
-          },
-          "signature": "setMarkers(markers?: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[], clearFirst?: boolean) => Promise<{ position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }[]>",
-          "parameters": [],
-          "docs": "Set the list of map markers",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "markers A list of map markers"
-            }
-          ]
-        },
-        {
-          "name": "setZoom",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "setZoom(level: number) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [
-        {
-          "event": "floodteamMapMarkerClick",
-          "detail": "{ marker: Marker; location: { position: { lat: number; lng: number; }; name: string; icon: string; payload?: any; }; }",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "When a marker on the map is clicked",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/pay-card/pay-card.tsx",
