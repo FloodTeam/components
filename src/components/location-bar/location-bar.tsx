@@ -113,7 +113,7 @@ export class LocationBar implements ComponentInterface {
             )}
             {this.changingLocation && (
               <fireenjin-form hideControls>
-                <floodteam-input
+                <fireenjin-input
                   name="query"
                   value={this.query}
                   placeholder="Enter Zip"

@@ -634,7 +634,7 @@ export class Epay implements ComponentInterface {
               <ion-row>
                 <ion-col>
                   <ion-list>
-                    <floodteam-input
+                    <fireenjin-input
                       class="billee-input"
                       iconLeft="mail"
                       label="Billee Email"
@@ -650,7 +650,7 @@ export class Epay implements ComponentInterface {
                       }
                       required
                     />
-                    <floodteam-input
+                    <fireenjin-input
                       class="amount-input"
                       iconLeft="logo-usd"
                       label="Amount"

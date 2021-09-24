@@ -103,7 +103,6 @@ Type: `Promise<void>`
 - ion-label
 - [floodteam-fallback](../fallback)
 - ion-list
-- [floodteam-input](../input)
 - [floodteam-pay-card](../pay-card)
 - [floodteam-pay-check](../pay-check)
 - [floodteam-error](../error)
@@ -125,7 +124,6 @@ graph TD;
   floodteam-epay --> ion-label
   floodteam-epay --> floodteam-fallback
   floodteam-epay --> ion-list
-  floodteam-epay --> floodteam-input
   floodteam-epay --> floodteam-pay-card
   floodteam-epay --> floodteam-pay-check
   floodteam-epay --> floodteam-error
@@ -135,10 +133,6 @@ graph TD;
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
   floodteam-fallback --> ion-icon
-  floodteam-input --> ion-input
-  floodteam-input --> ion-item
-  floodteam-input --> ion-icon
-  floodteam-input --> ion-label
   floodteam-pay-card --> floodteam-error
   floodteam-pay-card --> ion-grid
   floodteam-pay-card --> ion-row

@@ -92,19 +92,19 @@ export class BookNow {
           beforeSubmit={this.onBeforeSubmit.bind(this)}
         >
           <ion-list>
-            <floodteam-input
+            <fireenjin-input
               name="customer"
               label="Customer Name"
               placeholder="What is the customer's full name?"
             />
-            <floodteam-input
+            <fireenjin-input
               type="tel"
               inputMode="tel"
               label="Customer Phone Number"
               placeholder="What is the customer's phone number?"
               name="phone"
             />
-            <floodteam-input
+            <fireenjin-input
               name="email"
               type="email"
               label="Customer Email"

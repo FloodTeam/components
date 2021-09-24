@@ -28,7 +28,7 @@ floodteam-pay-check #form-check img {
   display: block;
   width: 100%;
 }
-floodteam-pay-check #form-check floodteam-input {
+floodteam-pay-check #form-check fireenjin-input {
   --floodteam-input-font-size: 28px;
   --floodteam-input-width: 160px;
   --floodteam-input-focus-color: #0f78b9;

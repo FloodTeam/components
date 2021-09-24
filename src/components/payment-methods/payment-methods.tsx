@@ -14,11 +14,11 @@ import {
   styleUrl: "payment-methods.css",
 })
 export class PaymentMethods implements ComponentInterface {
-  cardInputEl: HTMLFloodteamInputElement;
-  nameInputEl: HTMLFloodteamInputElement;
+  cardInputEl: any;
+  nameInputEl: any;
   addressInputEl: HTMLFloodteamInputAddressElement;
-  routingInputEl: HTMLFloodteamInputElement;
-  accountInputEl: HTMLFloodteamInputElement;
+  routingInputEl: any;
+  accountInputEl: any;
   checkmarkEl: any;
   sliderEl: HTMLIonSlidesElement;
   sliderOptions: any = {
@@ -253,7 +253,7 @@ export class PaymentMethods implements ComponentInterface {
                   excludeData={["card", "cardName"]}
                 >
                   <ion-list>
-                    <floodteam-input
+                    <fireenjin-input
                       ref={(el) => (this.cardInputEl = el)}
                       placeholder="Card Number"
                       name="card"
@@ -270,9 +270,9 @@ export class PaymentMethods implements ComponentInterface {
                           base: {
                             color:
                               window &&
-                              window.matchMedia &&
-                              window.matchMedia("(prefers-color-scheme: dark)")
-                                .matches
+                                window.matchMedia &&
+                                window.matchMedia("(prefers-color-scheme: dark)")
+                                  .matches
                                 ? "#ffffff"
                                 : "#000000",
                             fontFamily: '"Work Sans", sans-serif',
@@ -282,10 +282,10 @@ export class PaymentMethods implements ComponentInterface {
                               fontWeight: "400",
                               color:
                                 window &&
-                                window.matchMedia &&
-                                window.matchMedia(
-                                  "(prefers-color-scheme: dark)"
-                                ).matches
+                                  window.matchMedia &&
+                                  window.matchMedia(
+                                    "(prefers-color-scheme: dark)"
+                                  ).matches
                                   ? "#8d9ba9"
                                   : "#acadad",
                             },
@@ -298,7 +298,7 @@ export class PaymentMethods implements ComponentInterface {
                       }}
                       required
                     />
-                    <floodteam-input
+                    <fireenjin-input
                       ref={(el) => (this.nameInputEl = el)}
                       placeholder="Name on Card"
                       name="cardName"
@@ -325,13 +325,13 @@ export class PaymentMethods implements ComponentInterface {
                   name="bankingForm"
                 >
                   <ion-list>
-                    <floodteam-input
+                    <fireenjin-input
                       ref={(el) => (this.accountInputEl = el)}
                       placeholder="Account Number"
                       name="accountNumber"
                       required
                     />
-                    <floodteam-input
+                    <fireenjin-input
                       ref={(el) => (this.routingInputEl = el)}
                       placeholder="Routing Number"
                       name="routingNumber"

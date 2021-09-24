@@ -18,12 +18,6 @@ export namespace Components {
         "siteId": string;
         "userId": string;
     }
-    interface FloodteamAvatar {
-        "fallback": string;
-        "initials": string;
-        "size": string;
-        "src": string;
-    }
     interface FloodteamBookNow {
         /**
           * The Google Maps API Key
@@ -252,46 +246,6 @@ export namespace Components {
          */
         "vertical": "center" | "top" | "bottom";
     }
-    interface FloodteamInput {
-        "actionOptions": any;
-        "autocapitalize": string;
-        "autocomplete": "on" | "off";
-        "autocorrect": "on" | "off";
-        "autofocus": boolean;
-        "checkValidity": (options?: { setValidationClass?: boolean; validationClassOptions?: { ignoreInvalid?: boolean; }; }) => Promise<boolean>;
-        "clear": () => Promise<void>;
-        "clearInput": boolean;
-        "disabled": boolean;
-        "edit": boolean;
-        "getCardToken": (options?: { name?: string; address_line1?: string; address_line2?: string; address_city?: string; address_state?: string; address_zip?: string; address_country?: string; currency?: string; }) => Promise<any>;
-        "iconLeft": string;
-        "iconRight": string;
-        "info": string;
-        "inputMode": string;
-        "label": string;
-        "max": string;
-        "maxlength": number;
-        "min": string;
-        "minlength": number;
-        "multiple": boolean;
-        "name": string;
-        "pattern": any;
-        "placeholder": any;
-        "readOnly": boolean;
-        "reportValidity": () => Promise<boolean>;
-        "required": any;
-        "setFocus": () => Promise<void>;
-        "silence": boolean;
-        "spellCheck": boolean;
-        "step": string;
-        "stripeElements": {
-    style?: any;
-    fonts?: any[];
-  };
-        "stripeKey": string;
-        "type": any;
-        "value": any;
-    }
     interface FloodteamInputAddress {
         /**
           * The Google Maps API Key
@@ -348,11 +302,6 @@ export namespace Components {
         "path": string;
         "type": string;
         "uploadData": any;
-        "value": any;
-    }
-    interface FloodteamInputJson {
-        "label": string;
-        "name": string;
         "value": any;
     }
     interface FloodteamInputPhoto {
@@ -554,15 +503,6 @@ export namespace Components {
          */
         "events": any;
     }
-    interface FloodteamRadios {
-        "label": string;
-        "lines": "full" | "inset" | "none";
-        "name": string;
-        "options": any;
-        "required": any;
-        "selected": number;
-        "value": any;
-    }
     interface FloodteamSearchBar {
         "beforeGetResults": any;
         "clearFilter": (event: any, clearingControl: filterControl) => Promise<void>;
@@ -720,19 +660,6 @@ export namespace Components {
         "setCurrentRating": (rating: any) => Promise<void>;
         "value": string;
     }
-    interface FloodteamTab {
-        "selected": boolean;
-        "tab": string;
-    }
-    interface FloodteamTabs {
-        "hash": boolean;
-        "selected": string;
-    }
-    interface FloodteamToggle {
-        "label": string;
-        "name": string;
-        "value": boolean;
-    }
 }
 declare global {
     interface HTMLFireenjinGraphPaySplitsElement extends Components.FireenjinGraphPaySplits, HTMLStencilElement {
@@ -746,12 +673,6 @@ declare global {
     var HTMLFloodteamActivityFeedElement: {
         prototype: HTMLFloodteamActivityFeedElement;
         new (): HTMLFloodteamActivityFeedElement;
-    };
-    interface HTMLFloodteamAvatarElement extends Components.FloodteamAvatar, HTMLStencilElement {
-    }
-    var HTMLFloodteamAvatarElement: {
-        prototype: HTMLFloodteamAvatarElement;
-        new (): HTMLFloodteamAvatarElement;
     };
     interface HTMLFloodteamBookNowElement extends Components.FloodteamBookNow, HTMLStencilElement {
     }
@@ -801,12 +722,6 @@ declare global {
         prototype: HTMLFloodteamFloatingButtonElement;
         new (): HTMLFloodteamFloatingButtonElement;
     };
-    interface HTMLFloodteamInputElement extends Components.FloodteamInput, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputElement: {
-        prototype: HTMLFloodteamInputElement;
-        new (): HTMLFloodteamInputElement;
-    };
     interface HTMLFloodteamInputAddressElement extends Components.FloodteamInputAddress, HTMLStencilElement {
     }
     var HTMLFloodteamInputAddressElement: {
@@ -824,12 +739,6 @@ declare global {
     var HTMLFloodteamInputFileElement: {
         prototype: HTMLFloodteamInputFileElement;
         new (): HTMLFloodteamInputFileElement;
-    };
-    interface HTMLFloodteamInputJsonElement extends Components.FloodteamInputJson, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputJsonElement: {
-        prototype: HTMLFloodteamInputJsonElement;
-        new (): HTMLFloodteamInputJsonElement;
     };
     interface HTMLFloodteamInputPhotoElement extends Components.FloodteamInputPhoto, HTMLStencilElement {
     }
@@ -927,12 +836,6 @@ declare global {
         prototype: HTMLFloodteamProgressTimelineElement;
         new (): HTMLFloodteamProgressTimelineElement;
     };
-    interface HTMLFloodteamRadiosElement extends Components.FloodteamRadios, HTMLStencilElement {
-    }
-    var HTMLFloodteamRadiosElement: {
-        prototype: HTMLFloodteamRadiosElement;
-        new (): HTMLFloodteamRadiosElement;
-    };
     interface HTMLFloodteamSearchBarElement extends Components.FloodteamSearchBar, HTMLStencilElement {
     }
     var HTMLFloodteamSearchBarElement: {
@@ -975,28 +878,9 @@ declare global {
         prototype: HTMLFloodteamStarRatingElement;
         new (): HTMLFloodteamStarRatingElement;
     };
-    interface HTMLFloodteamTabElement extends Components.FloodteamTab, HTMLStencilElement {
-    }
-    var HTMLFloodteamTabElement: {
-        prototype: HTMLFloodteamTabElement;
-        new (): HTMLFloodteamTabElement;
-    };
-    interface HTMLFloodteamTabsElement extends Components.FloodteamTabs, HTMLStencilElement {
-    }
-    var HTMLFloodteamTabsElement: {
-        prototype: HTMLFloodteamTabsElement;
-        new (): HTMLFloodteamTabsElement;
-    };
-    interface HTMLFloodteamToggleElement extends Components.FloodteamToggle, HTMLStencilElement {
-    }
-    var HTMLFloodteamToggleElement: {
-        prototype: HTMLFloodteamToggleElement;
-        new (): HTMLFloodteamToggleElement;
-    };
     interface HTMLElementTagNameMap {
         "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
         "floodteam-activity-feed": HTMLFloodteamActivityFeedElement;
-        "floodteam-avatar": HTMLFloodteamAvatarElement;
         "floodteam-book-now": HTMLFloodteamBookNowElement;
         "floodteam-checkmark": HTMLFloodteamCheckmarkElement;
         "floodteam-epay": HTMLFloodteamEpayElement;
@@ -1005,11 +889,9 @@ declare global {
         "floodteam-feed-card": HTMLFloodteamFeedCardElement;
         "floodteam-flip-card": HTMLFloodteamFlipCardElement;
         "floodteam-floating-button": HTMLFloodteamFloatingButtonElement;
-        "floodteam-input": HTMLFloodteamInputElement;
         "floodteam-input-address": HTMLFloodteamInputAddressElement;
         "floodteam-input-amount": HTMLFloodteamInputAmountElement;
         "floodteam-input-file": HTMLFloodteamInputFileElement;
-        "floodteam-input-json": HTMLFloodteamInputJsonElement;
         "floodteam-input-photo": HTMLFloodteamInputPhotoElement;
         "floodteam-input-search": HTMLFloodteamInputSearchElement;
         "floodteam-input-search-popover": HTMLFloodteamInputSearchPopoverElement;
@@ -1026,7 +908,6 @@ declare global {
         "floodteam-progress-bar": HTMLFloodteamProgressBarElement;
         "floodteam-progress-circle": HTMLFloodteamProgressCircleElement;
         "floodteam-progress-timeline": HTMLFloodteamProgressTimelineElement;
-        "floodteam-radios": HTMLFloodteamRadiosElement;
         "floodteam-search-bar": HTMLFloodteamSearchBarElement;
         "floodteam-share": HTMLFloodteamShareElement;
         "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
@@ -1034,9 +915,6 @@ declare global {
         "floodteam-slides": HTMLFloodteamSlidesElement;
         "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
         "floodteam-star-rating": HTMLFloodteamStarRatingElement;
-        "floodteam-tab": HTMLFloodteamTabElement;
-        "floodteam-tabs": HTMLFloodteamTabsElement;
-        "floodteam-toggle": HTMLFloodteamToggleElement;
     }
 }
 declare namespace LocalJSX {
@@ -1049,12 +927,6 @@ declare namespace LocalJSX {
         "onFireenjinTrigger"?: (event: CustomEvent<any>) => void;
         "siteId"?: string;
         "userId"?: string;
-    }
-    interface FloodteamAvatar {
-        "fallback"?: string;
-        "initials"?: string;
-        "size"?: string;
-        "src"?: string;
     }
     interface FloodteamBookNow {
         /**
@@ -1277,45 +1149,6 @@ declare namespace LocalJSX {
          */
         "vertical"?: "center" | "top" | "bottom";
     }
-    interface FloodteamInput {
-        "actionOptions"?: any;
-        "autocapitalize"?: string;
-        "autocomplete"?: "on" | "off";
-        "autocorrect"?: "on" | "off";
-        "autofocus"?: boolean;
-        "clearInput"?: boolean;
-        "disabled"?: boolean;
-        "edit"?: boolean;
-        "iconLeft"?: string;
-        "iconRight"?: string;
-        "info"?: string;
-        "inputMode"?: string;
-        "label"?: string;
-        "max"?: string;
-        "maxlength"?: number;
-        "min"?: string;
-        "minlength"?: number;
-        "multiple"?: boolean;
-        "name"?: string;
-        "onIonBlur"?: (event: CustomEvent<any>) => void;
-        "onIonChange"?: (event: CustomEvent<any>) => void;
-        "onIonFocus"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        "pattern"?: any;
-        "placeholder"?: any;
-        "readOnly"?: boolean;
-        "required"?: any;
-        "silence"?: boolean;
-        "spellCheck"?: boolean;
-        "step"?: string;
-        "stripeElements"?: {
-    style?: any;
-    fonts?: any[];
-  };
-        "stripeKey"?: string;
-        "type"?: any;
-        "value"?: any;
-    }
     interface FloodteamInputAddress {
         /**
           * The Google Maps API Key
@@ -1378,11 +1211,6 @@ declare namespace LocalJSX {
         "path"?: string;
         "type"?: string;
         "uploadData"?: any;
-        "value"?: any;
-    }
-    interface FloodteamInputJson {
-        "label"?: string;
-        "name"?: string;
         "value"?: any;
     }
     interface FloodteamInputPhoto {
@@ -1581,16 +1409,6 @@ declare namespace LocalJSX {
          */
         "events"?: any;
     }
-    interface FloodteamRadios {
-        "label"?: string;
-        "lines"?: "full" | "inset" | "none";
-        "name"?: string;
-        "onIonChange"?: (event: CustomEvent<any>) => void;
-        "options"?: any;
-        "required"?: any;
-        "selected"?: number;
-        "value"?: any;
-    }
     interface FloodteamSearchBar {
         "beforeGetResults"?: any;
         "disabled"?: boolean;
@@ -1700,24 +1518,9 @@ declare namespace LocalJSX {
         "onFtStarRating"?: (event: CustomEvent<any>) => void;
         "value"?: string;
     }
-    interface FloodteamTab {
-        "selected"?: boolean;
-        "tab"?: string;
-    }
-    interface FloodteamTabs {
-        "hash"?: boolean;
-        "onFloodteamTabChange"?: (event: CustomEvent<any>) => void;
-        "selected"?: string;
-    }
-    interface FloodteamToggle {
-        "label"?: string;
-        "name"?: string;
-        "value"?: boolean;
-    }
     interface IntrinsicElements {
         "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
         "floodteam-activity-feed": FloodteamActivityFeed;
-        "floodteam-avatar": FloodteamAvatar;
         "floodteam-book-now": FloodteamBookNow;
         "floodteam-checkmark": FloodteamCheckmark;
         "floodteam-epay": FloodteamEpay;
@@ -1726,11 +1529,9 @@ declare namespace LocalJSX {
         "floodteam-feed-card": FloodteamFeedCard;
         "floodteam-flip-card": FloodteamFlipCard;
         "floodteam-floating-button": FloodteamFloatingButton;
-        "floodteam-input": FloodteamInput;
         "floodteam-input-address": FloodteamInputAddress;
         "floodteam-input-amount": FloodteamInputAmount;
         "floodteam-input-file": FloodteamInputFile;
-        "floodteam-input-json": FloodteamInputJson;
         "floodteam-input-photo": FloodteamInputPhoto;
         "floodteam-input-search": FloodteamInputSearch;
         "floodteam-input-search-popover": FloodteamInputSearchPopover;
@@ -1747,7 +1548,6 @@ declare namespace LocalJSX {
         "floodteam-progress-bar": FloodteamProgressBar;
         "floodteam-progress-circle": FloodteamProgressCircle;
         "floodteam-progress-timeline": FloodteamProgressTimeline;
-        "floodteam-radios": FloodteamRadios;
         "floodteam-search-bar": FloodteamSearchBar;
         "floodteam-share": FloodteamShare;
         "floodteam-signature-pad": FloodteamSignaturePad;
@@ -1755,9 +1555,6 @@ declare namespace LocalJSX {
         "floodteam-slides": FloodteamSlides;
         "floodteam-snapshot-card": FloodteamSnapshotCard;
         "floodteam-star-rating": FloodteamStarRating;
-        "floodteam-tab": FloodteamTab;
-        "floodteam-tabs": FloodteamTabs;
-        "floodteam-toggle": FloodteamToggle;
     }
 }
 export { LocalJSX as JSX };
@@ -1766,7 +1563,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "fireenjin-graph-pay-splits": LocalJSX.FireenjinGraphPaySplits & JSXBase.HTMLAttributes<HTMLFireenjinGraphPaySplitsElement>;
             "floodteam-activity-feed": LocalJSX.FloodteamActivityFeed & JSXBase.HTMLAttributes<HTMLFloodteamActivityFeedElement>;
-            "floodteam-avatar": LocalJSX.FloodteamAvatar & JSXBase.HTMLAttributes<HTMLFloodteamAvatarElement>;
             "floodteam-book-now": LocalJSX.FloodteamBookNow & JSXBase.HTMLAttributes<HTMLFloodteamBookNowElement>;
             "floodteam-checkmark": LocalJSX.FloodteamCheckmark & JSXBase.HTMLAttributes<HTMLFloodteamCheckmarkElement>;
             "floodteam-epay": LocalJSX.FloodteamEpay & JSXBase.HTMLAttributes<HTMLFloodteamEpayElement>;
@@ -1775,11 +1571,9 @@ declare module "@stencil/core" {
             "floodteam-feed-card": LocalJSX.FloodteamFeedCard & JSXBase.HTMLAttributes<HTMLFloodteamFeedCardElement>;
             "floodteam-flip-card": LocalJSX.FloodteamFlipCard & JSXBase.HTMLAttributes<HTMLFloodteamFlipCardElement>;
             "floodteam-floating-button": LocalJSX.FloodteamFloatingButton & JSXBase.HTMLAttributes<HTMLFloodteamFloatingButtonElement>;
-            "floodteam-input": LocalJSX.FloodteamInput & JSXBase.HTMLAttributes<HTMLFloodteamInputElement>;
             "floodteam-input-address": LocalJSX.FloodteamInputAddress & JSXBase.HTMLAttributes<HTMLFloodteamInputAddressElement>;
             "floodteam-input-amount": LocalJSX.FloodteamInputAmount & JSXBase.HTMLAttributes<HTMLFloodteamInputAmountElement>;
             "floodteam-input-file": LocalJSX.FloodteamInputFile & JSXBase.HTMLAttributes<HTMLFloodteamInputFileElement>;
-            "floodteam-input-json": LocalJSX.FloodteamInputJson & JSXBase.HTMLAttributes<HTMLFloodteamInputJsonElement>;
             "floodteam-input-photo": LocalJSX.FloodteamInputPhoto & JSXBase.HTMLAttributes<HTMLFloodteamInputPhotoElement>;
             "floodteam-input-search": LocalJSX.FloodteamInputSearch & JSXBase.HTMLAttributes<HTMLFloodteamInputSearchElement>;
             "floodteam-input-search-popover": LocalJSX.FloodteamInputSearchPopover & JSXBase.HTMLAttributes<HTMLFloodteamInputSearchPopoverElement>;
@@ -1796,7 +1590,6 @@ declare module "@stencil/core" {
             "floodteam-progress-bar": LocalJSX.FloodteamProgressBar & JSXBase.HTMLAttributes<HTMLFloodteamProgressBarElement>;
             "floodteam-progress-circle": LocalJSX.FloodteamProgressCircle & JSXBase.HTMLAttributes<HTMLFloodteamProgressCircleElement>;
             "floodteam-progress-timeline": LocalJSX.FloodteamProgressTimeline & JSXBase.HTMLAttributes<HTMLFloodteamProgressTimelineElement>;
-            "floodteam-radios": LocalJSX.FloodteamRadios & JSXBase.HTMLAttributes<HTMLFloodteamRadiosElement>;
             "floodteam-search-bar": LocalJSX.FloodteamSearchBar & JSXBase.HTMLAttributes<HTMLFloodteamSearchBarElement>;
             "floodteam-share": LocalJSX.FloodteamShare & JSXBase.HTMLAttributes<HTMLFloodteamShareElement>;
             "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
@@ -1804,9 +1597,6 @@ declare module "@stencil/core" {
             "floodteam-slides": LocalJSX.FloodteamSlides & JSXBase.HTMLAttributes<HTMLFloodteamSlidesElement>;
             "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
             "floodteam-star-rating": LocalJSX.FloodteamStarRating & JSXBase.HTMLAttributes<HTMLFloodteamStarRatingElement>;
-            "floodteam-tab": LocalJSX.FloodteamTab & JSXBase.HTMLAttributes<HTMLFloodteamTabElement>;
-            "floodteam-tabs": LocalJSX.FloodteamTabs & JSXBase.HTMLAttributes<HTMLFloodteamTabsElement>;
-            "floodteam-toggle": LocalJSX.FloodteamToggle & JSXBase.HTMLAttributes<HTMLFloodteamToggleElement>;
         }
     }
 }

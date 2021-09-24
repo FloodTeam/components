@@ -30,7 +30,6 @@
 - [floodteam-error](../error)
 - fireenjin-form
 - ion-list
-- [floodteam-input](../input)
 - [floodteam-input-address](../input-address)
 - [floodteam-checkmark](../checkmark)
 - ion-grid
@@ -47,7 +46,6 @@ graph TD;
   floodteam-book-now --> floodteam-error
   floodteam-book-now --> fireenjin-form
   floodteam-book-now --> ion-list
-  floodteam-book-now --> floodteam-input
   floodteam-book-now --> floodteam-input-address
   floodteam-book-now --> floodteam-checkmark
   floodteam-book-now --> ion-grid
@@ -67,10 +65,6 @@ graph TD;
   fireenjin-form --> ion-col
   fireenjin-form --> ion-button
   ion-button --> ion-ripple-effect
-  floodteam-input --> ion-input
-  floodteam-input --> ion-item
-  floodteam-input --> ion-icon
-  floodteam-input --> ion-label
   floodteam-input-address --> ion-item
   floodteam-input-address --> ion-label
   floodteam-input-address --> ion-input

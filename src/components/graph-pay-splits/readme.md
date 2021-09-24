@@ -32,7 +32,6 @@ Type: `Promise<any[]>`
 
 - fireenjin-graph
 - ion-item
-- [floodteam-avatar](../avatar)
 - [floodteam-error](../error)
 - ion-badge
 
@@ -41,7 +40,6 @@ Type: `Promise<any[]>`
 graph TD;
   fireenjin-graph-pay-splits --> fireenjin-graph
   fireenjin-graph-pay-splits --> ion-item
-  fireenjin-graph-pay-splits --> floodteam-avatar
   fireenjin-graph-pay-splits --> floodteam-error
   fireenjin-graph-pay-splits --> ion-badge
   ion-item --> ion-icon
