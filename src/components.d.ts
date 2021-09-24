@@ -423,14 +423,6 @@ export namespace Components {
         "algoliaSearchKey": string;
         "query": string;
     }
-    interface FloodteamLogItem {
-        "createdAt": string;
-        "input": string;
-        "name": string;
-        "output": string;
-        "resolveTime": number;
-        "type": string;
-    }
     interface FloodteamPayCard {
         "stripeKey": string;
         "stripeStyle": any;
@@ -472,16 +464,6 @@ export namespace Components {
     }
     interface FloodteamPhotoGallery {
         "photos": string[];
-    }
-    interface FloodteamProgressBar {
-        /**
-          * The percent of the progress bar that will be filled
-         */
-        "percent": number;
-        /**
-          * Set the progress bar completion percentage
-         */
-        "setPercent": (percent: number) => Promise<number>;
     }
     interface FloodteamProgressCircle {
         /**
@@ -528,13 +510,6 @@ export namespace Components {
   };
         "togglePaginationDisplay": () => Promise<void>;
         "updateCurrentFilters": () => Promise<void>;
-    }
-    interface FloodteamShare {
-        "options": {
-    url: string;
-    text?: string;
-    title?: string;
-  };
     }
     interface FloodteamSignaturePad {
         /**
@@ -638,12 +613,6 @@ export namespace Components {
           * Weight used to modify new velocity based on the previous velocity
          */
         "velocityFilterWeight": number;
-    }
-    interface FloodteamSlide {
-        "name": string;
-    }
-    interface FloodteamSlides {
-        "update": () => Promise<void>;
     }
     interface FloodteamSnapshotCard {
         "active": boolean;
@@ -782,12 +751,6 @@ declare global {
         prototype: HTMLFloodteamLocationBarElement;
         new (): HTMLFloodteamLocationBarElement;
     };
-    interface HTMLFloodteamLogItemElement extends Components.FloodteamLogItem, HTMLStencilElement {
-    }
-    var HTMLFloodteamLogItemElement: {
-        prototype: HTMLFloodteamLogItemElement;
-        new (): HTMLFloodteamLogItemElement;
-    };
     interface HTMLFloodteamPayCardElement extends Components.FloodteamPayCard, HTMLStencilElement {
     }
     var HTMLFloodteamPayCardElement: {
@@ -818,12 +781,6 @@ declare global {
         prototype: HTMLFloodteamPhotoGalleryElement;
         new (): HTMLFloodteamPhotoGalleryElement;
     };
-    interface HTMLFloodteamProgressBarElement extends Components.FloodteamProgressBar, HTMLStencilElement {
-    }
-    var HTMLFloodteamProgressBarElement: {
-        prototype: HTMLFloodteamProgressBarElement;
-        new (): HTMLFloodteamProgressBarElement;
-    };
     interface HTMLFloodteamProgressCircleElement extends Components.FloodteamProgressCircle, HTMLStencilElement {
     }
     var HTMLFloodteamProgressCircleElement: {
@@ -842,29 +799,11 @@ declare global {
         prototype: HTMLFloodteamSearchBarElement;
         new (): HTMLFloodteamSearchBarElement;
     };
-    interface HTMLFloodteamShareElement extends Components.FloodteamShare, HTMLStencilElement {
-    }
-    var HTMLFloodteamShareElement: {
-        prototype: HTMLFloodteamShareElement;
-        new (): HTMLFloodteamShareElement;
-    };
     interface HTMLFloodteamSignaturePadElement extends Components.FloodteamSignaturePad, HTMLStencilElement {
     }
     var HTMLFloodteamSignaturePadElement: {
         prototype: HTMLFloodteamSignaturePadElement;
         new (): HTMLFloodteamSignaturePadElement;
-    };
-    interface HTMLFloodteamSlideElement extends Components.FloodteamSlide, HTMLStencilElement {
-    }
-    var HTMLFloodteamSlideElement: {
-        prototype: HTMLFloodteamSlideElement;
-        new (): HTMLFloodteamSlideElement;
-    };
-    interface HTMLFloodteamSlidesElement extends Components.FloodteamSlides, HTMLStencilElement {
-    }
-    var HTMLFloodteamSlidesElement: {
-        prototype: HTMLFloodteamSlidesElement;
-        new (): HTMLFloodteamSlidesElement;
     };
     interface HTMLFloodteamSnapshotCardElement extends Components.FloodteamSnapshotCard, HTMLStencilElement {
     }
@@ -899,20 +838,15 @@ declare global {
         "floodteam-input-state": HTMLFloodteamInputStateElement;
         "floodteam-job-progress": HTMLFloodteamJobProgressElement;
         "floodteam-location-bar": HTMLFloodteamLocationBarElement;
-        "floodteam-log-item": HTMLFloodteamLogItemElement;
         "floodteam-pay-card": HTMLFloodteamPayCardElement;
         "floodteam-pay-check": HTMLFloodteamPayCheckElement;
         "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
         "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
         "floodteam-photo-gallery": HTMLFloodteamPhotoGalleryElement;
-        "floodteam-progress-bar": HTMLFloodteamProgressBarElement;
         "floodteam-progress-circle": HTMLFloodteamProgressCircleElement;
         "floodteam-progress-timeline": HTMLFloodteamProgressTimelineElement;
         "floodteam-search-bar": HTMLFloodteamSearchBarElement;
-        "floodteam-share": HTMLFloodteamShareElement;
         "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
-        "floodteam-slide": HTMLFloodteamSlideElement;
-        "floodteam-slides": HTMLFloodteamSlidesElement;
         "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
         "floodteam-star-rating": HTMLFloodteamStarRatingElement;
     }
@@ -1332,14 +1266,6 @@ declare namespace LocalJSX {
         "algoliaSearchKey"?: string;
         "query"?: string;
     }
-    interface FloodteamLogItem {
-        "createdAt"?: string;
-        "input"?: string;
-        "name"?: string;
-        "output"?: string;
-        "resolveTime"?: number;
-        "type"?: string;
-    }
     interface FloodteamPayCard {
         "onFtCancel"?: (event: CustomEvent<any>) => void;
         "onFtCardError"?: (event: CustomEvent<any>) => void;
@@ -1383,12 +1309,6 @@ declare namespace LocalJSX {
         "onFtOpenPhotoCarousel"?: (event: CustomEvent<any>) => void;
         "photos"?: string[];
     }
-    interface FloodteamProgressBar {
-        /**
-          * The percent of the progress bar that will be filled
-         */
-        "percent"?: number;
-    }
     interface FloodteamProgressCircle {
         /**
           * The percent value of progress filled between 0 and 100
@@ -1431,14 +1351,6 @@ declare namespace LocalJSX {
       label: string;
       value: string;
     }[];
-  };
-    }
-    interface FloodteamShare {
-        "onFloodteamShareClose"?: (event: CustomEvent<any>) => void;
-        "options"?: {
-    url: string;
-    text?: string;
-    title?: string;
   };
     }
     interface FloodteamSignaturePad {
@@ -1497,11 +1409,6 @@ declare namespace LocalJSX {
          */
         "velocityFilterWeight"?: number;
     }
-    interface FloodteamSlide {
-        "name"?: string;
-    }
-    interface FloodteamSlides {
-    }
     interface FloodteamSnapshotCard {
         "active"?: boolean;
         "buttonProps"?: {};
@@ -1539,20 +1446,15 @@ declare namespace LocalJSX {
         "floodteam-input-state": FloodteamInputState;
         "floodteam-job-progress": FloodteamJobProgress;
         "floodteam-location-bar": FloodteamLocationBar;
-        "floodteam-log-item": FloodteamLogItem;
         "floodteam-pay-card": FloodteamPayCard;
         "floodteam-pay-check": FloodteamPayCheck;
         "floodteam-payment-methods": FloodteamPaymentMethods;
         "floodteam-photo-carousel": FloodteamPhotoCarousel;
         "floodteam-photo-gallery": FloodteamPhotoGallery;
-        "floodteam-progress-bar": FloodteamProgressBar;
         "floodteam-progress-circle": FloodteamProgressCircle;
         "floodteam-progress-timeline": FloodteamProgressTimeline;
         "floodteam-search-bar": FloodteamSearchBar;
-        "floodteam-share": FloodteamShare;
         "floodteam-signature-pad": FloodteamSignaturePad;
-        "floodteam-slide": FloodteamSlide;
-        "floodteam-slides": FloodteamSlides;
         "floodteam-snapshot-card": FloodteamSnapshotCard;
         "floodteam-star-rating": FloodteamStarRating;
     }
@@ -1581,20 +1483,15 @@ declare module "@stencil/core" {
             "floodteam-input-state": LocalJSX.FloodteamInputState & JSXBase.HTMLAttributes<HTMLFloodteamInputStateElement>;
             "floodteam-job-progress": LocalJSX.FloodteamJobProgress & JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
             "floodteam-location-bar": LocalJSX.FloodteamLocationBar & JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
-            "floodteam-log-item": LocalJSX.FloodteamLogItem & JSXBase.HTMLAttributes<HTMLFloodteamLogItemElement>;
             "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
             "floodteam-pay-check": LocalJSX.FloodteamPayCheck & JSXBase.HTMLAttributes<HTMLFloodteamPayCheckElement>;
             "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
             "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
             "floodteam-photo-gallery": LocalJSX.FloodteamPhotoGallery & JSXBase.HTMLAttributes<HTMLFloodteamPhotoGalleryElement>;
-            "floodteam-progress-bar": LocalJSX.FloodteamProgressBar & JSXBase.HTMLAttributes<HTMLFloodteamProgressBarElement>;
             "floodteam-progress-circle": LocalJSX.FloodteamProgressCircle & JSXBase.HTMLAttributes<HTMLFloodteamProgressCircleElement>;
             "floodteam-progress-timeline": LocalJSX.FloodteamProgressTimeline & JSXBase.HTMLAttributes<HTMLFloodteamProgressTimelineElement>;
             "floodteam-search-bar": LocalJSX.FloodteamSearchBar & JSXBase.HTMLAttributes<HTMLFloodteamSearchBarElement>;
-            "floodteam-share": LocalJSX.FloodteamShare & JSXBase.HTMLAttributes<HTMLFloodteamShareElement>;
             "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
-            "floodteam-slide": LocalJSX.FloodteamSlide & JSXBase.HTMLAttributes<HTMLFloodteamSlideElement>;
-            "floodteam-slides": LocalJSX.FloodteamSlides & JSXBase.HTMLAttributes<HTMLFloodteamSlidesElement>;
             "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
             "floodteam-star-rating": LocalJSX.FloodteamStarRating & JSXBase.HTMLAttributes<HTMLFloodteamStarRatingElement>;
         }

@@ -93,7 +93,7 @@ Type: `Promise<void>`
 - ion-card
 - ion-button
 - ion-icon
-- [floodteam-progress-bar](../progress-bar)
+- ion-progress-bar
 - ion-slides
 - ion-slide
 - ion-grid
@@ -114,7 +114,7 @@ graph TD;
   floodteam-epay --> ion-card
   floodteam-epay --> ion-button
   floodteam-epay --> ion-icon
-  floodteam-epay --> floodteam-progress-bar
+  floodteam-epay --> ion-progress-bar
   floodteam-epay --> ion-slides
   floodteam-epay --> ion-slide
   floodteam-epay --> ion-grid
