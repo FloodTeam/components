@@ -40,6 +40,7 @@
 - ion-col
 - fireenjin-form
 - fireenjin-input
+- fireenjin-input-address
 - [floodteam-checkmark](../checkmark)
 
 ### Graph
@@ -59,6 +60,7 @@ graph TD;
   floodteam-payment-methods --> ion-col
   floodteam-payment-methods --> fireenjin-form
   floodteam-payment-methods --> fireenjin-input
+  floodteam-payment-methods --> fireenjin-input-address
   floodteam-payment-methods --> floodteam-checkmark
   ion-card --> ion-ripple-effect
   floodteam-error --> ion-item
@@ -75,6 +77,17 @@ graph TD;
   fireenjin-input --> ion-item
   fireenjin-input --> ion-icon
   fireenjin-input --> ion-label
+  fireenjin-input-address --> ion-item
+  fireenjin-input-address --> ion-label
+  fireenjin-input-address --> ion-input
+  fireenjin-input-address --> ion-grid
+  fireenjin-input-address --> ion-row
+  fireenjin-input-address --> ion-col
+  fireenjin-input-address --> fireenjin-input-state
+  fireenjin-input-address --> ion-button
+  fireenjin-input-address --> ion-icon
+  fireenjin-input-state --> ion-select
+  fireenjin-input-state --> ion-select-option
   floodteam-checkmark --> ion-icon
   style floodteam-payment-methods fill:#f9f,stroke:#333,stroke-width:4px
 ```

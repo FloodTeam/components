@@ -16,7 +16,7 @@ import {
 export class PaymentMethods implements ComponentInterface {
   cardInputEl: any;
   nameInputEl: any;
-  addressInputEl: HTMLFloodteamInputAddressElement;
+  addressInputEl: HTMLFireenjinInputAddressElement;
   routingInputEl: any;
   accountInputEl: any;
   checkmarkEl: any;

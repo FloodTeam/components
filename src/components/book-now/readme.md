@@ -31,6 +31,7 @@
 - fireenjin-form
 - ion-list
 - fireenjin-input
+- fireenjin-input-address
 - [floodteam-checkmark](../checkmark)
 - ion-grid
 - ion-row
@@ -47,6 +48,7 @@ graph TD;
   floodteam-book-now --> fireenjin-form
   floodteam-book-now --> ion-list
   floodteam-book-now --> fireenjin-input
+  floodteam-book-now --> fireenjin-input-address
   floodteam-book-now --> floodteam-checkmark
   floodteam-book-now --> ion-grid
   floodteam-book-now --> ion-row
@@ -69,6 +71,17 @@ graph TD;
   fireenjin-input --> ion-item
   fireenjin-input --> ion-icon
   fireenjin-input --> ion-label
+  fireenjin-input-address --> ion-item
+  fireenjin-input-address --> ion-label
+  fireenjin-input-address --> ion-input
+  fireenjin-input-address --> ion-grid
+  fireenjin-input-address --> ion-row
+  fireenjin-input-address --> ion-col
+  fireenjin-input-address --> fireenjin-input-state
+  fireenjin-input-address --> ion-button
+  fireenjin-input-address --> ion-icon
+  fireenjin-input-state --> ion-select
+  fireenjin-input-state --> ion-select-option
   floodteam-checkmark --> ion-icon
   style floodteam-book-now fill:#f9f,stroke:#333,stroke-width:4px
 ```

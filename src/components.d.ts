@@ -292,7 +292,7 @@ export namespace Components {
         "name": string;
         "options": any;
         "photos": any[];
-        "selectFiles": (event: any) => Promise<any>;
+        "selectFiles": (event: any) => Promise<boolean>;
         "slideNext": () => Promise<void>;
         "slidePrev": () => Promise<void>;
         "slideTo": (slideNumber: number) => Promise<void>;
@@ -438,13 +438,6 @@ export namespace Components {
         "href": string;
         "photo": string;
     }
-    interface FloodteamStarRating {
-        "disabled": boolean;
-        "maxRating": number;
-        "name": string;
-        "setCurrentRating": (rating: any) => Promise<void>;
-        "value": string;
-    }
 }
 declare global {
     interface HTMLFireenjinGraphPaySplitsElement extends Components.FireenjinGraphPaySplits, HTMLStencilElement {
@@ -567,12 +560,6 @@ declare global {
         prototype: HTMLFloodteamSnapshotCardElement;
         new (): HTMLFloodteamSnapshotCardElement;
     };
-    interface HTMLFloodteamStarRatingElement extends Components.FloodteamStarRating, HTMLStencilElement {
-    }
-    var HTMLFloodteamStarRatingElement: {
-        prototype: HTMLFloodteamStarRatingElement;
-        new (): HTMLFloodteamStarRatingElement;
-    };
     interface HTMLElementTagNameMap {
         "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
         "floodteam-activity-feed": HTMLFloodteamActivityFeedElement;
@@ -594,7 +581,6 @@ declare global {
         "floodteam-search-bar": HTMLFloodteamSearchBarElement;
         "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
         "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
-        "floodteam-star-rating": HTMLFloodteamStarRatingElement;
     }
 }
 declare namespace LocalJSX {
@@ -974,13 +960,6 @@ declare namespace LocalJSX {
         "onFloodteamClick"?: (event: CustomEvent<any>) => void;
         "photo"?: string;
     }
-    interface FloodteamStarRating {
-        "disabled"?: boolean;
-        "maxRating"?: number;
-        "name"?: string;
-        "onFtStarRating"?: (event: CustomEvent<any>) => void;
-        "value"?: string;
-    }
     interface IntrinsicElements {
         "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
         "floodteam-activity-feed": FloodteamActivityFeed;
@@ -1002,7 +981,6 @@ declare namespace LocalJSX {
         "floodteam-search-bar": FloodteamSearchBar;
         "floodteam-signature-pad": FloodteamSignaturePad;
         "floodteam-snapshot-card": FloodteamSnapshotCard;
-        "floodteam-star-rating": FloodteamStarRating;
     }
 }
 export { LocalJSX as JSX };
@@ -1029,7 +1007,6 @@ declare module "@stencil/core" {
             "floodteam-search-bar": LocalJSX.FloodteamSearchBar & JSXBase.HTMLAttributes<HTMLFloodteamSearchBarElement>;
             "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
             "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
-            "floodteam-star-rating": LocalJSX.FloodteamStarRating & JSXBase.HTMLAttributes<HTMLFloodteamStarRatingElement>;
         }
     }
 }
