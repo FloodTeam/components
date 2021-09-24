@@ -216,7 +216,7 @@ floodteam-epay floodteam-error .ft-error-wrapper {
 }
 
 floodteam-epay ion-item h4 {
-  color: var(--theme-dark-grey) !important;
+  color: var(--ion-color-medium-shade) !important;
 }
 
 @media only screen and (max-width: 500px) {

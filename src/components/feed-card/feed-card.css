@@ -39,7 +39,7 @@ floodteam-feed-card ion-card h3 {
   margin: 0;
   font-size: 16px;
   font-weight: bold;
-  font-family: var(--theme-font-primary);
+  font-family: var(--ion-font-family);
   text-transform: uppercase;
   color: var(--ion-text-color);
   letter-spacing: 1px;
@@ -51,8 +51,8 @@ floodteam-feed-card ion-card h5 {
   position: relative;
   margin: 4px 0 0 0;
   padding-right: 20px;
-  font-family: var(--theme-font-primary);
-  color: var(--theme-grey);
+  font-family: var(--ion-font-family);
+  color: var(--ion-color-medium);
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -76,7 +76,7 @@ floodteam-feed-card ion-card p {
   position: relative;
   margin: 0;
   font-family: "Bitter", serif;
-  color: var(--theme-light-grey);
+  color: var(--ion-color-light-shade);
   font-weight: 500;
   letter-spacing: 1px;
 }

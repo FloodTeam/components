@@ -1,7 +1,7 @@
 floodteam-pay-check {
   font-family: var(
     --floodteam-pay-check-font-family,
-    var(--theme-font-primary, Arial, Helvetica, sans-serif)
+    var(--ion-font-family, Arial, Helvetica, sans-serif)
   );
   display: block;
   width: 100%;

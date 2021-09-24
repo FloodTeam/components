@@ -1,7 +1,7 @@
 floodteam-fallback {
   font-family: var(
     --floodteam-error-font-family,
-    var(--theme-font-primary, Arial, Helvetica, sans-serif)
+    var(--ion-font-family, Arial, Helvetica, sans-serif)
   );
 }
 floodteam-fallback .fallback-wrapper ion-icon {

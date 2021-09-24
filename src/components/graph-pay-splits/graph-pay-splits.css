@@ -11,7 +11,7 @@ floodteam-graph-pay-splits .graph-pay-splits-wrapper {
 
 floodteam-graph-pay-splits h1 {
   text-align: center;
-  color: var(--theme-success) !important;
+  color: var(--ion-color-success) !important;
   font-size: 28px;
   font-weight: bold;
 }
@@ -23,11 +23,11 @@ floodteam-graph-pay-splits floodteam-graph {
 }
 
 floodteam-graph-pay-splits floodteam-item h4 {
-  color: var(--theme-dark-grey) !important;
+  color: var(--ion-color-medium-shade) !important;
 }
 
 floodteam-graph-pay-splits floodteam-item floodteam-badge {
   --floodteam-badge-padding: 0 10px;
-  --floodteam-badge-background: var(--theme-success);
+  --floodteam-badge-background: var(--ion-color-success);
   --floodteam-badge-color: #ffffff;
 }
