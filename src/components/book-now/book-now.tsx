@@ -110,7 +110,7 @@ export class BookNow {
               label="Customer Email"
               placeholder="What is the customer's email address?"
             />
-            <floodteam-input-address
+            <fireenjin-input-address
               googleMapsKey={this.googleMapsKey}
               name="address"
               label="Job Address"

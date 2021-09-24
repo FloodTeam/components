@@ -8,1492 +8,1559 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Color, TextFieldTypes } from "@ionic/core";
 import { filterControl } from "./typings";
 export namespace Components {
-    interface FireenjinGraphPaySplits {
-        "graphTitle": string;
-        "setUsers": (users: any) => Promise<any[]>;
-        "users": any[];
-    }
-    interface FloodteamActivityFeed {
-        "jobId": string;
-        "siteId": string;
-        "userId": string;
-    }
-    interface FloodteamBookNow {
-        /**
-          * The Google Maps API Key
-         */
-        "googleMapsKey": string;
-        /**
-          * The ID of the location
-         */
-        "locationId": string;
-        /**
-          * The ID of the referring user
-         */
-        "referralId": string;
-        /**
-          * Is the user referring?
-         */
-        "referring": boolean;
-        /**
-          * The campaign or API token
-         */
-        "token": string;
-    }
-    interface FloodteamCheckmark {
-        /**
-          * Start the animation
-         */
-        "animating": boolean;
-        /**
-          * The size of the thumb
-         */
-        "size": string;
-    }
-    interface FloodteamEpay {
-        /**
-          * Confirm a check payment
-         */
-        "confirmPayment": (options?: any) => Promise<any>;
-        "customer": any;
-        "dadeKey": string;
-        "dadeUrl": string;
-        /**
-          * The error message to display
-         */
-        "error": string;
-        "jobId": string;
-        /**
-          * The amount of money owed
-         */
-        "owed": any;
-        "paymentId": string;
-        /**
-          * The list of payments
-         */
-        "payments": {
-    timestamp: string;
-    brand: string;
-    last4: number;
-    amount: number;
-  }[];
-        "reset": () => Promise<void>;
-        /**
-          * The slide to show when loading the component
-         */
-        "showSlide": | "report"
-    | "details"
-    | "payments"
-    | "card"
-    | "check"
-    | "confirmation";
-        "stripeKey": string;
-        "success": () => Promise<void>;
-        "takePayment": () => Promise<void>;
-        /**
-          * The total amount of money billed
-         */
-        "total": any;
-        /**
-          * Update the ion-slides height
-         */
-        "updateSlides": () => Promise<void>;
-        "userId": string;
-        "users": any[];
-    }
-    interface FloodteamError {
-        /**
-          * The color of the component
-         */
-        "color": string;
-        /**
-          * The icon to use
-         */
-        "iconName": string;
-        /**
-          * The error message to display
-         */
-        "message": string;
-    }
-    interface FloodteamFallback {
-        /**
-          * An icon to display above the fallback message
-         */
-        "icon": string;
-        /**
-          * The message to display as a fallback
-         */
-        "message": string;
-    }
-    interface FloodteamFeedCard {
-        /**
-          * An optional action button to show on the card
-         */
-        "actionButtons"?: {
-    action: string;
-    size?: "small" | "default" | "large";
-    fill?: "clear" | "outline" | "solid" | "default";
-    color?: string;
-    iconStart?: string;
-    iconEnd?: string;
-    text?: string;
-    href?: string;
-  }[];
-        /**
-          * The background image to use for the card
-         */
-        "backgroundImage"?: string;
-        /**
-          * When the feed item was created
-         */
-        "createdAt"?: Date;
-        /**
-          * The more in depth details about the feed card
-         */
-        "details"?: string;
-        /**
-          * The main text at the top of the feed card
-         */
-        "heading"?: string;
-        /**
-          * The image to display at the top left of the feed card
-         */
-        "image"?: string;
-        /**
-          * The component to load into a modal that will display on load
-         */
-        "modal"?: string;
-        /**
-          * Payload data to send through the feed card
-         */
-        "payload"?: any;
-        /**
-          * Whether the message has been read
-         */
-        "read"?: boolean;
-        /**
-          * The subtext to display under the title
-         */
-        "subtext"?: string;
-        /**
-          * A list of tags that apply to this feed card
-         */
-        "tags"?: string[];
-    }
-    interface FloodteamFlipCard {
-        "backImage": string;
-        "flip": (event?: any) => Promise<void>;
-        "flipped": boolean;
-        "frontImage": string;
-        "hideRefresh": boolean;
-    }
-    interface FloodteamFloatingButton {
-        /**
-          * The content of the badge
-         */
-        "badge"?: string;
-        /**
-          * The color of the badge to display
-         */
-        "badgeColor"?: Color;
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList": {
+  interface FireenjinGraphPaySplits {
+    graphTitle: string;
+    setUsers: (users: any) => Promise<any[]>;
+    users: any[];
+  }
+  interface FloodteamActivityFeed {
+    jobId: string;
+    siteId: string;
+    userId: string;
+  }
+  interface FloodteamBookNow {
     /**
-     * The label to show next to the button
+     * The Google Maps API Key
      */
-    label: string;
+    googleMapsKey: string;
     /**
-     * The icon to use in the button
+     * The ID of the location
+     */
+    locationId: string;
+    /**
+     * The ID of the referring user
+     */
+    referralId: string;
+    /**
+     * Is the user referring?
+     */
+    referring: boolean;
+    /**
+     * The campaign or API token
+     */
+    token: string;
+  }
+  interface FloodteamCheckmark {
+    /**
+     * Start the animation
+     */
+    animating: boolean;
+    /**
+     * The size of the thumb
+     */
+    size: string;
+  }
+  interface FloodteamEpay {
+    /**
+     * Confirm a check payment
+     */
+    confirmPayment: (options?: any) => Promise<any>;
+    customer: any;
+    dadeKey: string;
+    dadeUrl: string;
+    /**
+     * The error message to display
+     */
+    error: string;
+    jobId: string;
+    /**
+     * The amount of money owed
+     */
+    owed: any;
+    paymentId: string;
+    /**
+     * The list of payments
+     */
+    payments: {
+      timestamp: string;
+      brand: string;
+      last4: number;
+      amount: number;
+    }[];
+    reset: () => Promise<void>;
+    /**
+     * The slide to show when loading the component
+     */
+    showSlide:
+      | "report"
+      | "details"
+      | "payments"
+      | "card"
+      | "check"
+      | "confirmation";
+    stripeKey: string;
+    success: () => Promise<void>;
+    takePayment: () => Promise<void>;
+    /**
+     * The total amount of money billed
+     */
+    total: any;
+    /**
+     * Update the ion-slides height
+     */
+    updateSlides: () => Promise<void>;
+    userId: string;
+    users: any[];
+  }
+  interface FloodteamError {
+    /**
+     * The color of the component
+     */
+    color: string;
+    /**
+     * The icon to use
+     */
+    iconName: string;
+    /**
+     * The error message to display
+     */
+    message: string;
+  }
+  interface FloodteamFallback {
+    /**
+     * An icon to display above the fallback message
      */
     icon: string;
     /**
-     * The color from the theme to make the button
+     * The message to display as a fallback
      */
-    color?: Color;
+    message: string;
+  }
+  interface FloodteamFeedCard {
     /**
-     * The link to use for the button
+     * An optional action button to show on the card
      */
-    href?: string;
-    /**
-     * The functionality to run when the button is clicked
-     */
-    onClick?: (event: any) => any;
-  }[];
-        /**
-          * The color of the button
-         */
-        "color": Color;
-        /**
-          * The horizontal position of the button
-         */
-        "horizontal": "end" | "start" | "center";
-        /**
-          * The side the list should display
-         */
-        "listSide": "end" | "start" | "top" | "bottom";
-        /**
-          * The icon to use on the material button when it's closed
-         */
-        "openIcon": string;
-        /**
-          * The url to link the material button to
-         */
-        "url": string;
-        /**
-          * The vertical position of the button
-         */
-        "vertical": "center" | "top" | "bottom";
-    }
-    interface FloodteamInputAddress {
-        /**
-          * The Google Maps API Key
-         */
-        "googleMapsKey": string;
-        /**
-          * The label of the input field
-         */
-        "label": string;
-        /**
-          * The name attribute of the input
-         */
-        "name": string;
-        /**
-          * The placeholder text for the input field
-         */
-        "placeholder": string;
-        /**
-          * Whether the address input is required
-         */
-        "required": boolean;
-        /**
-          * The value of the input field
-         */
-        "value": any;
-    }
-    interface FloodteamInputAmount {
-        "autofocus": boolean;
-        "decimal": boolean;
-        "disabled": boolean;
-        "label": string;
-        "max": string;
-        "min": string;
-        "name": string;
-        "placeholder": string;
-        "presets": ({ label?: string; value: any } | string)[];
-        "required": boolean;
-        "step": string;
-        "value": any;
-    }
-    interface FloodteamInputFile {
-        "accept"?: string;
-        "defaultValue": any;
-        "documentId": string;
-        /**
-          * The endpoint to upload to
-         */
-        "endpoint": string;
-        "fileName": string;
-        "icon": string;
-        "label": string;
-        "name"?: string;
-        "openFile": () => Promise<any>;
-        "path": string;
-        "type": string;
-        "uploadData": any;
-        "value": any;
-    }
-    interface FloodteamInputPhoto {
-        /**
-          * Text to display on the photo upload button
-         */
-        "buttonText": string;
-        /**
-          * Is the uploader disabled
-         */
-        "disabled": boolean;
-        /**
-          * The ID of the document the photo is tied to
-         */
-        "documentId": string;
-        /**
-          * The endpoint to upload to
-         */
-        "endpoint": string;
-        /**
-          * The fallback image to use if photo isn't set
-         */
-        "fallback": string;
-        /**
-          * The filename to use for the uploaded file
-         */
-        "fileName"?: string;
-        "initials": string;
-        "loading": boolean;
-        /**
-          * Allow uploading multiple
-         */
-        "multiple": boolean;
-        /**
-          * The name to use when emitting field change event
-         */
-        "name"?: string;
-        /**
-          * The storage path to upload the file to
-         */
-        "path": string;
-        /**
-          * Should the photo uploader show the button
-         */
-        "showButton": boolean;
-        "triggerFileInput": (_event: any) => Promise<boolean>;
-        /**
-          * The type of photo being uploaded
-         */
-        "type": string;
-        /**
-          * A link to the photo to display
-         */
-        "value": string;
-    }
-    interface FloodteamInputSearch {
-        "autofocus": boolean;
-        "checkValidity": (options?: { setValidationClass?: boolean; validationClassOptions?: { ignoreInvalid?: boolean; }; }) => Promise<boolean>;
-        "clearResults": () => Promise<any[]>;
-        "closePopover": () => Promise<boolean>;
-        "dataPropsMap": any;
-        "disableSearch": boolean;
-        "disabled": boolean;
-        "endpoint": string;
-        "iconEnd": string;
-        "iconStart": string;
-        "label": string;
-        "mode": "popover" | "inline";
-        "name": string;
-        "openPopover": () => Promise<void>;
-        "placeholder": string;
-        "reportValidity": () => Promise<boolean>;
-        "required": boolean;
-        "results": any[];
-        "resultsKey": string;
-        "searchParams": any;
-        "template": (result) => any;
-        "type": TextFieldTypes;
-        "value": any;
-    }
-    interface FloodteamInputSearchPopover {
-        "name": string;
-        "results": any;
-        "template": (result) => any;
-    }
-    interface FloodteamInputSearchUser {
-        "autofocus": boolean;
-        "dataPropsMap": any;
-        "disableSearch": boolean;
-        "disabled": boolean;
-        "endpoint": string;
-        "iconEnd": string;
-        "iconStart": string;
-        "label": string;
-        "limit": number;
-        "mode": "popover" | "inline";
-        "name": string;
-        "placeholder": string;
-        "required": boolean;
-        "results": any[];
-        "template": (result) => any;
-        "value": any;
-    }
-    interface FloodteamInputState {
-        "name": string;
-        "placeholder": string;
-        "value": string;
-    }
-    interface FloodteamJobProgress {
-        "color": Color;
-        "name": string;
-        "scrollable": boolean;
-        "statuses": string[];
-        "value": string;
-    }
-    interface FloodteamLocationBar {
-        "algoliaAppId": string;
-        "algoliaIndex": string;
-        "algoliaSearchKey": string;
-        "query": string;
-    }
-    interface FloodteamPayCard {
-        "stripeKey": string;
-        "stripeStyle": any;
-    }
-    interface FloodteamPayCheck {
-        "amount": number;
-        "apiKey": string;
-        "confirmPayment": (options?: {}) => Promise<any>;
-        "flipCard": () => Promise<void>;
-        "loading": boolean;
-        "openCamera": () => Promise<void>;
-        "paymentId": string;
-        "url": string;
-        "userId": string;
-    }
-    interface FloodteamPaymentMethods {
-        "address": any;
-        "cardName": string;
-        "methods": any[];
-        "payType": "card" | "checking";
-        "stripeKey": string;
-        "userId": string;
-    }
-    interface FloodteamPhotoCarousel {
-        "addButtonColor": Color;
-        "badgeColor": Color;
-        "currentSlide": number;
-        "getCurrentSlide": () => Promise<number>;
-        "hideAddButton": boolean;
-        "jobId": string;
-        "name": string;
-        "options": any;
-        "photos": any[];
-        "selectFiles": (event: any) => Promise<boolean>;
-        "slideNext": () => Promise<void>;
-        "slidePrev": () => Promise<void>;
-        "slideTo": (slideNumber: number) => Promise<void>;
-        "update": () => Promise<void>;
-    }
-    interface FloodteamPhotoGallery {
-        "photos": string[];
-    }
-    interface FloodteamProgressCircle {
-        /**
-          * The percent value of progress filled between 0 and 100
-         */
-        "percent": number;
-        /**
-          * The radius size of the circle in pixels
-         */
-        "radius": number;
-        /**
-          * The stroke thickness of the progress bar
-         */
-        "stroke": number;
-    }
-    interface FloodteamProgressTimeline {
-        /**
-          * The major events on the timeline
-         */
-        "events": any;
-    }
-    interface FloodteamSearchBar {
-        "beforeGetResults": any;
-        "clearFilter": (event: any, clearingControl: filterControl) => Promise<void>;
-        "disabled": boolean;
-        "displayMode": "list" | "grid";
-        "filter"?: {
-    label?: string;
-    controls: filterControl[];
-  };
-        "modeToggle": boolean;
-        "paginationEl": any;
-        "showFilter": boolean;
-        "sort"?: {
-    label?: string;
-    value?: string;
-    header?: string;
-    subHeader?: string;
-    message?: string;
-    options: {
-      label: string;
-      value: string;
+    actionButtons?: {
+      action: string;
+      size?: "small" | "default" | "large";
+      fill?: "clear" | "outline" | "solid" | "default";
+      color?: string;
+      iconStart?: string;
+      iconEnd?: string;
+      text?: string;
+      href?: string;
     }[];
-  };
-        "togglePaginationDisplay": () => Promise<void>;
-        "updateCurrentFilters": () => Promise<void>;
-    }
-    interface FloodteamSignaturePad {
-        /**
-          * The background color for the signature pad
-         */
-        "backgroundColor": string;
-        /**
-          * Clear the signature field
-         */
-        "clear": () => Promise<any>;
-        /**
-          * The text to display on the clear button
-         */
-        "clearText": string;
-        /**
-          * Radius of a single dot
-         */
-        "dotSize": number;
-        /**
-          * Download a file via a new browser tab
-          * @param dataURL The signature image file data
-          * @param filename The name of the file
-         */
-        "download": (dataURL: any, filename: any) => Promise<void>;
-        /**
-          * Download the signature as a JPG file
-         */
-        "downloadJPG": () => Promise<void>;
-        /**
-          * Download the signature as a PNG file
-         */
-        "downloadPNG": () => Promise<void>;
-        /**
-          * Download the signature as an SVG file
-         */
-        "downloadSVG": () => Promise<void>;
-        /**
-          * Fill the signature pad from data
-          * @param data The signature data
-         */
-        "fromData": (data: any) => Promise<any>;
-        "getSignatureInstace": () => Promise<any>;
-        /**
-          * Check if the signature pad is empty
-         */
-        "isEmpty": () => Promise<any>;
-        /**
-          * The label to display below signature pad
-         */
-        "label": string;
-        /**
-          * Maximum width of a line
-         */
-        "maxWidth": number;
-        /**
-          * Add the next point only if the previous one is farther than x pixels
-         */
-        "minDistance": number;
-        /**
-          * Minimum width of a line
-         */
-        "minWidth": number;
-        /**
-          * The name of the element
-         */
-        "name": string;
-        /**
-          * Color used to draw the lines. Can be any color format accepted by context.fillStyle
-         */
-        "penColor": string;
-        /**
-          * Resize the canvas based on browser
-         */
-        "resizeCanvas": () => Promise<void>;
-        /**
-          * Update the value and emit ionChange event
-         */
-        "submit": () => Promise<void>;
-        /**
-          * The text to display on the submit button
-         */
-        "submitText": string;
-        /**
-          * Draw the next point at most once per every x milliseconds. Set it to 0 to turn off throttling
-         */
-        "throttle": number;
-        /**
-          * Get the signature pad data
-         */
-        "toData": () => Promise<any>;
-        "toDataURL": (type?: string) => Promise<any>;
-        /**
-          * Undo the last stroke from the signature
-         */
-        "undo": () => Promise<any>;
-        /**
-          * The current data for the signature pad
-         */
-        "value": any;
-        /**
-          * Weight used to modify new velocity based on the previous velocity
-         */
-        "velocityFilterWeight": number;
-    }
-    interface FloodteamSnapshotCard {
-        "active": boolean;
-        "buttonProps": {};
-        "buttonText": string;
-        "disableShrink": boolean;
-        "href": string;
-        "photo": string;
-    }
-    interface FloodteamStarRating {
-        "disabled": boolean;
-        "maxRating": number;
-        "name": string;
-        "setCurrentRating": (rating: any) => Promise<void>;
-        "value": string;
-    }
+    /**
+     * The background image to use for the card
+     */
+    backgroundImage?: string;
+    /**
+     * When the feed item was created
+     */
+    createdAt?: Date;
+    /**
+     * The more in depth details about the feed card
+     */
+    details?: string;
+    /**
+     * The main text at the top of the feed card
+     */
+    heading?: string;
+    /**
+     * The image to display at the top left of the feed card
+     */
+    image?: string;
+    /**
+     * The component to load into a modal that will display on load
+     */
+    modal?: string;
+    /**
+     * Payload data to send through the feed card
+     */
+    payload?: any;
+    /**
+     * Whether the message has been read
+     */
+    read?: boolean;
+    /**
+     * The subtext to display under the title
+     */
+    subtext?: string;
+    /**
+     * A list of tags that apply to this feed card
+     */
+    tags?: string[];
+  }
+  interface FloodteamFlipCard {
+    backImage: string;
+    flip: (event?: any) => Promise<void>;
+    flipped: boolean;
+    frontImage: string;
+    hideRefresh: boolean;
+  }
+  interface FloodteamFloatingButton {
+    /**
+     * The content of the badge
+     */
+    badge?: string;
+    /**
+     * The color of the badge to display
+     */
+    badgeColor?: Color;
+    /**
+     * The list of buttons to show when the material button is clicked
+     */
+    buttonList: {
+      /**
+       * The label to show next to the button
+       */
+      label: string;
+      /**
+       * The icon to use in the button
+       */
+      icon: string;
+      /**
+       * The color from the theme to make the button
+       */
+      color?: Color;
+      /**
+       * The link to use for the button
+       */
+      href?: string;
+      /**
+       * The functionality to run when the button is clicked
+       */
+      onClick?: (event: any) => any;
+    }[];
+    /**
+     * The color of the button
+     */
+    color: Color;
+    /**
+     * The horizontal position of the button
+     */
+    horizontal: "end" | "start" | "center";
+    /**
+     * The side the list should display
+     */
+    listSide: "end" | "start" | "top" | "bottom";
+    /**
+     * The icon to use on the material button when it's closed
+     */
+    openIcon: string;
+    /**
+     * The url to link the material button to
+     */
+    url: string;
+    /**
+     * The vertical position of the button
+     */
+    vertical: "center" | "top" | "bottom";
+  }
+  interface FloodteamInputAddress {
+    /**
+     * The Google Maps API Key
+     */
+    googleMapsKey: string;
+    /**
+     * The label of the input field
+     */
+    label: string;
+    /**
+     * The name attribute of the input
+     */
+    name: string;
+    /**
+     * The placeholder text for the input field
+     */
+    placeholder: string;
+    /**
+     * Whether the address input is required
+     */
+    required: boolean;
+    /**
+     * The value of the input field
+     */
+    value: any;
+  }
+  interface FloodteamInputAmount {
+    autofocus: boolean;
+    decimal: boolean;
+    disabled: boolean;
+    label: string;
+    max: string;
+    min: string;
+    name: string;
+    placeholder: string;
+    presets: ({ label?: string; value: any } | string)[];
+    required: boolean;
+    step: string;
+    value: any;
+  }
+  interface FloodteamInputFile {
+    accept?: string;
+    defaultValue: any;
+    documentId: string;
+    /**
+     * The endpoint to upload to
+     */
+    endpoint: string;
+    fileName: string;
+    icon: string;
+    label: string;
+    name?: string;
+    openFile: () => Promise<any>;
+    path: string;
+    type: string;
+    uploadData: any;
+    value: any;
+  }
+  interface FloodteamInputPhoto {
+    /**
+     * Text to display on the photo upload button
+     */
+    buttonText: string;
+    /**
+     * Is the uploader disabled
+     */
+    disabled: boolean;
+    /**
+     * The ID of the document the photo is tied to
+     */
+    documentId: string;
+    /**
+     * The endpoint to upload to
+     */
+    endpoint: string;
+    /**
+     * The fallback image to use if photo isn't set
+     */
+    fallback: string;
+    /**
+     * The filename to use for the uploaded file
+     */
+    fileName?: string;
+    initials: string;
+    loading: boolean;
+    /**
+     * Allow uploading multiple
+     */
+    multiple: boolean;
+    /**
+     * The name to use when emitting field change event
+     */
+    name?: string;
+    /**
+     * The storage path to upload the file to
+     */
+    path: string;
+    /**
+     * Should the photo uploader show the button
+     */
+    showButton: boolean;
+    triggerFileInput: (_event: any) => Promise<boolean>;
+    /**
+     * The type of photo being uploaded
+     */
+    type: string;
+    /**
+     * A link to the photo to display
+     */
+    value: string;
+  }
+  interface FloodteamInputSearch {
+    autofocus: boolean;
+    checkValidity: (options?: {
+      setValidationClass?: boolean;
+      validationClassOptions?: { ignoreInvalid?: boolean };
+    }) => Promise<boolean>;
+    clearResults: () => Promise<any[]>;
+    closePopover: () => Promise<boolean>;
+    dataPropsMap: any;
+    disableSearch: boolean;
+    disabled: boolean;
+    endpoint: string;
+    iconEnd: string;
+    iconStart: string;
+    label: string;
+    mode: "popover" | "inline";
+    name: string;
+    openPopover: () => Promise<void>;
+    placeholder: string;
+    reportValidity: () => Promise<boolean>;
+    required: boolean;
+    results: any[];
+    resultsKey: string;
+    searchParams: any;
+    template: (result) => any;
+    type: TextFieldTypes;
+    value: any;
+  }
+  interface FloodteamInputSearchPopover {
+    name: string;
+    results: any;
+    template: (result) => any;
+  }
+  interface FloodteamInputSearchUser {
+    autofocus: boolean;
+    dataPropsMap: any;
+    disableSearch: boolean;
+    disabled: boolean;
+    endpoint: string;
+    iconEnd: string;
+    iconStart: string;
+    label: string;
+    limit: number;
+    mode: "popover" | "inline";
+    name: string;
+    placeholder: string;
+    required: boolean;
+    results: any[];
+    template: (result) => any;
+    value: any;
+  }
+  interface FloodteamInputState {
+    name: string;
+    placeholder: string;
+    value: string;
+  }
+  interface FloodteamJobProgress {
+    color: Color;
+    name: string;
+    scrollable: boolean;
+    statuses: string[];
+    value: string;
+  }
+  interface FloodteamLocationBar {
+    algoliaAppId: string;
+    algoliaIndex: string;
+    algoliaSearchKey: string;
+    query: string;
+  }
+  interface FloodteamPayCard {
+    stripeKey: string;
+    stripeStyle: any;
+  }
+  interface FloodteamPayCheck {
+    amount: number;
+    apiKey: string;
+    confirmPayment: (options?: {}) => Promise<any>;
+    flipCard: () => Promise<void>;
+    loading: boolean;
+    openCamera: () => Promise<void>;
+    paymentId: string;
+    url: string;
+    userId: string;
+  }
+  interface FloodteamPaymentMethods {
+    address: any;
+    cardName: string;
+    methods: any[];
+    payType: "card" | "checking";
+    stripeKey: string;
+    userId: string;
+  }
+  interface FloodteamPhotoCarousel {
+    addButtonColor: Color;
+    badgeColor: Color;
+    currentSlide: number;
+    getCurrentSlide: () => Promise<number>;
+    hideAddButton: boolean;
+    jobId: string;
+    name: string;
+    options: any;
+    photos: any[];
+    selectFiles: (event: any) => Promise<boolean>;
+    slideNext: () => Promise<void>;
+    slidePrev: () => Promise<void>;
+    slideTo: (slideNumber: number) => Promise<void>;
+    update: () => Promise<void>;
+  }
+  interface FloodteamPhotoGallery {
+    photos: string[];
+  }
+  interface FloodteamProgressCircle {
+    /**
+     * The percent value of progress filled between 0 and 100
+     */
+    percent: number;
+    /**
+     * The radius size of the circle in pixels
+     */
+    radius: number;
+    /**
+     * The stroke thickness of the progress bar
+     */
+    stroke: number;
+  }
+  interface FloodteamProgressTimeline {
+    /**
+     * The major events on the timeline
+     */
+    events: any;
+  }
+  interface FloodteamSearchBar {
+    beforeGetResults: any;
+    clearFilter: (event: any, clearingControl: filterControl) => Promise<void>;
+    disabled: boolean;
+    displayMode: "list" | "grid";
+    filter?: {
+      label?: string;
+      controls: filterControl[];
+    };
+    modeToggle: boolean;
+    paginationEl: any;
+    showFilter: boolean;
+    sort?: {
+      label?: string;
+      value?: string;
+      header?: string;
+      subHeader?: string;
+      message?: string;
+      options: {
+        label: string;
+        value: string;
+      }[];
+    };
+    togglePaginationDisplay: () => Promise<void>;
+    updateCurrentFilters: () => Promise<void>;
+  }
+  interface FloodteamSignaturePad {
+    /**
+     * The background color for the signature pad
+     */
+    backgroundColor: string;
+    /**
+     * Clear the signature field
+     */
+    clear: () => Promise<any>;
+    /**
+     * The text to display on the clear button
+     */
+    clearText: string;
+    /**
+     * Radius of a single dot
+     */
+    dotSize: number;
+    /**
+     * Download a file via a new browser tab
+     * @param dataURL The signature image file data
+     * @param filename The name of the file
+     */
+    download: (dataURL: any, filename: any) => Promise<void>;
+    /**
+     * Download the signature as a JPG file
+     */
+    downloadJPG: () => Promise<void>;
+    /**
+     * Download the signature as a PNG file
+     */
+    downloadPNG: () => Promise<void>;
+    /**
+     * Download the signature as an SVG file
+     */
+    downloadSVG: () => Promise<void>;
+    /**
+     * Fill the signature pad from data
+     * @param data The signature data
+     */
+    fromData: (data: any) => Promise<any>;
+    getSignatureInstace: () => Promise<any>;
+    /**
+     * Check if the signature pad is empty
+     */
+    isEmpty: () => Promise<any>;
+    /**
+     * The label to display below signature pad
+     */
+    label: string;
+    /**
+     * Maximum width of a line
+     */
+    maxWidth: number;
+    /**
+     * Add the next point only if the previous one is farther than x pixels
+     */
+    minDistance: number;
+    /**
+     * Minimum width of a line
+     */
+    minWidth: number;
+    /**
+     * The name of the element
+     */
+    name: string;
+    /**
+     * Color used to draw the lines. Can be any color format accepted by context.fillStyle
+     */
+    penColor: string;
+    /**
+     * Resize the canvas based on browser
+     */
+    resizeCanvas: () => Promise<void>;
+    /**
+     * Update the value and emit ionChange event
+     */
+    submit: () => Promise<void>;
+    /**
+     * The text to display on the submit button
+     */
+    submitText: string;
+    /**
+     * Draw the next point at most once per every x milliseconds. Set it to 0 to turn off throttling
+     */
+    throttle: number;
+    /**
+     * Get the signature pad data
+     */
+    toData: () => Promise<any>;
+    toDataURL: (type?: string) => Promise<any>;
+    /**
+     * Undo the last stroke from the signature
+     */
+    undo: () => Promise<any>;
+    /**
+     * The current data for the signature pad
+     */
+    value: any;
+    /**
+     * Weight used to modify new velocity based on the previous velocity
+     */
+    velocityFilterWeight: number;
+  }
+  interface FloodteamSnapshotCard {
+    active: boolean;
+    buttonProps: {};
+    buttonText: string;
+    disableShrink: boolean;
+    href: string;
+    photo: string;
+  }
+  interface FloodteamStarRating {
+    disabled: boolean;
+    maxRating: number;
+    name: string;
+    setCurrentRating: (rating: any) => Promise<void>;
+    value: string;
+  }
 }
 declare global {
-    interface HTMLFireenjinGraphPaySplitsElement extends Components.FireenjinGraphPaySplits, HTMLStencilElement {
-    }
-    var HTMLFireenjinGraphPaySplitsElement: {
-        prototype: HTMLFireenjinGraphPaySplitsElement;
-        new (): HTMLFireenjinGraphPaySplitsElement;
-    };
-    interface HTMLFloodteamActivityFeedElement extends Components.FloodteamActivityFeed, HTMLStencilElement {
-    }
-    var HTMLFloodteamActivityFeedElement: {
-        prototype: HTMLFloodteamActivityFeedElement;
-        new (): HTMLFloodteamActivityFeedElement;
-    };
-    interface HTMLFloodteamBookNowElement extends Components.FloodteamBookNow, HTMLStencilElement {
-    }
-    var HTMLFloodteamBookNowElement: {
-        prototype: HTMLFloodteamBookNowElement;
-        new (): HTMLFloodteamBookNowElement;
-    };
-    interface HTMLFloodteamCheckmarkElement extends Components.FloodteamCheckmark, HTMLStencilElement {
-    }
-    var HTMLFloodteamCheckmarkElement: {
-        prototype: HTMLFloodteamCheckmarkElement;
-        new (): HTMLFloodteamCheckmarkElement;
-    };
-    interface HTMLFloodteamEpayElement extends Components.FloodteamEpay, HTMLStencilElement {
-    }
-    var HTMLFloodteamEpayElement: {
-        prototype: HTMLFloodteamEpayElement;
-        new (): HTMLFloodteamEpayElement;
-    };
-    interface HTMLFloodteamErrorElement extends Components.FloodteamError, HTMLStencilElement {
-    }
-    var HTMLFloodteamErrorElement: {
-        prototype: HTMLFloodteamErrorElement;
-        new (): HTMLFloodteamErrorElement;
-    };
-    interface HTMLFloodteamFallbackElement extends Components.FloodteamFallback, HTMLStencilElement {
-    }
-    var HTMLFloodteamFallbackElement: {
-        prototype: HTMLFloodteamFallbackElement;
-        new (): HTMLFloodteamFallbackElement;
-    };
-    interface HTMLFloodteamFeedCardElement extends Components.FloodteamFeedCard, HTMLStencilElement {
-    }
-    var HTMLFloodteamFeedCardElement: {
-        prototype: HTMLFloodteamFeedCardElement;
-        new (): HTMLFloodteamFeedCardElement;
-    };
-    interface HTMLFloodteamFlipCardElement extends Components.FloodteamFlipCard, HTMLStencilElement {
-    }
-    var HTMLFloodteamFlipCardElement: {
-        prototype: HTMLFloodteamFlipCardElement;
-        new (): HTMLFloodteamFlipCardElement;
-    };
-    interface HTMLFloodteamFloatingButtonElement extends Components.FloodteamFloatingButton, HTMLStencilElement {
-    }
-    var HTMLFloodteamFloatingButtonElement: {
-        prototype: HTMLFloodteamFloatingButtonElement;
-        new (): HTMLFloodteamFloatingButtonElement;
-    };
-    interface HTMLFloodteamInputAddressElement extends Components.FloodteamInputAddress, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputAddressElement: {
-        prototype: HTMLFloodteamInputAddressElement;
-        new (): HTMLFloodteamInputAddressElement;
-    };
-    interface HTMLFloodteamInputAmountElement extends Components.FloodteamInputAmount, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputAmountElement: {
-        prototype: HTMLFloodteamInputAmountElement;
-        new (): HTMLFloodteamInputAmountElement;
-    };
-    interface HTMLFloodteamInputFileElement extends Components.FloodteamInputFile, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputFileElement: {
-        prototype: HTMLFloodteamInputFileElement;
-        new (): HTMLFloodteamInputFileElement;
-    };
-    interface HTMLFloodteamInputPhotoElement extends Components.FloodteamInputPhoto, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputPhotoElement: {
-        prototype: HTMLFloodteamInputPhotoElement;
-        new (): HTMLFloodteamInputPhotoElement;
-    };
-    interface HTMLFloodteamInputSearchElement extends Components.FloodteamInputSearch, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputSearchElement: {
-        prototype: HTMLFloodteamInputSearchElement;
-        new (): HTMLFloodteamInputSearchElement;
-    };
-    interface HTMLFloodteamInputSearchPopoverElement extends Components.FloodteamInputSearchPopover, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputSearchPopoverElement: {
-        prototype: HTMLFloodteamInputSearchPopoverElement;
-        new (): HTMLFloodteamInputSearchPopoverElement;
-    };
-    interface HTMLFloodteamInputSearchUserElement extends Components.FloodteamInputSearchUser, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputSearchUserElement: {
-        prototype: HTMLFloodteamInputSearchUserElement;
-        new (): HTMLFloodteamInputSearchUserElement;
-    };
-    interface HTMLFloodteamInputStateElement extends Components.FloodteamInputState, HTMLStencilElement {
-    }
-    var HTMLFloodteamInputStateElement: {
-        prototype: HTMLFloodteamInputStateElement;
-        new (): HTMLFloodteamInputStateElement;
-    };
-    interface HTMLFloodteamJobProgressElement extends Components.FloodteamJobProgress, HTMLStencilElement {
-    }
-    var HTMLFloodteamJobProgressElement: {
-        prototype: HTMLFloodteamJobProgressElement;
-        new (): HTMLFloodteamJobProgressElement;
-    };
-    interface HTMLFloodteamLocationBarElement extends Components.FloodteamLocationBar, HTMLStencilElement {
-    }
-    var HTMLFloodteamLocationBarElement: {
-        prototype: HTMLFloodteamLocationBarElement;
-        new (): HTMLFloodteamLocationBarElement;
-    };
-    interface HTMLFloodteamPayCardElement extends Components.FloodteamPayCard, HTMLStencilElement {
-    }
-    var HTMLFloodteamPayCardElement: {
-        prototype: HTMLFloodteamPayCardElement;
-        new (): HTMLFloodteamPayCardElement;
-    };
-    interface HTMLFloodteamPayCheckElement extends Components.FloodteamPayCheck, HTMLStencilElement {
-    }
-    var HTMLFloodteamPayCheckElement: {
-        prototype: HTMLFloodteamPayCheckElement;
-        new (): HTMLFloodteamPayCheckElement;
-    };
-    interface HTMLFloodteamPaymentMethodsElement extends Components.FloodteamPaymentMethods, HTMLStencilElement {
-    }
-    var HTMLFloodteamPaymentMethodsElement: {
-        prototype: HTMLFloodteamPaymentMethodsElement;
-        new (): HTMLFloodteamPaymentMethodsElement;
-    };
-    interface HTMLFloodteamPhotoCarouselElement extends Components.FloodteamPhotoCarousel, HTMLStencilElement {
-    }
-    var HTMLFloodteamPhotoCarouselElement: {
-        prototype: HTMLFloodteamPhotoCarouselElement;
-        new (): HTMLFloodteamPhotoCarouselElement;
-    };
-    interface HTMLFloodteamPhotoGalleryElement extends Components.FloodteamPhotoGallery, HTMLStencilElement {
-    }
-    var HTMLFloodteamPhotoGalleryElement: {
-        prototype: HTMLFloodteamPhotoGalleryElement;
-        new (): HTMLFloodteamPhotoGalleryElement;
-    };
-    interface HTMLFloodteamProgressCircleElement extends Components.FloodteamProgressCircle, HTMLStencilElement {
-    }
-    var HTMLFloodteamProgressCircleElement: {
-        prototype: HTMLFloodteamProgressCircleElement;
-        new (): HTMLFloodteamProgressCircleElement;
-    };
-    interface HTMLFloodteamProgressTimelineElement extends Components.FloodteamProgressTimeline, HTMLStencilElement {
-    }
-    var HTMLFloodteamProgressTimelineElement: {
-        prototype: HTMLFloodteamProgressTimelineElement;
-        new (): HTMLFloodteamProgressTimelineElement;
-    };
-    interface HTMLFloodteamSearchBarElement extends Components.FloodteamSearchBar, HTMLStencilElement {
-    }
-    var HTMLFloodteamSearchBarElement: {
-        prototype: HTMLFloodteamSearchBarElement;
-        new (): HTMLFloodteamSearchBarElement;
-    };
-    interface HTMLFloodteamSignaturePadElement extends Components.FloodteamSignaturePad, HTMLStencilElement {
-    }
-    var HTMLFloodteamSignaturePadElement: {
-        prototype: HTMLFloodteamSignaturePadElement;
-        new (): HTMLFloodteamSignaturePadElement;
-    };
-    interface HTMLFloodteamSnapshotCardElement extends Components.FloodteamSnapshotCard, HTMLStencilElement {
-    }
-    var HTMLFloodteamSnapshotCardElement: {
-        prototype: HTMLFloodteamSnapshotCardElement;
-        new (): HTMLFloodteamSnapshotCardElement;
-    };
-    interface HTMLFloodteamStarRatingElement extends Components.FloodteamStarRating, HTMLStencilElement {
-    }
-    var HTMLFloodteamStarRatingElement: {
-        prototype: HTMLFloodteamStarRatingElement;
-        new (): HTMLFloodteamStarRatingElement;
-    };
-    interface HTMLElementTagNameMap {
-        "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
-        "floodteam-activity-feed": HTMLFloodteamActivityFeedElement;
-        "floodteam-book-now": HTMLFloodteamBookNowElement;
-        "floodteam-checkmark": HTMLFloodteamCheckmarkElement;
-        "floodteam-epay": HTMLFloodteamEpayElement;
-        "floodteam-error": HTMLFloodteamErrorElement;
-        "floodteam-fallback": HTMLFloodteamFallbackElement;
-        "floodteam-feed-card": HTMLFloodteamFeedCardElement;
-        "floodteam-flip-card": HTMLFloodteamFlipCardElement;
-        "floodteam-floating-button": HTMLFloodteamFloatingButtonElement;
-        "floodteam-input-address": HTMLFloodteamInputAddressElement;
-        "floodteam-input-amount": HTMLFloodteamInputAmountElement;
-        "floodteam-input-file": HTMLFloodteamInputFileElement;
-        "floodteam-input-photo": HTMLFloodteamInputPhotoElement;
-        "floodteam-input-search": HTMLFloodteamInputSearchElement;
-        "floodteam-input-search-popover": HTMLFloodteamInputSearchPopoverElement;
-        "floodteam-input-search-user": HTMLFloodteamInputSearchUserElement;
-        "floodteam-input-state": HTMLFloodteamInputStateElement;
-        "floodteam-job-progress": HTMLFloodteamJobProgressElement;
-        "floodteam-location-bar": HTMLFloodteamLocationBarElement;
-        "floodteam-pay-card": HTMLFloodteamPayCardElement;
-        "floodteam-pay-check": HTMLFloodteamPayCheckElement;
-        "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
-        "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
-        "floodteam-photo-gallery": HTMLFloodteamPhotoGalleryElement;
-        "floodteam-progress-circle": HTMLFloodteamProgressCircleElement;
-        "floodteam-progress-timeline": HTMLFloodteamProgressTimelineElement;
-        "floodteam-search-bar": HTMLFloodteamSearchBarElement;
-        "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
-        "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
-        "floodteam-star-rating": HTMLFloodteamStarRatingElement;
-    }
+  interface HTMLFireenjinGraphPaySplitsElement
+    extends Components.FireenjinGraphPaySplits,
+      HTMLStencilElement {}
+  var HTMLFireenjinGraphPaySplitsElement: {
+    prototype: HTMLFireenjinGraphPaySplitsElement;
+    new (): HTMLFireenjinGraphPaySplitsElement;
+  };
+  interface HTMLFloodteamActivityFeedElement
+    extends Components.FloodteamActivityFeed,
+      HTMLStencilElement {}
+  var HTMLFloodteamActivityFeedElement: {
+    prototype: HTMLFloodteamActivityFeedElement;
+    new (): HTMLFloodteamActivityFeedElement;
+  };
+  interface HTMLFloodteamBookNowElement
+    extends Components.FloodteamBookNow,
+      HTMLStencilElement {}
+  var HTMLFloodteamBookNowElement: {
+    prototype: HTMLFloodteamBookNowElement;
+    new (): HTMLFloodteamBookNowElement;
+  };
+  interface HTMLFloodteamCheckmarkElement
+    extends Components.FloodteamCheckmark,
+      HTMLStencilElement {}
+  var HTMLFloodteamCheckmarkElement: {
+    prototype: HTMLFloodteamCheckmarkElement;
+    new (): HTMLFloodteamCheckmarkElement;
+  };
+  interface HTMLFloodteamEpayElement
+    extends Components.FloodteamEpay,
+      HTMLStencilElement {}
+  var HTMLFloodteamEpayElement: {
+    prototype: HTMLFloodteamEpayElement;
+    new (): HTMLFloodteamEpayElement;
+  };
+  interface HTMLFloodteamErrorElement
+    extends Components.FloodteamError,
+      HTMLStencilElement {}
+  var HTMLFloodteamErrorElement: {
+    prototype: HTMLFloodteamErrorElement;
+    new (): HTMLFloodteamErrorElement;
+  };
+  interface HTMLFloodteamFallbackElement
+    extends Components.FloodteamFallback,
+      HTMLStencilElement {}
+  var HTMLFloodteamFallbackElement: {
+    prototype: HTMLFloodteamFallbackElement;
+    new (): HTMLFloodteamFallbackElement;
+  };
+  interface HTMLFloodteamFeedCardElement
+    extends Components.FloodteamFeedCard,
+      HTMLStencilElement {}
+  var HTMLFloodteamFeedCardElement: {
+    prototype: HTMLFloodteamFeedCardElement;
+    new (): HTMLFloodteamFeedCardElement;
+  };
+  interface HTMLFloodteamFlipCardElement
+    extends Components.FloodteamFlipCard,
+      HTMLStencilElement {}
+  var HTMLFloodteamFlipCardElement: {
+    prototype: HTMLFloodteamFlipCardElement;
+    new (): HTMLFloodteamFlipCardElement;
+  };
+  interface HTMLFloodteamFloatingButtonElement
+    extends Components.FloodteamFloatingButton,
+      HTMLStencilElement {}
+  var HTMLFloodteamFloatingButtonElement: {
+    prototype: HTMLFloodteamFloatingButtonElement;
+    new (): HTMLFloodteamFloatingButtonElement;
+  };
+  interface HTMLFloodteamInputAddressElement
+    extends Components.FloodteamInputAddress,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputAddressElement: {
+    prototype: HTMLFloodteamInputAddressElement;
+    new (): HTMLFloodteamInputAddressElement;
+  };
+  interface HTMLFloodteamInputAmountElement
+    extends Components.FloodteamInputAmount,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputAmountElement: {
+    prototype: HTMLFloodteamInputAmountElement;
+    new (): HTMLFloodteamInputAmountElement;
+  };
+  interface HTMLFloodteamInputFileElement
+    extends Components.FloodteamInputFile,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputFileElement: {
+    prototype: HTMLFloodteamInputFileElement;
+    new (): HTMLFloodteamInputFileElement;
+  };
+  interface HTMLFloodteamInputPhotoElement
+    extends Components.FloodteamInputPhoto,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputPhotoElement: {
+    prototype: HTMLFloodteamInputPhotoElement;
+    new (): HTMLFloodteamInputPhotoElement;
+  };
+  interface HTMLFloodteamInputSearchElement
+    extends Components.FloodteamInputSearch,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputSearchElement: {
+    prototype: HTMLFloodteamInputSearchElement;
+    new (): HTMLFloodteamInputSearchElement;
+  };
+  interface HTMLFloodteamInputSearchPopoverElement
+    extends Components.FloodteamInputSearchPopover,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputSearchPopoverElement: {
+    prototype: HTMLFloodteamInputSearchPopoverElement;
+    new (): HTMLFloodteamInputSearchPopoverElement;
+  };
+  interface HTMLFloodteamInputSearchUserElement
+    extends Components.FloodteamInputSearchUser,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputSearchUserElement: {
+    prototype: HTMLFloodteamInputSearchUserElement;
+    new (): HTMLFloodteamInputSearchUserElement;
+  };
+  interface HTMLFloodteamInputStateElement
+    extends Components.FloodteamInputState,
+      HTMLStencilElement {}
+  var HTMLFloodteamInputStateElement: {
+    prototype: HTMLFloodteamInputStateElement;
+    new (): HTMLFloodteamInputStateElement;
+  };
+  interface HTMLFloodteamJobProgressElement
+    extends Components.FloodteamJobProgress,
+      HTMLStencilElement {}
+  var HTMLFloodteamJobProgressElement: {
+    prototype: HTMLFloodteamJobProgressElement;
+    new (): HTMLFloodteamJobProgressElement;
+  };
+  interface HTMLFloodteamLocationBarElement
+    extends Components.FloodteamLocationBar,
+      HTMLStencilElement {}
+  var HTMLFloodteamLocationBarElement: {
+    prototype: HTMLFloodteamLocationBarElement;
+    new (): HTMLFloodteamLocationBarElement;
+  };
+  interface HTMLFloodteamPayCardElement
+    extends Components.FloodteamPayCard,
+      HTMLStencilElement {}
+  var HTMLFloodteamPayCardElement: {
+    prototype: HTMLFloodteamPayCardElement;
+    new (): HTMLFloodteamPayCardElement;
+  };
+  interface HTMLFloodteamPayCheckElement
+    extends Components.FloodteamPayCheck,
+      HTMLStencilElement {}
+  var HTMLFloodteamPayCheckElement: {
+    prototype: HTMLFloodteamPayCheckElement;
+    new (): HTMLFloodteamPayCheckElement;
+  };
+  interface HTMLFloodteamPaymentMethodsElement
+    extends Components.FloodteamPaymentMethods,
+      HTMLStencilElement {}
+  var HTMLFloodteamPaymentMethodsElement: {
+    prototype: HTMLFloodteamPaymentMethodsElement;
+    new (): HTMLFloodteamPaymentMethodsElement;
+  };
+  interface HTMLFloodteamPhotoCarouselElement
+    extends Components.FloodteamPhotoCarousel,
+      HTMLStencilElement {}
+  var HTMLFloodteamPhotoCarouselElement: {
+    prototype: HTMLFloodteamPhotoCarouselElement;
+    new (): HTMLFloodteamPhotoCarouselElement;
+  };
+  interface HTMLFloodteamPhotoGalleryElement
+    extends Components.FloodteamPhotoGallery,
+      HTMLStencilElement {}
+  var HTMLFloodteamPhotoGalleryElement: {
+    prototype: HTMLFloodteamPhotoGalleryElement;
+    new (): HTMLFloodteamPhotoGalleryElement;
+  };
+  interface HTMLFloodteamProgressCircleElement
+    extends Components.FloodteamProgressCircle,
+      HTMLStencilElement {}
+  var HTMLFloodteamProgressCircleElement: {
+    prototype: HTMLFloodteamProgressCircleElement;
+    new (): HTMLFloodteamProgressCircleElement;
+  };
+  interface HTMLFloodteamProgressTimelineElement
+    extends Components.FloodteamProgressTimeline,
+      HTMLStencilElement {}
+  var HTMLFloodteamProgressTimelineElement: {
+    prototype: HTMLFloodteamProgressTimelineElement;
+    new (): HTMLFloodteamProgressTimelineElement;
+  };
+  interface HTMLFloodteamSearchBarElement
+    extends Components.FloodteamSearchBar,
+      HTMLStencilElement {}
+  var HTMLFloodteamSearchBarElement: {
+    prototype: HTMLFloodteamSearchBarElement;
+    new (): HTMLFloodteamSearchBarElement;
+  };
+  interface HTMLFloodteamSignaturePadElement
+    extends Components.FloodteamSignaturePad,
+      HTMLStencilElement {}
+  var HTMLFloodteamSignaturePadElement: {
+    prototype: HTMLFloodteamSignaturePadElement;
+    new (): HTMLFloodteamSignaturePadElement;
+  };
+  interface HTMLFloodteamSnapshotCardElement
+    extends Components.FloodteamSnapshotCard,
+      HTMLStencilElement {}
+  var HTMLFloodteamSnapshotCardElement: {
+    prototype: HTMLFloodteamSnapshotCardElement;
+    new (): HTMLFloodteamSnapshotCardElement;
+  };
+  interface HTMLFloodteamStarRatingElement
+    extends Components.FloodteamStarRating,
+      HTMLStencilElement {}
+  var HTMLFloodteamStarRatingElement: {
+    prototype: HTMLFloodteamStarRatingElement;
+    new (): HTMLFloodteamStarRatingElement;
+  };
+  interface HTMLElementTagNameMap {
+    "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
+    "floodteam-activity-feed": HTMLFloodteamActivityFeedElement;
+    "floodteam-book-now": HTMLFloodteamBookNowElement;
+    "floodteam-checkmark": HTMLFloodteamCheckmarkElement;
+    "floodteam-epay": HTMLFloodteamEpayElement;
+    "floodteam-error": HTMLFloodteamErrorElement;
+    "floodteam-fallback": HTMLFloodteamFallbackElement;
+    "floodteam-feed-card": HTMLFloodteamFeedCardElement;
+    "floodteam-flip-card": HTMLFloodteamFlipCardElement;
+    "floodteam-floating-button": HTMLFloodteamFloatingButtonElement;
+    "fireenjin-input-address": HTMLFloodteamInputAddressElement;
+    "fireenjin-input-amount": HTMLFloodteamInputAmountElement;
+    "fireenjin-input-file": HTMLFloodteamInputFileElement;
+    "fireenjin-input-photo": HTMLFloodteamInputPhotoElement;
+    "fireenjin-input-search": HTMLFloodteamInputSearchElement;
+    "fireenjin-input-search-popover": HTMLFloodteamInputSearchPopoverElement;
+    "fireenjin-input-search-user": HTMLFloodteamInputSearchUserElement;
+    "fireenjin-input-state": HTMLFloodteamInputStateElement;
+    "floodteam-job-progress": HTMLFloodteamJobProgressElement;
+    "floodteam-location-bar": HTMLFloodteamLocationBarElement;
+    "floodteam-pay-card": HTMLFloodteamPayCardElement;
+    "floodteam-pay-check": HTMLFloodteamPayCheckElement;
+    "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
+    "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
+    "floodteam-photo-gallery": HTMLFloodteamPhotoGalleryElement;
+    "fireenjin-progress-circle": HTMLFloodteamProgressCircleElement;
+    "floodteam-progress-timeline": HTMLFloodteamProgressTimelineElement;
+    "floodteam-search-bar": HTMLFloodteamSearchBarElement;
+    "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
+    "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
+    "floodteam-star-rating": HTMLFloodteamStarRatingElement;
+  }
 }
 declare namespace LocalJSX {
-    interface FireenjinGraphPaySplits {
-        "graphTitle"?: string;
-        "users"?: any[];
-    }
-    interface FloodteamActivityFeed {
-        "jobId"?: string;
-        "onFireenjinTrigger"?: (event: CustomEvent<any>) => void;
-        "siteId"?: string;
-        "userId"?: string;
-    }
-    interface FloodteamBookNow {
-        /**
-          * The Google Maps API Key
-         */
-        "googleMapsKey"?: string;
-        /**
-          * The ID of the location
-         */
-        "locationId"?: string;
-        /**
-          * The ID of the referring user
-         */
-        "referralId"?: string;
-        /**
-          * Is the user referring?
-         */
-        "referring"?: boolean;
-        /**
-          * The campaign or API token
-         */
-        "token"?: string;
-    }
-    interface FloodteamCheckmark {
-        /**
-          * Start the animation
-         */
-        "animating"?: boolean;
-        /**
-          * The size of the thumb
-         */
-        "size"?: string;
-    }
-    interface FloodteamEpay {
-        "customer"?: any;
-        "dadeKey"?: string;
-        "dadeUrl"?: string;
-        /**
-          * The error message to display
-         */
-        "error"?: string;
-        "jobId"?: string;
-        "onFireenjinFetch"?: (event: CustomEvent<any>) => void;
-        "onFireenjinSubmit"?: (event: CustomEvent<any>) => void;
-        "onFtEpayShowCommisions"?: (event: CustomEvent<any>) => void;
-        /**
-          * The amount of money owed
-         */
-        "owed"?: any;
-        "paymentId"?: string;
-        /**
-          * The list of payments
-         */
-        "payments"?: {
-    timestamp: string;
-    brand: string;
-    last4: number;
-    amount: number;
-  }[];
-        /**
-          * The slide to show when loading the component
-         */
-        "showSlide"?: | "report"
-    | "details"
-    | "payments"
-    | "card"
-    | "check"
-    | "confirmation";
-        "stripeKey"?: string;
-        /**
-          * The total amount of money billed
-         */
-        "total"?: any;
-        "userId"?: string;
-        "users"?: any[];
-    }
-    interface FloodteamError {
-        /**
-          * The color of the component
-         */
-        "color"?: string;
-        /**
-          * The icon to use
-         */
-        "iconName"?: string;
-        /**
-          * The error message to display
-         */
-        "message"?: string;
-    }
-    interface FloodteamFallback {
-        /**
-          * An icon to display above the fallback message
-         */
-        "icon"?: string;
-        /**
-          * The message to display as a fallback
-         */
-        "message"?: string;
-    }
-    interface FloodteamFeedCard {
-        /**
-          * An optional action button to show on the card
-         */
-        "actionButtons"?: {
-    action: string;
-    size?: "small" | "default" | "large";
-    fill?: "clear" | "outline" | "solid" | "default";
+  interface FireenjinGraphPaySplits {
+    graphTitle?: string;
+    users?: any[];
+  }
+  interface FloodteamActivityFeed {
+    jobId?: string;
+    onFireenjinTrigger?: (event: CustomEvent<any>) => void;
+    siteId?: string;
+    userId?: string;
+  }
+  interface FloodteamBookNow {
+    /**
+     * The Google Maps API Key
+     */
+    googleMapsKey?: string;
+    /**
+     * The ID of the location
+     */
+    locationId?: string;
+    /**
+     * The ID of the referring user
+     */
+    referralId?: string;
+    /**
+     * Is the user referring?
+     */
+    referring?: boolean;
+    /**
+     * The campaign or API token
+     */
+    token?: string;
+  }
+  interface FloodteamCheckmark {
+    /**
+     * Start the animation
+     */
+    animating?: boolean;
+    /**
+     * The size of the thumb
+     */
+    size?: string;
+  }
+  interface FloodteamEpay {
+    customer?: any;
+    dadeKey?: string;
+    dadeUrl?: string;
+    /**
+     * The error message to display
+     */
+    error?: string;
+    jobId?: string;
+    onFireenjinFetch?: (event: CustomEvent<any>) => void;
+    onFireenjinSubmit?: (event: CustomEvent<any>) => void;
+    onFtEpayShowCommisions?: (event: CustomEvent<any>) => void;
+    /**
+     * The amount of money owed
+     */
+    owed?: any;
+    paymentId?: string;
+    /**
+     * The list of payments
+     */
+    payments?: {
+      timestamp: string;
+      brand: string;
+      last4: number;
+      amount: number;
+    }[];
+    /**
+     * The slide to show when loading the component
+     */
+    showSlide?:
+      | "report"
+      | "details"
+      | "payments"
+      | "card"
+      | "check"
+      | "confirmation";
+    stripeKey?: string;
+    /**
+     * The total amount of money billed
+     */
+    total?: any;
+    userId?: string;
+    users?: any[];
+  }
+  interface FloodteamError {
+    /**
+     * The color of the component
+     */
     color?: string;
-    iconStart?: string;
-    iconEnd?: string;
-    text?: string;
-    href?: string;
-  }[];
-        /**
-          * The background image to use for the card
-         */
-        "backgroundImage"?: string;
-        /**
-          * When the feed item was created
-         */
-        "createdAt"?: Date;
-        /**
-          * The more in depth details about the feed card
-         */
-        "details"?: string;
-        /**
-          * The main text at the top of the feed card
-         */
-        "heading"?: string;
-        /**
-          * The image to display at the top left of the feed card
-         */
-        "image"?: string;
-        /**
-          * The component to load into a modal that will display on load
-         */
-        "modal"?: string;
-        "onFloodteamFeedAction"?: (event: CustomEvent<any>) => void;
-        /**
-          * Payload data to send through the feed card
-         */
-        "payload"?: any;
-        /**
-          * Whether the message has been read
-         */
-        "read"?: boolean;
-        /**
-          * The subtext to display under the title
-         */
-        "subtext"?: string;
-        /**
-          * A list of tags that apply to this feed card
-         */
-        "tags"?: string[];
-    }
-    interface FloodteamFlipCard {
-        "backImage"?: string;
-        "flipped"?: boolean;
-        "frontImage"?: string;
-        "hideRefresh"?: boolean;
-        "onFloodteamFlip"?: (event: CustomEvent<any>) => void;
-    }
-    interface FloodteamFloatingButton {
-        /**
-          * The content of the badge
-         */
-        "badge"?: string;
-        /**
-          * The color of the badge to display
-         */
-        "badgeColor"?: Color;
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList"?: {
     /**
-     * The label to show next to the button
+     * The icon to use
      */
-    label: string;
+    iconName?: string;
     /**
-     * The icon to use in the button
+     * The error message to display
      */
-    icon: string;
+    message?: string;
+  }
+  interface FloodteamFallback {
     /**
-     * The color from the theme to make the button
+     * An icon to display above the fallback message
+     */
+    icon?: string;
+    /**
+     * The message to display as a fallback
+     */
+    message?: string;
+  }
+  interface FloodteamFeedCard {
+    /**
+     * An optional action button to show on the card
+     */
+    actionButtons?: {
+      action: string;
+      size?: "small" | "default" | "large";
+      fill?: "clear" | "outline" | "solid" | "default";
+      color?: string;
+      iconStart?: string;
+      iconEnd?: string;
+      text?: string;
+      href?: string;
+    }[];
+    /**
+     * The background image to use for the card
+     */
+    backgroundImage?: string;
+    /**
+     * When the feed item was created
+     */
+    createdAt?: Date;
+    /**
+     * The more in depth details about the feed card
+     */
+    details?: string;
+    /**
+     * The main text at the top of the feed card
+     */
+    heading?: string;
+    /**
+     * The image to display at the top left of the feed card
+     */
+    image?: string;
+    /**
+     * The component to load into a modal that will display on load
+     */
+    modal?: string;
+    onFloodteamFeedAction?: (event: CustomEvent<any>) => void;
+    /**
+     * Payload data to send through the feed card
+     */
+    payload?: any;
+    /**
+     * Whether the message has been read
+     */
+    read?: boolean;
+    /**
+     * The subtext to display under the title
+     */
+    subtext?: string;
+    /**
+     * A list of tags that apply to this feed card
+     */
+    tags?: string[];
+  }
+  interface FloodteamFlipCard {
+    backImage?: string;
+    flipped?: boolean;
+    frontImage?: string;
+    hideRefresh?: boolean;
+    onFloodteamFlip?: (event: CustomEvent<any>) => void;
+  }
+  interface FloodteamFloatingButton {
+    /**
+     * The content of the badge
+     */
+    badge?: string;
+    /**
+     * The color of the badge to display
+     */
+    badgeColor?: Color;
+    /**
+     * The list of buttons to show when the material button is clicked
+     */
+    buttonList?: {
+      /**
+       * The label to show next to the button
+       */
+      label: string;
+      /**
+       * The icon to use in the button
+       */
+      icon: string;
+      /**
+       * The color from the theme to make the button
+       */
+      color?: Color;
+      /**
+       * The link to use for the button
+       */
+      href?: string;
+      /**
+       * The functionality to run when the button is clicked
+       */
+      onClick?: (event: any) => any;
+    }[];
+    /**
+     * The color of the button
      */
     color?: Color;
     /**
-     * The link to use for the button
+     * The horizontal position of the button
      */
-    href?: string;
+    horizontal?: "end" | "start" | "center";
     /**
-     * The functionality to run when the button is clicked
+     * The side the list should display
      */
-    onClick?: (event: any) => any;
-  }[];
-        /**
-          * The color of the button
-         */
-        "color"?: Color;
-        /**
-          * The horizontal position of the button
-         */
-        "horizontal"?: "end" | "start" | "center";
-        /**
-          * The side the list should display
-         */
-        "listSide"?: "end" | "start" | "top" | "bottom";
-        /**
-          * The icon to use on the material button when it's closed
-         */
-        "openIcon"?: string;
-        /**
-          * The url to link the material button to
-         */
-        "url"?: string;
-        /**
-          * The vertical position of the button
-         */
-        "vertical"?: "center" | "top" | "bottom";
-    }
-    interface FloodteamInputAddress {
-        /**
-          * The Google Maps API Key
-         */
-        "googleMapsKey"?: string;
-        /**
-          * The label of the input field
-         */
-        "label"?: string;
-        /**
-          * The name attribute of the input
-         */
-        "name"?: string;
-        "onFloodteamAddressMode"?: (event: CustomEvent<any>) => void;
-        "onFloodteamUpdateAutoHeight"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        /**
-          * The placeholder text for the input field
-         */
-        "placeholder"?: string;
-        /**
-          * Whether the address input is required
-         */
-        "required"?: boolean;
-        /**
-          * The value of the input field
-         */
-        "value"?: any;
-    }
-    interface FloodteamInputAmount {
-        "autofocus"?: boolean;
-        "decimal"?: boolean;
-        "disabled"?: boolean;
-        "label"?: string;
-        "max"?: string;
-        "min"?: string;
-        "name"?: string;
-        "onIonChange"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        "placeholder"?: string;
-        "presets"?: ({ label?: string; value: any } | string)[];
-        "required"?: boolean;
-        "step"?: string;
-        "value"?: any;
-    }
-    interface FloodteamInputFile {
-        "accept"?: string;
-        "defaultValue"?: any;
-        "documentId"?: string;
-        /**
-          * The endpoint to upload to
-         */
-        "endpoint"?: string;
-        "fileName"?: string;
-        "icon"?: string;
-        "label"?: string;
-        "name"?: string;
-        "onFireenjinUpload"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        "path"?: string;
-        "type"?: string;
-        "uploadData"?: any;
-        "value"?: any;
-    }
-    interface FloodteamInputPhoto {
-        /**
-          * Text to display on the photo upload button
-         */
-        "buttonText"?: string;
-        /**
-          * Is the uploader disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * The ID of the document the photo is tied to
-         */
-        "documentId"?: string;
-        /**
-          * The endpoint to upload to
-         */
-        "endpoint"?: string;
-        /**
-          * The fallback image to use if photo isn't set
-         */
-        "fallback"?: string;
-        /**
-          * The filename to use for the uploaded file
-         */
-        "fileName"?: string;
-        "initials"?: string;
-        "loading"?: boolean;
-        /**
-          * Allow uploading multiple
-         */
-        "multiple"?: boolean;
-        /**
-          * The name to use when emitting field change event
-         */
-        "name"?: string;
-        "onFireenjinUpload"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        /**
-          * The storage path to upload the file to
-         */
-        "path"?: string;
-        /**
-          * Should the photo uploader show the button
-         */
-        "showButton"?: boolean;
-        /**
-          * The type of photo being uploaded
-         */
-        "type"?: string;
-        /**
-          * A link to the photo to display
-         */
-        "value"?: string;
-    }
-    interface FloodteamInputSearch {
-        "autofocus"?: boolean;
-        "dataPropsMap"?: any;
-        "disableSearch"?: boolean;
-        "disabled"?: boolean;
-        "endpoint"?: string;
-        "iconEnd"?: string;
-        "iconStart"?: string;
-        "label"?: string;
-        "mode"?: "popover" | "inline";
-        "name"?: string;
-        "onFireenjinFetch"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        "placeholder"?: string;
-        "required"?: boolean;
-        "results"?: any[];
-        "resultsKey"?: string;
-        "searchParams"?: any;
-        "template"?: (result) => any;
-        "type"?: TextFieldTypes;
-        "value"?: any;
-    }
-    interface FloodteamInputSearchPopover {
-        "name"?: string;
-        "results"?: any;
-        "template"?: (result) => any;
-    }
-    interface FloodteamInputSearchUser {
-        "autofocus"?: boolean;
-        "dataPropsMap"?: any;
-        "disableSearch"?: boolean;
-        "disabled"?: boolean;
-        "endpoint"?: string;
-        "iconEnd"?: string;
-        "iconStart"?: string;
-        "label"?: string;
-        "limit"?: number;
-        "mode"?: "popover" | "inline";
-        "name"?: string;
-        "onFloodteamSelectUser"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        "placeholder"?: string;
-        "required"?: boolean;
-        "results"?: any[];
-        "template"?: (result) => any;
-        "value"?: any;
-    }
-    interface FloodteamInputState {
-        "name"?: string;
-        "placeholder"?: string;
-        "value"?: string;
-    }
-    interface FloodteamJobProgress {
-        "color"?: Color;
-        "name"?: string;
-        "scrollable"?: boolean;
-        "statuses"?: string[];
-        "value"?: string;
-    }
-    interface FloodteamLocationBar {
-        "algoliaAppId"?: string;
-        "algoliaIndex"?: string;
-        "algoliaSearchKey"?: string;
-        "query"?: string;
-    }
-    interface FloodteamPayCard {
-        "onFtCancel"?: (event: CustomEvent<any>) => void;
-        "onFtCardError"?: (event: CustomEvent<any>) => void;
-        "onFtSubmitCard"?: (event: CustomEvent<any>) => void;
-        "stripeKey"?: string;
-        "stripeStyle"?: any;
-    }
-    interface FloodteamPayCheck {
-        "amount"?: number;
-        "apiKey"?: string;
-        "loading"?: boolean;
-        "onFtCancel"?: (event: CustomEvent<any>) => void;
-        "onFtCheckConfirmation"?: (event: CustomEvent<any>) => void;
-        "onFtCheckError"?: (event: CustomEvent<any>) => void;
-        "onFtCheckScan"?: (event: CustomEvent<any>) => void;
-        "onFtSubmitCheck"?: (event: CustomEvent<any>) => void;
-        "paymentId"?: string;
-        "url"?: string;
-        "userId"?: string;
-    }
-    interface FloodteamPaymentMethods {
-        "address"?: any;
-        "cardName"?: string;
-        "methods"?: any[];
-        "onFtRemovePaymentMethod"?: (event: CustomEvent<any>) => void;
-        "payType"?: "card" | "checking";
-        "stripeKey"?: string;
-        "userId"?: string;
-    }
-    interface FloodteamPhotoCarousel {
-        "addButtonColor"?: Color;
-        "badgeColor"?: Color;
-        "currentSlide"?: number;
-        "hideAddButton"?: boolean;
-        "jobId"?: string;
-        "name"?: string;
-        "options"?: any;
-        "photos"?: any[];
-    }
-    interface FloodteamPhotoGallery {
-        "onFtOpenPhotoCarousel"?: (event: CustomEvent<any>) => void;
-        "photos"?: string[];
-    }
-    interface FloodteamProgressCircle {
-        /**
-          * The percent value of progress filled between 0 and 100
-         */
-        "percent"?: number;
-        /**
-          * The radius size of the circle in pixels
-         */
-        "radius"?: number;
-        /**
-          * The stroke thickness of the progress bar
-         */
-        "stroke"?: number;
-    }
-    interface FloodteamProgressTimeline {
-        /**
-          * The major events on the timeline
-         */
-        "events"?: any;
-    }
-    interface FloodteamSearchBar {
-        "beforeGetResults"?: any;
-        "disabled"?: boolean;
-        "displayMode"?: "list" | "grid";
-        "filter"?: {
+    listSide?: "end" | "start" | "top" | "bottom";
+    /**
+     * The icon to use on the material button when it's closed
+     */
+    openIcon?: string;
+    /**
+     * The url to link the material button to
+     */
+    url?: string;
+    /**
+     * The vertical position of the button
+     */
+    vertical?: "center" | "top" | "bottom";
+  }
+  interface FloodteamInputAddress {
+    /**
+     * The Google Maps API Key
+     */
+    googleMapsKey?: string;
+    /**
+     * The label of the input field
+     */
     label?: string;
-    controls: filterControl[];
-  };
-        "modeToggle"?: boolean;
-        "onFireenjinTrigger"?: (event: CustomEvent<any>) => void;
-        "paginationEl"?: any;
-        "showFilter"?: boolean;
-        "sort"?: {
+    /**
+     * The name attribute of the input
+     */
+    name?: string;
+    onFloodteamAddressMode?: (event: CustomEvent<any>) => void;
+    onFloodteamUpdateAutoHeight?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    /**
+     * The placeholder text for the input field
+     */
+    placeholder?: string;
+    /**
+     * Whether the address input is required
+     */
+    required?: boolean;
+    /**
+     * The value of the input field
+     */
+    value?: any;
+  }
+  interface FloodteamInputAmount {
+    autofocus?: boolean;
+    decimal?: boolean;
+    disabled?: boolean;
     label?: string;
+    max?: string;
+    min?: string;
+    name?: string;
+    onIonChange?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    placeholder?: string;
+    presets?: ({ label?: string; value: any } | string)[];
+    required?: boolean;
+    step?: string;
+    value?: any;
+  }
+  interface FloodteamInputFile {
+    accept?: string;
+    defaultValue?: any;
+    documentId?: string;
+    /**
+     * The endpoint to upload to
+     */
+    endpoint?: string;
+    fileName?: string;
+    icon?: string;
+    label?: string;
+    name?: string;
+    onFireenjinUpload?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    path?: string;
+    type?: string;
+    uploadData?: any;
+    value?: any;
+  }
+  interface FloodteamInputPhoto {
+    /**
+     * Text to display on the photo upload button
+     */
+    buttonText?: string;
+    /**
+     * Is the uploader disabled
+     */
+    disabled?: boolean;
+    /**
+     * The ID of the document the photo is tied to
+     */
+    documentId?: string;
+    /**
+     * The endpoint to upload to
+     */
+    endpoint?: string;
+    /**
+     * The fallback image to use if photo isn't set
+     */
+    fallback?: string;
+    /**
+     * The filename to use for the uploaded file
+     */
+    fileName?: string;
+    initials?: string;
+    loading?: boolean;
+    /**
+     * Allow uploading multiple
+     */
+    multiple?: boolean;
+    /**
+     * The name to use when emitting field change event
+     */
+    name?: string;
+    onFireenjinUpload?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    /**
+     * The storage path to upload the file to
+     */
+    path?: string;
+    /**
+     * Should the photo uploader show the button
+     */
+    showButton?: boolean;
+    /**
+     * The type of photo being uploaded
+     */
+    type?: string;
+    /**
+     * A link to the photo to display
+     */
     value?: string;
-    header?: string;
-    subHeader?: string;
-    message?: string;
-    options: {
-      label: string;
-      value: string;
-    }[];
-  };
-    }
-    interface FloodteamSignaturePad {
-        /**
-          * The background color for the signature pad
-         */
-        "backgroundColor"?: string;
-        /**
-          * The text to display on the clear button
-         */
-        "clearText"?: string;
-        /**
-          * Radius of a single dot
-         */
-        "dotSize"?: number;
-        /**
-          * The label to display below signature pad
-         */
-        "label"?: string;
-        /**
-          * Maximum width of a line
-         */
-        "maxWidth"?: number;
-        /**
-          * Add the next point only if the previous one is farther than x pixels
-         */
-        "minDistance"?: number;
-        /**
-          * Minimum width of a line
-         */
-        "minWidth"?: number;
-        /**
-          * The name of the element
-         */
-        "name"?: string;
-        "onIonChange"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
-        /**
-          * Color used to draw the lines. Can be any color format accepted by context.fillStyle
-         */
-        "penColor"?: string;
-        /**
-          * The text to display on the submit button
-         */
-        "submitText"?: string;
-        /**
-          * Draw the next point at most once per every x milliseconds. Set it to 0 to turn off throttling
-         */
-        "throttle"?: number;
-        /**
-          * The current data for the signature pad
-         */
-        "value"?: any;
-        /**
-          * Weight used to modify new velocity based on the previous velocity
-         */
-        "velocityFilterWeight"?: number;
-    }
-    interface FloodteamSnapshotCard {
-        "active"?: boolean;
-        "buttonProps"?: {};
-        "buttonText"?: string;
-        "disableShrink"?: boolean;
-        "href"?: string;
-        "onFloodteamClick"?: (event: CustomEvent<any>) => void;
-        "photo"?: string;
-    }
-    interface FloodteamStarRating {
-        "disabled"?: boolean;
-        "maxRating"?: number;
-        "name"?: string;
-        "onFtStarRating"?: (event: CustomEvent<any>) => void;
-        "value"?: string;
-    }
-    interface IntrinsicElements {
-        "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
-        "floodteam-activity-feed": FloodteamActivityFeed;
-        "floodteam-book-now": FloodteamBookNow;
-        "floodteam-checkmark": FloodteamCheckmark;
-        "floodteam-epay": FloodteamEpay;
-        "floodteam-error": FloodteamError;
-        "floodteam-fallback": FloodteamFallback;
-        "floodteam-feed-card": FloodteamFeedCard;
-        "floodteam-flip-card": FloodteamFlipCard;
-        "floodteam-floating-button": FloodteamFloatingButton;
-        "floodteam-input-address": FloodteamInputAddress;
-        "floodteam-input-amount": FloodteamInputAmount;
-        "floodteam-input-file": FloodteamInputFile;
-        "floodteam-input-photo": FloodteamInputPhoto;
-        "floodteam-input-search": FloodteamInputSearch;
-        "floodteam-input-search-popover": FloodteamInputSearchPopover;
-        "floodteam-input-search-user": FloodteamInputSearchUser;
-        "floodteam-input-state": FloodteamInputState;
-        "floodteam-job-progress": FloodteamJobProgress;
-        "floodteam-location-bar": FloodteamLocationBar;
-        "floodteam-pay-card": FloodteamPayCard;
-        "floodteam-pay-check": FloodteamPayCheck;
-        "floodteam-payment-methods": FloodteamPaymentMethods;
-        "floodteam-photo-carousel": FloodteamPhotoCarousel;
-        "floodteam-photo-gallery": FloodteamPhotoGallery;
-        "floodteam-progress-circle": FloodteamProgressCircle;
-        "floodteam-progress-timeline": FloodteamProgressTimeline;
-        "floodteam-search-bar": FloodteamSearchBar;
-        "floodteam-signature-pad": FloodteamSignaturePad;
-        "floodteam-snapshot-card": FloodteamSnapshotCard;
-        "floodteam-star-rating": FloodteamStarRating;
-    }
+  }
+  interface FloodteamInputSearch {
+    autofocus?: boolean;
+    dataPropsMap?: any;
+    disableSearch?: boolean;
+    disabled?: boolean;
+    endpoint?: string;
+    iconEnd?: string;
+    iconStart?: string;
+    label?: string;
+    mode?: "popover" | "inline";
+    name?: string;
+    onFireenjinFetch?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    placeholder?: string;
+    required?: boolean;
+    results?: any[];
+    resultsKey?: string;
+    searchParams?: any;
+    template?: (result) => any;
+    type?: TextFieldTypes;
+    value?: any;
+  }
+  interface FloodteamInputSearchPopover {
+    name?: string;
+    results?: any;
+    template?: (result) => any;
+  }
+  interface FloodteamInputSearchUser {
+    autofocus?: boolean;
+    dataPropsMap?: any;
+    disableSearch?: boolean;
+    disabled?: boolean;
+    endpoint?: string;
+    iconEnd?: string;
+    iconStart?: string;
+    label?: string;
+    limit?: number;
+    mode?: "popover" | "inline";
+    name?: string;
+    onFloodteamSelectUser?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    placeholder?: string;
+    required?: boolean;
+    results?: any[];
+    template?: (result) => any;
+    value?: any;
+  }
+  interface FloodteamInputState {
+    name?: string;
+    placeholder?: string;
+    value?: string;
+  }
+  interface FloodteamJobProgress {
+    color?: Color;
+    name?: string;
+    scrollable?: boolean;
+    statuses?: string[];
+    value?: string;
+  }
+  interface FloodteamLocationBar {
+    algoliaAppId?: string;
+    algoliaIndex?: string;
+    algoliaSearchKey?: string;
+    query?: string;
+  }
+  interface FloodteamPayCard {
+    onFtCancel?: (event: CustomEvent<any>) => void;
+    onFtCardError?: (event: CustomEvent<any>) => void;
+    onFtSubmitCard?: (event: CustomEvent<any>) => void;
+    stripeKey?: string;
+    stripeStyle?: any;
+  }
+  interface FloodteamPayCheck {
+    amount?: number;
+    apiKey?: string;
+    loading?: boolean;
+    onFtCancel?: (event: CustomEvent<any>) => void;
+    onFtCheckConfirmation?: (event: CustomEvent<any>) => void;
+    onFtCheckError?: (event: CustomEvent<any>) => void;
+    onFtCheckScan?: (event: CustomEvent<any>) => void;
+    onFtSubmitCheck?: (event: CustomEvent<any>) => void;
+    paymentId?: string;
+    url?: string;
+    userId?: string;
+  }
+  interface FloodteamPaymentMethods {
+    address?: any;
+    cardName?: string;
+    methods?: any[];
+    onFtRemovePaymentMethod?: (event: CustomEvent<any>) => void;
+    payType?: "card" | "checking";
+    stripeKey?: string;
+    userId?: string;
+  }
+  interface FloodteamPhotoCarousel {
+    addButtonColor?: Color;
+    badgeColor?: Color;
+    currentSlide?: number;
+    hideAddButton?: boolean;
+    jobId?: string;
+    name?: string;
+    options?: any;
+    photos?: any[];
+  }
+  interface FloodteamPhotoGallery {
+    onFtOpenPhotoCarousel?: (event: CustomEvent<any>) => void;
+    photos?: string[];
+  }
+  interface FloodteamProgressCircle {
+    /**
+     * The percent value of progress filled between 0 and 100
+     */
+    percent?: number;
+    /**
+     * The radius size of the circle in pixels
+     */
+    radius?: number;
+    /**
+     * The stroke thickness of the progress bar
+     */
+    stroke?: number;
+  }
+  interface FloodteamProgressTimeline {
+    /**
+     * The major events on the timeline
+     */
+    events?: any;
+  }
+  interface FloodteamSearchBar {
+    beforeGetResults?: any;
+    disabled?: boolean;
+    displayMode?: "list" | "grid";
+    filter?: {
+      label?: string;
+      controls: filterControl[];
+    };
+    modeToggle?: boolean;
+    onFireenjinTrigger?: (event: CustomEvent<any>) => void;
+    paginationEl?: any;
+    showFilter?: boolean;
+    sort?: {
+      label?: string;
+      value?: string;
+      header?: string;
+      subHeader?: string;
+      message?: string;
+      options: {
+        label: string;
+        value: string;
+      }[];
+    };
+  }
+  interface FloodteamSignaturePad {
+    /**
+     * The background color for the signature pad
+     */
+    backgroundColor?: string;
+    /**
+     * The text to display on the clear button
+     */
+    clearText?: string;
+    /**
+     * Radius of a single dot
+     */
+    dotSize?: number;
+    /**
+     * The label to display below signature pad
+     */
+    label?: string;
+    /**
+     * Maximum width of a line
+     */
+    maxWidth?: number;
+    /**
+     * Add the next point only if the previous one is farther than x pixels
+     */
+    minDistance?: number;
+    /**
+     * Minimum width of a line
+     */
+    minWidth?: number;
+    /**
+     * The name of the element
+     */
+    name?: string;
+    onIonChange?: (event: CustomEvent<any>) => void;
+    onIonInput?: (event: CustomEvent<any>) => void;
+    /**
+     * Color used to draw the lines. Can be any color format accepted by context.fillStyle
+     */
+    penColor?: string;
+    /**
+     * The text to display on the submit button
+     */
+    submitText?: string;
+    /**
+     * Draw the next point at most once per every x milliseconds. Set it to 0 to turn off throttling
+     */
+    throttle?: number;
+    /**
+     * The current data for the signature pad
+     */
+    value?: any;
+    /**
+     * Weight used to modify new velocity based on the previous velocity
+     */
+    velocityFilterWeight?: number;
+  }
+  interface FloodteamSnapshotCard {
+    active?: boolean;
+    buttonProps?: {};
+    buttonText?: string;
+    disableShrink?: boolean;
+    href?: string;
+    onFloodteamClick?: (event: CustomEvent<any>) => void;
+    photo?: string;
+  }
+  interface FloodteamStarRating {
+    disabled?: boolean;
+    maxRating?: number;
+    name?: string;
+    onFtStarRating?: (event: CustomEvent<any>) => void;
+    value?: string;
+  }
+  interface IntrinsicElements {
+    "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
+    "floodteam-activity-feed": FloodteamActivityFeed;
+    "floodteam-book-now": FloodteamBookNow;
+    "floodteam-checkmark": FloodteamCheckmark;
+    "floodteam-epay": FloodteamEpay;
+    "floodteam-error": FloodteamError;
+    "floodteam-fallback": FloodteamFallback;
+    "floodteam-feed-card": FloodteamFeedCard;
+    "floodteam-flip-card": FloodteamFlipCard;
+    "floodteam-floating-button": FloodteamFloatingButton;
+    "fireenjin-input-address": FloodteamInputAddress;
+    "fireenjin-input-amount": FloodteamInputAmount;
+    "fireenjin-input-file": FloodteamInputFile;
+    "fireenjin-input-photo": FloodteamInputPhoto;
+    "fireenjin-input-search": FloodteamInputSearch;
+    "fireenjin-input-search-popover": FloodteamInputSearchPopover;
+    "fireenjin-input-search-user": FloodteamInputSearchUser;
+    "fireenjin-input-state": FloodteamInputState;
+    "floodteam-job-progress": FloodteamJobProgress;
+    "floodteam-location-bar": FloodteamLocationBar;
+    "floodteam-pay-card": FloodteamPayCard;
+    "floodteam-pay-check": FloodteamPayCheck;
+    "floodteam-payment-methods": FloodteamPaymentMethods;
+    "floodteam-photo-carousel": FloodteamPhotoCarousel;
+    "floodteam-photo-gallery": FloodteamPhotoGallery;
+    "fireenjin-progress-circle": FloodteamProgressCircle;
+    "floodteam-progress-timeline": FloodteamProgressTimeline;
+    "floodteam-search-bar": FloodteamSearchBar;
+    "floodteam-signature-pad": FloodteamSignaturePad;
+    "floodteam-snapshot-card": FloodteamSnapshotCard;
+    "floodteam-star-rating": FloodteamStarRating;
+  }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
-    export namespace JSX {
-        interface IntrinsicElements {
-            "fireenjin-graph-pay-splits": LocalJSX.FireenjinGraphPaySplits & JSXBase.HTMLAttributes<HTMLFireenjinGraphPaySplitsElement>;
-            "floodteam-activity-feed": LocalJSX.FloodteamActivityFeed & JSXBase.HTMLAttributes<HTMLFloodteamActivityFeedElement>;
-            "floodteam-book-now": LocalJSX.FloodteamBookNow & JSXBase.HTMLAttributes<HTMLFloodteamBookNowElement>;
-            "floodteam-checkmark": LocalJSX.FloodteamCheckmark & JSXBase.HTMLAttributes<HTMLFloodteamCheckmarkElement>;
-            "floodteam-epay": LocalJSX.FloodteamEpay & JSXBase.HTMLAttributes<HTMLFloodteamEpayElement>;
-            "floodteam-error": LocalJSX.FloodteamError & JSXBase.HTMLAttributes<HTMLFloodteamErrorElement>;
-            "floodteam-fallback": LocalJSX.FloodteamFallback & JSXBase.HTMLAttributes<HTMLFloodteamFallbackElement>;
-            "floodteam-feed-card": LocalJSX.FloodteamFeedCard & JSXBase.HTMLAttributes<HTMLFloodteamFeedCardElement>;
-            "floodteam-flip-card": LocalJSX.FloodteamFlipCard & JSXBase.HTMLAttributes<HTMLFloodteamFlipCardElement>;
-            "floodteam-floating-button": LocalJSX.FloodteamFloatingButton & JSXBase.HTMLAttributes<HTMLFloodteamFloatingButtonElement>;
-            "floodteam-input-address": LocalJSX.FloodteamInputAddress & JSXBase.HTMLAttributes<HTMLFloodteamInputAddressElement>;
-            "floodteam-input-amount": LocalJSX.FloodteamInputAmount & JSXBase.HTMLAttributes<HTMLFloodteamInputAmountElement>;
-            "floodteam-input-file": LocalJSX.FloodteamInputFile & JSXBase.HTMLAttributes<HTMLFloodteamInputFileElement>;
-            "floodteam-input-photo": LocalJSX.FloodteamInputPhoto & JSXBase.HTMLAttributes<HTMLFloodteamInputPhotoElement>;
-            "floodteam-input-search": LocalJSX.FloodteamInputSearch & JSXBase.HTMLAttributes<HTMLFloodteamInputSearchElement>;
-            "floodteam-input-search-popover": LocalJSX.FloodteamInputSearchPopover & JSXBase.HTMLAttributes<HTMLFloodteamInputSearchPopoverElement>;
-            "floodteam-input-search-user": LocalJSX.FloodteamInputSearchUser & JSXBase.HTMLAttributes<HTMLFloodteamInputSearchUserElement>;
-            "floodteam-input-state": LocalJSX.FloodteamInputState & JSXBase.HTMLAttributes<HTMLFloodteamInputStateElement>;
-            "floodteam-job-progress": LocalJSX.FloodteamJobProgress & JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
-            "floodteam-location-bar": LocalJSX.FloodteamLocationBar & JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
-            "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
-            "floodteam-pay-check": LocalJSX.FloodteamPayCheck & JSXBase.HTMLAttributes<HTMLFloodteamPayCheckElement>;
-            "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
-            "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
-            "floodteam-photo-gallery": LocalJSX.FloodteamPhotoGallery & JSXBase.HTMLAttributes<HTMLFloodteamPhotoGalleryElement>;
-            "floodteam-progress-circle": LocalJSX.FloodteamProgressCircle & JSXBase.HTMLAttributes<HTMLFloodteamProgressCircleElement>;
-            "floodteam-progress-timeline": LocalJSX.FloodteamProgressTimeline & JSXBase.HTMLAttributes<HTMLFloodteamProgressTimelineElement>;
-            "floodteam-search-bar": LocalJSX.FloodteamSearchBar & JSXBase.HTMLAttributes<HTMLFloodteamSearchBarElement>;
-            "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
-            "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
-            "floodteam-star-rating": LocalJSX.FloodteamStarRating & JSXBase.HTMLAttributes<HTMLFloodteamStarRatingElement>;
-        }
+  export namespace JSX {
+    interface IntrinsicElements {
+      "fireenjin-graph-pay-splits": LocalJSX.FireenjinGraphPaySplits &
+        JSXBase.HTMLAttributes<HTMLFireenjinGraphPaySplitsElement>;
+      "floodteam-activity-feed": LocalJSX.FloodteamActivityFeed &
+        JSXBase.HTMLAttributes<HTMLFloodteamActivityFeedElement>;
+      "floodteam-book-now": LocalJSX.FloodteamBookNow &
+        JSXBase.HTMLAttributes<HTMLFloodteamBookNowElement>;
+      "floodteam-checkmark": LocalJSX.FloodteamCheckmark &
+        JSXBase.HTMLAttributes<HTMLFloodteamCheckmarkElement>;
+      "floodteam-epay": LocalJSX.FloodteamEpay &
+        JSXBase.HTMLAttributes<HTMLFloodteamEpayElement>;
+      "floodteam-error": LocalJSX.FloodteamError &
+        JSXBase.HTMLAttributes<HTMLFloodteamErrorElement>;
+      "floodteam-fallback": LocalJSX.FloodteamFallback &
+        JSXBase.HTMLAttributes<HTMLFloodteamFallbackElement>;
+      "floodteam-feed-card": LocalJSX.FloodteamFeedCard &
+        JSXBase.HTMLAttributes<HTMLFloodteamFeedCardElement>;
+      "floodteam-flip-card": LocalJSX.FloodteamFlipCard &
+        JSXBase.HTMLAttributes<HTMLFloodteamFlipCardElement>;
+      "floodteam-floating-button": LocalJSX.FloodteamFloatingButton &
+        JSXBase.HTMLAttributes<HTMLFloodteamFloatingButtonElement>;
+      "fireenjin-input-address": LocalJSX.FloodteamInputAddress &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputAddressElement>;
+      "fireenjin-input-amount": LocalJSX.FloodteamInputAmount &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputAmountElement>;
+      "fireenjin-input-file": LocalJSX.FloodteamInputFile &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputFileElement>;
+      "fireenjin-input-photo": LocalJSX.FloodteamInputPhoto &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputPhotoElement>;
+      "fireenjin-input-search": LocalJSX.FloodteamInputSearch &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputSearchElement>;
+      "fireenjin-input-search-popover": LocalJSX.FloodteamInputSearchPopover &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputSearchPopoverElement>;
+      "fireenjin-input-search-user": LocalJSX.FloodteamInputSearchUser &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputSearchUserElement>;
+      "fireenjin-input-state": LocalJSX.FloodteamInputState &
+        JSXBase.HTMLAttributes<HTMLFloodteamInputStateElement>;
+      "floodteam-job-progress": LocalJSX.FloodteamJobProgress &
+        JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
+      "floodteam-location-bar": LocalJSX.FloodteamLocationBar &
+        JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
+      "floodteam-pay-card": LocalJSX.FloodteamPayCard &
+        JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
+      "floodteam-pay-check": LocalJSX.FloodteamPayCheck &
+        JSXBase.HTMLAttributes<HTMLFloodteamPayCheckElement>;
+      "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods &
+        JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
+      "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel &
+        JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
+      "floodteam-photo-gallery": LocalJSX.FloodteamPhotoGallery &
+        JSXBase.HTMLAttributes<HTMLFloodteamPhotoGalleryElement>;
+      "fireenjin-progress-circle": LocalJSX.FloodteamProgressCircle &
+        JSXBase.HTMLAttributes<HTMLFloodteamProgressCircleElement>;
+      "floodteam-progress-timeline": LocalJSX.FloodteamProgressTimeline &
+        JSXBase.HTMLAttributes<HTMLFloodteamProgressTimelineElement>;
+      "floodteam-search-bar": LocalJSX.FloodteamSearchBar &
+        JSXBase.HTMLAttributes<HTMLFloodteamSearchBarElement>;
+      "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad &
+        JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
+      "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard &
+        JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
+      "floodteam-star-rating": LocalJSX.FloodteamStarRating &
+        JSXBase.HTMLAttributes<HTMLFloodteamStarRatingElement>;
     }
+  }
 }

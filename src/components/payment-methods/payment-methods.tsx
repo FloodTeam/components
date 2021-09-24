@@ -306,7 +306,7 @@ export class PaymentMethods implements ComponentInterface {
                       pattern="^[a-zA-Z]+ (([',. -][a-zA-Z ])?[a-zA-Z]+)*$"
                       required
                     />
-                    <floodteam-input-address
+                    <fireenjin-input-address
                       ref={(el) => (this.addressInputEl = el)}
                       placeholder="Billing Address"
                       name="address"

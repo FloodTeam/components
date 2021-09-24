@@ -78,7 +78,7 @@ export class PhotoCarousel implements ComponentInterface {
   render() {
     return (
       <Host>
-        <floodteam-input-photo
+        <fireenjin-input-photo
           name={this.name}
           ref={(el) => (this.inputPhotoEl = el)}
           path={`jobs/${this.jobId}/photos`}

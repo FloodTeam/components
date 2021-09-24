@@ -29,11 +29,11 @@ floodteam-pay-check #form-check img {
   width: 100%;
 }
 floodteam-pay-check #form-check fireenjin-input {
-  --floodteam-input-font-size: 28px;
-  --floodteam-input-width: 160px;
-  --floodteam-input-focus-color: #0f78b9;
-  --floodteam-input-margin: 0 0 0 0;
-  --floodteam-input-label-top: 10px;
+  --fireenjin-input-font-size: 28px;
+  --fireenjin-input-width: 160px;
+  --fireenjin-input-focus-color: #0f78b9;
+  --fireenjin-input-margin: 0 0 0 0;
+  --fireenjin-input-label-top: 10px;
   --floodteam-icon-bottom: 8px;
 }
 floodteam-pay-check floodteam-flip-card {

@@ -190,7 +190,7 @@ floodteam-epay #confirmation floodteam-list {
 floodteam-epay #confirmation floodteam-list p {
   font-size: 14px;
 }
-floodteam-epay #confirmation floodteam-progress-circle {
+floodteam-epay #confirmation fireenjin-progress-circle {
   color: var(--ion-color-medium);
   font-size: 14px;
   font-weight: bold;
