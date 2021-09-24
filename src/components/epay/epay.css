@@ -35,7 +35,7 @@ floodteam-epay floodteam-slides.hide-slides {
   opacity: 0;
   height: 0;
 }
-floodteam-epay floodteam-toggle {
+floodteam-epay fireenjin-toggle {
   position: absolute;
   top: var(--floodteam-epay-toggle-top, 10px);
   right: var(--floodteam-epay-toggle-right, 25px);
@@ -94,7 +94,7 @@ floodteam-epay .owed.shrunk {
 floodteam-epay .owed.shrunk floodteam-progress-bar {
   --floodteam-progress-bar-height: 10px;
 }
-floodteam-epay .owed.shrunk floodteam-toggle {
+floodteam-epay .owed.shrunk fireenjin-toggle {
   opacity: 0;
   pointer-events: none;
 }
