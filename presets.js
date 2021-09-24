@@ -9,19 +9,6 @@ function define(name, dependencies, callback) {
     window.presets[name.split('/').pop()] = exports["default"];
 }
 ;
-define("src/components/avatar/avatar.presets", ["require", "exports"], function (require, exports) {
-    "use strict";
-    exports.__esModule = true;
-    exports["default"] = {
-        "default": {
-            name: "Default",
-            props: {
-                src: null,
-                initials: "TT"
-            }
-        }
-    };
-});
 define("src/components/book-now/book-now.presets", ["require", "exports"], function (require, exports) {
     "use strict";
     exports.__esModule = true;
