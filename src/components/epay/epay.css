@@ -80,19 +80,8 @@ floodteam-epay .owed > p {
   letter-spacing: 2px;
   color: var(--ion-text-color) !important;
 }
-floodteam-epay .owed floodteam-progress-bar {
-  transition: 0.4s all ease;
-  display: block;
-  max-width: 200px;
-  width: 80%;
-  margin: 15px auto;
-  opacity: 1;
-}
 floodteam-epay .owed.shrunk {
   padding: 10px 0 0 0;
-}
-floodteam-epay .owed.shrunk floodteam-progress-bar {
-  --floodteam-progress-bar-height: 10px;
 }
 floodteam-epay .owed.shrunk fireenjin-toggle {
   opacity: 0;

@@ -574,7 +574,7 @@ export class Epay implements ComponentInterface {
             {this.formatUSD(this.owed)}
             <small> owed</small>
           </span>
-          <floodteam-progress-bar percent={this.calculatePercentPaid()} />
+          <ion-progress-bar value={this.calculatePercentPaid()} />
           {this.isSubTextShowing && <p>{this.subText}</p>}
         </div>
         <ion-slides
