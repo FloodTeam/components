@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-25T00:27:53",
+  "timestamp": "2021-09-25T18:45:41",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -182,7 +182,6 @@
         "ion-grid",
         "ion-row",
         "ion-col",
-        "fireenjin-filter-bar",
         "fireenjin-pagination",
         "ion-card"
       ],
@@ -191,34 +190,8 @@
           "ion-grid",
           "ion-row",
           "ion-col",
-          "fireenjin-filter-bar",
           "fireenjin-pagination",
           "ion-card"
-        ],
-        "fireenjin-filter-bar": [
-          "ion-grid",
-          "ion-row",
-          "ion-col",
-          "ion-button",
-          "ion-icon",
-          "ion-searchbar",
-          "ion-card",
-          "ion-chip",
-          "ion-label",
-          "ion-select",
-          "ion-select-option"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ],
-        "ion-searchbar": [
-          "ion-icon"
-        ],
-        "ion-card": [
-          "ion-ripple-effect"
-        ],
-        "ion-chip": [
-          "ion-ripple-effect"
         ],
         "fireenjin-pagination": [
           "ion-grid",
@@ -229,6 +202,9 @@
           "ion-virtual-scroll",
           "ion-infinite-scroll",
           "ion-infinite-scroll-content"
+        ],
+        "ion-card": [
+          "ion-ripple-effect"
         ],
         "ion-infinite-scroll-content": [
           "ion-spinner"
@@ -2918,242 +2894,6 @@
           "ion-row",
           "ion-col",
           "ion-img"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/search-bar/search-bar.tsx",
-      "encapsulation": "none",
-      "tag": "floodteam-search-bar",
-      "readme": "# floodteam-search-bar\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "beforeGetResults",
-          "type": "any",
-          "mutable": false,
-          "attr": "before-get-results",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "displayMode",
-          "type": "\"grid\" | \"list\"",
-          "mutable": true,
-          "attr": "display-mode",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "\"grid\"",
-          "values": [
-            {
-              "value": "grid",
-              "type": "string"
-            },
-            {
-              "value": "list",
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "filter",
-          "type": "{ label?: string; controls: filterControl[]; }",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "{ label?: string; controls: filterControl[]; }"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "modeToggle",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "mode-toggle",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "paginationEl",
-          "type": "any",
-          "mutable": false,
-          "attr": "pagination-el",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "showFilter",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "show-filter",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "sort",
-          "type": "{ label?: string; value?: string; header?: string; subHeader?: string; message?: string; options: { label: string; value: string; }[]; }",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "{ label?: string; value?: string; header?: string; subHeader?: string; message?: string; options: { label: string; value: string; }[]; }"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "clearFilter",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "clearFilter(event: any, clearingControl: filterControl) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "togglePaginationDisplay",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "togglePaginationDisplay() => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "updateCurrentFilters",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "updateCurrentFilters() => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [
-        {
-          "event": "fireenjinTrigger",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "listeners": [
-        {
-          "event": "fireenjinSuccess",
-          "target": "body",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "ionChange",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-searchbar",
-        "ion-chip",
-        "ion-icon",
-        "ion-label",
-        "ion-button",
-        "ion-badge"
-      ],
-      "dependencyGraph": {
-        "floodteam-search-bar": [
-          "ion-searchbar",
-          "ion-chip",
-          "ion-icon",
-          "ion-label",
-          "ion-button",
-          "ion-badge"
-        ],
-        "ion-searchbar": [
-          "ion-icon"
-        ],
-        "ion-chip": [
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
         ]
       }
     },
