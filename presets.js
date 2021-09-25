@@ -112,7 +112,7 @@ define("src/components/search-bar/search-bar.presets", ["require", "exports"], f
                                     value: "review"
                                 },
                                 {
-                                    label: "Complete",
+                                    label: "Complete and Get the Fuck out",
                                     value: "complete"
                                 },
                                 {
@@ -120,7 +120,7 @@ define("src/components/search-bar/search-bar.presets", ["require", "exports"], f
                                     value: "lost"
                                 },
                             ],
-                            value: "lost"
+                            value: "dry"
                         },
                     ]
                 }
