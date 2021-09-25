@@ -6,7 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Color } from "@ionic/core";
-import { filterControl } from "./typings";
 export namespace Components {
     interface FireenjinGraphPaySplits {
         "graphTitle": string;
@@ -301,32 +300,6 @@ export namespace Components {
     interface FloodteamPhotoGallery {
         "photos": string[];
     }
-    interface FloodteamSearchBar {
-        "beforeGetResults": any;
-        "clearFilter": (event: any, clearingControl: filterControl) => Promise<void>;
-        "disabled": boolean;
-        "displayMode": "list" | "grid";
-        "filter"?: {
-    label?: string;
-    controls: filterControl[];
-  };
-        "modeToggle": boolean;
-        "paginationEl": any;
-        "showFilter": boolean;
-        "sort"?: {
-    label?: string;
-    value?: string;
-    header?: string;
-    subHeader?: string;
-    message?: string;
-    options: {
-      label: string;
-      value: string;
-    }[];
-  };
-        "togglePaginationDisplay": () => Promise<void>;
-        "updateCurrentFilters": () => Promise<void>;
-    }
     interface FloodteamSignaturePad {
         /**
           * The background color for the signature pad
@@ -542,12 +515,6 @@ declare global {
         prototype: HTMLFloodteamPhotoGalleryElement;
         new (): HTMLFloodteamPhotoGalleryElement;
     };
-    interface HTMLFloodteamSearchBarElement extends Components.FloodteamSearchBar, HTMLStencilElement {
-    }
-    var HTMLFloodteamSearchBarElement: {
-        prototype: HTMLFloodteamSearchBarElement;
-        new (): HTMLFloodteamSearchBarElement;
-    };
     interface HTMLFloodteamSignaturePadElement extends Components.FloodteamSignaturePad, HTMLStencilElement {
     }
     var HTMLFloodteamSignaturePadElement: {
@@ -578,7 +545,6 @@ declare global {
         "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
         "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
         "floodteam-photo-gallery": HTMLFloodteamPhotoGalleryElement;
-        "floodteam-search-bar": HTMLFloodteamSearchBarElement;
         "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
         "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
     }
@@ -871,30 +837,6 @@ declare namespace LocalJSX {
         "onFtOpenPhotoCarousel"?: (event: CustomEvent<any>) => void;
         "photos"?: string[];
     }
-    interface FloodteamSearchBar {
-        "beforeGetResults"?: any;
-        "disabled"?: boolean;
-        "displayMode"?: "list" | "grid";
-        "filter"?: {
-    label?: string;
-    controls: filterControl[];
-  };
-        "modeToggle"?: boolean;
-        "onFireenjinTrigger"?: (event: CustomEvent<any>) => void;
-        "paginationEl"?: any;
-        "showFilter"?: boolean;
-        "sort"?: {
-    label?: string;
-    value?: string;
-    header?: string;
-    subHeader?: string;
-    message?: string;
-    options: {
-      label: string;
-      value: string;
-    }[];
-  };
-    }
     interface FloodteamSignaturePad {
         /**
           * The background color for the signature pad
@@ -978,7 +920,6 @@ declare namespace LocalJSX {
         "floodteam-payment-methods": FloodteamPaymentMethods;
         "floodteam-photo-carousel": FloodteamPhotoCarousel;
         "floodteam-photo-gallery": FloodteamPhotoGallery;
-        "floodteam-search-bar": FloodteamSearchBar;
         "floodteam-signature-pad": FloodteamSignaturePad;
         "floodteam-snapshot-card": FloodteamSnapshotCard;
     }
@@ -1004,7 +945,6 @@ declare module "@stencil/core" {
             "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
             "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
             "floodteam-photo-gallery": LocalJSX.FloodteamPhotoGallery & JSXBase.HTMLAttributes<HTMLFloodteamPhotoGalleryElement>;
-            "floodteam-search-bar": LocalJSX.FloodteamSearchBar & JSXBase.HTMLAttributes<HTMLFloodteamSearchBarElement>;
             "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
             "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
         }
