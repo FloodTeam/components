@@ -34,7 +34,7 @@ export default {
                 value: "review",
               },
               {
-                label: "Complete",
+                label: "Complete and Get the Fuck out",
                 value: "complete",
               },
               {
@@ -42,7 +42,7 @@ export default {
                 value: "lost",
               },
             ],
-            value: "lost",
+            value: "dry",
           },
         ],
       },

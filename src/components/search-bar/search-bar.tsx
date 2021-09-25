@@ -137,8 +137,18 @@ export class SearchBar implements ComponentInterface {
     }
   }
 
+  getLabelForValue(control: filterControl, value: any) {
+    for (const option of control?.options || []) {
+      if (option?.value !== value) continue;
+      return option?.label ? option.label : option.value;
+    }
+  }
+
   getControlLabel(control: filterControl) {
-    return control?.value ? Array.isArray(control.value) ? control.value.join(", ") : control.value : control.label;
+    const value = control?.value ? control.value : null;
+    let label = value ? Array.isArray(value) ? value.map(val => this.getLabelForValue(control, val)).join(", ") : this.getLabelForValue(control, value) : control.label;
+
+    return label;
   }
 
   componentDidLoad() {
