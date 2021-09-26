@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-25T23:57:27",
+  "timestamp": "2021-09-26T05:42:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -70,6 +70,7 @@
       "dependencies": [
         "fireenjin-graph",
         "ion-item",
+        "fireenjin-avatar",
         "floodteam-error",
         "ion-badge"
       ],
@@ -77,6 +78,7 @@
         "fireenjin-graph-pay-splits": [
           "fireenjin-graph",
           "ion-item",
+          "fireenjin-avatar",
           "floodteam-error",
           "ion-badge"
         ],
