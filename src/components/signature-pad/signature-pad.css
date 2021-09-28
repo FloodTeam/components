@@ -1,7 +1,10 @@
 floodteam-signature-pad {
   display: block;
   margin: 0 auto;
+}
 
+floodteam-signature-pad ion-card {
+  background-color: #fff;
 }
 
 floodteam-signature-pad .signature-pad {
@@ -24,11 +27,7 @@ floodteam-signature-pad .signature-pad {
   margin: 10px auto;
 }
 
-floodteam-signature-pad canvas {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
-}
-
-floodteam-signature-pad .signature-pad ion-icon.undo {
+floodteam-signature-pad ion-icon.undo {
   height: 30px;
   width: 30px;
   position: absolute;
