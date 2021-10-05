@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-01T21:09:16",
+  "timestamp": "2021-10-05T17:17:08",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -867,9 +867,10 @@
       "dependents": [],
       "dependencies": [
         "ion-card",
-        "ion-button",
+        "ion-fab",
+        "ion-fab-button",
         "ion-icon",
-        "ion-progress-bar",
+        "ion-button",
         "ion-slides",
         "ion-slide",
         "ion-grid",
@@ -888,9 +889,10 @@
       "dependencyGraph": {
         "floodteam-epay": [
           "ion-card",
-          "ion-button",
+          "ion-fab",
+          "ion-fab-button",
           "ion-icon",
-          "ion-progress-bar",
+          "ion-button",
           "ion-slides",
           "ion-slide",
           "ion-grid",
@@ -907,6 +909,10 @@
           "floodteam-checkmark"
         ],
         "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-fab-button": [
+          "ion-icon",
           "ion-ripple-effect"
         ],
         "ion-button": [
