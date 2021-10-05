@@ -91,9 +91,10 @@ Type: `Promise<void>`
 ### Depends on
 
 - ion-card
-- ion-button
+- ion-fab
+- ion-fab-button
 - ion-icon
-- ion-progress-bar
+- ion-button
 - ion-slides
 - ion-slide
 - ion-grid
@@ -113,9 +114,10 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   floodteam-epay --> ion-card
-  floodteam-epay --> ion-button
+  floodteam-epay --> ion-fab
+  floodteam-epay --> ion-fab-button
   floodteam-epay --> ion-icon
-  floodteam-epay --> ion-progress-bar
+  floodteam-epay --> ion-button
   floodteam-epay --> ion-slides
   floodteam-epay --> ion-slide
   floodteam-epay --> ion-grid
@@ -131,6 +133,8 @@ graph TD;
   floodteam-epay --> floodteam-error
   floodteam-epay --> floodteam-checkmark
   ion-card --> ion-ripple-effect
+  ion-fab-button --> ion-icon
+  ion-fab-button --> ion-ripple-effect
   ion-button --> ion-ripple-effect
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect

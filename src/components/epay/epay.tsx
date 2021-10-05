@@ -550,7 +550,20 @@ export class Epay implements ComponentInterface {
 
   render() {
     return (
-      <ion-card class="epay-wrapper">
+      <ion-card>
+        <ion-fab
+          style={{
+            top: "-25px",
+            right: "-25px"
+          }}
+          vertical="top"
+          horizontal="end"
+          onClick={() => this.takePayment()}
+        >
+          <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
         {this.isBackShowing && (
           <ion-button
             class="back-button"
@@ -574,7 +587,6 @@ export class Epay implements ComponentInterface {
             {this.formatUSD(this.owed)}
             <small> owed</small>
           </span>
-          <ion-progress-bar value={this.calculatePercentPaid()} />
           {this.isSubTextShowing && <p>{this.subText}</p>}
         </div>
         <ion-slides
