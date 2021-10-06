@@ -81,14 +81,14 @@ export class Epay implements ComponentInterface {
   @Prop() dadeUrl: string;
   @Prop({ mutable: true }) users: any[] = [];
   @Prop({ mutable: true }) paymentId: string;
+  @Prop({ mutable: true }) paymentMethod: "card" | "check" | "manual" | "ach" = "card";
+  @Prop({ mutable: true }) paymentType: "insurance" | "codeblue";
+
 
   @State() amount: number;
   @State() isSlidesHidding = false;
-  @State() isHeaderShrunk = false;
   @State() isBackShowing = false;
-  @State() isSubTextShowing = true;
   @State() isHeaderHidden = false;
-  @State() paymentType: "card" | "check" | "manual";
   @State() email: string;
   @State() job: any;
   @State() subText: string;
@@ -119,6 +119,22 @@ export class Epay implements ComponentInterface {
     }
   }
 
+  @Listen("fireenjinSubmit")
+  async onSubmit() {
+    if (this.paymentMethod === "card") {
+      await this.payWithCard();
+    } else {
+      await this.payWithCheck();
+    }
+  }
+
+
+  @Listen("fireenjinReset")
+  @Listen("ftCancel")
+  onReset() {
+    this.goBack();
+  }
+
   @Listen("ftCheckScan")
   onCheckScan(event) {
     if (!event || !event.detail || !event.detail.front) {
@@ -135,6 +151,10 @@ export class Epay implements ComponentInterface {
       this.amount = event.target.value ? parseFloat(event.target.value) : null;
     } else if (event.target.name === "email") {
       this.email = event.target.value;
+    } else if (event.target.name === "paymentMethod") {
+      this.paymentMethod = event.target.value;
+    } else if (event.target.name === "paymentType") {
+      this.paymentType = event.target.value;
     }
   }
 
@@ -158,7 +178,7 @@ export class Epay implements ComponentInterface {
   }
 
   async approve() {
-    if (this.paymentType === "check") {
+    if (this.paymentMethod === "check") {
       try {
         await this.confirmPayment(
           this.errorCode === 2006
@@ -167,16 +187,16 @@ export class Epay implements ComponentInterface {
             }
             : {}
         );
-        this.submitPayment(this.paymentType, this.paymentEvent);
+        this.submitPayment(this.paymentMethod, this.paymentEvent);
       } catch (error) {
         console.log("Error taking check payment", error);
       }
     } else {
-      this.submitPayment(this.paymentType, this.paymentEvent);
+      this.submitPayment(this.paymentMethod, this.paymentEvent);
     }
   }
 
-  submitPayment(type: "card" | "check" | "manual", event) {
+  submitPayment(type: "card" | "check" | "manual" | "ach", event) {
     let data = {};
     if (type === "card") {
       data = {
@@ -270,15 +290,6 @@ export class Epay implements ComponentInterface {
     this.goToConfirmation(event);
   }
 
-  @Listen("ftCancel")
-  onCancel() {
-    this.sliderEl.slideTo(0);
-    this.isHeaderShrunk = false;
-    this.isBackShowing = false;
-    this.isSubTextShowing = true;
-    this.setSubText();
-  }
-
   /**
    * Update the ion-slides height
    */
@@ -304,11 +315,9 @@ export class Epay implements ComponentInterface {
     this.paymentPayload = null;
     this.sliderEl.slideTo(0);
     this.amount = 0;
-    this.isHeaderShrunk = false;
     this.isBackShowing = false;
-    this.isSubTextShowing = true;
     this.isHeaderHidden = false;
-    this.paymentType = null;
+    this.paymentMethod = null;
     this.paymentEvent = null;
     this.setSubText();
     await this.sliderEl.update();
@@ -370,8 +379,6 @@ export class Epay implements ComponentInterface {
       | "success"
   ) {
     if (["confirmation", "card", "check", "success"].indexOf(name) >= 0) {
-      this.isHeaderShrunk = true;
-      this.isSubTextShowing = false;
       this.isBackShowing = true;
     } else if (name === "confirmation" || name === "success") {
       this.isHeaderHidden = true;
@@ -380,8 +387,6 @@ export class Epay implements ComponentInterface {
       }
     } else if (name === "payments") {
       this.isBackShowing = false;
-      this.isSubTextShowing = true;
-      this.isHeaderShrunk = false;
     }
   }
 
@@ -412,9 +417,8 @@ export class Epay implements ComponentInterface {
   @Method()
   async takePayment() {
     if (this.isBackShowing) return;
-    this.isHeaderShrunk = true;
+
     this.isBackShowing = true;
-    this.isSubTextShowing = false;
     this.sliderEl.slideNext();
   }
 
@@ -429,9 +433,8 @@ export class Epay implements ComponentInterface {
 
       return false;
     }
-    this.paymentType = "card";
+    this.paymentMethod = "card";
     this.subText = `Paying ${this.formatUSD(this.amount)} by card...`;
-    this.isSubTextShowing = true;
     this.sliderEl.slideTo(2);
   }
 
@@ -446,9 +449,8 @@ export class Epay implements ComponentInterface {
 
       return false;
     }
-    this.paymentType = "check";
+    this.paymentMethod = "check";
     this.subText = `Paying ${this.formatUSD(this.amount)} by check...`;
-    this.isSubTextShowing = true;
     this.sliderEl.slideTo(3);
   }
 
@@ -465,7 +467,7 @@ export class Epay implements ComponentInterface {
 
       return false;
     }
-    this.paymentType = "manual";
+    this.paymentMethod = "manual";
     this.goToConfirmation(null);
   }
 
@@ -474,25 +476,22 @@ export class Epay implements ComponentInterface {
     this.error = null;
     const currentSlideIndex = await this.sliderEl.getActiveIndex();
     if (currentSlideIndex === 4) {
-      if (this.paymentType === "card") {
+      if (this.paymentMethod === "card") {
         await this.sliderEl.slideTo(2);
-      } else if (this.paymentType === "check") {
+      } else if (this.paymentMethod === "check") {
         await this.sliderEl.slideTo(3);
-      } else if (this.paymentType === "manual") {
+      } else if (this.paymentMethod === "manual") {
         await this.sliderEl.slideTo(1);
       }
     } else {
-      this.paymentType === "check"
+      this.paymentMethod === "check"
         ? await this.sliderEl.slideTo(1)
         : await this.sliderEl.slidePrev();
     }
 
-    this.paymentType = null;
+    this.paymentMethod = null;
     if (currentSlideIndex === 0) {
       this.reset();
-    } else if (currentSlideIndex === 1) {
-      this.isHeaderShrunk = true;
-      this.isSubTextShowing = false;
     }
     this.isHeaderHidden = false;
   }
@@ -503,7 +502,7 @@ export class Epay implements ComponentInterface {
   }
 
   getPaymentTypeCofirmation() {
-    if (this.paymentType === "card") {
+    if (this.paymentMethod === "card") {
       return `<h4>${this.capitalize(
         this.paymentPayload &&
           this.paymentPayload.token &&
@@ -524,9 +523,9 @@ export class Epay implements ComponentInterface {
           ? this.paymentPayload.token.card.last4
           : ""
         }</h4>`;
-    } else if (this.paymentType === "check") {
+    } else if (this.paymentMethod === "check") {
       return `<ion-grid><ion-row><ion-col size="6"><img src="${this.checkFront}" style="border-radius: 20px; width:100%; display: block; max-width: 300px;" /></ion-col><ion-col size="6"><img src="${this.checkBack}" style="border-radius: 20px; width:100%; display: block; max-width: 300px;" /></ion-col></ion-row></ion-grid>`;
-    } else if (this.paymentType === "manual") {
+    } else if (this.paymentMethod === "manual") {
       return "<h4>This should be avoided!</h4>";
     }
   }
@@ -551,10 +550,10 @@ export class Epay implements ComponentInterface {
   render() {
     return (
       <ion-card>
-        <ion-fab
+        {!this.isBackShowing && <ion-fab
           style={{
-            top: "-25px",
-            right: "-25px"
+            top: "-30px",
+            right: "0px"
           }}
           vertical="top"
           horizontal="end"
@@ -563,23 +562,10 @@ export class Epay implements ComponentInterface {
           <ion-fab-button>
             <ion-icon name="add"></ion-icon>
           </ion-fab-button>
-        </ion-fab>
-        {this.isBackShowing && (
-          <ion-button
-            class="back-button"
-            onClick={() => this.goBack()}
-            fill="clear"
-            shape="round"
-            size="large"
-            color={this.userPrefersDark ? "light" : "dark"}
-          >
-            <ion-icon name="arrow-back" slot="icon-only" />
-          </ion-button>
-        )}
+        </ion-fab>}
         <div
           class={{
             owed: true,
-            shrunk: this.isHeaderShrunk,
             hidden: this.isHeaderHidden,
           }}
         >
@@ -587,7 +573,7 @@ export class Epay implements ComponentInterface {
             {this.formatUSD(this.owed)}
             <small> owed</small>
           </span>
-          {this.isSubTextShowing && <p>{this.subText}</p>}
+          <p>{this.subText}</p>
         </div>
         <ion-slides
           ref={(el) => (this.sliderEl = el)}
@@ -642,60 +628,40 @@ export class Epay implements ComponentInterface {
             </ion-grid>
           </ion-slide>
           <ion-slide id="details">
-            <ion-grid>
-              <ion-row>
-                <ion-col>
-                  <ion-list>
-                    <fireenjin-input
-                      class="billee-input"
-                      iconLeft="mail"
-                      label="Billee Email"
-                      type="email"
-                      name="email"
-                      autocomplete="off"
-                      value={
-                        this.email
-                          ? this.email
-                          : this.customer?.email
-                            ? this.customer.email
-                            : null
-                      }
-                      required
-                    />
-                    <fireenjin-input
-                      class="amount-input"
-                      iconLeft="logo-usd"
-                      label="Amount"
-                      type="number"
-                      name="amount"
-                      autocomplete="off"
-                      min="5.00"
-                      step="0.01"
-                      value={this.amount}
-                      required
-                    />
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col size="6">
-                  <ion-button
-                    color="success"
-                    onClick={() => this.payWithCheck()}
-                  >
-                    Pay with Check
-                  </ion-button>
-                </ion-col>
-                <ion-col size="6">
-                  <ion-button
-                    color="success"
-                    onClick={() => this.payWithCard()}
-                  >
-                    Pay with Card
-                  </ion-button>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+            <fireenjin-form
+              id="invoice"
+              name="invoice"
+              class="ion-padding"
+              resetButton="Back"
+              submitButton="Next"
+              disableLoader
+            >
+              <fireenjin-input-amount name="amount" label="Amount on Invoice" value={this.amount} />
+              <fireenjin-input name="email" type="email" label="Invoice Email" value={this.email} />
+              <fireenjin-select
+                lines="full"
+                labelPosition="stacked"
+                name="paymentType"
+                label="Payment Type"
+                value={null}
+                options={[
+                  { label: "Self", value: null },
+                  { label: "Insurance", value: "insurance" },
+                  { label: "Code Blue", value: "codeblue" },
+                ]} />
+              <fireenjin-select
+                lines="full"
+                labelPosition="stacked"
+                name="paymentMethod"
+                label="Payment Method"
+                value={"card"}
+                options={[
+                  { label: "Check", value: "check" },
+                  { label: "Card", value: "card" },
+                  { label: "ACH", value: "ach" },
+                ]} />
+              <fireenjin-toggle lines="full" name="send" value={true} label="Send Invoice" color="secondary" />
+            </fireenjin-form>
           </ion-slide>
           <ion-slide id="card">
             <floodteam-pay-card
@@ -764,10 +730,10 @@ export class Epay implements ComponentInterface {
                       <ion-icon slot="start" name="logo-usd" />
                       <div>
                         <p>
-                          {this.paymentType === "manual"
+                          {this.paymentMethod === "manual"
                             ? `Paying manually`
                             : `Paying with ${this.capitalize(
-                              this.paymentType
+                              this.paymentMethod
                             )}`}
                         </p>
                         <div innerHTML={this.getPaymentTypeCofirmation()} />

@@ -67,6 +67,8 @@ export namespace Components {
          */
         "owed": any;
         "paymentId": string;
+        "paymentMethod": "card" | "check" | "manual" | "ach";
+        "paymentType": "insurance" | "codeblue";
         /**
           * The list of payments
          */
@@ -609,6 +611,8 @@ declare namespace LocalJSX {
          */
         "owed"?: any;
         "paymentId"?: string;
+        "paymentMethod"?: "card" | "check" | "manual" | "ach";
+        "paymentType"?: "insurance" | "codeblue";
         /**
           * The list of payments
          */

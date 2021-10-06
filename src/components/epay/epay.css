@@ -18,31 +18,12 @@ floodteam-epay floodteam-flip-card .flip-card-inner .badge-top-right {
   font-size: 12px;
   text-transform: uppercase;
 }
-floodteam-epay floodteam-button {
-  cursor: pointer;
-}
-floodteam-epay floodteam-slides {
-  transition: 0.4s ease all;
-  max-width: 700px;
-  margin: 0 auto;
-  display: block;
-  opacity: 1;
-}
-floodteam-epay floodteam-slides.hide-slides {
-  opacity: 0;
-  height: 0;
-}
-floodteam-epay fireenjin-toggle {
-  position: absolute;
-  top: var(--floodteam-epay-toggle-top, 10px);
-  right: var(--floodteam-epay-toggle-right, 25px);
-  opacity: 1;
-  transition: opacity ease 0.3s;
-  pointer-events: initial;
-}
 floodteam-epay ion-item ion-icon[slot="start"] {
   margin: auto 10px 10px auto;
   fill: var(--ion-text-color);
+}
+floodteam-epay fireenjin-form#invoice {
+  min-width: 100%;
 }
 floodteam-epay .owed {
   padding: var(--floodteam-epay-owed-padding, 15px 0 15px 0);
@@ -77,14 +58,6 @@ floodteam-epay .owed > p {
   letter-spacing: 2px;
   color: var(--ion-text-color) !important;
 }
-floodteam-epay .owed.shrunk {
-  padding: 10px 0 0 0;
-}
-floodteam-epay .owed.shrunk fireenjin-toggle {
-  opacity: 0;
-  pointer-events: none;
-}
-floodteam-epay .owed.shrunk > span,
 floodteam-epay #confirmation h1 {
   height: 30px;
   font-size: 28px;
@@ -140,59 +113,10 @@ floodteam-epay #admin-controls floodteam-button {
   font-weight: normal;
   font-size: 12px;
 }
-floodteam-epay .view-button {
-  width: 80px;
-  padding: 10px;
-  position: absolute;
-  top: var(--floodteam-epay-view-button-top, 0px);
-  left: var(--floodteam-epay-view-button-left, 0px);
-}
-floodteam-epay .view-button p {
-  font-size: 12px;
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-  display: block;
-  color: #95989a !important;
-  width: 100%;
-  text-align: center;
-}
-floodteam-epay .view-button ion-icon {
-  display: block;
-  margin: 0 auto;
-  height: 25px;
-  width: 25px;
-  color: #cccccc !important;
-}
-floodteam-epay .view-button:hover {
-  cursor: pointer;
-}
-floodteam-epay .view-button:hover p {
-  color: var(--ion-color-secondary) !important;
-}
-floodteam-epay .view-button:hover ion-icon {
-  color: var(--ion-color-secondary) !important;
-}
 floodteam-epay #confirmation .confirm-title {
   font-weight: bold;
   color: var(--ion-color-medium) !important;
   margin: 0 auto 15px;
-}
-floodteam-epay #confirmation floodteam-list {
-  display: block;
-  max-width: 400px;
-  width: 90%;
-  margin: 0 auto 20px;
-}
-floodteam-epay #confirmation floodteam-list p {
-  font-size: 14px;
-}
-floodteam-epay #confirmation fireenjin-progress-circle {
-  color: var(--ion-color-medium);
-  font-size: 14px;
-  font-weight: bold;
-  height: 40px;
-  float: right;
 }
 floodteam-epay #confirmation floodteam-thumbs-up {
   display: block;
@@ -210,10 +134,6 @@ floodteam-epay #success p {
 }
 floodteam-epay floodteam-error .ft-error-wrapper {
   padding: 0 !important;
-}
-
-floodteam-epay ion-item h4 {
-  color: var(--ion-color-medium-shade) !important;
 }
 
 @media only screen and (max-width: 500px) {
