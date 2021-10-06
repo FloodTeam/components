@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-05T17:17:08",
+  "timestamp": "2021-10-06T03:07:16",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -599,6 +599,57 @@
           "required": false
         },
         {
+          "name": "paymentMethod",
+          "type": "\"ach\" | \"card\" | \"check\" | \"manual\"",
+          "mutable": true,
+          "attr": "payment-method",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"card\"",
+          "values": [
+            {
+              "value": "ach",
+              "type": "string"
+            },
+            {
+              "value": "card",
+              "type": "string"
+            },
+            {
+              "value": "check",
+              "type": "string"
+            },
+            {
+              "value": "manual",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "paymentType",
+          "type": "\"codeblue\" | \"insurance\"",
+          "mutable": true,
+          "attr": "payment-type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "codeblue",
+              "type": "string"
+            },
+            {
+              "value": "insurance",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "payments",
           "type": "{ timestamp: string; brand: string; last4: number; amount: number; }[]",
           "mutable": true,
@@ -811,6 +862,21 @@
           "passive": false
         },
         {
+          "event": "fireenjinSubmit",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "fireenjinReset",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ftCancel",
+          "capture": false,
+          "passive": false
+        },
+        {
           "event": "ftCheckScan",
           "capture": false,
           "passive": false
@@ -854,11 +920,6 @@
           "event": "ftSubmitCheck",
           "capture": false,
           "passive": false
-        },
-        {
-          "event": "ftCancel",
-          "capture": false,
-          "passive": false
         }
       ],
       "styles": [],
@@ -870,7 +931,6 @@
         "ion-fab",
         "ion-fab-button",
         "ion-icon",
-        "ion-button",
         "ion-slides",
         "ion-slide",
         "ion-grid",
@@ -879,11 +939,16 @@
         "ion-item",
         "ion-label",
         "floodteam-fallback",
-        "ion-list",
+        "fireenjin-form",
+        "fireenjin-input-amount",
         "fireenjin-input",
+        "fireenjin-select",
+        "fireenjin-toggle",
         "floodteam-pay-card",
         "floodteam-pay-check",
         "floodteam-error",
+        "ion-list",
+        "ion-button",
         "floodteam-checkmark"
       ],
       "dependencyGraph": {
@@ -892,7 +957,6 @@
           "ion-fab",
           "ion-fab-button",
           "ion-icon",
-          "ion-button",
           "ion-slides",
           "ion-slide",
           "ion-grid",
@@ -901,11 +965,16 @@
           "ion-item",
           "ion-label",
           "floodteam-fallback",
-          "ion-list",
+          "fireenjin-form",
+          "fireenjin-input-amount",
           "fireenjin-input",
+          "fireenjin-select",
+          "fireenjin-toggle",
           "floodteam-pay-card",
           "floodteam-pay-check",
           "floodteam-error",
+          "ion-list",
+          "ion-button",
           "floodteam-checkmark"
         ],
         "ion-card": [
@@ -915,9 +984,6 @@
           "ion-icon",
           "ion-ripple-effect"
         ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ],
         "ion-item": [
           "ion-icon",
           "ion-ripple-effect"
@@ -925,11 +991,38 @@
         "floodteam-fallback": [
           "ion-icon"
         ],
+        "fireenjin-form": [
+          "ion-grid",
+          "ion-row",
+          "ion-col",
+          "ion-button"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "fireenjin-input-amount": [
+          "ion-item",
+          "ion-icon",
+          "ion-label",
+          "ion-input"
+        ],
         "fireenjin-input": [
           "ion-input",
           "ion-item",
           "ion-icon",
           "ion-label"
+        ],
+        "fireenjin-select": [
+          "ion-item",
+          "ion-icon",
+          "ion-label",
+          "ion-select",
+          "ion-select-option"
+        ],
+        "fireenjin-toggle": [
+          "ion-item",
+          "ion-label",
+          "ion-toggle"
         ],
         "floodteam-pay-card": [
           "floodteam-error",
