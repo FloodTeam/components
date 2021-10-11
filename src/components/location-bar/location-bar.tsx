@@ -119,7 +119,6 @@ export class LocationBar implements ComponentInterface {
                   placeholder="Enter Zip"
                 />
                 <ion-button
-                  color="success"
                   onClick={() => (this.changingLocation = false)}
                 >
                   Set

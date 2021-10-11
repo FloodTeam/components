@@ -87,7 +87,6 @@ export class BookNow {
           ref={(el) => (this.formEl = el)}
           endpoint="addJob"
           formData={this.formData}
-          submitButtonColor="success"
           resetButtonColor="medium"
           beforeSubmit={this.onBeforeSubmit.bind(this)}
         >
@@ -147,7 +146,6 @@ export class BookNow {
                     <ion-button
                       class="btn"
                       size="default"
-                      color="success"
                       expand="block"
                       data-clipboard-text={this.confirmationId}
                     >

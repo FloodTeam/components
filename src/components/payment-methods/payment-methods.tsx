@@ -176,7 +176,7 @@ export class PaymentMethods implements ComponentInterface {
               <ion-grid class="slide-controls">
                 <ion-row>
                   <ion-col class="ion-align-self-end">
-                    <ion-button color="success" onClick={() => this.next()}>
+                    <ion-button onClick={() => this.next()}>
                       Add Payment Method
                     </ion-button>
                   </ion-col>
@@ -193,7 +193,6 @@ export class PaymentMethods implements ComponentInterface {
                 name="paymentForm"
                 resetButton="<ion-icon slot='start' name='arrow-back-outline'></ion-icon>Back"
                 resetButtonColor="medium"
-                submitButtonColor="success"
                 submitButton="Next"
               >
                 <ion-grid>
@@ -247,7 +246,6 @@ export class PaymentMethods implements ComponentInterface {
                   name="cardForm"
                   resetButton="<ion-icon slot='start' name='arrow-back-outline'></ion-icon>Back"
                   resetButtonColor="medium"
-                  submitButtonColor="success"
                   endpoint="addPaymentMethod"
                   beforeSubmit={(data) => this.onBeforeSubmit(data)}
                   excludeData={["card", "cardName"]}
@@ -319,7 +317,6 @@ export class PaymentMethods implements ComponentInterface {
                 <fireenjin-form
                   resetButton="<ion-icon slot='start' name='arrow-back-outline'></ion-icon>Back"
                   resetButtonColor="medium"
-                  submitButtonColor="success"
                   endpoint="addPaymentMethod"
                   beforeSubmit={(data) => this.onBeforeSubmit(data, true)}
                   name="bankingForm"
@@ -357,7 +354,7 @@ export class PaymentMethods implements ComponentInterface {
                     </ion-label>
                   </ion-col>
                   <ion-col class="dashboard-button">
-                    <ion-button href="/dashboard" color="success">
+                    <ion-button href="/dashboard">
                       Go to Dashboard
                     </ion-button>
                   </ion-col>

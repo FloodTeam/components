@@ -83,8 +83,8 @@ export class PayCheck implements ComponentInterface {
     const file = imageFile
       ? imageFile
       : event && event.srcElement && event.srcElement.files
-      ? event.srcElement.files[0]
-      : null;
+        ? event.srcElement.files[0]
+        : null;
     const reader = new FileReader();
 
     reader.onload = async () => {
@@ -162,8 +162,7 @@ export class PayCheck implements ComponentInterface {
 
     if (!this.hasCheckFront || !this.hasCheckBack) {
       alert(
-        `Please take a picture of the ${
-          !this.hasCheckFront ? "front" : "back"
+        `Please take a picture of the ${!this.hasCheckFront ? "front" : "back"
         } of the check.`
       );
       this.isScanningFront = !this.hasCheckFront ? true : false;
@@ -269,7 +268,7 @@ export class PayCheck implements ComponentInterface {
               </ion-button>
             </ion-col>
             <ion-col size="6">
-              <ion-button color="success" onClick={event => this.save(event)}>
+              <ion-button onClick={event => this.save(event)}>
                 Save
               </ion-button>
             </ion-col>

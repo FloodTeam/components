@@ -744,7 +744,6 @@ export class Epay implements ComponentInterface {
                         <ion-col size="12" class="ion-align-self-end">
                           <ion-button
                             onClick={() => this.approve()}
-                            color="success"
                           >
                             Approve
                           </ion-button>

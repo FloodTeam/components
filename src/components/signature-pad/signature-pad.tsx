@@ -355,7 +355,6 @@ export class SignaturePad {
             </ion-button>
             <p>{this.label}</p>
             <ion-button
-              color="success"
               fill="solid"
               onClick={() => this.submit()}
             >

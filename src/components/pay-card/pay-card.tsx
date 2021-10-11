@@ -73,23 +73,23 @@ export class PayCard implements ComponentInterface {
     const style: any = this.stripeStyle
       ? this.stripeStyle
       : {
-          base: {
-            color: "#32325d",
-            lineHeight: "18px",
-            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-            fontSmoothing: "antialiased",
-            fontSize: "16px",
-            fontWeight: "bold",
-            "::placeholder": {
-              color: "#aab7c4"
-            },
-            left: "15px"
+        base: {
+          color: "#32325d",
+          lineHeight: "18px",
+          fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+          fontSmoothing: "antialiased",
+          fontSize: "16px",
+          fontWeight: "bold",
+          "::placeholder": {
+            color: "#aab7c4"
           },
-          invalid: {
-            color: "#fa755a",
-            iconColor: "#fa755a"
-          }
-        };
+          left: "15px"
+        },
+        invalid: {
+          color: "#fa755a",
+          iconColor: "#fa755a"
+        }
+      };
 
     this.card = elements.create("card", {
       style,
@@ -122,7 +122,7 @@ export class PayCard implements ComponentInterface {
               </ion-button>
             </ion-col>
             <ion-col size="6">
-              <ion-button color="success" onClick={event => this.save(event)}>
+              <ion-button onClick={event => this.save(event)}>
                 Save
               </ion-button>
             </ion-col>
