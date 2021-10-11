@@ -1,0 +1,1 @@
+import{r as e,h as n}from"./p-eb2b03ce.js";let r=class{constructor(n){e(this,n)}render(){return n("ion-content",null,n("fireenjin-pagination",{endpoint:"listUsers",limit:24,listEl:({result:e})=>n("ion-item",null,e.id)}))}};export{r as fireenjin_renderer}
