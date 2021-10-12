@@ -27,4 +27,4 @@ jobs:
         run: npx semantic-release --deubg
       - run: echo -e "@floodteam:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.npmrc
       - name: Release Github Package Registry
-      - run: npm publish
+        run: npm publish
