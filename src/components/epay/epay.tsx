@@ -121,10 +121,10 @@ export class Epay implements ComponentInterface {
 
   @Listen("fireenjinSubmit")
   async onSubmit() {
-    if (this.paymentMethod === "card") {
-      await this.payWithCard();
-    } else {
+    if (this.paymentMethod === "check") {
       await this.payWithCheck();
+    } else {
+      await this.payWithCard();
     }
   }
 
@@ -146,6 +146,7 @@ export class Epay implements ComponentInterface {
   }
 
   @Listen("ionInput")
+  @Listen("ionChange")
   onInput(event) {
     if (event?.target?.name === "amount") {
       this.amount = event.target.value ? parseFloat(event.target.value) : null;
@@ -248,7 +249,6 @@ export class Epay implements ComponentInterface {
 
   @Listen("ftCheckError")
   onCheckError(event) {
-    console.log(event);
     if (
       !event ||
       !event.detail ||
@@ -269,20 +269,6 @@ export class Epay implements ComponentInterface {
     setTimeout(() => {
       this.updateSlides();
     }, 2000);
-  }
-
-  @Listen("ftSelect")
-  onSelect(event) {
-    if (
-      event &&
-      event.detail &&
-      event.detail.user &&
-      event.detail.user.user_email
-    ) {
-      this.userId = event.detail.user.id;
-      this.customer = event.detail.user;
-      this.email = event.detail.user.user_email;
-    }
   }
 
   @Listen("ftSubmitCheck")
@@ -634,6 +620,7 @@ export class Epay implements ComponentInterface {
               class="ion-padding"
               resetButton="Back"
               submitButton="Next"
+              disableReset
               disableLoader
             >
               <fireenjin-input-amount name="amount" labelPosition="stacked" label="Amount on Invoice" value={this.amount} />
