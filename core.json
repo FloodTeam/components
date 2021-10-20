@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-13T21:09:44",
+  "timestamp": "2021-10-20T16:45:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -887,6 +887,11 @@
           "passive": false
         },
         {
+          "event": "ionChange",
+          "capture": false,
+          "passive": false
+        },
+        {
           "event": "ftToggle",
           "capture": false,
           "passive": false
@@ -908,11 +913,6 @@
         },
         {
           "event": "ftCheckError",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "ftSelect",
           "capture": false,
           "passive": false
         },
