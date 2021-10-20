@@ -94,11 +94,13 @@ export class BookNow {
             <fireenjin-input
               name="customer"
               label="Customer Name"
+              labelPosition="stacked"
               placeholder="What is the customer's full name?"
             />
             <fireenjin-input
               type="tel"
               inputMode="tel"
+              labelPosition="stacked"
               label="Customer Phone Number"
               placeholder="What is the customer's phone number?"
               name="phone"
@@ -106,6 +108,7 @@ export class BookNow {
             <fireenjin-input
               name="email"
               type="email"
+              labelPosition="stacked"
               label="Customer Email"
               placeholder="What is the customer's email address?"
             />
@@ -113,6 +116,7 @@ export class BookNow {
               googleMapsKey={this.googleMapsKey}
               name="address"
               label="Job Address"
+              labelPosition="stacked"
               placeholder="What is the address of the loss?"
             />
           </ion-list>
