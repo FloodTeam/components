@@ -619,6 +619,7 @@ export class Epay implements ComponentInterface {
               name="invoice"
               class="ion-padding"
               resetButton="Back"
+              resetButtonColor="medium"
               submitButton="Next"
               disableReset
               disableLoader
@@ -732,7 +733,7 @@ export class Epay implements ComponentInterface {
                           <ion-button
                             onClick={() => this.approve()}
                           >
-                            Approve
+                            Approve & Finish
                           </ion-button>
                         </ion-col>
                       </ion-row>

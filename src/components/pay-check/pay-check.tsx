@@ -263,13 +263,13 @@ export class PayCheck implements ComponentInterface {
         <ion-grid>
           <ion-row>
             <ion-col size="6">
-              <ion-button fill="clear" onClick={event => this.cancel(event)}>
-                Cancel
+              <ion-button fill="clear" color="medium" onClick={event => this.cancel(event)}>
+                Back
               </ion-button>
             </ion-col>
             <ion-col size="6">
               <ion-button onClick={event => this.save(event)}>
-                Save
+                Next
               </ion-button>
             </ion-col>
           </ion-row>
