@@ -188,65 +188,6 @@ export namespace Components {
         "frontImage": string;
         "hideRefresh": boolean;
     }
-    interface FloodteamFloatingButton {
-        /**
-          * The content of the badge
-         */
-        "badge"?: string;
-        /**
-          * The color of the badge to display
-         */
-        "badgeColor"?: Color;
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList": {
-    /**
-     * The label to show next to the button
-     */
-    label: string;
-    /**
-     * The icon to use in the button
-     */
-    icon: string;
-    /**
-     * The color from the theme to make the button
-     */
-    color?: Color;
-    /**
-     * The link to use for the button
-     */
-    href?: string;
-    /**
-     * The functionality to run when the button is clicked
-     */
-    onClick?: (event: any) => any;
-  }[];
-        /**
-          * The color of the button
-         */
-        "color": Color;
-        /**
-          * The horizontal position of the button
-         */
-        "horizontal": "end" | "start" | "center";
-        /**
-          * The side the list should display
-         */
-        "listSide": "end" | "start" | "top" | "bottom";
-        /**
-          * The icon to use on the material button when it's closed
-         */
-        "openIcon": string;
-        /**
-          * The url to link the material button to
-         */
-        "url": string;
-        /**
-          * The vertical position of the button
-         */
-        "vertical": "center" | "top" | "bottom";
-    }
     interface FloodteamJobProgress {
         "color": Color;
         "name": string;
@@ -469,12 +410,6 @@ declare global {
         prototype: HTMLFloodteamFlipCardElement;
         new (): HTMLFloodteamFlipCardElement;
     };
-    interface HTMLFloodteamFloatingButtonElement extends Components.FloodteamFloatingButton, HTMLStencilElement {
-    }
-    var HTMLFloodteamFloatingButtonElement: {
-        prototype: HTMLFloodteamFloatingButtonElement;
-        new (): HTMLFloodteamFloatingButtonElement;
-    };
     interface HTMLFloodteamJobProgressElement extends Components.FloodteamJobProgress, HTMLStencilElement {
     }
     var HTMLFloodteamJobProgressElement: {
@@ -539,7 +474,6 @@ declare global {
         "floodteam-fallback": HTMLFloodteamFallbackElement;
         "floodteam-feed-card": HTMLFloodteamFeedCardElement;
         "floodteam-flip-card": HTMLFloodteamFlipCardElement;
-        "floodteam-floating-button": HTMLFloodteamFloatingButtonElement;
         "floodteam-job-progress": HTMLFloodteamJobProgressElement;
         "floodteam-location-bar": HTMLFloodteamLocationBarElement;
         "floodteam-pay-card": HTMLFloodteamPayCardElement;
@@ -726,65 +660,6 @@ declare namespace LocalJSX {
         "hideRefresh"?: boolean;
         "onFloodteamFlip"?: (event: CustomEvent<any>) => void;
     }
-    interface FloodteamFloatingButton {
-        /**
-          * The content of the badge
-         */
-        "badge"?: string;
-        /**
-          * The color of the badge to display
-         */
-        "badgeColor"?: Color;
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList"?: {
-    /**
-     * The label to show next to the button
-     */
-    label: string;
-    /**
-     * The icon to use in the button
-     */
-    icon: string;
-    /**
-     * The color from the theme to make the button
-     */
-    color?: Color;
-    /**
-     * The link to use for the button
-     */
-    href?: string;
-    /**
-     * The functionality to run when the button is clicked
-     */
-    onClick?: (event: any) => any;
-  }[];
-        /**
-          * The color of the button
-         */
-        "color"?: Color;
-        /**
-          * The horizontal position of the button
-         */
-        "horizontal"?: "end" | "start" | "center";
-        /**
-          * The side the list should display
-         */
-        "listSide"?: "end" | "start" | "top" | "bottom";
-        /**
-          * The icon to use on the material button when it's closed
-         */
-        "openIcon"?: string;
-        /**
-          * The url to link the material button to
-         */
-        "url"?: string;
-        /**
-          * The vertical position of the button
-         */
-        "vertical"?: "center" | "top" | "bottom";
-    }
     interface FloodteamJobProgress {
         "color"?: Color;
         "name"?: string;
@@ -916,7 +791,6 @@ declare namespace LocalJSX {
         "floodteam-fallback": FloodteamFallback;
         "floodteam-feed-card": FloodteamFeedCard;
         "floodteam-flip-card": FloodteamFlipCard;
-        "floodteam-floating-button": FloodteamFloatingButton;
         "floodteam-job-progress": FloodteamJobProgress;
         "floodteam-location-bar": FloodteamLocationBar;
         "floodteam-pay-card": FloodteamPayCard;
@@ -941,7 +815,6 @@ declare module "@stencil/core" {
             "floodteam-fallback": LocalJSX.FloodteamFallback & JSXBase.HTMLAttributes<HTMLFloodteamFallbackElement>;
             "floodteam-feed-card": LocalJSX.FloodteamFeedCard & JSXBase.HTMLAttributes<HTMLFloodteamFeedCardElement>;
             "floodteam-flip-card": LocalJSX.FloodteamFlipCard & JSXBase.HTMLAttributes<HTMLFloodteamFlipCardElement>;
-            "floodteam-floating-button": LocalJSX.FloodteamFloatingButton & JSXBase.HTMLAttributes<HTMLFloodteamFloatingButtonElement>;
             "floodteam-job-progress": LocalJSX.FloodteamJobProgress & JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
             "floodteam-location-bar": LocalJSX.FloodteamLocationBar & JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
             "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
