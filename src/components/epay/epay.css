@@ -58,8 +58,10 @@ floodteam-epay .owed > p {
   letter-spacing: 2px;
   color: var(--ion-text-color) !important;
 }
+floodteam-epay .confirm-title {
+  margin: 0 !important;
+}
 floodteam-epay #confirmation h1 {
-  height: 30px;
   font-size: 28px;
   padding-top: 0;
 }

@@ -636,8 +636,8 @@ export class Epay implements ComponentInterface {
               submitButton="Next"
               disableLoader
             >
-              <fireenjin-input-amount name="amount" label="Amount on Invoice" value={this.amount} />
-              <fireenjin-input name="email" type="email" label="Invoice Email" value={this.email} />
+              <fireenjin-input-amount name="amount" labelPosition="stacked" label="Amount on Invoice" value={this.amount} />
+              <fireenjin-input name="email" labelPosition="stacked" type="email" label="Invoice Email" value={this.email} />
               <fireenjin-select
                 lines="full"
                 labelPosition="stacked"
