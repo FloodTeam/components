@@ -1,5 +1,5 @@
 import { Color, popoverController } from "@ionic/core";
-import { Component, ComponentInterface, Prop, h, Build } from "@stencil/core";
+import { Component, ComponentInterface, Prop, h, Build, Listen } from "@stencil/core";
 
 @Component({
   tag: "floodteam-floating-button",
@@ -8,6 +8,12 @@ import { Component, ComponentInterface, Prop, h, Build } from "@stencil/core";
 export class FloatingButton implements ComponentInterface {
   fabEl: HTMLIonFabElement;
   popoverEl: HTMLIonPopoverElement;
+
+  @Listen("floodteamClosePopover", { target: "body" })
+  onClosePopover() {
+    this.popoverEl.dismiss();
+    this.popoverEl = null;
+  }
 
   /**
    * The list of buttons to show when the material button is clicked
