@@ -43,8 +43,7 @@ export class PopoverControls {
                         <ion-item
                             detail
                             lines="full"
-                            href={mb.href}
-                            color={mb?.color}
+                            href={mb?.href || "#"}
                             onClick={(event) => {
                                 if (typeof mb?.onClick !== "function") return;
                                 mb.onClick(event);
@@ -52,11 +51,12 @@ export class PopoverControls {
                             }}
                         >
                             <ion-icon
+                                color={mb?.color}
                                 name={mb.icon.indexOf("/") === -1 ? mb.icon : null}
                                 src={mb.icon.indexOf("/") === -1 ? null : mb.icon}
                                 slot="start"
                             />
-                            <ion-label innerHTML={mb.label} />
+                            <ion-label color={mb?.color} innerHTML={mb.label} />
                         </ion-item>
                     ))}
 
