@@ -37,7 +37,7 @@ ion-icon {
   display: block;
   height: var(--floodteam-checkmark-size, 150px);
   width: var(--floodteam-checkmark-size, 150px);
-  color: var(--ion-color-success, #000000);
+  color: var(--ion-color-secondary, #000000);
   display: block;
   margin: 0 auto;
   opacity: 0;
