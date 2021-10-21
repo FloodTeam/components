@@ -1,5 +1,5 @@
 import "@ionic/core";
-import "@madnesslabs/fireenjin-components";
+import "@fireenjin/components";
 
 export default () => {
   // On Load

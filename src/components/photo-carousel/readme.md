@@ -29,13 +29,13 @@ Type: `Promise<number>`
 
 
 
-### `selectFiles(event: any) => Promise<boolean>`
+### `selectFiles(event: any) => Promise<any>`
 
 
 
 #### Returns
 
-Type: `Promise<boolean>`
+Type: `Promise<any>`
 
 
 

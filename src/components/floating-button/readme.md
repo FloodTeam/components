@@ -27,8 +27,6 @@
 - ion-fab
 - ion-fab-button
 - ion-icon
-- ion-fab-list
-- ion-button
 - ion-badge
 
 ### Graph
@@ -37,12 +35,9 @@ graph TD;
   floodteam-floating-button --> ion-fab
   floodteam-floating-button --> ion-fab-button
   floodteam-floating-button --> ion-icon
-  floodteam-floating-button --> ion-fab-list
-  floodteam-floating-button --> ion-button
   floodteam-floating-button --> ion-badge
   ion-fab-button --> ion-icon
   ion-fab-button --> ion-ripple-effect
-  ion-button --> ion-ripple-effect
   style floodteam-floating-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -188,6 +188,65 @@ export namespace Components {
         "frontImage": string;
         "hideRefresh": boolean;
     }
+    interface FloodteamFloatingButton {
+        /**
+          * The content of the badge
+         */
+        "badge"?: string;
+        /**
+          * The color of the badge to display
+         */
+        "badgeColor"?: Color;
+        /**
+          * The list of buttons to show when the material button is clicked
+         */
+        "buttonList": {
+    /**
+     * The label to show next to the button
+     */
+    label: string;
+    /**
+     * The icon to use in the button
+     */
+    icon: string;
+    /**
+     * The color from the theme to make the button
+     */
+    color?: Color;
+    /**
+     * The link to use for the button
+     */
+    href?: string;
+    /**
+     * The functionality to run when the button is clicked
+     */
+    onClick?: (event: any) => any;
+  }[];
+        /**
+          * The color of the button
+         */
+        "color": Color;
+        /**
+          * The horizontal position of the button
+         */
+        "horizontal": "end" | "start" | "center";
+        /**
+          * The side the list should display
+         */
+        "listSide": "end" | "start" | "top" | "bottom";
+        /**
+          * The icon to use on the material button when it's closed
+         */
+        "openIcon": string;
+        /**
+          * The url to link the material button to
+         */
+        "url": string;
+        /**
+          * The vertical position of the button
+         */
+        "vertical": "center" | "top" | "bottom";
+    }
     interface FloodteamJobProgress {
         "color": Color;
         "name": string;
@@ -234,7 +293,7 @@ export namespace Components {
         "name": string;
         "options": any;
         "photos": any[];
-        "selectFiles": (event: any) => Promise<boolean>;
+        "selectFiles": (event: any) => Promise<any>;
         "slideNext": () => Promise<void>;
         "slidePrev": () => Promise<void>;
         "slideTo": (slideNumber: number) => Promise<void>;
@@ -242,6 +301,33 @@ export namespace Components {
     }
     interface FloodteamPhotoGallery {
         "photos": string[];
+    }
+    interface FloodteamPopoverControls {
+        /**
+          * The list of buttons to show when the material button is clicked
+         */
+        "buttonList": {
+        /**
+         * The label to show next to the button
+         */
+        label: string;
+        /**
+         * The icon to use in the button
+         */
+        icon: string;
+        /**
+         * The color from the theme to make the button
+         */
+        color?: Color;
+        /**
+         * The link to use for the button
+         */
+        href?: string;
+        /**
+         * The functionality to run when the button is clicked
+         */
+        onClick?: (event: any) => any;
+    }[];
     }
     interface FloodteamSignaturePad {
         /**
@@ -410,6 +496,12 @@ declare global {
         prototype: HTMLFloodteamFlipCardElement;
         new (): HTMLFloodteamFlipCardElement;
     };
+    interface HTMLFloodteamFloatingButtonElement extends Components.FloodteamFloatingButton, HTMLStencilElement {
+    }
+    var HTMLFloodteamFloatingButtonElement: {
+        prototype: HTMLFloodteamFloatingButtonElement;
+        new (): HTMLFloodteamFloatingButtonElement;
+    };
     interface HTMLFloodteamJobProgressElement extends Components.FloodteamJobProgress, HTMLStencilElement {
     }
     var HTMLFloodteamJobProgressElement: {
@@ -452,6 +544,12 @@ declare global {
         prototype: HTMLFloodteamPhotoGalleryElement;
         new (): HTMLFloodteamPhotoGalleryElement;
     };
+    interface HTMLFloodteamPopoverControlsElement extends Components.FloodteamPopoverControls, HTMLStencilElement {
+    }
+    var HTMLFloodteamPopoverControlsElement: {
+        prototype: HTMLFloodteamPopoverControlsElement;
+        new (): HTMLFloodteamPopoverControlsElement;
+    };
     interface HTMLFloodteamSignaturePadElement extends Components.FloodteamSignaturePad, HTMLStencilElement {
     }
     var HTMLFloodteamSignaturePadElement: {
@@ -474,6 +572,7 @@ declare global {
         "floodteam-fallback": HTMLFloodteamFallbackElement;
         "floodteam-feed-card": HTMLFloodteamFeedCardElement;
         "floodteam-flip-card": HTMLFloodteamFlipCardElement;
+        "floodteam-floating-button": HTMLFloodteamFloatingButtonElement;
         "floodteam-job-progress": HTMLFloodteamJobProgressElement;
         "floodteam-location-bar": HTMLFloodteamLocationBarElement;
         "floodteam-pay-card": HTMLFloodteamPayCardElement;
@@ -481,6 +580,7 @@ declare global {
         "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
         "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
         "floodteam-photo-gallery": HTMLFloodteamPhotoGalleryElement;
+        "floodteam-popover-controls": HTMLFloodteamPopoverControlsElement;
         "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
         "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
     }
@@ -660,6 +760,65 @@ declare namespace LocalJSX {
         "hideRefresh"?: boolean;
         "onFloodteamFlip"?: (event: CustomEvent<any>) => void;
     }
+    interface FloodteamFloatingButton {
+        /**
+          * The content of the badge
+         */
+        "badge"?: string;
+        /**
+          * The color of the badge to display
+         */
+        "badgeColor"?: Color;
+        /**
+          * The list of buttons to show when the material button is clicked
+         */
+        "buttonList"?: {
+    /**
+     * The label to show next to the button
+     */
+    label: string;
+    /**
+     * The icon to use in the button
+     */
+    icon: string;
+    /**
+     * The color from the theme to make the button
+     */
+    color?: Color;
+    /**
+     * The link to use for the button
+     */
+    href?: string;
+    /**
+     * The functionality to run when the button is clicked
+     */
+    onClick?: (event: any) => any;
+  }[];
+        /**
+          * The color of the button
+         */
+        "color"?: Color;
+        /**
+          * The horizontal position of the button
+         */
+        "horizontal"?: "end" | "start" | "center";
+        /**
+          * The side the list should display
+         */
+        "listSide"?: "end" | "start" | "top" | "bottom";
+        /**
+          * The icon to use on the material button when it's closed
+         */
+        "openIcon"?: string;
+        /**
+          * The url to link the material button to
+         */
+        "url"?: string;
+        /**
+          * The vertical position of the button
+         */
+        "vertical"?: "center" | "top" | "bottom";
+    }
     interface FloodteamJobProgress {
         "color"?: Color;
         "name"?: string;
@@ -715,6 +874,34 @@ declare namespace LocalJSX {
     interface FloodteamPhotoGallery {
         "onFtOpenPhotoCarousel"?: (event: CustomEvent<any>) => void;
         "photos"?: string[];
+    }
+    interface FloodteamPopoverControls {
+        /**
+          * The list of buttons to show when the material button is clicked
+         */
+        "buttonList"?: {
+        /**
+         * The label to show next to the button
+         */
+        label: string;
+        /**
+         * The icon to use in the button
+         */
+        icon: string;
+        /**
+         * The color from the theme to make the button
+         */
+        color?: Color;
+        /**
+         * The link to use for the button
+         */
+        href?: string;
+        /**
+         * The functionality to run when the button is clicked
+         */
+        onClick?: (event: any) => any;
+    }[];
+        "onFloodteamClosePopover"?: (event: CustomEvent<any>) => void;
     }
     interface FloodteamSignaturePad {
         /**
@@ -791,6 +978,7 @@ declare namespace LocalJSX {
         "floodteam-fallback": FloodteamFallback;
         "floodteam-feed-card": FloodteamFeedCard;
         "floodteam-flip-card": FloodteamFlipCard;
+        "floodteam-floating-button": FloodteamFloatingButton;
         "floodteam-job-progress": FloodteamJobProgress;
         "floodteam-location-bar": FloodteamLocationBar;
         "floodteam-pay-card": FloodteamPayCard;
@@ -798,6 +986,7 @@ declare namespace LocalJSX {
         "floodteam-payment-methods": FloodteamPaymentMethods;
         "floodteam-photo-carousel": FloodteamPhotoCarousel;
         "floodteam-photo-gallery": FloodteamPhotoGallery;
+        "floodteam-popover-controls": FloodteamPopoverControls;
         "floodteam-signature-pad": FloodteamSignaturePad;
         "floodteam-snapshot-card": FloodteamSnapshotCard;
     }
@@ -815,6 +1004,7 @@ declare module "@stencil/core" {
             "floodteam-fallback": LocalJSX.FloodteamFallback & JSXBase.HTMLAttributes<HTMLFloodteamFallbackElement>;
             "floodteam-feed-card": LocalJSX.FloodteamFeedCard & JSXBase.HTMLAttributes<HTMLFloodteamFeedCardElement>;
             "floodteam-flip-card": LocalJSX.FloodteamFlipCard & JSXBase.HTMLAttributes<HTMLFloodteamFlipCardElement>;
+            "floodteam-floating-button": LocalJSX.FloodteamFloatingButton & JSXBase.HTMLAttributes<HTMLFloodteamFloatingButtonElement>;
             "floodteam-job-progress": LocalJSX.FloodteamJobProgress & JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
             "floodteam-location-bar": LocalJSX.FloodteamLocationBar & JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
             "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
@@ -822,6 +1012,7 @@ declare module "@stencil/core" {
             "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
             "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
             "floodteam-photo-gallery": LocalJSX.FloodteamPhotoGallery & JSXBase.HTMLAttributes<HTMLFloodteamPhotoGalleryElement>;
+            "floodteam-popover-controls": LocalJSX.FloodteamPopoverControls & JSXBase.HTMLAttributes<HTMLFloodteamPopoverControlsElement>;
             "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
             "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
         }

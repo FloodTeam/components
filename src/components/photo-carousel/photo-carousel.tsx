@@ -15,7 +15,7 @@ import {
 })
 export class PhotoCarousel implements ComponentInterface {
   photoSlidesEl: HTMLIonSlidesElement;
-  inputPhotoEl: HTMLFireenjinInputPhotoElement;
+  inputPhotoEl: any;
 
   @Prop() jobId: string;
   @Prop() badgeColor: Color = "medium";
