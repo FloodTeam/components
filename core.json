@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-21T01:31:14",
+  "timestamp": "2021-10-21T03:34:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -2829,10 +2829,10 @@
         {
           "name": "selectFiles",
           "returns": {
-            "type": "Promise<boolean>",
+            "type": "Promise<any>",
             "docs": ""
           },
-          "signature": "selectFiles(event: any) => Promise<boolean>",
+          "signature": "selectFiles(event: any) => Promise<any>",
           "parameters": [],
           "docs": "",
           "docsTags": []
@@ -2995,6 +2995,7 @@
       "filePath": "./src/components/popover-controls/popover-controls.tsx",
       "encapsulation": "none",
       "tag": "floodteam-popover-controls",
+      "readme": "# floodteam-popover-controls\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
