@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-26T18:02:13",
+  "timestamp": "2021-10-27T08:47:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -2808,6 +2808,23 @@
           "values": [
             {
               "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"job\"",
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
