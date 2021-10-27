@@ -25,6 +25,7 @@ export class PhotoCarousel implements ComponentInterface {
   @Prop({ mutable: true }) currentSlide = 0;
   @Prop() options: any = {};
   @Prop() name = "photocarousel";
+  @Prop() type: string = "job";
 
   @Listen("ionSlideDidChange")
   async onSlideChange() {
@@ -79,6 +80,7 @@ export class PhotoCarousel implements ComponentInterface {
     return (
       <Host>
         <fireenjin-input-photo
+          type={this.type}
           name={this.name}
           ref={(el) => (this.inputPhotoEl = el)}
           path={`jobs/${this.jobId}/photos`}
