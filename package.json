@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@dadesystems/dademobile": "^1.2.1",
-    "@fireenjin/components": "^1.0.3",
+    "@fireenjin/components": "^1.0.5",
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/geolocation": "^5.36.0",
     "@ionic/core": "^5.8.5",
