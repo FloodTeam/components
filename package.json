@@ -38,7 +38,7 @@
     "@fireenjin/components": "^1.0.3",
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/geolocation": "^5.36.0",
-    "@ionic/core": "^5.8.0",
+    "@ionic/core": "^5.8.5",
     "@stencil/core": "^2.8.1",
     "@stripe/stripe-js": "^1.20.3",
     "algoliasearch": "^4.11.0",
