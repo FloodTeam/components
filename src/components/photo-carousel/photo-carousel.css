@@ -52,6 +52,10 @@ floodteam-photo-carousel fireenjin-input-photo {
 
 floodteam-photo-carousel floodteam-fallback {
   --floodteam-fallback-icon-size: 10vw;
+  position: absolute;
+  top: calc(50% - 60px);
+  left: 0;
+  right: 0;
 }
 
 floodteam-photo-carousel floodteam-fallback ion-icon {
