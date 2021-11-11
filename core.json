@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-11-08T01:53:39",
+  "timestamp": "2021-11-11T09:36:38",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.10.0",
@@ -2814,6 +2814,22 @@
           "required": false
         },
         {
+          "name": "siteId",
+          "type": "string",
+          "mutable": false,
+          "attr": "site-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "type",
           "type": "string",
           "mutable": false,
@@ -2821,7 +2837,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "\"job\"",
+          "default": "\"site\"",
           "values": [
             {
               "type": "string"
