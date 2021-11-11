@@ -18,6 +18,7 @@ export class PhotoCarousel implements ComponentInterface {
   inputPhotoEl: any;
 
   @Prop() jobId: string;
+  @Prop() siteId: string;
   @Prop() badgeColor: Color = "medium";
   @Prop() addButtonColor: Color = "primary";
   @Prop() hideAddButton = false;
@@ -25,7 +26,7 @@ export class PhotoCarousel implements ComponentInterface {
   @Prop({ mutable: true }) currentSlide = 0;
   @Prop() options: any = {};
   @Prop() name = "photocarousel";
-  @Prop() type: string = "job";
+  @Prop() type: string = "site";
 
   @Listen("ionSlideDidChange")
   async onSlideChange() {
@@ -84,7 +85,7 @@ export class PhotoCarousel implements ComponentInterface {
           name={this.name}
           ref={(el) => (this.inputPhotoEl = el)}
           path={`jobs/${this.jobId}/photos`}
-          documentId={this.jobId}
+          documentId={this.siteId || this.jobId}
           fileName={new Date().toISOString()}
           multiple
         />
