@@ -2,8 +2,6 @@ floodteam-photo-carousel {
   display: block;
   border: 1px solid var(--ion-color-base-dark);
   position: relative;
-  min-height: 45px;
-  min-width: 80px;
   margin: 0 auto;
   border-radius: 8px !important;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
