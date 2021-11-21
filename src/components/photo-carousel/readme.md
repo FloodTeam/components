@@ -15,6 +15,8 @@
 | `name`           | `name`             |             | `string`  | `"photocarousel"` |
 | `options`        | `options`          |             | `any`     | `{}`              |
 | `photos`         | --                 |             | `any[]`   | `[]`              |
+| `siteId`         | `site-id`          |             | `string`  | `undefined`       |
+| `type`           | `type`             |             | `string`  | `"site"`          |
 
 
 ## Methods

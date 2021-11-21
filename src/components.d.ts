@@ -294,9 +294,11 @@ export namespace Components {
         "options": any;
         "photos": any[];
         "selectFiles": (event: any) => Promise<any>;
+        "siteId": string;
         "slideNext": () => Promise<void>;
         "slidePrev": () => Promise<void>;
         "slideTo": (slideNumber: number) => Promise<void>;
+        "type": string;
         "update": () => Promise<void>;
     }
     interface FloodteamPhotoGallery {
@@ -870,6 +872,8 @@ declare namespace LocalJSX {
         "name"?: string;
         "options"?: any;
         "photos"?: any[];
+        "siteId"?: string;
+        "type"?: string;
     }
     interface FloodteamPhotoGallery {
         "onFtOpenPhotoCarousel"?: (event: CustomEvent<any>) => void;
