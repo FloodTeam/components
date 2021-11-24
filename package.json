@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@dadesystems/dademobile": "^1.2.1",
-    "@fireenjin/components": "^1.0.10",
+    "@fireenjin/components": "^1.0.11",
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/geolocation": "^5.36.0",
     "@ionic/core": "^5.9.1",
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@fireenjin/cli": "^1.0.4",
-    "@fireenjin/docs": "^1.0.3",
+    "@fireenjin/docs": "^1.0.4",
     "@stencil/eslint-plugin": "^0.3.1",
     "@types/cleave.js": "^1.4.5",
     "@types/google.maps": "^3.47.0",
