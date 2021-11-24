@@ -12,11 +12,6 @@ export namespace Components {
         "setUsers": (users: any) => Promise<any[]>;
         "users": any[];
     }
-    interface FloodteamActivityFeed {
-        "jobId": string;
-        "siteId": string;
-        "userId": string;
-    }
     interface FloodteamBookNow {
         /**
           * The Google Maps API Key
@@ -450,12 +445,6 @@ declare global {
         prototype: HTMLFireenjinGraphPaySplitsElement;
         new (): HTMLFireenjinGraphPaySplitsElement;
     };
-    interface HTMLFloodteamActivityFeedElement extends Components.FloodteamActivityFeed, HTMLStencilElement {
-    }
-    var HTMLFloodteamActivityFeedElement: {
-        prototype: HTMLFloodteamActivityFeedElement;
-        new (): HTMLFloodteamActivityFeedElement;
-    };
     interface HTMLFloodteamBookNowElement extends Components.FloodteamBookNow, HTMLStencilElement {
     }
     var HTMLFloodteamBookNowElement: {
@@ -566,7 +555,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
-        "floodteam-activity-feed": HTMLFloodteamActivityFeedElement;
         "floodteam-book-now": HTMLFloodteamBookNowElement;
         "floodteam-checkmark": HTMLFloodteamCheckmarkElement;
         "floodteam-epay": HTMLFloodteamEpayElement;
@@ -591,12 +579,6 @@ declare namespace LocalJSX {
     interface FireenjinGraphPaySplits {
         "graphTitle"?: string;
         "users"?: any[];
-    }
-    interface FloodteamActivityFeed {
-        "jobId"?: string;
-        "onFireenjinTrigger"?: (event: CustomEvent<any>) => void;
-        "siteId"?: string;
-        "userId"?: string;
     }
     interface FloodteamBookNow {
         /**
@@ -974,7 +956,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
-        "floodteam-activity-feed": FloodteamActivityFeed;
         "floodteam-book-now": FloodteamBookNow;
         "floodteam-checkmark": FloodteamCheckmark;
         "floodteam-epay": FloodteamEpay;
@@ -1000,7 +981,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "fireenjin-graph-pay-splits": LocalJSX.FireenjinGraphPaySplits & JSXBase.HTMLAttributes<HTMLFireenjinGraphPaySplitsElement>;
-            "floodteam-activity-feed": LocalJSX.FloodteamActivityFeed & JSXBase.HTMLAttributes<HTMLFloodteamActivityFeedElement>;
             "floodteam-book-now": LocalJSX.FloodteamBookNow & JSXBase.HTMLAttributes<HTMLFloodteamBookNowElement>;
             "floodteam-checkmark": LocalJSX.FloodteamCheckmark & JSXBase.HTMLAttributes<HTMLFloodteamCheckmarkElement>;
             "floodteam-epay": LocalJSX.FloodteamEpay & JSXBase.HTMLAttributes<HTMLFloodteamEpayElement>;
