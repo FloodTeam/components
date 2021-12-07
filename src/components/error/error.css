@@ -14,6 +14,6 @@ ion-icon {
 }
 ion-label {
   padding-left: 5px;
-  font-size: 14px;
+  font-size: 0.75em;
   color: var(--ion-color-danger, red) !important;
 }

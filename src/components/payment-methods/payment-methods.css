@@ -50,7 +50,7 @@ floodteam-payment-methods #payment-type .options span:after {
   width: 100%;
   top: 35px;
   left: calc(-50% + 8px);
-  font-size: 18px;
+  font-size: 1em;
   font-family: var(--ion-font-family-secondary);
   z-index: 4;
   content: "OR";
@@ -72,7 +72,7 @@ floodteam-payment-methods #payment-type .options span:before {
 floodteam-payment-methods #payment-type .options ion-col p {
   text-align: center;
   color: var(--ion-color-medium);
-  font-size: 14px;
+  font-size: 0.75em;
   padding: 0 15px;
 }
 

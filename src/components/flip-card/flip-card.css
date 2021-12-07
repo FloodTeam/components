@@ -27,7 +27,7 @@ floodteam-flip-card .badge-top-left {
   left: 0;
   padding: 5px 10px;
   border-radius: 0 0 5px 0;
-  font-size: 12px;
+  font-size: 0.75em;
   text-transform: uppercase;
   z-index: 10;
 }

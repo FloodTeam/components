@@ -12,7 +12,7 @@ floodteam-graph-pay-splits .graph-pay-splits-wrapper {
 floodteam-graph-pay-splits h1 {
   text-align: center;
   color: var(--ion-color-success) !important;
-  font-size: 28px;
+  font-size: 2em;
   font-weight: bold;
 }
 

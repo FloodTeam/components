@@ -8,7 +8,7 @@ floodteam-floating-button ion-badge {
   margin: 0 auto;
   padding: 3px;
   display: block;
-  font-size: 12px;
+  font-size: 0.6em;
   position: absolute;
   top: 3px;
   right: 3px;
@@ -16,7 +16,6 @@ floodteam-floating-button ion-badge {
 }
 
 floodteam-floating-button ion-fab > ion-fab-button {
-  font-size: 40px;
   position: relative;
 }
 
@@ -25,5 +24,5 @@ floodteam-floating-button ion-fab > ion-fab-button ion-icon {
   display: block;
   height: 30px;
   width: 30px;
-  font-size: 30px;
+  font-size: 3em;
 }

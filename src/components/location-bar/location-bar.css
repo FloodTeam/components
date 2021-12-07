@@ -19,7 +19,7 @@ floodteam-location-bar h4 {
   text-align: right;
   color: #fff;
   font-family: var(--ion-font-family);
-  font-size: 18px;
+  font-size: 1em;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: normal;
