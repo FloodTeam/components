@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-15T20:48:40",
+  "timestamp": "2021-12-16T04:27:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -408,6 +408,23 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disableFetch",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable-fetch",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,
