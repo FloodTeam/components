@@ -83,7 +83,7 @@ export class Epay implements ComponentInterface {
   @Prop({ mutable: true }) paymentId: string;
   @Prop({ mutable: true }) paymentMethod: "card" | "check" | "manual" | "ach" = "card";
   @Prop({ mutable: true }) paymentType: "insurance" | "codeblue";
-
+  @Prop() disableFetch = false;
 
   @State() amount: number;
   @State() isSlidesHidding = false;
@@ -332,7 +332,9 @@ export class Epay implements ComponentInterface {
     if (this.showSlide) {
       this.setSlide(this.showSlide);
     }
-    this.fetchData();
+    if (!this.disableFetch) {
+      this.fetchData();
+    }
   }
 
   async fetchData() {
