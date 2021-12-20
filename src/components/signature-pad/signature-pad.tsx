@@ -326,10 +326,10 @@ export class SignaturePad {
         minWidth: this.minWidth,
         throttle: this.throttle,
         velocityFilterWeight: this.velocityFilterWeight,
-        onEnd: async () => {
-          this.value = await this.toData();
-          this.ionInput.emit();
-        },
+      });
+      this.pad.addEventListener("endStroke", async () => {
+        this.value = await this.pad.toData();
+        this.ionInput.emit();
       });
       this.resizeCanvas();
     }

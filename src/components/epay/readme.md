@@ -12,6 +12,7 @@
 | `customer`      | `customer`       |                                              | `any`                                                                        | `{}`        |
 | `dadeKey`       | `dade-key`       |                                              | `string`                                                                     | `undefined` |
 | `dadeUrl`       | `dade-url`       |                                              | `string`                                                                     | `undefined` |
+| `disableFetch`  | `disable-fetch`  |                                              | `boolean`                                                                    | `false`     |
 | `error`         | `error`          | The error message to display                 | `string`                                                                     | `undefined` |
 | `jobId`         | `job-id`         |                                              | `string`                                                                     | `undefined` |
 | `owed`          | `owed`           | The amount of money owed                     | `any`                                                                        | `0`         |

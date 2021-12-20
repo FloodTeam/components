@@ -52,6 +52,7 @@ export namespace Components {
         "customer": any;
         "dadeKey": string;
         "dadeUrl": string;
+        "disableFetch": boolean;
         /**
           * The error message to display
          */
@@ -616,6 +617,7 @@ declare namespace LocalJSX {
         "customer"?: any;
         "dadeKey"?: string;
         "dadeUrl"?: string;
+        "disableFetch"?: boolean;
         /**
           * The error message to display
          */
