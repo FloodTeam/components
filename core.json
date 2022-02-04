@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-01-17T02:35:28",
+  "timestamp": "2022-02-04T01:54:13",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.12.1",
+    "version": "2.13.0",
     "typescriptVersion": "4.3.5"
   },
   "components": [
@@ -270,8 +270,7 @@
           "ion-row",
           "ion-col",
           "fireenjin-input-state",
-          "ion-button",
-          "ion-icon"
+          "ion-button"
         ],
         "fireenjin-input-state": [
           "ion-select",
@@ -2555,8 +2554,7 @@
           "ion-row",
           "ion-col",
           "fireenjin-input-state",
-          "ion-button",
-          "ion-icon"
+          "ion-button"
         ],
         "fireenjin-input-state": [
           "ion-select",
