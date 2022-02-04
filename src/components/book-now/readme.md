@@ -79,7 +79,6 @@ graph TD;
   fireenjin-input-address --> ion-col
   fireenjin-input-address --> fireenjin-input-state
   fireenjin-input-address --> ion-button
-  fireenjin-input-address --> ion-icon
   fireenjin-input-state --> ion-select
   fireenjin-input-state --> ion-select-option
   floodteam-checkmark --> ion-icon
