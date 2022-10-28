@@ -1,5 +1,7 @@
+import { FireEnjinTriggerInput } from "@fireenjin/sdk";
 import { Color } from "@ionic/core";
 import {
+  Build,
   Component,
   ComponentInterface,
   Listen,
@@ -7,6 +9,8 @@ import {
   h,
   Host,
   Method,
+  Event,
+  EventEmitter,
 } from "@stencil/core";
 
 @Component({
@@ -16,6 +20,8 @@ import {
 export class PhotoCarousel implements ComponentInterface {
   photoSlidesEl: HTMLIonSlidesElement;
   inputPhotoEl: any;
+
+  @Event() fireenjinTrigger: EventEmitter<FireEnjinTriggerInput>;
 
   @Prop() jobId: string;
   @Prop() siteId: string;
@@ -27,6 +33,9 @@ export class PhotoCarousel implements ComponentInterface {
   @Prop() options: any = {};
   @Prop() name = "photocarousel";
   @Prop() type: string = "site";
+  @Prop() multiple = true;
+  @Prop() uploadPath: string;
+  @Prop() tags: string[] = [];
 
   @Listen("ionSlideDidChange")
   async onSlideChange() {
@@ -37,6 +46,11 @@ export class PhotoCarousel implements ComponentInterface {
   async getCurrentSlide() {
     this.currentSlide = (await this.photoSlidesEl.getActiveIndex()) + 1;
     return this.currentSlide;
+  }
+
+  @Method()
+  async getPhoto() {
+    return this.photos[this.currentSlide - 1];
   }
 
   @Method()
@@ -55,8 +69,17 @@ export class PhotoCarousel implements ComponentInterface {
   }
 
   @Method()
-  async selectFiles(event) {
-    return this.inputPhotoEl.triggerFileInput(event);
+  async selectFiles() {
+    this.fireenjinTrigger.emit({
+      name: "photos",
+      multiple: !!this.multiple,
+      payload: {
+        path: this.uploadPath || `jobs/${this.jobId}/photos`,
+        jobId: this.jobId,
+        siteId: this.siteId,
+        tags: this.tags || [],
+      },
+    });
   }
 
   @Method()
@@ -66,6 +89,7 @@ export class PhotoCarousel implements ComponentInterface {
   }
 
   componentDidLoad() {
+    if (!Build?.isBrowser) return;
     if (!this.photoSlidesEl?.getActiveIndex) {
       setTimeout(this.componentDidLoad, 200);
       return;
@@ -80,29 +104,19 @@ export class PhotoCarousel implements ComponentInterface {
   render() {
     return (
       <Host>
-        <fireenjin-input-photo
-          type={this.type}
-          name={this.name}
-          ref={(el) => (this.inputPhotoEl = el)}
-          path={`jobs/${this.jobId}/photos`}
-          documentId={this.siteId || this.jobId}
-          fileName={new Date().toISOString()}
-          multiple
-        />
         {this.photos?.length ? (
           <ion-badge color={this.badgeColor} class="photo-pagination">
             {this.currentSlide} / {this.photos.length}
           </ion-badge>
         ) : null}
         {!this.hideAddButton ? (
-          <ion-fab
-            class="select-photo"
-            onClick={(event) => this.selectFiles(event)}
+          <ion-button
+            class="select-photo ion-float-right"
+            color={this.addButtonColor}
+            onClick={() => this.selectFiles()}
           >
-            <ion-fab-button color={this.addButtonColor}>
-              <ion-icon name="add"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
+            Add
+          </ion-button>
         ) : null}
         {this.photos?.length ? (
           <ion-slides

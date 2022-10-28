@@ -1,0 +1,18 @@
+floodteam-item-job fireenjin-chip-bar {
+  padding: 3px;
+  height: 46px;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto !important;
+  white-space: nowrap;
+}
+
+floodteam-item-job fireenjin-chip-bar::-webkit-scrollbar {
+  width: 0;
+  height: 5px;
+}
+
+floodteam-item-job fireenjin-chip-bar::-webkit-scrollbar-thumb {
+  background: rgba(var(--ion-text-color-rgb), 0.6);
+  border-radius: 2px;
+}

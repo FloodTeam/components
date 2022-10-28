@@ -1,0 +1,11 @@
+floodteam-total-graph fireenjin-graph {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+}
+
+@media only screen and (max-width: 1050px ) {
+    floodteam-total-graph fireenjin-graph {
+        width: 95%;
+    }
+}

@@ -1,0 +1,31 @@
+floodteam-item-site h3,
+floodteam-item-site ion-text {
+  display: block;
+  text-indent: 10px;
+}
+
+floodteam-item-site ion-label {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
+
+floodteam-item-site ion-grid ion-chip {
+  padding: 0px 15px;
+  --background: transparent;
+  --color: var(--ion-text-color);
+  opacity: 0.5;
+}
+
+floodteam-item-site ion-chip ion-icon {
+  height: 15px;
+  width: 15px;
+  color: var(--ion-text-color);
+}
+
+floodteam-item-site ion-grid,
+floodteam-item-site ion-grid ion-row,
+floodteam-item-site ion-grid ion-row ion-col {
+  padding: 0;
+  margin: 0;
+}

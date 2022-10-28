@@ -1,4 +1,4 @@
-# floodteam-graph-pay-splits
+# fireenjin-graph-pay-splits
 
 
 
@@ -46,6 +46,7 @@ graph TD;
   fireenjin-graph-pay-splits --> ion-badge
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect
+  ion-item --> ion-note
   floodteam-error --> ion-item
   floodteam-error --> ion-icon
   floodteam-error --> ion-label

@@ -1,9 +1,8 @@
 floodteam-photo-carousel {
   display: block;
-  border: 1px solid var(--ion-color-base-dark);
   position: relative;
   margin: 0 auto;
-  border-radius: 8px !important;
+  min-height: 200px;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
@@ -22,7 +21,6 @@ floodteam-photo-carousel ion-slides::after {
     rgba(0, 0, 0, 0) 10%,
     rgba(0, 0, 0, 0.3) 80%
   );
-  border-radius: 8px 8px 0 0;
 }
 
 floodteam-photo-carousel ion-slides {
@@ -31,7 +29,6 @@ floodteam-photo-carousel ion-slides {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 8px !important;
   overflow: hidden !important;
 }
 
@@ -39,21 +36,18 @@ floodteam-photo-carousel ion-slide {
   margin: auto;
 }
 
-floodteam-photo-carousel fireenjin-input-photo {
+floodteam-photo-carousel input[type="file"] {
   height: 0px;
   width: 0px;
   visibility: hidden;
-  opacity: 0;
+  opacity: 0 !important;
   display: block;
   overflow: hidden;
+  float: left;
 }
 
 floodteam-photo-carousel floodteam-fallback {
   --floodteam-fallback-icon-size: 10vw;
-  position: absolute;
-  top: calc(50% - 60px);
-  left: 0;
-  right: 0;
 }
 
 floodteam-photo-carousel floodteam-fallback ion-icon {
@@ -70,20 +64,6 @@ floodteam-photo-carousel .photo-pagination {
   display: block;
   z-index: 2;
   padding-right: 10px;
-}
-
-floodteam-photo-carousel ion-fab.select-photo {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  z-index: 2;
-}
-
-floodteam-photo-carousel ion-fab.select-photo {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  z-index: 2;
 }
 
 @media only screen and (max-width: 500px) {

@@ -21,35 +21,28 @@
 @import "~@ionic/core/css/text-transformation.css";
 @import "~@ionic/core/css/flex-utils.css";
 
-/*
-  The CSS Variables below can be used to theme your app.
-  For more info on CSS variables check out:
-  https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
-
-  More info about color theming using Ionic:
-  https://ionicframework.com/docs/theming/color-generator
-*/
 :root {
-  --ion-color-primary: #3388bb;
-  --ion-color-primary-rgb: 51, 136, 187;
+  --ion-color-primary: #2473bb;
+  --ion-color-primary-rgb: 36, 115, 187;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #2d78a5;
-  --ion-color-primary-tint: #4794c2;
+  --ion-color-primary-shade: #2065a5;
+  --ion-color-primary-tint: #3a81c2;
 
-  --ion-color-secondary: #54b6e7;
-  --ion-color-secondary-rgb: 84, 182, 231;
-  --ion-color-secondary-contrast: #000000;
-  --ion-color-secondary-contrast-rgb: 0, 0, 0;
-  --ion-color-secondary-shade: #4aa0cb;
-  --ion-color-secondary-tint: #65bde9;
+  --ion-color-secondary: #1e3955;
+  --ion-color-secondary-rgb: 30, 57, 85;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #1a324b;
+  --ion-color-secondary-tint: #354d66;
 
-  --ion-color-tertiary: #1e3955;
-  --ion-color-tertiary-rgb: 30, 57, 85;
+  --ion-color-tertiary: #54b6e7;
+  --ion-color-tertiary-rgb: 84, 182, 231;
   --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #1a324b;
-  --ion-color-tertiary-tint: #354d66;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #4aa0cb;
+  --ion-color-tertiary-tint: #65bde9;
+
   --ion-color-success: #79c79d;
   --ion-color-success-rgb: 121, 199, 157;
   --ion-color-success-contrast: #000000;
@@ -70,6 +63,7 @@
   --ion-color-danger-contrast-rgb: 255, 255, 255;
   --ion-color-danger-shade: #c13353;
   --ion-color-danger-tint: #df4e6e;
+
   --ion-color-dark: #08141c;
   --ion-color-dark-rgb: 8, 20, 28;
   --ion-color-dark-contrast: #ffffff;
@@ -77,74 +71,42 @@
   --ion-color-dark-shade: #071219;
   --ion-color-dark-tint: #212c33;
 
-  --ion-color-medium: #f5f6f6;
-  --ion-color-medium-rgb: 245, 246, 246;
+  --ion-color-medium: #d8d8d8;
+  --ion-color-medium-rgb: 190, 190, 190;
   --ion-color-medium-contrast: #000000;
   --ion-color-medium-contrast-rgb: 0, 0, 0;
-  --ion-color-medium-shade: #d8d8d8;
-  --ion-color-medium-tint: #f6f7f7;
+  --ion-color-medium-shade: #bebebe;
+  --ion-color-medium-tint: #dcdcdc;
 
-  --ion-color-light: #ffffff;
-  --ion-color-light-rgb: 255, 255, 255;
+  --ion-color-light: #f6f6f6;
+  --ion-color-light-rgb: 248, 248, 248;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
-  --ion-color-light-shade: #e0e0e0;
-  --ion-color-light-tint: #ffffff;
+  --ion-color-light-shade: #d8d8d8;
+  --ion-color-light-tint: #f7f7f7;
 
-  --ion-font-family: "Work Sans", sans-serif;
-  --ion-font-family-secondary: "Rubik", sans-serif;
+  --ion-font-family: myriad-pro, Helvetica, sans-serif;
+  --ion-font-family-secondary: "Fjalla One", Verdana, sans-serif;
 
   --ion-icon-checkmark: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjNjVjYzk2IiBkPSJNMjU2IDQ4QzE0MS42IDQ4IDQ4IDE0MS42IDQ4IDI1NnM5My42IDIwOCAyMDggMjA4IDIwOC05My42IDIwOC0yMDhTMzcwLjQgNDggMjU2IDQ4em0tNDIuNyAzMTguOUwxMDYuNyAyNjAuM2wyOS45LTI5LjkgNzYuOCA3Ni44IDE2Mi4xLTE2Mi4xIDI5LjkgMjkuOS0xOTIuMSAxOTEuOXoiLz48L3N2Zz4=);
-}
-
-ion-icon.ft-icon-style {
-  color: var(--ft-icon-primary, var(--ion-color-secondary));
-  padding: 7px;
-  position: relative;
-}
-ion-icon.ft-icon-style:after {
-  border: 1px solid var(--ion-color-light-shade);
-  border-bottom-color: var(--ft-icon-primary, var(--ion-color-secondary));
-  border-right-color: var(--ft-icon-primary, var(--ion-color-secondary));
-  transform: rotate(45deg);
-  border-radius: 100%;
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-/*
-  Contextual Loader
-*/
-.is-loading {
-  position: relative;
-  pointer-events: none;
-}
-.is-loading:before {
-  transition: all 400ms ease;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.6);
-  z-index: 99;
-}
-.is-loading:after {
-  display: block;
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  content: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDApOyBkaXNwbGF5OiBibG9jazsiIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2VhN2RlIiBzdHJva2Utd2lkdGg9IjIiPgogIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjIuMTI3NjU5NTc0NDY4MDg1cyIgdmFsdWVzPSIwOzQwIiBrZXlUaW1lcz0iMDsxIiBrZXlTcGxpbmVzPSIwIDAuMiAwLjggMSIgY2FsY01vZGU9InNwbGluZSIgYmVnaW49IjBzIj48L2FuaW1hdGU+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGR1cj0iMi4xMjc2NTk1NzQ0NjgwODVzIiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIga2V5U3BsaW5lcz0iMC4yIDAgMC44IDEiIGNhbGNNb2RlPSJzcGxpbmUiIGJlZ2luPSIwcyI+PC9hbmltYXRlPgo8L2NpcmNsZT48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzg4YmIiIHN0cm9rZS13aWR0aD0iMiI+CiAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGR1cj0iMi4xMjc2NTk1NzQ0NjgwODVzIiB2YWx1ZXM9IjA7NDAiIGtleVRpbWVzPSIwOzEiIGtleVNwbGluZXM9IjAgMC4yIDAuOCAxIiBjYWxjTW9kZT0ic3BsaW5lIiBiZWdpbj0iLTEuMDYzODI5Nzg3MjM0MDQyNXMiPjwvYW5pbWF0ZT4KICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIyLjEyNzY1OTU3NDQ2ODA4NXMiIHZhbHVlcz0iMTswIiBrZXlUaW1lcz0iMDsxIiBrZXlTcGxpbmVzPSIwLjIgMCAwLjggMSIgY2FsY01vZGU9InNwbGluZSIgYmVnaW49Ii0xLjA2MzgyOTc4NzIzNDA0MjVzIj48L2FuaW1hdGU+CjwvY2lyY2xlPgo8L3N2Zz4=);
-  top: 50%;
-  left: 50%;
-  margin-left: -100px;
-  margin-top: -100px;
-  z-index: 100;
-  pointer-events: none;
+  --ion-border-color: var(--ion-color-base-dark);
+  --ion-color-step-50: #f2f2f2;
+  --ion-color-step-100: #e6e6e6;
+  --ion-color-step-150: #d9d9d9;
+  --ion-color-step-200: #cccccc;
+  --ion-color-step-250: #bfbfbf;
+  --ion-color-step-300: #b3b3b3;
+  --ion-color-step-350: #a6a6a6;
+  --ion-color-step-400: #999999;
+  --ion-color-step-450: #8c8c8c;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #737373;
+  --ion-color-step-600: #666666;
+  --ion-color-step-650: #595959;
+  --ion-color-step-700: #4d4d4d;
+  --ion-color-step-750: #404040;
+  --ion-color-step-800: #333333;
+  --ion-color-step-850: #262626;
+  --ion-color-step-900: #191919;
+  --ion-color-step-950: #0d0d0d;
 }

@@ -37,10 +37,6 @@ Type: `Promise<void>`
 
 ## Dependencies
 
-### Used by
-
- - [floodteam-pay-check](../pay-check)
-
 ### Depends on
 
 - ion-icon
@@ -49,7 +45,6 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   floodteam-flip-card --> ion-icon
-  floodteam-pay-check --> floodteam-flip-card
   style floodteam-flip-card fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,3 +1,4 @@
+import { FireEnjinSubmitEvent, FireEnjinFetchEvent } from "@fireenjin/sdk";
 import {
   Component,
   ComponentInterface,
@@ -29,7 +30,8 @@ export class PaymentMethods implements ComponentInterface {
     autoplay: false,
   };
 
-  @Event() ftRemovePaymentMethod: EventEmitter;
+  @Event() fireenjinSubmit: EventEmitter<FireEnjinSubmitEvent>;
+  @Event() fireenjinFetch: EventEmitter<FireEnjinFetchEvent>;
 
   @Prop() stripeKey: string;
   @Prop() cardName: string;
@@ -37,6 +39,8 @@ export class PaymentMethods implements ComponentInterface {
   @Prop() userId: string;
   @Prop() payType: "card" | "checking" = "card";
   @Prop() methods: any[];
+  @Prop() googleMapsKey: string;
+  @Prop() sessionId: string;
 
   @State() errors: string[] = [];
   @State() currentSlideIndex = 0;
@@ -60,10 +64,10 @@ export class PaymentMethods implements ComponentInterface {
     if (
       event.detail.endpoint === "cardForm" ||
       event.target.name === "bankingForm" ||
-      event.detail.endpoint === "addPaymentMethod"
-    ) {
+      event.detail.endpoint === "addPaymentMethod" ||
+      event.detail.endpoint === "removePaymentMethod"
+    )
       return false;
-    }
     this.next();
   }
 
@@ -83,6 +87,13 @@ export class PaymentMethods implements ComponentInterface {
         this.checkmarkEl.animating = true;
       }, 500);
       this.next();
+      this.fireenjinFetch.emit({
+        endpoint: "listPaymentMethods",
+      });
+    } else if (event.detail.endpoint === "removePaymentMethod") {
+      this.fireenjinFetch.emit({
+        endpoint: "listPaymentMethods",
+      });
     }
   }
 
@@ -107,7 +118,14 @@ export class PaymentMethods implements ComponentInterface {
 
     data.userId = this.userId;
 
-    return data;
+    return {
+      userId: this.userId,
+      type: data?.type || "card",
+      accountNumber: data?.accountNumber || null,
+      routingNumber: data?.routingNumber || null,
+      token: data?.token || null,
+      address: data?.address || null,
+    };
   }
 
   async next() {
@@ -118,10 +136,16 @@ export class PaymentMethods implements ComponentInterface {
     this.sliderEl.slidePrev();
   }
 
-  async removePaymentMethod(id: string) {
+  async removePaymentMethod(event, id: string) {
+    event.preventDefault();
+    event.stopPropagation();
     if (confirm("Are you sure you wish to delete this payment method?")) {
-      this.ftRemovePaymentMethod.emit({
-        id,
+      this.fireenjinSubmit.emit({
+        endpoint: "removePaymentMethod",
+        data: {
+          userId: this.sessionId,
+          id,
+        },
       });
     }
   }
@@ -159,7 +183,9 @@ export class PaymentMethods implements ComponentInterface {
                         color="danger"
                         fill="clear"
                         slot="end"
-                        onClick={() => this.removePaymentMethod(method.id)}
+                        onClick={(event) =>
+                          this.removePaymentMethod(event, method.id)
+                        }
                       >
                         <ion-label>Remove</ion-label>
                         <ion-icon slot="end" name="close-circle" />
@@ -248,7 +274,6 @@ export class PaymentMethods implements ComponentInterface {
                   resetButtonColor="medium"
                   endpoint="addPaymentMethod"
                   beforeSubmit={(data) => this.onBeforeSubmit(data)}
-                  excludeData={["card", "cardName"]}
                 >
                   <ion-list>
                     <fireenjin-input
@@ -268,9 +293,9 @@ export class PaymentMethods implements ComponentInterface {
                           base: {
                             color:
                               window &&
-                                window.matchMedia &&
-                                window.matchMedia("(prefers-color-scheme: dark)")
-                                  .matches
+                              window.matchMedia &&
+                              window.matchMedia("(prefers-color-scheme: dark)")
+                                .matches
                                 ? "#ffffff"
                                 : "#000000",
                             fontFamily: '"Work Sans", sans-serif',
@@ -280,10 +305,10 @@ export class PaymentMethods implements ComponentInterface {
                               fontWeight: "400",
                               color:
                                 window &&
-                                  window.matchMedia &&
-                                  window.matchMedia(
-                                    "(prefers-color-scheme: dark)"
-                                  ).matches
+                                window.matchMedia &&
+                                window.matchMedia(
+                                  "(prefers-color-scheme: dark)"
+                                ).matches
                                   ? "#8d9ba9"
                                   : "#acadad",
                             },
@@ -306,6 +331,7 @@ export class PaymentMethods implements ComponentInterface {
                     />
                     <fireenjin-input-address
                       ref={(el) => (this.addressInputEl = el)}
+                      googleMapsKey={this.googleMapsKey}
                       placeholder="Billing Address"
                       name="address"
                       value={this.address}
@@ -354,8 +380,8 @@ export class PaymentMethods implements ComponentInterface {
                     </ion-label>
                   </ion-col>
                   <ion-col class="dashboard-button">
-                    <ion-button href="/dashboard">
-                      Go to Dashboard
+                    <ion-button onClick={() => this.sliderEl.slideTo(0)}>
+                      Done
                     </ion-button>
                   </ion-col>
                 </ion-row>

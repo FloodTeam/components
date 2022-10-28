@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { FireEnjinFetchEvent, FireEnjinSubmitEvent, FireEnjinTriggerInput } from "@fireenjin/sdk";
 import { Color } from "@ionic/core";
 export namespace Components {
     interface FireenjinGraphPaySplits {
@@ -16,7 +17,7 @@ export namespace Components {
         /**
           * The Google Maps API Key
          */
-        "googleMapsKey": string;
+        "googleMapsKey": any;
         /**
           * The ID of the location
          */
@@ -57,6 +58,7 @@ export namespace Components {
           * The error message to display
          */
         "error": string;
+        "job": any;
         "jobId": string;
         /**
           * The amount of money owed
@@ -184,64 +186,53 @@ export namespace Components {
         "frontImage": string;
         "hideRefresh": boolean;
     }
-    interface FloodteamFloatingButton {
-        /**
-          * The content of the badge
-         */
-        "badge"?: string;
-        /**
-          * The color of the badge to display
-         */
-        "badgeColor"?: Color;
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList": {
-    /**
-     * The label to show next to the button
-     */
-    label: string;
-    /**
-     * The icon to use in the button
-     */
-    icon: string;
-    /**
-     * The color from the theme to make the button
-     */
-    color?: Color;
-    /**
-     * The link to use for the button
-     */
-    href?: string;
-    /**
-     * The functionality to run when the button is clicked
-     */
-    onClick?: (event: any) => any;
-  }[];
-        /**
-          * The color of the button
-         */
-        "color": Color;
-        /**
-          * The horizontal position of the button
-         */
-        "horizontal": "end" | "start" | "center";
-        /**
-          * The side the list should display
-         */
-        "listSide": "end" | "start" | "top" | "bottom";
-        /**
-          * The icon to use on the material button when it's closed
-         */
-        "openIcon": string;
-        /**
-          * The url to link the material button to
-         */
-        "url": string;
-        /**
-          * The vertical position of the button
-         */
-        "vertical": "center" | "top" | "bottom";
+    interface FloodteamInputMaterial {
+        "label": string;
+        "labelPosition": "stacked" | "fixed" | "floating";
+        "list": string;
+        "multiple": boolean;
+        "name": string;
+        "options": { label: string; value: any }[];
+        "placeholder": string;
+        "value": any;
+    }
+    interface FloodteamInputRoom {
+        "label": string;
+        "labelPosition": "stacked" | "fixed" | "floating";
+        "list": string;
+        "multiple": boolean;
+        "name": string;
+        "options"?: { label: string; value: any }[];
+        "placeholder": string;
+        "required": boolean;
+        "value": any;
+    }
+    interface FloodteamInputTotallerType {
+        "label": string;
+        "labelPosition": "stacked" | "fixed" | "floating";
+        "list": string;
+        "name": string;
+        "options"?: { label: string; value: any }[];
+        "placeholder": string;
+        "required": boolean;
+        "value": any;
+    }
+    interface FloodteamItemJob {
+        "isAdmin": boolean;
+        "job": any;
+        "lines"?: "none" | "inset" | "full";
+    }
+    interface FloodteamItemSite {
+        "detail": boolean;
+        "disabled": boolean;
+        "href"?: string;
+        "site": any;
+    }
+    interface FloodteamItemUser {
+        "disabled": boolean;
+        "jobId": string;
+        "role": string;
+        "user": any;
     }
     interface FloodteamJobProgress {
         "color": Color;
@@ -254,28 +245,38 @@ export namespace Components {
         "algoliaAppId": string;
         "algoliaIndex": string;
         "algoliaSearchKey": string;
-        "query": string;
+        "findLocation": (id: string) => Promise<{ objectID?: string; name?: string; path?: string; id?: string; email?: string; phone?: string; type?: string; address?: any; isSearchable?: boolean; createdAt?: number; updatedAt?: number; _geoloc?: { lat: string; lng: string; }; taxId?: string; lastModified?: number; }>;
+        "locationId": string;
+        "query": any;
+        "search": (query: any, options: any) => Promise<any>;
     }
-    interface FloodteamPayCard {
-        "stripeKey": string;
-        "stripeStyle": any;
+    interface FloodteamNavigationFooter {
     }
-    interface FloodteamPayCheck {
-        "amount": number;
-        "apiKey": string;
-        "confirmPayment": (options?: {}) => Promise<any>;
-        "flipCard": () => Promise<void>;
-        "loading": boolean;
-        "openCamera": () => Promise<void>;
-        "paymentId": string;
-        "url": string;
+    interface FloodteamNavigationHeader {
+        "isLoggedIn": boolean;
+        "navigationView": string;
+    }
+    interface FloodteamNavigationMenu {
+        "feedFetchData": any;
+        "isAdmin": boolean;
+        "isInternalTeam": boolean;
+        "isLoggedIn": boolean;
+        "jobId": string;
+        "locationId": string;
+        "locations": any[];
+        "navigationView": string;
+        "pins": any[];
+        "profile": any;
+        "templates": any[];
         "userId": string;
     }
     interface FloodteamPaymentMethods {
         "address": any;
         "cardName": string;
+        "googleMapsKey": string;
         "methods": any[];
         "payType": "card" | "checking";
+        "sessionId": string;
         "stripeKey": string;
         "userId": string;
     }
@@ -284,48 +285,76 @@ export namespace Components {
         "badgeColor": Color;
         "currentSlide": number;
         "getCurrentSlide": () => Promise<number>;
+        "getPhoto": () => Promise<any>;
         "hideAddButton": boolean;
         "jobId": string;
+        "multiple": boolean;
         "name": string;
         "options": any;
         "photos": any[];
-        "selectFiles": (event: any) => Promise<any>;
+        "selectFiles": () => Promise<void>;
         "siteId": string;
         "slideNext": () => Promise<void>;
         "slidePrev": () => Promise<void>;
         "slideTo": (slideNumber: number) => Promise<void>;
+        "tags": string[];
         "type": string;
         "update": () => Promise<void>;
+        "uploadPath": string;
+    }
+    interface FloodteamPhotoCropper {
+        "aspectRatio": number;
+        "getCroppedCanvas": (options: any) => Promise<any>;
+        "getImageData": (type?: string, quality?: number) => Promise<any>;
+        "replace": (src: string, hasSameSize?: boolean) => Promise<any>;
+        "reset": () => Promise<any>;
+        "setAspectRatio": (aspectRatio: number) => Promise<void>;
+        "src": string;
     }
     interface FloodteamPhotoGallery {
         "photos": string[];
     }
-    interface FloodteamPopoverControls {
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList": {
-        /**
-         * The label to show next to the button
-         */
-        label: string;
-        /**
-         * The icon to use in the button
-         */
-        icon: string;
-        /**
-         * The color from the theme to make the button
-         */
-        color?: Color;
-        /**
-         * The link to use for the button
-         */
-        href?: string;
-        /**
-         * The functionality to run when the button is clicked
-         */
-        onClick?: (event: any) => any;
-    }[];
+    interface FloodteamPinBar {
+        "pins": any[];
+        "profile": any;
+        "reorder": boolean;
+    }
+    interface FloodteamSelectJobServiceTypes {
+        "disabled": boolean;
+        "icon": string;
+        "jobId": string;
+        "locationId": string;
+        "name": string;
+        "value": string[];
+    }
+    interface FloodteamSelectLocation {
+        "disabled": boolean;
+        "jobId": string;
+        "locations": any[];
+        "name": string;
+        "value": string;
+    }
+    interface FloodteamSelectLostReason {
+        "disabled": boolean;
+        "jobId": string;
+        "name": string;
+        "value": string;
+    }
+    interface FloodteamSelectRole {
+        "disabled": boolean;
+        "jobId": string;
+        "name": string;
+        "userId": string;
+        "value": string;
+    }
+    interface FloodteamSelectStatus {
+        "disabled": boolean;
+        "jobId": string;
+        "name": string;
+        "value": string;
+    }
+    interface FloodteamServiceCard {
+        "src": string;
     }
     interface FloodteamSignaturePad {
         /**
@@ -438,6 +467,152 @@ export namespace Components {
         "href": string;
         "photo": string;
     }
+    interface FloodteamTemplate {
+        "allowFullscreen": boolean;
+        "data": any;
+        "disableFrame": boolean;
+        "disablePosition": boolean;
+        "helpers": any;
+        "partials": any[];
+        "rawHtml": string;
+        "resize": boolean;
+        "template": any;
+        "templateId": string;
+        "zoom": number;
+    }
+    interface FloodteamTitleBar {
+        "back"?: string;
+        "disableUnderline"?: boolean;
+        "heading"?: number;
+        "icon"?: string;
+        "pin"?: any;
+        "pins": any[];
+    }
+    interface FloodteamTotalGraph {
+        "dataSets": any[];
+        "groupBy": string;
+        "labels": string[];
+        "totaller": any;
+        "totallerId": string;
+        "type": "bar" | "line" | "pie";
+    }
+    interface FloodteamTotallerCardList {
+        "groupBy": string;
+        "label": string;
+        "timeframe": Date;
+        "totallerIds": any[];
+    }
+    interface FloodteamTotallerCards {
+        "totallerId": string;
+        "totals": { [sumName: string]: any };
+    }
+    interface FloodteamWaves {
+        "color": string;
+        "dip": string;
+        "moving": boolean;
+        "size": string;
+        "speed": string;
+    }
+}
+export interface FloodteamEpayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamEpayElement;
+}
+export interface FloodteamFeedCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamFeedCardElement;
+}
+export interface FloodteamFlipCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamFlipCardElement;
+}
+export interface FloodteamInputMaterialCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamInputMaterialElement;
+}
+export interface FloodteamInputRoomCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamInputRoomElement;
+}
+export interface FloodteamInputTotallerTypeCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamInputTotallerTypeElement;
+}
+export interface FloodteamItemSiteCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamItemSiteElement;
+}
+export interface FloodteamItemUserCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamItemUserElement;
+}
+export interface FloodteamNavigationHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamNavigationHeaderElement;
+}
+export interface FloodteamNavigationMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamNavigationMenuElement;
+}
+export interface FloodteamPaymentMethodsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamPaymentMethodsElement;
+}
+export interface FloodteamPhotoCarouselCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamPhotoCarouselElement;
+}
+export interface FloodteamPhotoGalleryCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamPhotoGalleryElement;
+}
+export interface FloodteamPinBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamPinBarElement;
+}
+export interface FloodteamSelectJobServiceTypesCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSelectJobServiceTypesElement;
+}
+export interface FloodteamSelectLocationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSelectLocationElement;
+}
+export interface FloodteamSelectLostReasonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSelectLostReasonElement;
+}
+export interface FloodteamSelectRoleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSelectRoleElement;
+}
+export interface FloodteamSelectStatusCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSelectStatusElement;
+}
+export interface FloodteamSignaturePadCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSignaturePadElement;
+}
+export interface FloodteamSnapshotCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamSnapshotCardElement;
+}
+export interface FloodteamTitleBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamTitleBarElement;
+}
+export interface FloodteamTotalGraphCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamTotalGraphElement;
+}
+export interface FloodteamTotallerCardListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamTotallerCardListElement;
+}
+export interface FloodteamTotallerCardsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamTotallerCardsElement;
 }
 declare global {
     interface HTMLFireenjinGraphPaySplitsElement extends Components.FireenjinGraphPaySplits, HTMLStencilElement {
@@ -488,11 +663,41 @@ declare global {
         prototype: HTMLFloodteamFlipCardElement;
         new (): HTMLFloodteamFlipCardElement;
     };
-    interface HTMLFloodteamFloatingButtonElement extends Components.FloodteamFloatingButton, HTMLStencilElement {
+    interface HTMLFloodteamInputMaterialElement extends Components.FloodteamInputMaterial, HTMLStencilElement {
     }
-    var HTMLFloodteamFloatingButtonElement: {
-        prototype: HTMLFloodteamFloatingButtonElement;
-        new (): HTMLFloodteamFloatingButtonElement;
+    var HTMLFloodteamInputMaterialElement: {
+        prototype: HTMLFloodteamInputMaterialElement;
+        new (): HTMLFloodteamInputMaterialElement;
+    };
+    interface HTMLFloodteamInputRoomElement extends Components.FloodteamInputRoom, HTMLStencilElement {
+    }
+    var HTMLFloodteamInputRoomElement: {
+        prototype: HTMLFloodteamInputRoomElement;
+        new (): HTMLFloodteamInputRoomElement;
+    };
+    interface HTMLFloodteamInputTotallerTypeElement extends Components.FloodteamInputTotallerType, HTMLStencilElement {
+    }
+    var HTMLFloodteamInputTotallerTypeElement: {
+        prototype: HTMLFloodteamInputTotallerTypeElement;
+        new (): HTMLFloodteamInputTotallerTypeElement;
+    };
+    interface HTMLFloodteamItemJobElement extends Components.FloodteamItemJob, HTMLStencilElement {
+    }
+    var HTMLFloodteamItemJobElement: {
+        prototype: HTMLFloodteamItemJobElement;
+        new (): HTMLFloodteamItemJobElement;
+    };
+    interface HTMLFloodteamItemSiteElement extends Components.FloodteamItemSite, HTMLStencilElement {
+    }
+    var HTMLFloodteamItemSiteElement: {
+        prototype: HTMLFloodteamItemSiteElement;
+        new (): HTMLFloodteamItemSiteElement;
+    };
+    interface HTMLFloodteamItemUserElement extends Components.FloodteamItemUser, HTMLStencilElement {
+    }
+    var HTMLFloodteamItemUserElement: {
+        prototype: HTMLFloodteamItemUserElement;
+        new (): HTMLFloodteamItemUserElement;
     };
     interface HTMLFloodteamJobProgressElement extends Components.FloodteamJobProgress, HTMLStencilElement {
     }
@@ -506,17 +711,23 @@ declare global {
         prototype: HTMLFloodteamLocationBarElement;
         new (): HTMLFloodteamLocationBarElement;
     };
-    interface HTMLFloodteamPayCardElement extends Components.FloodteamPayCard, HTMLStencilElement {
+    interface HTMLFloodteamNavigationFooterElement extends Components.FloodteamNavigationFooter, HTMLStencilElement {
     }
-    var HTMLFloodteamPayCardElement: {
-        prototype: HTMLFloodteamPayCardElement;
-        new (): HTMLFloodteamPayCardElement;
+    var HTMLFloodteamNavigationFooterElement: {
+        prototype: HTMLFloodteamNavigationFooterElement;
+        new (): HTMLFloodteamNavigationFooterElement;
     };
-    interface HTMLFloodteamPayCheckElement extends Components.FloodteamPayCheck, HTMLStencilElement {
+    interface HTMLFloodteamNavigationHeaderElement extends Components.FloodteamNavigationHeader, HTMLStencilElement {
     }
-    var HTMLFloodteamPayCheckElement: {
-        prototype: HTMLFloodteamPayCheckElement;
-        new (): HTMLFloodteamPayCheckElement;
+    var HTMLFloodteamNavigationHeaderElement: {
+        prototype: HTMLFloodteamNavigationHeaderElement;
+        new (): HTMLFloodteamNavigationHeaderElement;
+    };
+    interface HTMLFloodteamNavigationMenuElement extends Components.FloodteamNavigationMenu, HTMLStencilElement {
+    }
+    var HTMLFloodteamNavigationMenuElement: {
+        prototype: HTMLFloodteamNavigationMenuElement;
+        new (): HTMLFloodteamNavigationMenuElement;
     };
     interface HTMLFloodteamPaymentMethodsElement extends Components.FloodteamPaymentMethods, HTMLStencilElement {
     }
@@ -530,17 +741,59 @@ declare global {
         prototype: HTMLFloodteamPhotoCarouselElement;
         new (): HTMLFloodteamPhotoCarouselElement;
     };
+    interface HTMLFloodteamPhotoCropperElement extends Components.FloodteamPhotoCropper, HTMLStencilElement {
+    }
+    var HTMLFloodteamPhotoCropperElement: {
+        prototype: HTMLFloodteamPhotoCropperElement;
+        new (): HTMLFloodteamPhotoCropperElement;
+    };
     interface HTMLFloodteamPhotoGalleryElement extends Components.FloodteamPhotoGallery, HTMLStencilElement {
     }
     var HTMLFloodteamPhotoGalleryElement: {
         prototype: HTMLFloodteamPhotoGalleryElement;
         new (): HTMLFloodteamPhotoGalleryElement;
     };
-    interface HTMLFloodteamPopoverControlsElement extends Components.FloodteamPopoverControls, HTMLStencilElement {
+    interface HTMLFloodteamPinBarElement extends Components.FloodteamPinBar, HTMLStencilElement {
     }
-    var HTMLFloodteamPopoverControlsElement: {
-        prototype: HTMLFloodteamPopoverControlsElement;
-        new (): HTMLFloodteamPopoverControlsElement;
+    var HTMLFloodteamPinBarElement: {
+        prototype: HTMLFloodteamPinBarElement;
+        new (): HTMLFloodteamPinBarElement;
+    };
+    interface HTMLFloodteamSelectJobServiceTypesElement extends Components.FloodteamSelectJobServiceTypes, HTMLStencilElement {
+    }
+    var HTMLFloodteamSelectJobServiceTypesElement: {
+        prototype: HTMLFloodteamSelectJobServiceTypesElement;
+        new (): HTMLFloodteamSelectJobServiceTypesElement;
+    };
+    interface HTMLFloodteamSelectLocationElement extends Components.FloodteamSelectLocation, HTMLStencilElement {
+    }
+    var HTMLFloodteamSelectLocationElement: {
+        prototype: HTMLFloodteamSelectLocationElement;
+        new (): HTMLFloodteamSelectLocationElement;
+    };
+    interface HTMLFloodteamSelectLostReasonElement extends Components.FloodteamSelectLostReason, HTMLStencilElement {
+    }
+    var HTMLFloodteamSelectLostReasonElement: {
+        prototype: HTMLFloodteamSelectLostReasonElement;
+        new (): HTMLFloodteamSelectLostReasonElement;
+    };
+    interface HTMLFloodteamSelectRoleElement extends Components.FloodteamSelectRole, HTMLStencilElement {
+    }
+    var HTMLFloodteamSelectRoleElement: {
+        prototype: HTMLFloodteamSelectRoleElement;
+        new (): HTMLFloodteamSelectRoleElement;
+    };
+    interface HTMLFloodteamSelectStatusElement extends Components.FloodteamSelectStatus, HTMLStencilElement {
+    }
+    var HTMLFloodteamSelectStatusElement: {
+        prototype: HTMLFloodteamSelectStatusElement;
+        new (): HTMLFloodteamSelectStatusElement;
+    };
+    interface HTMLFloodteamServiceCardElement extends Components.FloodteamServiceCard, HTMLStencilElement {
+    }
+    var HTMLFloodteamServiceCardElement: {
+        prototype: HTMLFloodteamServiceCardElement;
+        new (): HTMLFloodteamServiceCardElement;
     };
     interface HTMLFloodteamSignaturePadElement extends Components.FloodteamSignaturePad, HTMLStencilElement {
     }
@@ -554,6 +807,42 @@ declare global {
         prototype: HTMLFloodteamSnapshotCardElement;
         new (): HTMLFloodteamSnapshotCardElement;
     };
+    interface HTMLFloodteamTemplateElement extends Components.FloodteamTemplate, HTMLStencilElement {
+    }
+    var HTMLFloodteamTemplateElement: {
+        prototype: HTMLFloodteamTemplateElement;
+        new (): HTMLFloodteamTemplateElement;
+    };
+    interface HTMLFloodteamTitleBarElement extends Components.FloodteamTitleBar, HTMLStencilElement {
+    }
+    var HTMLFloodteamTitleBarElement: {
+        prototype: HTMLFloodteamTitleBarElement;
+        new (): HTMLFloodteamTitleBarElement;
+    };
+    interface HTMLFloodteamTotalGraphElement extends Components.FloodteamTotalGraph, HTMLStencilElement {
+    }
+    var HTMLFloodteamTotalGraphElement: {
+        prototype: HTMLFloodteamTotalGraphElement;
+        new (): HTMLFloodteamTotalGraphElement;
+    };
+    interface HTMLFloodteamTotallerCardListElement extends Components.FloodteamTotallerCardList, HTMLStencilElement {
+    }
+    var HTMLFloodteamTotallerCardListElement: {
+        prototype: HTMLFloodteamTotallerCardListElement;
+        new (): HTMLFloodteamTotallerCardListElement;
+    };
+    interface HTMLFloodteamTotallerCardsElement extends Components.FloodteamTotallerCards, HTMLStencilElement {
+    }
+    var HTMLFloodteamTotallerCardsElement: {
+        prototype: HTMLFloodteamTotallerCardsElement;
+        new (): HTMLFloodteamTotallerCardsElement;
+    };
+    interface HTMLFloodteamWavesElement extends Components.FloodteamWaves, HTMLStencilElement {
+    }
+    var HTMLFloodteamWavesElement: {
+        prototype: HTMLFloodteamWavesElement;
+        new (): HTMLFloodteamWavesElement;
+    };
     interface HTMLElementTagNameMap {
         "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
         "floodteam-book-now": HTMLFloodteamBookNowElement;
@@ -563,17 +852,36 @@ declare global {
         "floodteam-fallback": HTMLFloodteamFallbackElement;
         "floodteam-feed-card": HTMLFloodteamFeedCardElement;
         "floodteam-flip-card": HTMLFloodteamFlipCardElement;
-        "floodteam-floating-button": HTMLFloodteamFloatingButtonElement;
+        "floodteam-input-material": HTMLFloodteamInputMaterialElement;
+        "floodteam-input-room": HTMLFloodteamInputRoomElement;
+        "floodteam-input-totaller-type": HTMLFloodteamInputTotallerTypeElement;
+        "floodteam-item-job": HTMLFloodteamItemJobElement;
+        "floodteam-item-site": HTMLFloodteamItemSiteElement;
+        "floodteam-item-user": HTMLFloodteamItemUserElement;
         "floodteam-job-progress": HTMLFloodteamJobProgressElement;
         "floodteam-location-bar": HTMLFloodteamLocationBarElement;
-        "floodteam-pay-card": HTMLFloodteamPayCardElement;
-        "floodteam-pay-check": HTMLFloodteamPayCheckElement;
+        "floodteam-navigation-footer": HTMLFloodteamNavigationFooterElement;
+        "floodteam-navigation-header": HTMLFloodteamNavigationHeaderElement;
+        "floodteam-navigation-menu": HTMLFloodteamNavigationMenuElement;
         "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
         "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
+        "floodteam-photo-cropper": HTMLFloodteamPhotoCropperElement;
         "floodteam-photo-gallery": HTMLFloodteamPhotoGalleryElement;
-        "floodteam-popover-controls": HTMLFloodteamPopoverControlsElement;
+        "floodteam-pin-bar": HTMLFloodteamPinBarElement;
+        "floodteam-select-job-service-types": HTMLFloodteamSelectJobServiceTypesElement;
+        "floodteam-select-location": HTMLFloodteamSelectLocationElement;
+        "floodteam-select-lost-reason": HTMLFloodteamSelectLostReasonElement;
+        "floodteam-select-role": HTMLFloodteamSelectRoleElement;
+        "floodteam-select-status": HTMLFloodteamSelectStatusElement;
+        "floodteam-service-card": HTMLFloodteamServiceCardElement;
         "floodteam-signature-pad": HTMLFloodteamSignaturePadElement;
         "floodteam-snapshot-card": HTMLFloodteamSnapshotCardElement;
+        "floodteam-template": HTMLFloodteamTemplateElement;
+        "floodteam-title-bar": HTMLFloodteamTitleBarElement;
+        "floodteam-total-graph": HTMLFloodteamTotalGraphElement;
+        "floodteam-totaller-card-list": HTMLFloodteamTotallerCardListElement;
+        "floodteam-totaller-cards": HTMLFloodteamTotallerCardsElement;
+        "floodteam-waves": HTMLFloodteamWavesElement;
     }
 }
 declare namespace LocalJSX {
@@ -585,7 +893,7 @@ declare namespace LocalJSX {
         /**
           * The Google Maps API Key
          */
-        "googleMapsKey"?: string;
+        "googleMapsKey"?: any;
         /**
           * The ID of the location
          */
@@ -622,10 +930,11 @@ declare namespace LocalJSX {
           * The error message to display
          */
         "error"?: string;
+        "job"?: any;
         "jobId"?: string;
-        "onFireenjinFetch"?: (event: CustomEvent<any>) => void;
-        "onFireenjinSubmit"?: (event: CustomEvent<any>) => void;
-        "onFtEpayShowCommisions"?: (event: CustomEvent<any>) => void;
+        "onFireenjinFetch"?: (event: FloodteamEpayCustomEvent<any>) => void;
+        "onFireenjinSubmit"?: (event: FloodteamEpayCustomEvent<any>) => void;
+        "onFtEpayShowCommisions"?: (event: FloodteamEpayCustomEvent<any>) => void;
         /**
           * The amount of money owed
          */
@@ -721,7 +1030,7 @@ declare namespace LocalJSX {
           * The component to load into a modal that will display on load
          */
         "modal"?: string;
-        "onFloodteamFeedAction"?: (event: CustomEvent<any>) => void;
+        "onFloodteamFeedAction"?: (event: FloodteamFeedCardCustomEvent<any>) => void;
         /**
           * Payload data to send through the feed card
          */
@@ -744,66 +1053,63 @@ declare namespace LocalJSX {
         "flipped"?: boolean;
         "frontImage"?: string;
         "hideRefresh"?: boolean;
-        "onFloodteamFlip"?: (event: CustomEvent<any>) => void;
+        "onFloodteamFlip"?: (event: FloodteamFlipCardCustomEvent<any>) => void;
     }
-    interface FloodteamFloatingButton {
-        /**
-          * The content of the badge
-         */
-        "badge"?: string;
-        /**
-          * The color of the badge to display
-         */
-        "badgeColor"?: Color;
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList"?: {
-    /**
-     * The label to show next to the button
-     */
-    label: string;
-    /**
-     * The icon to use in the button
-     */
-    icon: string;
-    /**
-     * The color from the theme to make the button
-     */
-    color?: Color;
-    /**
-     * The link to use for the button
-     */
-    href?: string;
-    /**
-     * The functionality to run when the button is clicked
-     */
-    onClick?: (event: any) => any;
-  }[];
-        /**
-          * The color of the button
-         */
-        "color"?: Color;
-        /**
-          * The horizontal position of the button
-         */
-        "horizontal"?: "end" | "start" | "center";
-        /**
-          * The side the list should display
-         */
-        "listSide"?: "end" | "start" | "top" | "bottom";
-        /**
-          * The icon to use on the material button when it's closed
-         */
-        "openIcon"?: string;
-        /**
-          * The url to link the material button to
-         */
-        "url"?: string;
-        /**
-          * The vertical position of the button
-         */
-        "vertical"?: "center" | "top" | "bottom";
+    interface FloodteamInputMaterial {
+        "label"?: string;
+        "labelPosition"?: "stacked" | "fixed" | "floating";
+        "list"?: string;
+        "multiple"?: boolean;
+        "name"?: string;
+        "onIonChange"?: (event: FloodteamInputMaterialCustomEvent<any>) => void;
+        "onIonInput"?: (event: FloodteamInputMaterialCustomEvent<any>) => void;
+        "options"?: { label: string; value: any }[];
+        "placeholder"?: string;
+        "value"?: any;
+    }
+    interface FloodteamInputRoom {
+        "label"?: string;
+        "labelPosition"?: "stacked" | "fixed" | "floating";
+        "list"?: string;
+        "multiple"?: boolean;
+        "name"?: string;
+        "onIonChange"?: (event: FloodteamInputRoomCustomEvent<any>) => void;
+        "onIonInput"?: (event: FloodteamInputRoomCustomEvent<any>) => void;
+        "options"?: { label: string; value: any }[];
+        "placeholder"?: string;
+        "required"?: boolean;
+        "value"?: any;
+    }
+    interface FloodteamInputTotallerType {
+        "label"?: string;
+        "labelPosition"?: "stacked" | "fixed" | "floating";
+        "list"?: string;
+        "name"?: string;
+        "onIonChange"?: (event: FloodteamInputTotallerTypeCustomEvent<any>) => void;
+        "onIonInput"?: (event: FloodteamInputTotallerTypeCustomEvent<any>) => void;
+        "options"?: { label: string; value: any }[];
+        "placeholder"?: string;
+        "required"?: boolean;
+        "value"?: any;
+    }
+    interface FloodteamItemJob {
+        "isAdmin"?: boolean;
+        "job"?: any;
+        "lines"?: "none" | "inset" | "full";
+    }
+    interface FloodteamItemSite {
+        "detail"?: boolean;
+        "disabled"?: boolean;
+        "href"?: string;
+        "onFloodteamOpenSiteEditModal"?: (event: FloodteamItemSiteCustomEvent<any>) => void;
+        "site"?: any;
+    }
+    interface FloodteamItemUser {
+        "disabled"?: boolean;
+        "jobId"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamItemUserCustomEvent<FireEnjinSubmitEvent>) => void;
+        "role"?: string;
+        "user"?: any;
     }
     interface FloodteamJobProgress {
         "color"?: Color;
@@ -816,34 +1122,41 @@ declare namespace LocalJSX {
         "algoliaAppId"?: string;
         "algoliaIndex"?: string;
         "algoliaSearchKey"?: string;
-        "query"?: string;
+        "locationId"?: string;
+        "query"?: any;
     }
-    interface FloodteamPayCard {
-        "onFtCancel"?: (event: CustomEvent<any>) => void;
-        "onFtCardError"?: (event: CustomEvent<any>) => void;
-        "onFtSubmitCard"?: (event: CustomEvent<any>) => void;
-        "stripeKey"?: string;
-        "stripeStyle"?: any;
+    interface FloodteamNavigationFooter {
     }
-    interface FloodteamPayCheck {
-        "amount"?: number;
-        "apiKey"?: string;
-        "loading"?: boolean;
-        "onFtCancel"?: (event: CustomEvent<any>) => void;
-        "onFtCheckConfirmation"?: (event: CustomEvent<any>) => void;
-        "onFtCheckError"?: (event: CustomEvent<any>) => void;
-        "onFtCheckScan"?: (event: CustomEvent<any>) => void;
-        "onFtSubmitCheck"?: (event: CustomEvent<any>) => void;
-        "paymentId"?: string;
-        "url"?: string;
+    interface FloodteamNavigationHeader {
+        "isLoggedIn"?: boolean;
+        "navigationView"?: string;
+        "onFireenjinTrigger"?: (event: FloodteamNavigationHeaderCustomEvent<FireEnjinTriggerInput>) => void;
+    }
+    interface FloodteamNavigationMenu {
+        "feedFetchData"?: any;
+        "isAdmin"?: boolean;
+        "isInternalTeam"?: boolean;
+        "isLoggedIn"?: boolean;
+        "jobId"?: string;
+        "locationId"?: string;
+        "locations"?: any[];
+        "navigationView"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamNavigationMenuCustomEvent<FireEnjinSubmitEvent>) => void;
+        "onFireenjinTrigger"?: (event: FloodteamNavigationMenuCustomEvent<FireEnjinTriggerInput>) => void;
+        "pins"?: any[];
+        "profile"?: any;
+        "templates"?: any[];
         "userId"?: string;
     }
     interface FloodteamPaymentMethods {
         "address"?: any;
         "cardName"?: string;
+        "googleMapsKey"?: string;
         "methods"?: any[];
-        "onFtRemovePaymentMethod"?: (event: CustomEvent<any>) => void;
+        "onFireenjinFetch"?: (event: FloodteamPaymentMethodsCustomEvent<FireEnjinFetchEvent>) => void;
+        "onFireenjinSubmit"?: (event: FloodteamPaymentMethodsCustomEvent<FireEnjinSubmitEvent>) => void;
         "payType"?: "card" | "checking";
+        "sessionId"?: string;
         "stripeKey"?: string;
         "userId"?: string;
     }
@@ -853,43 +1166,76 @@ declare namespace LocalJSX {
         "currentSlide"?: number;
         "hideAddButton"?: boolean;
         "jobId"?: string;
+        "multiple"?: boolean;
         "name"?: string;
+        "onFireenjinTrigger"?: (event: FloodteamPhotoCarouselCustomEvent<FireEnjinTriggerInput>) => void;
         "options"?: any;
         "photos"?: any[];
         "siteId"?: string;
+        "tags"?: string[];
         "type"?: string;
+        "uploadPath"?: string;
+    }
+    interface FloodteamPhotoCropper {
+        "aspectRatio"?: number;
+        "src"?: string;
     }
     interface FloodteamPhotoGallery {
-        "onFtOpenPhotoCarousel"?: (event: CustomEvent<any>) => void;
+        "onFtOpenPhotoCarousel"?: (event: FloodteamPhotoGalleryCustomEvent<any>) => void;
         "photos"?: string[];
     }
-    interface FloodteamPopoverControls {
-        /**
-          * The list of buttons to show when the material button is clicked
-         */
-        "buttonList"?: {
-        /**
-         * The label to show next to the button
-         */
-        label: string;
-        /**
-         * The icon to use in the button
-         */
-        icon: string;
-        /**
-         * The color from the theme to make the button
-         */
-        color?: Color;
-        /**
-         * The link to use for the button
-         */
-        href?: string;
-        /**
-         * The functionality to run when the button is clicked
-         */
-        onClick?: (event: any) => any;
-    }[];
-        "onFloodteamClosePopover"?: (event: CustomEvent<any>) => void;
+    interface FloodteamPinBar {
+        "onFireenjinTrigger"?: (event: FloodteamPinBarCustomEvent<FireEnjinTriggerInput>) => void;
+        "pins"?: any[];
+        "profile"?: any;
+        "reorder"?: boolean;
+    }
+    interface FloodteamSelectJobServiceTypes {
+        "disabled"?: boolean;
+        "icon"?: string;
+        "jobId"?: string;
+        "locationId"?: string;
+        "name"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamSelectJobServiceTypesCustomEvent<FireEnjinSubmitEvent>) => void;
+        "onFireenjinTrigger"?: (event: FloodteamSelectJobServiceTypesCustomEvent<FireEnjinTriggerInput>) => void;
+        "value"?: string[];
+    }
+    interface FloodteamSelectLocation {
+        "disabled"?: boolean;
+        "jobId"?: string;
+        "locations"?: any[];
+        "name"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamSelectLocationCustomEvent<FireEnjinSubmitEvent>) => void;
+        "onFireenjinTrigger"?: (event: FloodteamSelectLocationCustomEvent<FireEnjinTriggerInput>) => void;
+        "value"?: string;
+    }
+    interface FloodteamSelectLostReason {
+        "disabled"?: boolean;
+        "jobId"?: string;
+        "name"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamSelectLostReasonCustomEvent<FireEnjinSubmitEvent>) => void;
+        "onFireenjinTrigger"?: (event: FloodteamSelectLostReasonCustomEvent<FireEnjinTriggerInput>) => void;
+        "value"?: string;
+    }
+    interface FloodteamSelectRole {
+        "disabled"?: boolean;
+        "jobId"?: string;
+        "name"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamSelectRoleCustomEvent<FireEnjinSubmitEvent>) => void;
+        "onFireenjinTrigger"?: (event: FloodteamSelectRoleCustomEvent<FireEnjinTriggerInput>) => void;
+        "userId"?: string;
+        "value"?: string;
+    }
+    interface FloodteamSelectStatus {
+        "disabled"?: boolean;
+        "jobId"?: string;
+        "name"?: string;
+        "onFireenjinSubmit"?: (event: FloodteamSelectStatusCustomEvent<FireEnjinSubmitEvent>) => void;
+        "onFireenjinTrigger"?: (event: FloodteamSelectStatusCustomEvent<FireEnjinTriggerInput>) => void;
+        "value"?: string;
+    }
+    interface FloodteamServiceCard {
+        "src"?: string;
     }
     interface FloodteamSignaturePad {
         /**
@@ -924,8 +1270,8 @@ declare namespace LocalJSX {
           * The name of the element
          */
         "name"?: string;
-        "onIonChange"?: (event: CustomEvent<any>) => void;
-        "onIonInput"?: (event: CustomEvent<any>) => void;
+        "onIonChange"?: (event: FloodteamSignaturePadCustomEvent<any>) => void;
+        "onIonInput"?: (event: FloodteamSignaturePadCustomEvent<any>) => void;
         /**
           * Color used to draw the lines. Can be any color format accepted by context.fillStyle
          */
@@ -953,8 +1299,58 @@ declare namespace LocalJSX {
         "buttonText"?: string;
         "disableShrink"?: boolean;
         "href"?: string;
-        "onFloodteamClick"?: (event: CustomEvent<any>) => void;
+        "onFloodteamClick"?: (event: FloodteamSnapshotCardCustomEvent<any>) => void;
         "photo"?: string;
+    }
+    interface FloodteamTemplate {
+        "allowFullscreen"?: boolean;
+        "data"?: any;
+        "disableFrame"?: boolean;
+        "disablePosition"?: boolean;
+        "helpers"?: any;
+        "partials"?: any[];
+        "rawHtml"?: string;
+        "resize"?: boolean;
+        "template"?: any;
+        "templateId"?: string;
+        "zoom"?: number;
+    }
+    interface FloodteamTitleBar {
+        "back"?: string;
+        "disableUnderline"?: boolean;
+        "heading"?: number;
+        "icon"?: string;
+        "onFireenjinTrigger"?: (event: FloodteamTitleBarCustomEvent<FireEnjinTriggerInput>) => void;
+        "pin"?: any;
+        "pins"?: any[];
+    }
+    interface FloodteamTotalGraph {
+        "dataSets"?: any[];
+        "groupBy"?: string;
+        "labels"?: string[];
+        "onFireenjinFetch"?: (event: FloodteamTotalGraphCustomEvent<FireEnjinFetchEvent>) => void;
+        "totaller"?: any;
+        "totallerId"?: string;
+        "type"?: "bar" | "line" | "pie";
+    }
+    interface FloodteamTotallerCardList {
+        "groupBy"?: string;
+        "label"?: string;
+        "onFireenjinFetch"?: (event: FloodteamTotallerCardListCustomEvent<FireEnjinFetchEvent>) => void;
+        "timeframe"?: Date;
+        "totallerIds"?: any[];
+    }
+    interface FloodteamTotallerCards {
+        "onFireenjinFetch"?: (event: FloodteamTotallerCardsCustomEvent<FireEnjinFetchEvent>) => void;
+        "totallerId"?: string;
+        "totals"?: { [sumName: string]: any };
+    }
+    interface FloodteamWaves {
+        "color"?: string;
+        "dip"?: string;
+        "moving"?: boolean;
+        "size"?: string;
+        "speed"?: string;
     }
     interface IntrinsicElements {
         "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
@@ -965,17 +1361,36 @@ declare namespace LocalJSX {
         "floodteam-fallback": FloodteamFallback;
         "floodteam-feed-card": FloodteamFeedCard;
         "floodteam-flip-card": FloodteamFlipCard;
-        "floodteam-floating-button": FloodteamFloatingButton;
+        "floodteam-input-material": FloodteamInputMaterial;
+        "floodteam-input-room": FloodteamInputRoom;
+        "floodteam-input-totaller-type": FloodteamInputTotallerType;
+        "floodteam-item-job": FloodteamItemJob;
+        "floodteam-item-site": FloodteamItemSite;
+        "floodteam-item-user": FloodteamItemUser;
         "floodteam-job-progress": FloodteamJobProgress;
         "floodteam-location-bar": FloodteamLocationBar;
-        "floodteam-pay-card": FloodteamPayCard;
-        "floodteam-pay-check": FloodteamPayCheck;
+        "floodteam-navigation-footer": FloodteamNavigationFooter;
+        "floodteam-navigation-header": FloodteamNavigationHeader;
+        "floodteam-navigation-menu": FloodteamNavigationMenu;
         "floodteam-payment-methods": FloodteamPaymentMethods;
         "floodteam-photo-carousel": FloodteamPhotoCarousel;
+        "floodteam-photo-cropper": FloodteamPhotoCropper;
         "floodteam-photo-gallery": FloodteamPhotoGallery;
-        "floodteam-popover-controls": FloodteamPopoverControls;
+        "floodteam-pin-bar": FloodteamPinBar;
+        "floodteam-select-job-service-types": FloodteamSelectJobServiceTypes;
+        "floodteam-select-location": FloodteamSelectLocation;
+        "floodteam-select-lost-reason": FloodteamSelectLostReason;
+        "floodteam-select-role": FloodteamSelectRole;
+        "floodteam-select-status": FloodteamSelectStatus;
+        "floodteam-service-card": FloodteamServiceCard;
         "floodteam-signature-pad": FloodteamSignaturePad;
         "floodteam-snapshot-card": FloodteamSnapshotCard;
+        "floodteam-template": FloodteamTemplate;
+        "floodteam-title-bar": FloodteamTitleBar;
+        "floodteam-total-graph": FloodteamTotalGraph;
+        "floodteam-totaller-card-list": FloodteamTotallerCardList;
+        "floodteam-totaller-cards": FloodteamTotallerCards;
+        "floodteam-waves": FloodteamWaves;
     }
 }
 export { LocalJSX as JSX };
@@ -990,17 +1405,36 @@ declare module "@stencil/core" {
             "floodteam-fallback": LocalJSX.FloodteamFallback & JSXBase.HTMLAttributes<HTMLFloodteamFallbackElement>;
             "floodteam-feed-card": LocalJSX.FloodteamFeedCard & JSXBase.HTMLAttributes<HTMLFloodteamFeedCardElement>;
             "floodteam-flip-card": LocalJSX.FloodteamFlipCard & JSXBase.HTMLAttributes<HTMLFloodteamFlipCardElement>;
-            "floodteam-floating-button": LocalJSX.FloodteamFloatingButton & JSXBase.HTMLAttributes<HTMLFloodteamFloatingButtonElement>;
+            "floodteam-input-material": LocalJSX.FloodteamInputMaterial & JSXBase.HTMLAttributes<HTMLFloodteamInputMaterialElement>;
+            "floodteam-input-room": LocalJSX.FloodteamInputRoom & JSXBase.HTMLAttributes<HTMLFloodteamInputRoomElement>;
+            "floodteam-input-totaller-type": LocalJSX.FloodteamInputTotallerType & JSXBase.HTMLAttributes<HTMLFloodteamInputTotallerTypeElement>;
+            "floodteam-item-job": LocalJSX.FloodteamItemJob & JSXBase.HTMLAttributes<HTMLFloodteamItemJobElement>;
+            "floodteam-item-site": LocalJSX.FloodteamItemSite & JSXBase.HTMLAttributes<HTMLFloodteamItemSiteElement>;
+            "floodteam-item-user": LocalJSX.FloodteamItemUser & JSXBase.HTMLAttributes<HTMLFloodteamItemUserElement>;
             "floodteam-job-progress": LocalJSX.FloodteamJobProgress & JSXBase.HTMLAttributes<HTMLFloodteamJobProgressElement>;
             "floodteam-location-bar": LocalJSX.FloodteamLocationBar & JSXBase.HTMLAttributes<HTMLFloodteamLocationBarElement>;
-            "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
-            "floodteam-pay-check": LocalJSX.FloodteamPayCheck & JSXBase.HTMLAttributes<HTMLFloodteamPayCheckElement>;
+            "floodteam-navigation-footer": LocalJSX.FloodteamNavigationFooter & JSXBase.HTMLAttributes<HTMLFloodteamNavigationFooterElement>;
+            "floodteam-navigation-header": LocalJSX.FloodteamNavigationHeader & JSXBase.HTMLAttributes<HTMLFloodteamNavigationHeaderElement>;
+            "floodteam-navigation-menu": LocalJSX.FloodteamNavigationMenu & JSXBase.HTMLAttributes<HTMLFloodteamNavigationMenuElement>;
             "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
             "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
+            "floodteam-photo-cropper": LocalJSX.FloodteamPhotoCropper & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCropperElement>;
             "floodteam-photo-gallery": LocalJSX.FloodteamPhotoGallery & JSXBase.HTMLAttributes<HTMLFloodteamPhotoGalleryElement>;
-            "floodteam-popover-controls": LocalJSX.FloodteamPopoverControls & JSXBase.HTMLAttributes<HTMLFloodteamPopoverControlsElement>;
+            "floodteam-pin-bar": LocalJSX.FloodteamPinBar & JSXBase.HTMLAttributes<HTMLFloodteamPinBarElement>;
+            "floodteam-select-job-service-types": LocalJSX.FloodteamSelectJobServiceTypes & JSXBase.HTMLAttributes<HTMLFloodteamSelectJobServiceTypesElement>;
+            "floodteam-select-location": LocalJSX.FloodteamSelectLocation & JSXBase.HTMLAttributes<HTMLFloodteamSelectLocationElement>;
+            "floodteam-select-lost-reason": LocalJSX.FloodteamSelectLostReason & JSXBase.HTMLAttributes<HTMLFloodteamSelectLostReasonElement>;
+            "floodteam-select-role": LocalJSX.FloodteamSelectRole & JSXBase.HTMLAttributes<HTMLFloodteamSelectRoleElement>;
+            "floodteam-select-status": LocalJSX.FloodteamSelectStatus & JSXBase.HTMLAttributes<HTMLFloodteamSelectStatusElement>;
+            "floodteam-service-card": LocalJSX.FloodteamServiceCard & JSXBase.HTMLAttributes<HTMLFloodteamServiceCardElement>;
             "floodteam-signature-pad": LocalJSX.FloodteamSignaturePad & JSXBase.HTMLAttributes<HTMLFloodteamSignaturePadElement>;
             "floodteam-snapshot-card": LocalJSX.FloodteamSnapshotCard & JSXBase.HTMLAttributes<HTMLFloodteamSnapshotCardElement>;
+            "floodteam-template": LocalJSX.FloodteamTemplate & JSXBase.HTMLAttributes<HTMLFloodteamTemplateElement>;
+            "floodteam-title-bar": LocalJSX.FloodteamTitleBar & JSXBase.HTMLAttributes<HTMLFloodteamTitleBarElement>;
+            "floodteam-total-graph": LocalJSX.FloodteamTotalGraph & JSXBase.HTMLAttributes<HTMLFloodteamTotalGraphElement>;
+            "floodteam-totaller-card-list": LocalJSX.FloodteamTotallerCardList & JSXBase.HTMLAttributes<HTMLFloodteamTotallerCardListElement>;
+            "floodteam-totaller-cards": LocalJSX.FloodteamTotallerCards & JSXBase.HTMLAttributes<HTMLFloodteamTotallerCardsElement>;
+            "floodteam-waves": LocalJSX.FloodteamWaves & JSXBase.HTMLAttributes<HTMLFloodteamWavesElement>;
         }
     }
 }

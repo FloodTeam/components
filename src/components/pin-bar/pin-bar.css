@@ -1,0 +1,22 @@
+floodteam-pin-bar {
+  padding: 3px;
+  height: 46px;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto !important;
+  white-space: nowrap;
+}
+
+floodteam-pin-bar ion-router-link:hover ion-icon {
+  color: var(--ion-color-secondary);
+}
+
+floodteam-pin-bar::-webkit-scrollbar {
+  width: 0;
+  height: 5px;
+}
+
+floodteam-pin-bar::-webkit-scrollbar-thumb {
+  background: rgba(var(--ion-text-color-rgb), 0.6);
+  border-radius: 2px;
+}

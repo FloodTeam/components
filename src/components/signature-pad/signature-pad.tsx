@@ -10,6 +10,7 @@ import {
   Watch,
 } from "@stencil/core";
 import Signature from "signature_pad";
+import formatDate from "../../helpers/formatDate";
 
 @Component({
   tag: "floodteam-signature-pad",
@@ -262,12 +263,11 @@ export class SignaturePad {
     // When zoomed out to less than 100%, for some very strange reason,
     // some browsers report devicePixelRatio as less than 1
     // and only part of the canvas is cleared then.
-    var ratio = Math.max(window.devicePixelRatio || 1, 1);
 
     // This part causes the canvas to be cleared
-    this.canvasEl.width = this.canvasEl.offsetWidth * ratio;
-    this.canvasEl.height = this.canvasEl.offsetHeight * ratio;
-    this.canvasEl.getContext("2d").scale(ratio, ratio);
+    this.canvasEl.width = this.canvasEl.offsetWidth;
+    this.canvasEl.height = this.canvasEl.offsetHeight;
+    this.canvasEl.getContext("2d").scale(1, 1);
 
     // This library does not listen for canvas changes, so after the canvas is automatically
     // cleared by the browser, SignaturePad#isEmpty might still return false, even though the
@@ -316,29 +316,33 @@ export class SignaturePad {
   }
 
   componentDidLoad() {
-    if (Build.isBrowser) {
-      this.pad = new Signature(this.canvasEl, {
-        backgroundColor: this.backgroundColor,
-        penColor: this.penColor,
-        dotSize: this.dotSize,
-        maxWidth: this.maxWidth,
-        minDistance: this.minDistance,
-        minWidth: this.minWidth,
-        throttle: this.throttle,
-        velocityFilterWeight: this.velocityFilterWeight,
-      });
-      this.pad.addEventListener("endStroke", async () => {
-        this.value = await this.pad.toData();
-        this.ionInput.emit();
-      });
-      this.resizeCanvas();
-    }
+    if (!Build?.isBrowser) return;
+    this.pad = new Signature(this.canvasEl, {
+      backgroundColor: this.backgroundColor,
+      penColor: this.penColor,
+      dotSize: this.dotSize,
+      maxWidth: this.maxWidth,
+      minDistance: this.minDistance,
+      minWidth: this.minWidth,
+      throttle: this.throttle,
+      velocityFilterWeight: this.velocityFilterWeight,
+    });
+    this.pad.addEventListener("endStroke", async () => {
+      this.value = await this.pad.toData();
+      this.ionInput.emit();
+    });
+    this.resizeCanvas();
   }
 
   render() {
     return (
       <ion-card id="signature-pad">
-        <canvas class="signature-pad" ref={(el) => (this.canvasEl = el)} height="200" width="" />
+        <canvas
+          class="signature-pad"
+          ref={(el) => (this.canvasEl = el)}
+          height="150"
+          width="300"
+        />
         <ion-icon
           class="undo"
           name="arrow-undo-circle-outline"
@@ -353,11 +357,22 @@ export class SignaturePad {
             >
               {this.clearText}
             </ion-button>
-            <p>{this.label}</p>
-            <ion-button
-              fill="solid"
-              onClick={() => this.submit()}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "space-between",
+            }}
+          >
+            <b
+              style={{
+                color: "var(--ion-color-step-500)",
+                "font-size": "1rem",
+              }}
             >
+              Signed on {formatDate(new Date(), "MM-dd-yy")}
+            </b>
+            <ion-button fill="solid" onClick={() => this.submit()}>
               {this.submitText}
             </ion-button>
           </div>

@@ -1,4 +1,4 @@
-import { OrganismPresets } from "@fireenjin/docs/dist/types/interfaces";
+import { ComponentPresets } from "@fireenjin/docs";
 
 export default {
   default: {
@@ -11,4 +11,4 @@ export default {
       email: "popcorn245@gmail.com",
     },
   },
-} as OrganismPresets;
+} as ComponentPresets;

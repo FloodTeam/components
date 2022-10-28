@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type       | Default                                           |
-| ------------ | ------------ | ----------- | ---------- | ------------------------------------------------- |
-| `color`      | `color`      |             | `string`   | `"success"`                                       |
-| `name`       | `name`       |             | `string`   | `"status"`                                        |
-| `scrollable` | `scrollable` |             | `boolean`  | `true`                                            |
-| `statuses`   | --           |             | `string[]` | `["respond", "evaluate", "map", "dry", "review"]` |
-| `value`      | `value`      |             | `string`   | `"respond"`                                       |
+| Property     | Attribute    | Description | Type                                                                                                                                             | Default                                           |
+| ------------ | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| `color`      | `color`      |             | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning" \| string & Record<never, never>` | `"success"`                                       |
+| `name`       | `name`       |             | `string`                                                                                                                                         | `"status"`                                        |
+| `scrollable` | `scrollable` |             | `boolean`                                                                                                                                        | `true`                                            |
+| `statuses`   | --           |             | `string[]`                                                                                                                                       | `["respond", "evaluate", "map", "dry", "review"]` |
+| `value`      | `value`      |             | `string`                                                                                                                                         | `"respond"`                                       |
 
 
 ## Dependencies

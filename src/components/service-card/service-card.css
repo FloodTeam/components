@@ -1,0 +1,13 @@
+.img-wrapper {  
+    width: 250px;
+    height: 250px;
+    overflow: hidden; 
+  }
+  
+  .inner-img {
+    transition: 0.3s;
+  }
+  
+  .inner-img:hover {
+    transform: scale(1.1);
+  }

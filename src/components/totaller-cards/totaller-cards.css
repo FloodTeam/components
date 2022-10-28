@@ -1,0 +1,30 @@
+floodteam-totaller-cards .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+floodteam-totaller-cards ion-card {
+    min-width: 6rem;
+    max-width: 10rem;
+    min-height: 6rem;
+    padding:0px 10px 10px 10px;
+    flex-basis:18%
+  }
+
+ floodteam-totaller-cards h1 {
+  font-size: 1rem;
+  color:var(--ion-text-color)
+ }
+ floodteam-totaller-cards h2 {
+  font-size: .8rem;
+  color:var(--ion-text-color)
+ }
+ floodteam-totaller-cards h3 {
+  font-size: .6rem;
+ }
+
+@media only screen and (max-width:415.9px) {
+  floodteam-totaller-cards .flex-container {
+    justify-content: space-evenly;
+  }
+}

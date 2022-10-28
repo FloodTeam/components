@@ -32,10 +32,10 @@ export class GraphPaySplits implements ComponentInterface {
         typeof users === "string"
           ? JSON.parse(users)
           : users.length > 0
-            ? users
-            : this.graphPaySplitsEl.getAttribute("users")
-              ? JSON.parse(this.graphPaySplitsEl.getAttribute("users"))
-              : [];
+          ? users
+          : this.graphPaySplitsEl.getAttribute("users")
+          ? JSON.parse(this.graphPaySplitsEl.getAttribute("users"))
+          : [];
 
       const backgroundColor = [
         "#3e95cd",
@@ -83,20 +83,21 @@ export class GraphPaySplits implements ComponentInterface {
     if (payment.type === "manual") {
       paymentText = `${this.formatUSD(payment.amount)} paid manually`;
     } else if (payment.type === "charge") {
-      paymentText = `${this.formatUSD(payment.amount)} paid on ${payment.brand
-        } card ending in ${payment.ending_in}`;
+      paymentText = `${this.formatUSD(payment.amount)} paid on ${
+        payment.brand
+      } card ending in ${payment.ending_in}`;
     } else if (payment.type === "check") {
-      paymentText = `${this.formatUSD(payment.amount)} paid by check ${payment.check_number
-        }`;
+      paymentText = `${this.formatUSD(payment.amount)} paid by check ${
+        payment.check_number
+      }`;
     }
 
     return paymentText;
   }
 
   componentDidLoad() {
-    if (Build.isBrowser) {
-      this.setUsers(this.users);
-    }
+    if (!Build?.isBrowser) return;
+    this.setUsers(this.users);
   }
 
   render() {

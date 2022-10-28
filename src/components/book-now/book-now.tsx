@@ -27,7 +27,7 @@ export class BookNow {
   /**
    * The Google Maps API Key
    */
-  @Prop() googleMapsKey: string;
+  @Prop() googleMapsKey;
 
   @State() errors: string[] = [];
   @State() successful = false;
@@ -35,7 +35,7 @@ export class BookNow {
   @State() confirmationId: string;
   @State() checkmarkEl: any;
 
-  @Listen("fireenjinError", { target: "body" })
+  @Listen("fireenjinError")
   onError(event) {
     if (event.detail.endpoint === "addJob") {
       setTimeout(() => {
@@ -46,7 +46,7 @@ export class BookNow {
     }
   }
 
-  @Listen("fireenjinSuccess", { target: "body" })
+  @Listen("fireenjinSuccess")
   async onSuccess(event) {
     this.errors = [];
     if (event.detail.endpoint === "addJob") {
@@ -60,13 +60,12 @@ export class BookNow {
   }
 
   componentDidLoad() {
-    if (Build.isBrowser) {
-      // Get Data
-      this.formData.token = this.token;
-      this.formData.locationId = this.locationId;
-      if (!this.referring) {
-        new ClipboardJS(".btn");
-      }
+    if (!Build?.isBrowser) return;
+    // Get Data
+    this.formData.token = this.token;
+    this.formData.locationId = this.locationId;
+    if (!this.referring) {
+      new ClipboardJS(".btn");
     }
   }
 
@@ -160,10 +159,10 @@ export class BookNow {
                 ) : (
                   <ion-button
                     size="default"
-                    onClick={() => (window ? window.location.reload() : null)}
+                    href={`/jobs/${this.confirmationId}`}
                     expand="block"
                   >
-                    Add Another
+                    Open Job
                   </ion-button>
                 )}
               </ion-col>

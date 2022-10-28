@@ -1,22 +1,34 @@
 # floodteam-photo-carousel
 
+
+
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-| Property         | Attribute          | Description | Type      | Default           |
-| ---------------- | ------------------ | ----------- | --------- | ----------------- |
-| `addButtonColor` | `add-button-color` |             | `string`  | `"primary"`       |
-| `badgeColor`     | `badge-color`      |             | `string`  | `"medium"`        |
-| `currentSlide`   | `current-slide`    |             | `number`  | `0`               |
-| `hideAddButton`  | `hide-add-button`  |             | `boolean` | `false`           |
-| `jobId`          | `job-id`           |             | `string`  | `undefined`       |
-| `name`           | `name`             |             | `string`  | `"photocarousel"` |
-| `options`        | `options`          |             | `any`     | `{}`              |
-| `photos`         | --                 |             | `any[]`   | `[]`              |
-| `siteId`         | `site-id`          |             | `string`  | `undefined`       |
-| `type`           | `type`             |             | `string`  | `"site"`          |
+| Property         | Attribute          | Description | Type                                                                                                                                             | Default           |
+| ---------------- | ------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| `addButtonColor` | `add-button-color` |             | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning" \| string & Record<never, never>` | `"primary"`       |
+| `badgeColor`     | `badge-color`      |             | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning" \| string & Record<never, never>` | `"medium"`        |
+| `currentSlide`   | `current-slide`    |             | `number`                                                                                                                                         | `0`               |
+| `hideAddButton`  | `hide-add-button`  |             | `boolean`                                                                                                                                        | `false`           |
+| `jobId`          | `job-id`           |             | `string`                                                                                                                                         | `undefined`       |
+| `multiple`       | `multiple`         |             | `boolean`                                                                                                                                        | `true`            |
+| `name`           | `name`             |             | `string`                                                                                                                                         | `"photocarousel"` |
+| `options`        | `options`          |             | `any`                                                                                                                                            | `{}`              |
+| `photos`         | --                 |             | `any[]`                                                                                                                                          | `[]`              |
+| `siteId`         | `site-id`          |             | `string`                                                                                                                                         | `undefined`       |
+| `tags`           | --                 |             | `string[]`                                                                                                                                       | `[]`              |
+| `type`           | `type`             |             | `string`                                                                                                                                         | `"site"`          |
+| `uploadPath`     | `upload-path`      |             | `string`                                                                                                                                         | `undefined`       |
+
+
+## Events
+
+| Event              | Description | Type                                 |
+| ------------------ | ----------- | ------------------------------------ |
+| `fireenjinTrigger` |             | `CustomEvent<FireEnjinTriggerInput>` |
 
 
 ## Methods
@@ -31,13 +43,23 @@ Type: `Promise<number>`
 
 
 
-### `selectFiles(event: any) => Promise<any>`
+### `getPhoto() => Promise<any>`
 
 
 
 #### Returns
 
 Type: `Promise<any>`
+
+
+
+### `selectFiles() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
 
 
 
@@ -86,11 +108,8 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- fireenjin-input-photo
 - ion-badge
-- ion-fab
-- ion-fab-button
-- ion-icon
+- ion-button
 - ion-slides
 - ion-slide
 - ion-img
@@ -99,20 +118,13 @@ Type: `Promise<void>`
 ### Graph
 ```mermaid
 graph TD;
-  floodteam-photo-carousel --> fireenjin-input-photo
   floodteam-photo-carousel --> ion-badge
-  floodteam-photo-carousel --> ion-fab
-  floodteam-photo-carousel --> ion-fab-button
-  floodteam-photo-carousel --> ion-icon
+  floodteam-photo-carousel --> ion-button
   floodteam-photo-carousel --> ion-slides
   floodteam-photo-carousel --> ion-slide
   floodteam-photo-carousel --> ion-img
   floodteam-photo-carousel --> floodteam-fallback
-  fireenjin-input-photo --> ion-button
-  fireenjin-input-photo --> ion-icon
   ion-button --> ion-ripple-effect
-  ion-fab-button --> ion-icon
-  ion-fab-button --> ion-ripple-effect
   floodteam-fallback --> ion-icon
   style floodteam-photo-carousel fill:#f9f,stroke:#333,stroke-width:4px
 ```
