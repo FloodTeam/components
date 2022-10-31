@@ -9,18 +9,6 @@ function define(name, dependencies, callback) {
     window.presets[name.split('/').pop()] = exports["default"];
 }
 ;
-define("src/components/book-now/book-now.presets", ["require", "exports"], function (require, exports) {
-    "use strict";
-    exports.__esModule = true;
-    exports["default"] = {
-        "default": {
-            name: "Default",
-            props: {
-                googleMapsKey: "AIzaSyBenUMQZUJg7qRUoFUJOS5tjK-JnOeQtjM"
-            }
-        }
-    };
-});
 define("src/components/epay/epay.presets", ["require", "exports"], function (require, exports) {
     "use strict";
     exports.__esModule = true;
@@ -73,6 +61,17 @@ define("src/components/photo-carousel/photo-carousel.presets", ["require", "expo
                         url: "https://firebasestorage.googleapis.com/v0/b/ftms-ca85b.appspot.com/o/jobs%2FUXmgvBkzLJQ9eKRR8o7i%2Fphotos%2F2021-06-24T21%3A35%3A31.403Z.jpeg?alt=media&token=d5168723-3670-4b6e-872e-74a98d51180d"
                     },
                 ]
+            }
+        }
+    };
+});
+define("src/components/photo-cropper/photo-cropper.presets", ["require", "exports"], function (require, exports) {
+    "use strict";
+    exports.__esModule = true;
+    exports["default"] = {
+        "default": {
+            props: {
+                src: "/assets/images/check-diagram.png"
             }
         }
     };

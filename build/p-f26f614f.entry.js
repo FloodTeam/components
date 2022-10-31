@@ -1,0 +1,1 @@
+import{r,h as i}from"./p-8710117e.js";const s=class{constructor(i){r(this,i),this.src=void 0}render(){return i("ion-card",{class:"img-wrapper"},i("img",{class:"inner-img",src:this.src}))}};s.style=".img-wrapper{width:250px;height:250px;overflow:hidden}.inner-img{transition:0.3s}.inner-img:hover{transform:scale(1.1)}";export{s as floodteam_service_card}

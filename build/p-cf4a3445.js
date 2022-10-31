@@ -1,0 +1,1 @@
+function n(n){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",minimumFractionDigits:2}).format("string"==typeof n?parseFloat(n.replace(/\$|,/g,"")):n||0)}export{n as f}
