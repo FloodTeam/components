@@ -11,8 +11,16 @@ export const config: Config = {
       type: "dist",
     },
     {
-      type: "dist-custom-elements",
-      generateTypeDeclarations: true,
+      type: "www",
+      serviceWorker: null,
+      baseUrl: "https://app.thefloodteam.com/",
+    },
+    {
+      type: "docs-readme",
+    },
+    {
+      type: "docs-json",
+      file: "www/core.json",
     },
   ],
   rollupPlugins: {
