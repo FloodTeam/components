@@ -16,6 +16,9 @@ export const config: Config = {
       baseUrl: "https://app.thefloodteam.com/",
     },
     {
+      type: "dist-custom-elements",
+    },
+    {
       type: "docs-readme",
     },
     {
