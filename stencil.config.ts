@@ -11,12 +11,8 @@ export const config: Config = {
       type: "dist",
     },
     {
-      type: "www",
-      serviceWorker: null,
-      baseUrl: "https://app.thefloodteam.com/",
-    },
-    {
       type: "dist-custom-elements",
+      generateTypeDeclarations: true,
     },
     {
       type: "docs-readme",

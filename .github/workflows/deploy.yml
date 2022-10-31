@@ -4,18 +4,19 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 14.17.6
-      # - name: Authenticate
-      #   run: echo -e "@floodteam:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.npmrc
-      - name: Install
+          node-version: 16
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run deploy:build

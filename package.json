@@ -10,6 +10,9 @@
   "unpkg": "./dist/floodteam/floodteam.esm.js",
   "collection:main": "./dist/collection/index.js",
   "collection": "./dist/collection/collection-manifest.json",
+  "engines": {
+    "node": "16"
+  },
   "files": [
     "dist/"
   ],
