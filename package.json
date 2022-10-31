@@ -48,7 +48,7 @@
     "debounce-decorator": "^1.0.6",
     "json-formatter-js": "^2.3.4",
     "localforage": "^1.10.0",
-    "signature_pad": "^4.0.10"
+    "signature_pad": "^4.1.0"
   },
   "devDependencies": {
     "@fireenjin/cli": "^1.1.5",
