@@ -5,13 +5,67 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Step } from "@fireenjin/components/dist/types/typings";
 import { FireEnjinFetchEvent, FireEnjinSubmitEvent, FireEnjinTriggerInput } from "@fireenjin/sdk";
 import { Color } from "@ionic/core";
+import { User } from "../../core/src/sdk";
 export namespace Components {
     interface FireenjinGraphPaySplits {
         "graphTitle": string;
         "setUsers": (users: any) => Promise<any[]>;
         "users": any[];
+    }
+    interface FloodteamBookFlow {
+        /**
+          * The service address captured in the flow
+         */
+        "address": any;
+        "algoliaAppId": string;
+        "algoliaIndex": string;
+        "algoliaSearchKey": string;
+        /**
+          * The current path of the flow they are in
+         */
+        "currentPath": string;
+        /**
+          * The current step of the path they are on
+         */
+        "currentStep": string;
+        /**
+          * The name of the customer captured in the flow
+         */
+        "customer": string;
+        "findLocation": (id: string) => Promise<any>;
+        /**
+          * The Google Maps API Key
+         */
+        "googleMapsKey": any;
+        /**
+          * The ID of the location
+         */
+        "locationId": string;
+        /**
+          * The phone number captured in the flow
+         */
+        "phone": string;
+        /**
+          * The ID of the referring user
+         */
+        "referralId": string;
+        /**
+          * Is the user referring?
+         */
+        "referring": boolean;
+        /**
+          * Set the path of the flow
+          * @param path The path name to change to
+          * @returns A list of steps for the current path
+         */
+        "setPath": (path?: string) => Promise<Step[]>;
+        /**
+          * The campaign or API token
+         */
+        "token": string;
     }
     interface FloodteamBookNow {
         /**
@@ -269,6 +323,41 @@ export namespace Components {
         "profile": any;
         "templates": any[];
         "userId": string;
+    }
+    interface FloodteamPayCard {
+        "darkMode": boolean;
+        "getCardToken": () => Promise<any>;
+        "stripeKey": string;
+        "stripeStyle": any;
+    }
+    interface FloodteamPayCheck {
+        "amount": number;
+        "apiKey": string;
+        "confirmPayment": (options?: {}) => Promise<any>;
+        "flipCard": () => Promise<void>;
+        "loading": boolean;
+        "openCamera": (scanningBack?: boolean) => Promise<void>;
+        "paymentId": string;
+        "url": string;
+        "userId": string;
+    }
+    interface FloodteamPaymentFlow {
+        "amount": number;
+        "checkAmount": number;
+        "checkBack": string;
+        "checkFront": string;
+        "currentPath": string;
+        "currentStep": string;
+        "email": string;
+        "jobId": string;
+        "method": string;
+        /**
+          * Set the path of the flow d
+          * @param path The path name to change to
+          * @returns A list of steps for the current path
+         */
+        "setPath": (path?: string) => Promise<Step[]>;
+        "user": Partial<User>;
     }
     interface FloodteamPaymentMethods {
         "address": any;
@@ -554,6 +643,14 @@ export interface FloodteamNavigationMenuCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFloodteamNavigationMenuElement;
 }
+export interface FloodteamPayCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamPayCardElement;
+}
+export interface FloodteamPayCheckCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFloodteamPayCheckElement;
+}
 export interface FloodteamPaymentMethodsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFloodteamPaymentMethodsElement;
@@ -620,6 +717,12 @@ declare global {
     var HTMLFireenjinGraphPaySplitsElement: {
         prototype: HTMLFireenjinGraphPaySplitsElement;
         new (): HTMLFireenjinGraphPaySplitsElement;
+    };
+    interface HTMLFloodteamBookFlowElement extends Components.FloodteamBookFlow, HTMLStencilElement {
+    }
+    var HTMLFloodteamBookFlowElement: {
+        prototype: HTMLFloodteamBookFlowElement;
+        new (): HTMLFloodteamBookFlowElement;
     };
     interface HTMLFloodteamBookNowElement extends Components.FloodteamBookNow, HTMLStencilElement {
     }
@@ -728,6 +831,24 @@ declare global {
     var HTMLFloodteamNavigationMenuElement: {
         prototype: HTMLFloodteamNavigationMenuElement;
         new (): HTMLFloodteamNavigationMenuElement;
+    };
+    interface HTMLFloodteamPayCardElement extends Components.FloodteamPayCard, HTMLStencilElement {
+    }
+    var HTMLFloodteamPayCardElement: {
+        prototype: HTMLFloodteamPayCardElement;
+        new (): HTMLFloodteamPayCardElement;
+    };
+    interface HTMLFloodteamPayCheckElement extends Components.FloodteamPayCheck, HTMLStencilElement {
+    }
+    var HTMLFloodteamPayCheckElement: {
+        prototype: HTMLFloodteamPayCheckElement;
+        new (): HTMLFloodteamPayCheckElement;
+    };
+    interface HTMLFloodteamPaymentFlowElement extends Components.FloodteamPaymentFlow, HTMLStencilElement {
+    }
+    var HTMLFloodteamPaymentFlowElement: {
+        prototype: HTMLFloodteamPaymentFlowElement;
+        new (): HTMLFloodteamPaymentFlowElement;
     };
     interface HTMLFloodteamPaymentMethodsElement extends Components.FloodteamPaymentMethods, HTMLStencilElement {
     }
@@ -845,6 +966,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "fireenjin-graph-pay-splits": HTMLFireenjinGraphPaySplitsElement;
+        "floodteam-book-flow": HTMLFloodteamBookFlowElement;
         "floodteam-book-now": HTMLFloodteamBookNowElement;
         "floodteam-checkmark": HTMLFloodteamCheckmarkElement;
         "floodteam-epay": HTMLFloodteamEpayElement;
@@ -863,6 +985,9 @@ declare global {
         "floodteam-navigation-footer": HTMLFloodteamNavigationFooterElement;
         "floodteam-navigation-header": HTMLFloodteamNavigationHeaderElement;
         "floodteam-navigation-menu": HTMLFloodteamNavigationMenuElement;
+        "floodteam-pay-card": HTMLFloodteamPayCardElement;
+        "floodteam-pay-check": HTMLFloodteamPayCheckElement;
+        "floodteam-payment-flow": HTMLFloodteamPaymentFlowElement;
         "floodteam-payment-methods": HTMLFloodteamPaymentMethodsElement;
         "floodteam-photo-carousel": HTMLFloodteamPhotoCarouselElement;
         "floodteam-photo-cropper": HTMLFloodteamPhotoCropperElement;
@@ -888,6 +1013,51 @@ declare namespace LocalJSX {
     interface FireenjinGraphPaySplits {
         "graphTitle"?: string;
         "users"?: any[];
+    }
+    interface FloodteamBookFlow {
+        /**
+          * The service address captured in the flow
+         */
+        "address"?: any;
+        "algoliaAppId"?: string;
+        "algoliaIndex"?: string;
+        "algoliaSearchKey"?: string;
+        /**
+          * The current path of the flow they are in
+         */
+        "currentPath"?: string;
+        /**
+          * The current step of the path they are on
+         */
+        "currentStep"?: string;
+        /**
+          * The name of the customer captured in the flow
+         */
+        "customer"?: string;
+        /**
+          * The Google Maps API Key
+         */
+        "googleMapsKey"?: any;
+        /**
+          * The ID of the location
+         */
+        "locationId"?: string;
+        /**
+          * The phone number captured in the flow
+         */
+        "phone"?: string;
+        /**
+          * The ID of the referring user
+         */
+        "referralId"?: string;
+        /**
+          * Is the user referring?
+         */
+        "referring"?: boolean;
+        /**
+          * The campaign or API token
+         */
+        "token"?: string;
     }
     interface FloodteamBookNow {
         /**
@@ -1148,6 +1318,39 @@ declare namespace LocalJSX {
         "templates"?: any[];
         "userId"?: string;
     }
+    interface FloodteamPayCard {
+        "darkMode"?: boolean;
+        "onFtCancel"?: (event: FloodteamPayCardCustomEvent<any>) => void;
+        "onFtCardError"?: (event: FloodteamPayCardCustomEvent<any>) => void;
+        "onFtSubmitCard"?: (event: FloodteamPayCardCustomEvent<any>) => void;
+        "stripeKey"?: string;
+        "stripeStyle"?: any;
+    }
+    interface FloodteamPayCheck {
+        "amount"?: number;
+        "apiKey"?: string;
+        "loading"?: boolean;
+        "onFtCancel"?: (event: FloodteamPayCheckCustomEvent<any>) => void;
+        "onFtCheckConfirmation"?: (event: FloodteamPayCheckCustomEvent<any>) => void;
+        "onFtCheckError"?: (event: FloodteamPayCheckCustomEvent<any>) => void;
+        "onFtCheckScan"?: (event: FloodteamPayCheckCustomEvent<any>) => void;
+        "onFtSubmitCheck"?: (event: FloodteamPayCheckCustomEvent<any>) => void;
+        "paymentId"?: string;
+        "url"?: string;
+        "userId"?: string;
+    }
+    interface FloodteamPaymentFlow {
+        "amount"?: number;
+        "checkAmount"?: number;
+        "checkBack"?: string;
+        "checkFront"?: string;
+        "currentPath"?: string;
+        "currentStep"?: string;
+        "email"?: string;
+        "jobId"?: string;
+        "method"?: string;
+        "user"?: Partial<User>;
+    }
     interface FloodteamPaymentMethods {
         "address"?: any;
         "cardName"?: string;
@@ -1354,6 +1557,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "fireenjin-graph-pay-splits": FireenjinGraphPaySplits;
+        "floodteam-book-flow": FloodteamBookFlow;
         "floodteam-book-now": FloodteamBookNow;
         "floodteam-checkmark": FloodteamCheckmark;
         "floodteam-epay": FloodteamEpay;
@@ -1372,6 +1576,9 @@ declare namespace LocalJSX {
         "floodteam-navigation-footer": FloodteamNavigationFooter;
         "floodteam-navigation-header": FloodteamNavigationHeader;
         "floodteam-navigation-menu": FloodteamNavigationMenu;
+        "floodteam-pay-card": FloodteamPayCard;
+        "floodteam-pay-check": FloodteamPayCheck;
+        "floodteam-payment-flow": FloodteamPaymentFlow;
         "floodteam-payment-methods": FloodteamPaymentMethods;
         "floodteam-photo-carousel": FloodteamPhotoCarousel;
         "floodteam-photo-cropper": FloodteamPhotoCropper;
@@ -1398,6 +1605,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "fireenjin-graph-pay-splits": LocalJSX.FireenjinGraphPaySplits & JSXBase.HTMLAttributes<HTMLFireenjinGraphPaySplitsElement>;
+            "floodteam-book-flow": LocalJSX.FloodteamBookFlow & JSXBase.HTMLAttributes<HTMLFloodteamBookFlowElement>;
             "floodteam-book-now": LocalJSX.FloodteamBookNow & JSXBase.HTMLAttributes<HTMLFloodteamBookNowElement>;
             "floodteam-checkmark": LocalJSX.FloodteamCheckmark & JSXBase.HTMLAttributes<HTMLFloodteamCheckmarkElement>;
             "floodteam-epay": LocalJSX.FloodteamEpay & JSXBase.HTMLAttributes<HTMLFloodteamEpayElement>;
@@ -1416,6 +1624,9 @@ declare module "@stencil/core" {
             "floodteam-navigation-footer": LocalJSX.FloodteamNavigationFooter & JSXBase.HTMLAttributes<HTMLFloodteamNavigationFooterElement>;
             "floodteam-navigation-header": LocalJSX.FloodteamNavigationHeader & JSXBase.HTMLAttributes<HTMLFloodteamNavigationHeaderElement>;
             "floodteam-navigation-menu": LocalJSX.FloodteamNavigationMenu & JSXBase.HTMLAttributes<HTMLFloodteamNavigationMenuElement>;
+            "floodteam-pay-card": LocalJSX.FloodteamPayCard & JSXBase.HTMLAttributes<HTMLFloodteamPayCardElement>;
+            "floodteam-pay-check": LocalJSX.FloodteamPayCheck & JSXBase.HTMLAttributes<HTMLFloodteamPayCheckElement>;
+            "floodteam-payment-flow": LocalJSX.FloodteamPaymentFlow & JSXBase.HTMLAttributes<HTMLFloodteamPaymentFlowElement>;
             "floodteam-payment-methods": LocalJSX.FloodteamPaymentMethods & JSXBase.HTMLAttributes<HTMLFloodteamPaymentMethodsElement>;
             "floodteam-photo-carousel": LocalJSX.FloodteamPhotoCarousel & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCarouselElement>;
             "floodteam-photo-cropper": LocalJSX.FloodteamPhotoCropper & JSXBase.HTMLAttributes<HTMLFloodteamPhotoCropperElement>;

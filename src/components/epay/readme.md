@@ -109,6 +109,8 @@ Type: `Promise<void>`
 - fireenjin-input
 - fireenjin-select
 - fireenjin-toggle
+- [floodteam-pay-card](../pay-card)
+- [floodteam-pay-check](../pay-check)
 - [floodteam-error](../error)
 - ion-list
 - ion-icon
@@ -132,6 +134,8 @@ graph TD;
   floodteam-epay --> fireenjin-input
   floodteam-epay --> fireenjin-select
   floodteam-epay --> fireenjin-toggle
+  floodteam-epay --> floodteam-pay-card
+  floodteam-epay --> floodteam-pay-check
   floodteam-epay --> floodteam-error
   floodteam-epay --> ion-list
   floodteam-epay --> ion-icon
@@ -180,9 +184,13 @@ graph TD;
   fireenjin-toggle --> ion-label
   fireenjin-toggle --> ion-toggle
   ion-toggle --> ion-icon
+  floodteam-pay-card --> floodteam-error
+  floodteam-pay-card --> fireenjin-input
   floodteam-error --> ion-item
   floodteam-error --> ion-icon
   floodteam-error --> ion-label
+  floodteam-pay-check --> floodteam-error
+  floodteam-pay-check --> ion-button
   floodteam-checkmark --> ion-icon
   style floodteam-epay fill:#f9f,stroke:#333,stroke-width:4px
 ```

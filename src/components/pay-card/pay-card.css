@@ -1,0 +1,21 @@
+floodteam-pay-card {
+  display: block;
+  width: 100%;
+  font-family: var(--ion-font-family, Arial, Helvetica, sans-serif);
+}
+
+floodteam-pay-card .pay-card-wrapper {
+  width: 90%;
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+floodteam-pay-card .pay-card-wrapper .StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+floodteam-pay-card .pay-card-wrapper ion-grid {
+  display: block;
+  width: 100%;
+  padding: 15px 0 0 0;
+}
