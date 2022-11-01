@@ -8,7 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Step } from "@fireenjin/components/dist/types/typings";
 import { FireEnjinFetchEvent, FireEnjinSubmitEvent, FireEnjinTriggerInput } from "@fireenjin/sdk";
 import { Color } from "@ionic/core";
-import { User } from "../../core/src/sdk";
 export namespace Components {
     interface FireenjinGraphPaySplits {
         "graphTitle": string;
@@ -357,7 +356,7 @@ export namespace Components {
           * @returns A list of steps for the current path
          */
         "setPath": (path?: string) => Promise<Step[]>;
-        "user": Partial<User>;
+        "user": any;
     }
     interface FloodteamPaymentMethods {
         "address": any;
@@ -1349,7 +1348,7 @@ declare namespace LocalJSX {
         "email"?: string;
         "jobId"?: string;
         "method"?: string;
-        "user"?: Partial<User>;
+        "user"?: any;
     }
     interface FloodteamPaymentMethods {
         "address"?: any;

@@ -9,7 +9,6 @@ import {
   State,
 } from "@stencil/core";
 import { Step } from "@fireenjin/components/dist/types/typings";
-import { Invoice, User } from "../../../../core/src/sdk";
 import invoiceAmount from "../../helpers/steps/invoiceAmount";
 import receiptEmail from "../../helpers/steps/receiptEmail";
 import paymentMethod from "../../helpers/steps/paymentMethod";
@@ -25,7 +24,7 @@ import paymentIntro from "../../helpers/steps/paymentIntro";
 export class PaymentFlow {
   flowEl: HTMLFireenjinFlowElement;
 
-  @Prop() user: Partial<User> = {};
+  @Prop() user: any;
   @Prop() jobId: string;
   @Prop({ mutable: true }) currentPath = "payingCard";
   @Prop({ mutable: true }) currentStep: string = "paymentIntro";
@@ -36,7 +35,7 @@ export class PaymentFlow {
   @Prop({ mutable: true }) checkBack: string = null;
   @Prop({ mutable: true }) checkAmount: number;
 
-  @State() invoice: Invoice;
+  @State() invoice: any;
   @State() disableNext = false;
   @State() disablePrev = false;
   @State() disableSave = true;
